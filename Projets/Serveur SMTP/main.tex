@@ -1,0 +1,70 @@
+%#########################################################
+%####### Project name : 
+%####### Name
+%#########################################################
+%####### Author(s) : 
+%####### Auth1, Auth2 ...
+%#########################################################
+%####### File settings
+%#########################################################
+\input{Settings.tex}
+%#########################################################
+%####### Begin document
+
+
+
+
+\begin{document}
+%#########################################################
+%####### First Page
+\setHeaderImage{Images/tux.png}{1}{Outils LINUX}{Serveur Web et serveur SMTP}{Nicolas LE GUERROUE}{juin 2020}
+\input{Make/Contacts.tex} %licence and more contacts
+%#########################################################
+%####### Table of content
+\tableofcontents
+%#########################################################
+%#########################################################
+
+%\part{Bluetooth\\ \makebox[10cm]{\rule{\includegraphics[width=5cm]{Images/apache_log.png}}{5cm}}}
+
+
+\part{Préambule}
+
+
+\input{Parts/Introduction.tex}
+
+\part[Apache]{Apache \\\vspace*{2cm} \makebox{\centering \includegraphics[width=0.6\textwidth]{Images/apache_log.png}}}
+\input{Parts/Apache.tex}
+
+\part{Bases}
+
+\input{Parts/Mysql.tex}
+\input{Parts/Phpmyadmin.tex}
+
+\part[PHP]{PHP \\\vspace*{2cm} \makebox{\centering \includegraphics[width=0.6\textwidth]{Images/php.png}}}
+\input{Parts/Php.tex}
+
+\part{Serveur SMTP}
+\input{Parts/Smtp.tex}
+
+\part{Outils Lirc}
+\input{Parts/Lirc.tex}
+
+\part[Outils Latex]{Outils Latex \\\vspace*{2cm} \makebox{\centering \LaTeX}}
+\input{Parts/Latex.tex}
+
+
+\input{Parts/Add-on.tex}
+
+\part{Annexes}
+
+\input{Make/Bibliography.tex}
+\input{Make/Nomenclature.tex}
+\input{Make/Glossaries.tex}
+\input{Make/Index.tex}
+
+\listoffigures
+
+\end{document}
+
+

@@ -1,0 +1,169 @@
+%Fichier Latex pour les importations
+%Auteurs : Mathieu CHARLES, Nicolas GAUTIER, Nicolas LE GUERROUÉ
+%S4P-B - Supervision
+%Professeur : M. Pelt
+
+%Modules à importer
+\usepackage[utf8]{inputenc}     %UTF-8
+\usepackage{hyperref}           %Url
+\usepackage[frenchb]{babel}     %Langue française
+\usepackage{graphicx}           %Images
+\usepackage{caption}            %légende
+\usepackage{color}              %Couleurs
+\usepackage{fancyhdr}           %headers & footers
+\usepackage{lastpage}           %Nombre de page
+\usepackage{listings}           %code source
+\usepackage{xcolor}             %Couleurs personnalisées
+\usepackage{float}              %Mise en page des images
+\usepackage{xcolor}             %Couleurs personnalisées
+
+\usepackage{lmodern}            
+\usepackage{setspace}           
+
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{tikz,pgfplots,pgf}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{titlesec}
+
+\usepackage{ENIB}
+\usetikzlibrary{patterns,calc,positioning}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=black}
+%STYLE DE PAGE ENIB
+
+
+\definecolor{lightGrey}{rgb}{0.6,0.6,0.6}
+
+
+\fancypagestyle{enib_style}{ % Création du style 'ENIB'
+    \rhead{\leftmark}                                                               %Ajout du titre du chapitre courant
+    \lhead{\small \includegraphics[scale=0.2]{images/Header/logo_enib.png}}         %Ajout du logo ENIB
+    \renewcommand{\footrulewidth}{0.4pt}                                            %Ligne du pied de page
+    \renewcommand{\headrulewidth}{0.4pt}                                            %Ligne de l'en-tête
+    \rfoot{\thepage/\pageref{LastPage}}                                             %Page courante / Nombre de page
+    \cfoot{}
+    \lfoot{\small \textcolor{lightGrey}{Mathieu CHARLES} - \textcolor{lightGrey}{Nicolas GAUTIER} - \textcolor{lightGrey}{Nicolas LE GUERROUÉ}}
+}
+
+\fancypagestyle{enib_style_title}{ % Création du style 'ENIB'
+    \lhead{\small \includegraphics[scale=0.2]{images/Header/logo_enib.png}}         %Ajout du logo ENIB
+    \renewcommand{\footrulewidth}{0.4pt}                                            %Ligne du pied de page
+    \renewcommand{\headrulewidth}{0.4pt}                                            %Ligne de l'en-tête
+    \rfoot{\thepage/\pageref{LastPage}}                                             %Page courante / Nombre de page
+    \cfoot{}
+    \lfoot{\small Mathieu CHARLES \\                                                %Auteurs
+    Nicolas GAUTIER\\
+    Nicolas LE GUERROUÉ}
+}
+
+\makeatletter
+\renewcommand\chapter{\if@openright\cleardoublepage\else\clearpage\fi
+                      \thispagestyle{enib_style} % On change le style des chapitres.
+                      \global\@topnum\z@
+                      \@afterindentfalse
+                      \secdef\@chapter\@schapter}
+\makeatother
+\pagestyle{enib_style}
+
+\makeatletter
+\renewcommand\chapter{\if@openright\cleardoublepage\else\clearpage\fi
+                      \thispagestyle{enib_style} % On change le style des chapitres.
+                      \global\@topnum\z@
+                      \@afterindentfalse
+                      \secdef\@chapter\@schapter}
+\makeatother
+\pagestyle{enib_style}
+
+
+%hauteur après chapitre
+\setlength{\headsep}{0.2in}
+
+
+%CODES
+% ~~~~ Nécessaire au balisage du code
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{darkRed}{rgb}{0.6,0,0}
+\definecolor{darkBlue}{rgb}{0,0,0.7}
+\definecolor{darkOrange}{rgb}{0.85,0.6,0.6}
+\definecolor{bigBrother}{rgb}{0.6,0.07,0.3}
+
+\lstdefinestyle{pyStyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=center,
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=pyStyle}
+
+
+\lstset{style=pyStyle}
+\lstset{literate=
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {Ã}{{\~A}}1 {ã}{{\~a}}1 {Õ}{{\~O}}1 {õ}{{\~o}}1 {’}{{'}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+  {»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1
+}
+
+%COMMANDES PERSONNELLES
+%Raccourci image
+\newcommand{\iImage}[3]{\begin{figure}[H]\centering\includegraphics[scale=#3]{#1}\caption{#2}\end{figure}}
+% arg 1 : chemin image
+% arg 2 : description
+% arg 3 : taille
+
+%raccourci mise en gras/italique
+\newcommand{\bold}[1]{{\bfseries #1}}
+\newcommand{\italic}[1]{{\itshape #1}}
+\newcommand{\ib}[1]{{\bfseries\itshape #1}}
+
+%raccourci petit saut de ligne
+\newcommand{\smallSkip}{\vskip 0.5cm}
+
+%nouvel environnement de mise en forme de code python
+\lstnewenvironment{pyCode}{\lstset{language=python}}{}
+
+%##### Définition des styles persos des fonctions/modules/variables
+%e pour ENIBSupervision
+\newcommand{\eFunc}[1]{\italic{#1}} %fonction
+\newcommand{\eMod}[1]{\textcolor{darkRed}{\ib{#1}}} %module
+\newcommand{\eType}[1]{\ib{#1}}
+\newcommand{\eVar}[1]{\bold{#1}}
+\newcommand{\ePath}[1]{\textcolor{darkBlue}{#1}}
+%\newcommand{\e}[1]{#1}
+
+
+
+%Rajoute un titre énorme sur une page unique
+\newcommand{\BIGBROTHER}[1]{\newpage \clearpage \vspace*{\fill} \begin{center} \begin{spacing}{2.0} \Huge {\fontsize{48}{48} \selectfont \textcolor{bigBrother}{\bold{#1}}} \end{spacing} \end{center} \vfill \clearpage \normalsize \newpage}
+
+
+%Root of images
+\newcommand{\rootIm}{images/ENIBSupervision/}
+%~~~~~~~~~~~~ Fin commandes persos
+

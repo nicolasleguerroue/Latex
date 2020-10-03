@@ -1,0 +1,3 @@
+\babel@toc {french}{}
+\contentsline {section}{\numberline {0.1}Sujet pour le contrôle de Labo}{1}{section.0.1}%
+\contentsline {subsection}{\numberline {0.1.1}Sujet n°2}{1}{subsection.0.1.1}%

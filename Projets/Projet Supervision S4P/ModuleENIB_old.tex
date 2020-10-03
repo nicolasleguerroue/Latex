@@ -1,0 +1,1250 @@
+%Fichier Latex expliquant le projet en détail.
+%Auteurs : Mathieu CHARLES, Nicolas GAUTIER, Nicolas LE GUERROUÉ
+%S4P-B - Supervision
+%Professeur : M. Pelt
+
+%Modules à importer
+\documentclass[12pt]{report}    %Type de document
+\usepackage[utf8]{inputenc}     %UTF-8
+\usepackage{hyperref}           %Url
+\usepackage[frenchb]{babel}     %Langue française
+\usepackage{graphicx}           %Images
+\usepackage{caption}            %légende
+\usepackage{color}              %Couleurs
+\usepackage{fancyhdr}           %headers & footers
+\usepackage{lastpage}           %Nombre de page
+\usepackage{listings}           %code source
+\usepackage{xcolor}             %Couleurs personnalisées
+\usepackage{float}              %emplacement relatif des images et figure
+\usepackage[footnotesep=0.8cm]{geometry} %Espacement des notes de bas de page
+
+
+%STYLE DE PAGE
+\fancypagestyle{enib_style}{ %création du style 'ENIB''
+    \renewcommand{\headrulewidth}{1pt}
+    \rhead{\leftmark}
+    \chead{}
+    \lhead{\small \includegraphics[scale=0.2]{images/Header/logo_enib.png}}
+    \renewcommand{\footrulewidth}{1pt}
+    \cfoot{}
+    \rfoot{\thepage/\pageref{LastPage}}
+    \lfoot{\small Mathieu CHARLES \\
+    Nicolas GAUTIER\\
+    Nicolas LE GUERROUÉ}
+}
+\makeatletter
+\renewcommand\chapter{\if@openright\cleardoublepage\else\clearpage\fi
+                      \thispagestyle{enib_style} % On change le style des chapitres.
+                      \global\@topnum\z@
+                      \@afterindentfalse
+                      \secdef\@chapter\@schapter}
+\makeatother
+\pagestyle{enib_style}
+
+
+% ~~~~ Nécessaire au balisage du code
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{darkRed}{rgb}{0.6,0,0}
+
+\lstdefinestyle{pyStyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4
+}
+\lstset{style=pyStyle}
+\lstset{literate=
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {Ã}{{\~A}}1 {ã}{{\~a}}1 {Õ}{{\~O}}1 {õ}{{\~o}}1 {’}{{'}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+  {»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1
+}
+
+%~~~~~~~~~~~~~ URLs
+
+\hypersetup{colorlinks=true,urlcolor=blue}
+
+%~~~~~~~~~~~~~ Commandes persos
+
+%Raccourci image
+\newcommand{\iImage}[3]{\begin{figure}[H]\centering\includegraphics[scale=#3]{#1}\caption{#2}\end{figure}}
+% arg 1 : chemin image
+% arg 2 : description
+% arg 3 : taille
+
+
+%raccourci mise en gras/italique
+\newcommand{\bold}[1]{{\bfseries #1}}
+\newcommand{\italic}[1]{{\itshape #1}}
+\newcommand{\ib}[1]{{\bfseries\itshape #1}}
+
+%raccourci petit saut de ligne
+\newcommand{\smallSkip}{\vskip 0.5cm}
+
+%nouvel environnement de mise en forme de code python
+\lstnewenvironment{pyCode}{\lstset{language=python}}{}
+
+%raccourci référence vers un label
+\newcommand{\lref}[2]{\hyperref[#1]{\textcolor{blue}{\italic{#2}}}}
+% arg 1 : label référencé
+% arg 2 : texte de l'hyperlien
+
+
+%Nouvelle sous-section
+\newcommand{\subsubsubsection}[1]{\textit{\vskip 0.5cm #1 \vskip 0.5cm}}
+
+
+%##### Définition des styles persos des fonctions/modules/variables
+%e pour ENIBSupervision
+\newcommand{\eFunc}[1]{\italic{#1}} %fonction
+\newcommand{\eMod}[1]{\textcolor{darkRed}{\ib{#1}}} %module
+\newcommand{\eType}[1]{\ib{#1}}
+\newcommand{\eVar}[1]{\bold{#1}}
+%\newcommand{\e}[1]{#1}
+
+
+%~~~~~~~~~~~~ Fin commandes persos
+
+
+%~~~~ FIN du header général (la portée de ce qui suit doit être limitée à ce fichier)
+
+\newcommand{\rootIm}{images/ENIBSupervision/}
+
+%Début du document
+\begin{document}
+
+%Page de garde
+\title{Automatisme S4P ENIB \protect\\ Module ENIBSupervision}
+\author{CHARLES Mathieu \and GAUTIER Nicolas \and LE GUERROUÉ Nicolas}  
+%Génère la table des matières
+\maketitle
+
+\tableofcontents
+
+
+%###########################################################################################################################
+%###################### NEW PAGE ###########################################################################################
+%###########################################################################################################################
+
+
+\chapter{Introduction}
+
+Ce document a pour but de vous initier à l'utilisation de PyQt5 à travers la réalisation d'un programme simple utilisant PyQt5 et \bold{les outils développés dans le module ENIBSupervision}.\newline
+Ne seront pas abordés ici :
+\begin{enumerate}
+\item L'utilisation de QtDesigner
+\item Le descriptif et le détail du code réalisé dans le module ENIBSupervision
+\end{enumerate}
+
+\smallSkip
+La réalisation de ce projet a amené à la création d'un module \textbf{"ENIBSupervision"} fournissant des outils facilitant la mise en oeuvre de logiciels de supervision en Python.\newline
+Ce module propose des outils et une manière d'aborder la Supervision en Python, ce n'est qu'une manière parmi tant d'autres, le but est de simplifier le travail du programmeur en proposant des outils robustes et dont l'utilisation est accessible.
+
+
+
+%###########################################################################################################################
+%###################### NEW PAGE ###########################################################################################
+%###########################################################################################################################
+
+
+\chapter{Présentation}
+
+\section{Types de variable principaux}
+
+Cette section à pour but de faire une présentation rapide des types les plus importants disponibles dans ce module.
+
+\subsection{Types non-graphiques}
+
+\begin{enumerate}
+
+\item \label{tag-presentation-PLCVar} \textbf{PLCVar} \newline
+Il s'agit du type principal de ce module, il représente une variable automate et possède les attributs nécessaires comme un \textbf{nom}, une \textbf{adresse}, une \textbf{description} etc... Ce type a été conçu pour fonctionner avec le type suivant : \textbf{EventsLoop}\newline
+Pour plus d'informations sur ce type, se référer à la documentation fournie en annexe.\newline
+D'un point de vue organisation, le type \textbf{PLCVar} est défini dans le sous-module \textbf{PLC} puis dans le sous-module \textbf{Variable}. \newline
+Pour importer ce type en Python, il faudra par exemple utiliser :
+%"coloration" du code
+\begin{lstlisting}[language=Python]
+from ENIBSupervision.PLC.Variable import PLCVar
+\end{lstlisting}
+
+\item \textbf{EventsLoop} \newline
+Ce type permet la gestion pseudo-événementielle des variables. Son utilisation simplifie l'utilisation du type \textbf{PLCVar} grâce à l'utilisation de fonctions connectées au changement d'état d'une variable. Ce fonctionnement sera décrit en détail plus tard mais son utilisation est obligatoire pour profiter de tous les systèmes mis en place autour de cette gestion.\newline
+Ce type permet de lancer en parallèle du programme principal une boucle qui cherchera à analyser l'état des variables dans l'automate à un intervalle de temps régulier. De la même manière, lorsque une variable est modifiée dans le programme et seulement si elle est modifiée, alors son état sera automatiquement envoyé vers l'automate. \newline
+Si ce fonctionnement peut sembler compliqué, nous verrons dans la suite de ce document qu'il est en réalité extrêmement simple et que l'utilisation de ce type simplifie énormément la gestion de la communication avec l'automate. \newline
+D'un point de vue organisation, le type \textbf{EventsLoop} est défini dans le sous-module \textbf{EventsLoop}.\newline
+Pour plus d'informations sur ce type, se référer à la documentation fournie en annexe.\newline
+Pour importer ce type, il faudra par exemple utiliser :
+\begin{lstlisting}[language=Python]
+from ENIBSupervision.EventsLoop import EventsLoop
+\end{lstlisting}
+
+\end{enumerate}
+
+\subsection{Types graphiques}
+
+\begin{enumerate}
+
+\item \textbf{AnimationTables}\newline
+Ce type offre la possibilité de faire très facilement des tables d'animations à partir d'une liste de variables de type \textbf{PLCVar}. Pour un bon fonctionnement des tables générées, il \textcolor{red}{est nécessaire} d'utiliser le type \textbf{EventsLoop}.\newline
+La fenêtre générée propose des fonctionnalités de forçage, d'actualisation automatique des valeurs lorsque elle est couplée à une \textbf{EventsLoop}, d'affichage des tables d'entrées/sorties redimensionnables et la possibilité de la "docker" sur une fenêtre principale de Qt \footnote{Documentation \href{https://doc.qt.io/qt-5/qmainwindow.html}{QMainWindow}}.\newline
+D'un point de vue organisation, le type \textbf{AnimationTables} est défini dans le sous-module \textbf{UI\_class} puis dans le sous-module \textbf{UI\_AnimationTables}.\newline
+Pour plus d'informations sur ce type, se référer à la documentation fournie en annexe.\newline
+Pour importer ce type, il faudra par exemple utiliser :
+\begin{lstlisting}[language=Python]
+from ENIBSupervision.UI_class.UI_AnimationTables import AnimationTables
+\end{lstlisting}
+Voici un exemple de tables que l'on peut obtenir :
+\iImage{images/ENIBSupervision/enibSup_window_animationTablesExample.png}{Exemple de tables d'animations}{0.4}
+
+\end{enumerate}
+
+
+
+
+%###########################################################################
+%############################### NEW PAGE ##################################
+%###########################################################################
+
+\chapter{Réalisation d'un programme type\protect\\Projet élémentaire}
+
+Nous allons aborder dans ce chapitre la création d'un programme de base en utilisant PyQt5. A la fin de ce chapitre, vous serez en mesure de créer et d'afficher une fenêtre principale basique.\smallSkip
+
+Il est très vivement conseillé de lire l'introduction à PyQt5 et QtDesigner avant de s'attaquer à cette partie. Aussi, il est considéré que les différents outils nécessaires sont déjà installés.
+
+
+
+\section{Architecture type d'un programme}
+
+Cette section a pour but de présenter \textbf{une} manière parmi tant d'autres d'organiser un programme de ce type utilisant Qt comme bibliothèque graphique.
+
+L'utilisation de Qt en Python (c'est originellement une bibliothèque C++) impose certaines contraintes. En effet, cela impose la création de fichiers \textbf{*.ui}, l'utilisation de fichiers Python automatiquement générés et l'utilisation de fichiers rédigés par un programmeur.\newline
+L'organisation qui va être présentée a l'avantage de séparer ces trois "types" de fichiers et de permettre l'utilisation d'outils déjà rédigés.
+
+\subsection{Création d'un dossier de projet}
+
+En premier lieu, nous allons créer un dossier de projet. On l'appellera la \textbf{racine du projet}. Ce dossier contiendra tous les fichiers nécessaires au programme.\newline
+Pour notre exemple, je vais nommer le dossier "SupEx".\newline
+
+\subsection{Contenu essentiel de la racine du projet}
+
+Nous pouvons ensuite copier le dossier \textbf{ENIBSupervision} fourni dans la racine du projet.\newline
+
+Dans la racine du projet, nous allons ensuite séparer les trois types de fichiers mentionnés plus haut (QtDesigner,python générés,python rédigés). Pour ce faire, nous allons créer  trois nouveaux dossiers. Pour pouvoir utiliser un script que nous verrons juste après, il sera nécessaire de les nommer comme suit :
+\begin{enumerate}
+
+\item \textbf{UI\_formFiles} : Ce dossier contiendra les fichiers d'interfaces graphiques créés avec QtDesigner (fichiers \textbf{*.ui})\newline
+
+\item \textbf{UI\_pyFiles} : Ce dossier contiendra les fichiers Python générés depuis les fichiers \textbf{*.ui} du dossier \textbf{UI\_formFiles} à l'aide de l'outil \textbf{pyuic}.\newline
+C'est d'ailleurs ici que rentre en jeu un petit script que vous pouvez trouver dans le dossier du module \bold{ENIBSupervision}. Ce script python se nomme "\textbf{scriptExport.py}". Son fonctionnement est très simple, il fournit une fonction permettant de convertir automatiquement tous les fichiers \textbf{*.ui} d'un dossier en fichier \textbf{*.py} dans autre dossier. Consultez la documentation de ce module pour plus d'informations.\newline
+Si vous lancez le script Python, il cherchera par défaut à appliquer ces traitements sur les dossiers mentionnés soit \textbf{UI\_formFiles} et \textbf{UI\_pyFiles}.
+
+\item \bold{UI\_class} : Ce nom n'est ici d'aucune importance, vous pouvez le modifier comme bon vous semble sans avoir quoique ce soit d'autre à modifier.\newline
+Ce dossier contiendra les fichiers de code Python que vous aurez rédigés et qui serviront dans votre programme pour créer des interfaces graphiques.
+
+\end{enumerate}
+
+Encore une fois, il s'agit de propositions, libre à vous de les renommer comme bon vous semble mais il vous faudra certainement adapter votre code à certains endroits.
+
+\subsection{Fichier principal du programme}
+
+N'oublions pas de rajouter le fichier qui servira à lancer le programme.Nous l'appellerons le fichier principal ou "main" en anglais.\newline
+Ainsi, nous pouvons créer un fichier "\bold{main.py}" avec son contenu essentiel dans la racine du projet :
+
+\begin{pyCode}
+# -*- coding: utf-8 -*-
+#on explicite l'encodage du fichier
+
+#importation des modules nécessaires à Qt
+import sys
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+if(__name__ == "__main__"): #si c'est ce module qui est lancé directement
+
+	#code du programme
+
+\end{pyCode}
+
+\subsection{Résultat}
+
+Vous devriez maintenant avoir dans votre racine du projet créé précédemment, quelque chose ressemblant fortement à ceci :
+
+\iImage{\rootIm enibSup_window_explorer_projectRoot.png}{Illustration d'une racine de projet}{0.4}
+
+%new section
+
+\section{La fenêtre principale}
+
+\subsection{Création de l'interface graphique}
+
+Nous utiliserons ici QtDesigner et PyQt5 avec leurs outils respectifs, si vous n'avez pas encore étudié leur fonctionnement, je vous invite à vous y intéresser avant de commencer cette section. Une annexe à ce sujet est disponible.\newline
+En effet, même si nous rappellerons ici l'essentiel, vous aurez certainement besoin de plus de connaissances pour être à même de concevoir une interface vraiment utilisable en supervision.
+
+\subsubsection{Lancement de QtDesigner}
+
+Il est possible que ce logiciel ne soit pas "facilement" accessible. Ainsi, nous vous invitons à suivre la procédure suivante :
+\begin{enumerate}
+\item Ouvrir une console windows/Un terminal linux
+\item Lancer QtDesigner par la commande suivante :
+\begin{lstlisting}[language=bash]
+designer
+\end{lstlisting}
+\end{enumerate}
+
+Si vous avez installés les outils nécessaires, cette commande devrait vous lancer le logiciel et vous épargner de longues minutes de recherche du dossier d'installation.
+
+\subsubsection{Choix de l'interface}
+
+A l'ouverture du logiciel, vous devriez arriver sur une page vous demandant de choisir le type de "\bold{formulaire}" que vous voulez créer.\newline
+Puisque nous voulons réaliser une fenêtre principale, nous sélectionnerons en toute logique le type "\bold{\textcolor{red}{MainWindow}}" :
+
+\iImage{\rootIm enibSup_window_designerWidgetSelection_MainWindow.png}{Sélection du type d'interface voulue}{0.3}
+
+Je laisse à votre charge de réaliser le contenu de la fenêtre : pour cet exemple simple, nous allons simplement disposer un bouton dans la fenêtre et l'organiser dans un layout simple. En cas d'oubli, vous pouvez vous reporter au tutoriel \italic{PyQt5 et ses outils}.\newline
+Vous devriez obtenir à la fin une fenêtre ressemblant à ceci :
+
+\iImage{\rootIm enibSup_window_MainWindowExample.png}{Fenêtre principale de l'exemple}{0.4}
+
+N'oubliez pas de sauvegarder votre réalisation
+\footnote{
+Profitons-en ici pour rappeler que nous ne sauvegardons jamais assez. Dès que vous le pouvez, sauvegardez, la combinaison \bold{\textcolor{red}{Ctrl+S}} doit devenir un réflexe. Souvenez-vous que vous pouvez perdre tout votre travail sur un simple bug.
+}
+dans le dossier adapté, soit \bold{UI\_formFiles} dans la racine de votre projet. Pour cet exemple, je la nommerai \bold{UI\_MainWindow.ui}\newline
+Vous avez maintenant une interface graphique "dessinée" facilement. Il ne reste plus qu'à l'exploiter.
+
+
+%End section
+
+\section{Export de l'interface}
+
+Pour pouvoir exploiter l'interface que nous avons créé, il nous faut convertir le fichier \bold{*.ui} en fichier Python utilisable.\newline
+Ceci est permis grâce à l'outil \italic{\bold{pyuic5}}.\newline
+J'ai déjà mentionné un script permettant de réaliser cet export automatiquement. Nous allons nous en servir. Si vous avez suivi la section "\bold{Architecture type d'un programme}", vous devriez avoir dans la racine du projet ce script sous forme d'un fichier Python nommé \italic{\bold{scriptExport.py}}. Il vous suffit de le lancer. Si vous le lancez depuis un terminal
+\footnote
+{
+Nous vous conseillons plutôt de manière générale de lancer les différents programmes python depuis un terminal lors du développement. Cela vous permet d'afficher facilement des informations pour contrôler la bonne exécution du programme lors du débogage.
+}
+, vous aurez le détail des fichiers exportés.\newline
+
+\iImage{\rootIm enibSup_window_explorer_projectRoot_scriptExport.png}{Script d'export dans la racine du projet}{0.4}
+
+Une fois le script lancé, vérifiez que le dossier \bold{UI\_pyFiles} contient bien un fichier dont le nom est identique au fichier \bold{*.ui} que vous avez édité précédemment. Notez que si vous avez enregistré un fichier avec un nom commençant par le préfixe \italic{UI\_}, celui-ci a été supprimé, c'est un comportement voulu. Libre à vous de modifier ce script simpliste.
+
+\iImage{\rootIm enibSup_window_explorer_UIPyFiles_mainWindow.png}{Fichier \bold{*.ui} exporté en fichier \bold{*.py}}{0.4}
+
+%End section
+
+\section{Exploitation de l'interface en python}
+
+\subsection{Pré-requis}
+
+Nous avons maintenant toutes les clés en main pour faire un programme minimal exploitant cette interface.\newline
+Nous allons nous rendre dans le dossier \bold{UI\_class} dans la racine du projet pour créer un nouveau fichier qui correspondra au module contenant la définition de notre fenêtre principale. (Le coeur du programme)\newline
+Pour ma part, ce module portera le même nom que son fichier \bold{*.ui} associé soit \italic{UI\_MainWindow.py}.
+
+\iImage{\rootIm enibSup_window_explorer_UIClass_basic.png}{Contenu du dossier \bold{UI\_class} en l'état}{0.4}
+
+\subsection{Rédaction du code de la fenêtre principale}
+
+Tout d'abord, n'oublions pas la ligne traditionnelle d'en-tête d'un fichier Python :
+\begin{pyCode}
+# -*- coding: utf-8 -*-
+#on explicite l'encodage du fichier
+\end{pyCode}
+Puis l'importation des modules nécessaires à l'utilisation de PyQt
+\begin{pyCode}
+#importation des modules nécessaires à Qt
+from PyQt5 import QtCore, QtGui, QtWidgets
+\end{pyCode}
+
+Ensuite, attaquons-nous au plus délicat.\newline
+Afin d'augmenter notre liberté de programmation, nous allons ici déclarer notre propre \bold{classe} qui va permettre l'exploitation de l'interface générée précédemment. Nous utiliserons ici des concepts de Programmation Orientée Objet\footnote{La Programmation Orientée Objet est évoquée dans le tutoriel \italic{PyQt5 et ses outils}} qui ne sont abordés normalement qu'en S5 à l'Enib. Mais pas d'inquiétude, cela ne vous empêchera pas de mener à bien votre projet.\newline
+La déclaration de notre class qui  va représenter notre fenêtre principale nécessite l'importation du module Python généré depuis le fichier QtDesigner. Si vous avez utilisés les mêmes noms que ceux utilisés dans ce tutoriel, la ligne permettant l'importation de ce module sera celle-ci :
+\begin{pyCode}
+from UI_pyFiles.MainWindow import Ui_MainWindow
+\end{pyCode}
+Dans le cas contraire, c'est à vous que revient la responsabilité de faire les modifications nécessaires.\smallSkip %on laisse un espace blanc de 5mm
+
+Pour le moment, votre fichier UI\_MainWindow.py doit donc ressembler à ceci
+\footnote
+{
+Profitons-en pour vous rappeler de sauvegarder régulièrement votre travail, \textcolor{red}{\bold{Ctrl+S}} n'est pas un raccourci compliqué à retenir et peut vous épargner bien des déconvenues.
+}
+:
+\begin{pyCode}
+# -*- coding: utf-8 -*-
+#on explicite l’encodage du fichier
+
+#importation des modules nécessaires à Qt
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+#importation du module nécessaire à la création de notre fenêtre principale
+from UI_pyFiles.MainWindow import Ui_MainWindow
+\end{pyCode}
+\smallSkip %on laisse un espace blanc de 5mm
+
+Maintenant, rentrons au coeur du sujet. Nous pouvons dorénavant déclarer notre classe sans que Python ne nous insulte copieusement lorsque nous lancerons le programme
+\footnote
+{
+Notons que pour le moment, nous ne pouvons pas vraiment tester le programme dans le sens où il ne fait rien et notre fichier main n'est pas encore préparé. Exécuter le fichier seul en dehors de la racine du projet provoquera certainement des erreurs dans les importations (il faudrait donc l'exécuter depuis le fichier main.py par exemple pour éviter les problèmes).\newline
+Rappelons ici que plus vous exécuterez votre code souvent, moins vous aurez d'erreurs à corriger à la fois. N'hésitez pas à l'exécuter dès que vous le pouvez (Nous verrons cela ensemble dans quelques temps).
+}.\newline
+La déclaration de notre classe se fera de la manière suivante :
+\begin{pyCode}
+class MainWindow(QtWidgets.QMainWindow):
+    #code
+\end{pyCode}
+Où \italic{\bold{MainWindow}} correspond au type représentant notre fenêtre principale
+\footnote
+{
+Vous pouvez modifier ce nom comme bon vous semble mais que celui-ci a l'avantage indéniable d'être explicite.
+}
+et la portion de code \ib{(QtWidgets.QMainWindow)} permet d'indiquer à Python que notre type \ib{MainWindow} \italic{hérite} des propriétés du type \ib{QtWidgets.QMainWindow}.\newline
+Concrètement, notre type pourra faire tout ce que faisait une \ib{QMainWindow} du module \ib{QtWidgets} plus ce que nous lui apprendrons.
+
+
+\subsubsection{Constructeur de notre class}
+
+Tout comme en C++, nous pouvons définir un constructeur
+\footnote
+{
+Une fonction membre \_\_init\_\_ en Python n'est pas vraiment un constructeur mais un "initialiseur". Cependant, pour simplifier la compréhension nous utiliserons ici abusivement le terme constructeur. Pour un peu plus d'information à ce sujet : \url{https://www.geeksforgeeks.org/__new__-in-python/}
+}
+pour notre classe. Celui-ci sera appelé lors de l'initialisation d'un nouvel objet de notre type \ib{MainWindow}.\newline
+En Python, le constructeur d'une classe se définit de la manière suivante :
+\begin{pyCode}
+def __init__(self):
+    #code
+\end{pyCode}
+Et il sera toujours définit de cette manière (aux paramètres près).\smallSkip
+
+Profitons de ce moment pour attirer votre attention sur le paramètre \textcolor{red}{\ib{self}} qui est un paramètre particulièrement important\footnote{Pour plus d'informations sur self : \url{https://www.geeksforgeeks.org/self-in-python-class/}}. Il représente l'instance de la class. Pour avoir un équivalent dans un langage mieux connu des élèves, c'est un peu comme le mot-clé \ib{this} en c++. Sauf qu'en python \textcolor{red}{\ib{self}} est beaucoup plus important, nous verrons après pourquoi.\newline
+Ce paramètre \textcolor{red}{\bold{doit}} figurer dans tous les prototypes des fonctions membres d'une class.\smallSkip
+
+Revenons-en au constructeur de notre classe \ib{MainWindow}, il existe avec Qt un système de widget parent/enfant bien trop complexe à expliquer ici. Le principal est de savoir que ce système existe et que avec Qt, la plupart des widgets\footnote{À noter qu'une \ib{QMainWindow} est aussi un widget} instanciés doivent avoir un parent (pour des raisons trop complexes à aborder ici encore une fois). Ce qui implique que tous les widgets aient dans leurs constructeurs un paramètre représentant un potentiel widget parent.\vskip 0cm %Nouveau paragraphe sans saut de ligne
+Nous devrions donc en toute rigueur laisser au programmeur (vous) la possibilité d'initialiser son type avec un widget parent (Même si c'est hautement improbable dans le cas d'une fenêtre principale puisque ce sera le premier widget que nous allons créer). Mais puisque c'est une bonne habitude à prendre quand l'on programme en utilisant des widgets et Qt, nous allons le faire.\newline
+Ceci se traduit simplement par un paramètre \italic{parent} dans le constructeur pouvant représenter le parent de notre type héritant d'un widget Qt.\newline
+Concrètement, le prototype de notre constructeur ressemblera à ceci:
+\begin{pyCode}
+def __init__(self,parent = None):
+\end{pyCode}
+Le morceau de code "\ib{parent = None}" permet de signaler à Python quand dans le cas où le programmeur ne spécifierait pas ce paramètre, sa valeur serait "\bold{None}", on appelle ça une \textcolor{red}{valeur par défaut}.\newline
+Puisque tous les widgets de Qt autorisent leurs instanciations sans parent spécifié (même si ce n'est pas une bonne pratique), il sera d'usage de proposer une valeur par défaut "\ib{None}" au paramètre "\ib{parent}" d'un constructeur d'un type héritant d'un widget de Qt.\smallSkip
+
+Nous avons la déclaration de notre constructeur, nous devons maintenant le définir.\newline
+La première chose à faire est d'appeler le constructeur du type hérité, il s'agit d'une forme de délégation. Et pour cela, Python vous fournit un outil tout fait : la fonction "\bold{super()}"
+\footnote
+{
+En réalité, la fonction "\bold{super()}" est beaucoup plus complexe que cela, si vous voulez en savoir plus : \url{https://www.stashofcode.fr/comment-marche-fonction-super-de-python/}
+}
+. Son utilisation est la suivante (Le constructeur complet est écrit dans le code ci-dessous) :
+\begin{pyCode}
+def __init__(self,parent = None):
+		super().__init__(parent)
+\end{pyCode}
+Dans notre cas, en faisant cela, nous initialisons notre class en appelant le constructeur de \href{https://doc.qt.io/qt-5/qmainwindow.html}{QMainWindow}\newpage
+
+%###########################################################################
+%############################### NEW PAGE ##################################
+%###########################################################################
+
+
+Pour une meilleure vision d'ensemble, voici à quoi devrait ressembler votre fichier de définition de votre class \ib{MainWindow} :
+\begin{pyCode}
+# -*- coding: utf-8 -*-
+#on explicite l’encodage du fichier
+
+#importation des modules nécessaires à Qt
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+#importation du module nécessaire à la création de notre fenêtre principale
+from UI_pyFiles.MainWindow import Ui_MainWindow
+
+class MainWindow(QtWidgets.QMainWindow): #déclaration de la class MainWindow
+
+	#déclaration du constructeur avec un possible parent
+	def __init__(self,parent = None):
+		#on appelle le constructeur de la class parent
+		super().__init__(parent)
+\end{pyCode}
+\smallSkip
+En l'état, nous avons une fenêtre vide. Nous allons maintenant voir comment utiliser l'interface que nous avons précédemment créé avec QtDesigner.\newline
+C'est ici que notre ligne d'importation du module généré par \bold{pyuic5} va nous servir. Si vous ne vous en souvenez pas, c'est celle-ci :
+\begin{pyCode}
+from UI_pyFiles.MainWindow import Ui_MainWindow
+\end{pyCode}
+La première étape est de d'initialiser une variable membre "interface graphique" dont le type portera le nom du fichier \bold{*.ui} que vous avez créé.\newline
+C'est cette variable qui nous permettra d'accéder aux différents éléments de l'interface que nous avons mis en place.\newline
+Puisque nous n'avons pas à accéder à ces éléments en dehors de notre classe, cette variable sera privée.\newline
+En pratique, cela se traduit par l'instruction suivante :
+\begin{pyCode}
+self.__ui = Ui_MainWindow()
+\end{pyCode}
+Explications : 
+Pour accéder à des variables membres de la class, il est nécessaire en Python de \textcolor{red}{systématiquement} utiliser "\textcolor{blue}{\ib{self.}}"
+\footnote{Vous l'oublierez certainement à plusieurs reprise. En cas d'oubli, vous ne ferez qu'accéder à des variables locales ce qui amènera à des erreurs peu explicites}. Dans notre cas, nous créons une variable membre de nom \italic{\_\_ui}.\newline
+Ce nom n'a pas été choisi par hasard, en Python, toute variable membre dont le nom commence par "\_\_" est une variable privée. Quant au nom en lui même,  "\textcolor{green}{\bold{ui}}", il s'agit de l'abréviation anglaise de \bold{UserInterface}.\newline
+Cette variable est initialisée avec le type de l'interface graphique que nous avons conçu plus tôt.\newline
+\bold{En résumé} : Nous créons une variable membre privée dans notre classe qui nous permettra d'accéder à l'interface graphique.\smallSkip
+
+Il faut maintenant lier notre interface à notre fenêtre principale. Pour le moment, les deux existent mais rien ne les relie si ce n'est que l'UI est une variable membre de notre class \ib{MainWindow}. Hélas, ce n'est pas suffisant. Nous devons appeler une fonction pour dire que notre interface s'applique à notre fenêtre. Cette fonction est la suivante :
+\begin{pyCode}
+self.__ui.setupUi(self)
+\end{pyCode}
+Il n'y a pas grand chose à dire dessus, elle ne fait qu'affecter l'interface à notre fenêtre, c'est une fonction de la bibliothèque Qt.\smallSkip
+
+Voici à quoi devrait maintenant ressembler votre fichier de définition de notre type \ib{MainWindow} :
+\begin{pyCode}
+# -*- coding: utf-8 -*-
+#on explicite l’encodage du fichier
+
+#importation des modules nécessaires à Qt
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+#importation du module nécessaire à la création de notre fenêtre principale
+from UI_pyFiles.MainWindow import Ui_MainWindow
+
+class MainWindow(QtWidgets.QMainWindow): #déclaration de la class MainWindow
+
+	#déclaration du constructeur avec un possible parent
+	def __init__(self,parent = None):
+		#on appelle le constructeur de la class parent
+		super().__init__(parent)
+
+		#initialisation de l'interface graphique
+		self.__ui = Ui_MainWindow()
+		#Affectation de l'interface à notre fenêtre principale
+		self.__ui.setupUi(self)
+\end{pyCode}
+
+
+Notre fenêtre principale est maintenant prête à être affichée, c'est ce que nous allons aborder dans la section suivante.
+
+
+
+
+
+
+
+\subsection{Affichage de notre fenêtre principale.}
+
+Nous allons délaisser notre fichier \italic{UI\_MainWindow.py} au profit du fichier \italic{main.py}. En effet, si la définition de la fenêtre s'est faite dans un fichier, l'initialisation et l'affichage de notre fenêtre \underline{principale} se fera depuis le fichier \italic{main.py}.\smallSkip
+
+Pour le moment, le contenu du fichier \italic{main.py} doit ressembler à ceci :
+\begin{pyCode}
+# -*- coding: utf-8 -*-
+#on  explicite l’encodage  du  fichier
+
+#importation des modules nécessaires à Qt
+import sys
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+#importation des modules d'interfaces graphiques créés
+from UI_class.UI_MainWindow import MainWindow
+
+
+if(__name__ == "__main__"): #si c'est ce module qui est lancé directement
+
+	#code
+\end{pyCode}
+
+\subsubsection{Création d'une application Qt}
+
+L'utilisation de Qt impose l'initialisation et l'exécution d'une "application" Qt pour faire fonctionner tous les éléments. C'est ce que nous allons voir ici.\newline
+C'est la première étape, nous allons déclarer une application Qt, cela se fait assez simplement :
+\begin{pyCode}
+app = QtWidgets.QApplication(sys.argv)
+\end{pyCode}
+Très succinctement, nous déclarons ici une \ib{QApplication} en lui passant en paramètre les arguments fournis au programme
+\footnote{Il s'agit en réalité des arguments de la ligne de commande (plus d'informations ici : \url{https://en.wikipedia.org/wiki/Command-line_argument_parsing}}.\newline
+Maintenant que nous avons notre application, nous pouvons l'exécuter. Nous le ferons d'une manière assez condensée avec l'instruction suivante :
+\begin{pyCode}
+sys.exit(app.exec())
+\end{pyCode}
+Cette ligne réalise en réalité deux opérations :
+\begin{enumerate}
+    \item \bold{Éxécution de l'application} : ceci est réalisé par l'appel de de "\italic{app.exec()}". Cette fonction retourne un "statut d'exécution de l'application Qt"\footnote{Il s'agit d'un code permettant de savoir si un programme s'est exécuté correctement.\newline
+    Plus d'informations ici : \url{https://en.wikipedia.org/wiki/Return_statement}}.
+    
+    \item \bold{Quitter le programme python} : ceci est réalisé par la fonction "\italic{sys.exit()}"\footnote{Plus d'informations sur cette fonction ici \url{https://python101.pythonlibrary.org/chapter20_sys.html}} qui prend en argument un statut d'exécution à retourner au système d'exploitation.
+\end{enumerate}
+L'utilisation de "\italic{app.exec()}" en argument de "\italic{sys.exit()}" permet donc de faire quitter le programme Python en renvoyant au système le statut d'exécution de l'application Qt lorsque celle-ci est terminée.\smallSkip
+
+Vous devriez dorénavant avoir un code ressemblant à ceci :
+\begin{pyCode}
+#si c'est ce module qui est lancé directement
+if(__name__ == "__main__"):
+
+	#déclaration de l'application Qt
+	app = QtWidgets.QApplication(sys.argv)
+	#exécution de l'application Qt
+	sys.exit(app.exec())
+\end{pyCode}
+Le problème étant que ce code n'utilise pas encore notre fenêtre principale que nous avons définit plus tôt.\newline
+Ce sera donc la prochaine étape, déclarer et afficher notre fenêtre.
+
+\subsubsection{Affichage de la fenêtre principale}
+
+Nous avons créé notre type \ib{MainWindow} pour pouvoir manipuler une fenêtre principale, il nous faut maintenant l'utiliser.\newline
+Tout le code que nous allons écrire sera placé avant la ligne
+\begin{pyCode}
+    #exécution de l'application Qt
+	sys.exit(app.exec())
+\end{pyCode}
+Puisque celle-ci signe la fin du programme. Tout le code placé après ne sera pas exécuté.\smallSkip
+
+Pour cela, il nous suffit de déclarer une variable de notre type \ib{MainWindow} puis de l'afficher.\newline
+Vérifiez tout d'abord que vous importez bien le type que nous avons créé depuis le bon module :
+\begin{pyCode}
+#importation du module d'interface graphique créé
+from UI_class.UI_MainWindow import MainWindow
+\end{pyCode}
+Si c'est déjà le cas, vous n'avez plus qu'à déclarer une variable utilisant ce type, par exemple :
+\begin{pyCode}
+mainWindow = MainWindow()
+\end{pyCode}
+Et pour la voir apparaître, il suffit d'appeler une fonction : "\italic{show()}" sur cette variable, ce qui donne :
+\begin{pyCode}
+mainWindow.show()
+\end{pyCode}
+\smallSkip
+
+
+\subsubsection{Lancement du programme}
+\label{tag-startProgFromCmdLine}
+Il est maintenant possible de lancer notre programme et de voir le résultat de tout ce que nous avons fait jusqu'à maintenant.\newline
+Pour cela, comme cela a été conseillé auparavant, nous passerons par un terminal pour lancer le programme en suivant ces étapes :
+\begin{enumerate}
+\item Lancez un terminal
+    
+\item Placez vous dans la racine du projet (à l'aide de la commande \textcolor{blue}{\bold{cd}}
+    
+\item Lancez le programme en utilisant la commande suivante qui fera exécuter le fichier "\bold{main.py}" :
+\begin{pyCode}
+    python main.py
+\end{pyCode}
+\end{enumerate}
+
+\smallSkip
+
+Dans le cas où Python ne trouverait aucune erreur, vous devriez voir apparaître à l'écran quelque chose de ce type :
+
+\iImage{\rootIm enibSup_window_firstMainWindow.png}{Résultat de l'exécution de votre programme}{0.27}
+
+
+
+
+%###########################################################################
+%############################### NEW PAGE ##################################
+%###########################################################################
+
+\chapter{Réalisation d'un programme type\protect\\Utilisation du module ENIBSupervision}
+
+Dans ce chapitre, nous travaillerons principalement dans le fichier de définition de la fenêtre principale du programme. Dans notre cas il s'agit du fichier \ib{UI\_MainWindow.py}.\smallSkip
+
+
+
+
+\section{Variable automate}
+
+Les outils développés dans le module \bold{enibSupervision} ont été conçus pour fonctionner avec une liste de variables de type \lref{tag-presentation-PLCVar}{PLCVar}.\smallSkip
+
+Dans notre cas, nous allons stocker cette liste de variables en tant que variable membre de notre class \ib{MainWindow} (qui est maintenant au coeur de notre programme) afin que nous puissions nous en servir à d'autres occasions
+
+\subsection{Pré-requis}
+
+Afin de pouvoir utiliser le type \bold{PLCVar}, vous aurez besoin de l'importer, ceci peut se faire de la manière suivate :
+\begin{pyCode}
+from ENIBSupervision.PLC.Variable import PLCVar
+\end{pyCode}
+
+\subsection{Fonction d'initialisation}
+
+Je vous propose de créer une fonction qui nous servira à initialiser nos variables. Bien que ce ne soit pas une obligation, cela améliorera la lisibilité de notre code.\newline
+Puisque cette fonction n'a pas besoin d'accéder à des données membres de notre type \ib{MainWindow}, cette fonction sera \bold{non}-membre de la class.\newline
+Il suffit pour cela de déclarer la fonction après (ou avant) la class.\newline
+Je vous propose d'appeler cette fonction \italic{initVarList}.\smallSkip
+
+Enfin, n'oubliez pas d'appeler la fonction dans le constructeur de la fenêtre principale afin qu'elle ne soit exécutée qu'une seule fois au lancement du programme. De même, souvenez-vous que la liste de variables ainsi obtenue doit être stockée dans une variable membre de notre class \ib{MainWindow}\smallSkip
+
+Dans le fichier au complet, cela donnera quelque chose du type :
+\begin{pyCode}
+# -*- coding: utf-8 -*-
+#on explicite l’encodage du fichier
+
+#importation des modules nécessaires à Qt
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+#importation du module nécessaire à la création de notre fenêtre principale
+from UI_pyFiles.MainWindow import Ui_MainWindow
+
+#importation des modules de supervision
+from ENIBSupervision.PLC.Variable import PLCVar
+
+class MainWindow(QtWidgets.QMainWindow): #déclaration de la class MainWindow
+
+	#déclaration du constructeur avec un possible parent
+	def __init__(self,parent = None):
+		#on appelle le constructeur de la class parent
+		super().__init__(parent)
+
+		#initialisation de l'interface graphique
+		self.__ui = Ui_MainWindow()
+		#Affectation de l'interface à notre fenêtre principale
+		self.__ui.setupUi(self)
+		
+		#stockage de la liste de variable initialisée
+		self.__varList = initVarList()
+
+
+def initVarList():
+	#init de la liste
+
+\end{pyCode}
+
+Nous allons déclarer notre liste de variable dans cette fonction qui la retournera. Sa structure sera donc la suivante :
+\begin{pyCode}
+def initVarList():
+	varList = [] #initialisation de la liste de variables
+
+	#déclarations des différentes variables
+
+	return varList#on retourne la liste de variables
+\end{pyCode}
+
+
+
+
+\subsection{Déclaration d'une variable}
+
+Voici le prototype du constructeur du type PLCVar\footnote{Pour plus d'informations sur ce type et son constructeur, se référer à la documentation} :
+\begin{pyCode}
+PLCVar(name,address,description,varType,varMode,f_connectedSlots = []):
+\end{pyCode}
+Pour un descriptif rapide des paramètres :
+\begin{enumerate}
+\item \bold{name} : C'est le nom de la variable, chaque nom doit être unique, on préférera éviter les caractères spéciaux et les espaces.
+
+\item \bold{address} : C'est l'index de l'adresse dans l'automate. Par exemple 1 pour \%M1 ou \%MW1 (nous verrons après que l'adresse est aussi déterminée par le type de la variable). Ce paramètre attend un \bold{entier}.
+
+\item \bold{description} : Il s'agit d'une description de la variable.
+
+\item \bold{varType} : il s'agit du type de la variable aux yeux de l'automate. On ne peut pas utiliser n'importe quel type, pour le moment, seuls sont supportés : \ib{BIT} ou \ib{WORD}. Ce type est très important, c'est lui qui va fixer les fonctions à utiliser pour communiquer avec l'automate et qui servira à convertir les données si besoin est.
+
+\item \bold{varMode} : Il s'agit du mode de fonctionnement de la variable soit \ib{INPUT} ou \ib{OUTPUT}
+
+\item \bold{f\_connectedSlots} : Il s'agit d'une liste de fonction à appeler lorsqu'un changement de valeur est détecté avec une \ib{EventsLoop} (nous verrons cela un peu plus tard)
+\end{enumerate}
+\smallSkip
+
+Maintenant que nous savons ce qu'il faut fournir pour déclarer une variable de ce type, nous n'avons plus qu'à le faire. Nous allons aborder deux exemples qui donneront une idée de ce qu'il est possible de faire.
+
+\begin{enumerate}
+\item \bold{Variable "\italic{BIT}"}\newline
+Nous allons ici déclarer une variable de type "\italic{BIT}" à l'adresse "\italic{\%M5}" qui représentera l'état d'un bouton "\italic{dcy}" qui fonctionnera donc comme une entrée.\newline
+La déclaration de cette variable directement dans la liste \bold{varList} se fera de la manière suivante :
+\begin{pyCode}
+varList.append(PLCVar("dcy",5,"Bouton permettant de lancer un cycle","BIT","INPUT"))
+\end{pyCode}
+
+\item \bold{Variable "\italic{WORD}"}\newline
+Puis une variable de type "\italic{WORD}" à l'adresse "\italic{\%MW0}" qui représentera la nouvelle valeur d'un compteur ("\italic{new\_cycle\_count}") qui fonctionnera donc comme une sortie.\newline
+La déclaration de cette variable directement dans la liste \bold{varList} se fera de la manière suivante :
+\begin{pyCode}
+varList.append(PLCVar("new_cycle_count",0,"Nouveau nombre de cycle à exécuter","WORD","OUTPUT"))
+\end{pyCode}
+\end{enumerate}
+
+Le code de votre fonction d'initialisation devrait donc maintenant ressembler à ceci :
+\begin{pyCode}
+def initVarList():
+	varList = [] #initialisation de la liste de variables
+
+	#déclarations des différentes variables
+	varList.append(PLCVar("dcy",5,"Bouton permettant de lancer un cycle","BIT","INPUT"))
+
+	varList.append(PLCVar("new_cycle_count",0,"Nouveau nombre de cycle à exécuter","WORD","OUTPUT"))
+
+	return varList#on retourne la liste de variables
+\end{pyCode}
+
+
+
+
+
+\subsection{Affichage d'une variable dans le terminal}
+
+Lors du débogage par exemple, vous pourriez avoir besoin d'afficher dans la console une variable. Nous allons voir comment afficher une variable présente dans une liste dans un terminal.\newline
+Nous utiliserons le même code, donc les mêmes variables que dans les exemples ci-dessus.\newline
+Le code que nous allons écrire\footnote{A l'exception de l'importation des modules bien entendu} prendra place dans le constructeur du type "\ib{MainWindow}", après l'initialisation de la liste de variables (cette ligne là : )
+\begin{pyCode}
+#stockage de la liste de variable initialisée
+self.__varList = initVarList()
+\end{pyCode}
+\smallSkip
+
+Imaginons que nous souhaitions afficher la variable "\italic{dcy}". Deux solutions s'offrent à nous pour trouver cette variable dans la liste:
+\begin{enumerate}
+\item Vous vous souvenez de l'index de la variable et vous pouvez écrire cet index "en dur", directement dans le code. Cette solution n'est pas la meilleure, en effet, si pour une raison quelconque l'index de la variable change, le résultat obtenu ne sera plus celui attendu.
+
+\item Vous utilisez une fonction fournie dans le module "\ib{ENIBSupervision.PLC.Variable}" qu'il vous faudra donc \bold{importer}, en utilisant par exemple :
+\begin{pyCode}
+import ENIBSupervision.PLC.Variable as PLCVariable
+\end{pyCode}
+Et la fonction qui nous intéresse est "\ib{findVariableInList}" qui permet de retourner l'index de la variable recherchée dans une liste. Voici son prototype :
+\begin{pyCode}
+def findVariableInList(varList,varName):
+\end{pyCode}
+Cette fonction retourne l'index de la variable ou -1 si celle-ci n'a pas été trouvée.
+\end{enumerate}
+\smallSkip
+
+Nous préférerons ici utiliser la deuxième solution. Pour afficher la variable "\italic{dcy}", nous devons donc en premier lieu récupérer son index dans notre liste. Vous avez tous les éléments pour effectuer cette tâche, cette opération se traduit par exemple par ceci :
+\begin{pyCode}
+dcyIndex = PLCVariable.findVariableInList(self.__varList,"dcy")
+\end{pyCode}
+Une fois que nous avons son index, nous pouvons nous en servir pour afficher la variable dans le terminal :
+\begin{pyCode}
+print(str(self.__varList[dcyIndex]))
+\end{pyCode}
+Explications :\newline
+La fonction "\italic{print()}" permet d'afficher quelque chose dans le terminal.\newline
+La fonction "\italic{str()}" permet de convertir un élément en chaîne de caractère.\newline
+Et "\italic{self.\_\_varList[dcyIndex]}" permet d'accéder à l'élément de la liste "\italic{self.\_\_varList}" à l'index "\italic{dcyIndex}".\smallSkip
+
+Voici maintenant à quoi devrait ressembler le constructeur de votre type "\ib{MainWindow}" :
+\begin{pyCode}
+#déclaration du constructeur avec un possible parent
+def __init__(self,parent = None):
+	#on appelle le constructeur de la class parent
+	super().__init__(parent)
+
+	#initialisation de l'interface graphique
+	self.__ui = Ui_MainWindow()
+	#Affectation de l'interface à notre fenêtre principale
+	self.__ui.setupUi(self)
+
+	#stockage de la liste de variable initialisée
+	self.__varList = initVarList()
+
+	#récupération de l'index de la variable "dcy"
+	dcyIndex = PLCVariable.findVariableInList(self.__varList,"dcy")
+	#affichage de la variable
+	print(str(self.__varList[dcyIndex]))
+\end{pyCode}
+\smallSkip
+
+Vous n'avez maintenant plus qu'à lancer le programme
+\footnote{
+Si vous ne vous souvenez plus de comment réaliser cela, je vous invite à retourner voir la section \lref{tag-startProgFromCmdLine}{3.4.3 Affichage de la fenêtre principale - Lancement du programme}
+}
+et vous devriez voir s'afficher un résultat de ce type :
+\iImage{\rootIm enibSup_result_printPLCVar.png}{Résultat du programme dans un terminal}{0.4}
+
+
+
+
+\section{Automate}\label{tag-plc-declaration}
+
+Attention\footnote{
+Ce point est voué à être changé dès la prochaine mise à jour du module, il est donc et doit être considéré comme temporaire}.\smallSkip
+
+Le code que nous allons écrire\footnote{A l'exception de l'importation des modules bien entendu} prendra place dans le constructeur du type "\ib{MainWindow}", après l'initialisation de la liste de variables (cette ligne là : )
+\begin{pyCode}
+#stockage de la liste de variable initialisée
+self.__varList = initVarList()
+\end{pyCode}\smallSkip
+
+Puisque l'\bold{EventsLoop} (que nous verrons juste après) se chargera de faire communiquer nos variables avec l'automate, il nous faut lui fournir un objet avec lequel communiquer.
+Cela se fera en déclarant un automate avec une adresse ip avec lequel le programme devra communiquer.\smallSkip
+
+Pour ce faire, nous aurons besoin d'importer le module suivant qui permettra d'initialiser notre automate : \ib{ENIBSupervision.PLC.communication} :
+\begin{pyCode}
+import ENIBSupervision.PLC.communication as Com
+\end{pyCode}
+Et l'initialisation se fera de cette façon :
+\begin{pyCode}
+self.__plcClient = Com.initPLC("192.168.69.12")
+\end{pyCode}
+Où "192.168.69.12" est l'adresse IP de l'automate visé. Nous avons choisi de rendre cette variable membre de notre class \ib{MainWindow} au cas où nous en aurions besoin dans une autre fonction que le constructeur.
+
+
+\section{Boucle d'événement}
+
+Une "boucle d'événement" a été mentionnée à de nombreuses reprises précédemment. Dans ce chapitre, nous allons aborder ce point essentiel du module \ib{ENIBSupervision}. En effet, même si vous avez maintenant des variables, vous ne les faites pas communiquer avec l'automate. Deux solutions s'offrent à vous :
+\begin{enumerate}
+\item Rédiger manuellement toutes les interactions avec l'automate : lecture et écriture des variables
+\item Utiliser le type "\ib{EventsLoop}" du module "\ib{ENIBSupervision}" qui fera (presque) tout à votre place.
+\end{enumerate}
+Vous imaginez bien que nous préférerons ici la deuxième solution. Si vous préférez la première, les outils de ce module ne fonctionneront pas ou très mal.\smallSkip
+
+Le code que nous allons écrire\footnote{A l'exception de l'importation des modules bien entendu} prendra place dans le constructeur du type "\ib{MainWindow}", après l'initialisation de la liste de variables (cette ligne là : )
+\begin{pyCode}
+#stockage de la liste de variable initialisée
+self.__varList = initVarList()
+\end{pyCode}
+
+
+Maintenant que nous avons initialisé un automate juste avant, il ne nous reste plus qu'à déclarer et initialiser notre \ib{EventsLoop}.\newline
+Pour cela, nous avons tout d'abord besoin d'importer le module décrivant ce type, il s'agit du module \ib{ENIBSupervision.EventsLoop} :
+\begin{pyCode}
+import ENIBSupervision.EventsLoop as EventsLoop
+\end{pyCode}
+Une fois le module importé, il nous est maintenant possible de déclarer une \ib{EventsLoop}. Étudions rapidement le prototype de ce type :
+\begin{pyCode}
+EventsLoop(client,loopDelay = 0.1)
+\end{pyCode}
+Et une courte description des paramètres attendus :
+\begin{enumerate}
+    \item \bold{client} : Il s'agit d'un objet représentant un Automate. Concrètement, il s'agit de la variable déclarée précédemment : \italic{self.\_\_plcClient}
+
+    \item \bold{loopDelay} : Il s'agit d'un délai (en secondes) à laisser entre deux itérations de la boucle. Une valeur par défaut est disponible et conviendra à la plupart des cas, nous ne spécifieront donc pas ce paramètre.
+\end{enumerate}
+\smallSkip
+
+La déclaration et l'utilisation d'une \ib{EventsLoop} se fait en trois étapes :
+\begin{enumerate}
+    \item Déclaration de l'\ib{EventsLoop}
+    \item Spécification de la liste de variables à scruter
+    \item Lancement de la boucle
+\end{enumerate}
+Que nous allons détailler ci-après.
+
+\subsection{Déclaration de l'\ib{EventsLoop}}
+
+Cette étape se fait très simplement dès que les modules nécessaires ont été importés. Dans notre cas, nous allons la déclarer en lui fournissant en paramètre le client automate déclaré \lref{tag-plc-declaration}{auparavant}. Cela se traduit par le code suivant :
+\begin{pyCode}
+self.__eventsLoop = EventsLoop.EventsLoop(self.__plcClient)
+\end{pyCode}
+Il a été choisi de la déclarer en variable membre de la class \ib{MainWindow} car nous pourrions en avoir besoin dans d'autres fonctions membres.
+
+\subsection{Spécification de la liste de variables à scruter}
+
+Nous allons ici utiliser une fonction membre du type \ib{EventsLoop} dont voici le prototype :
+\begin{pyCode}
+def setVarList(varList):
+\end{pyCode}
+Nous avons tous éléments en main pour affecter la liste de variables \ib{PLCVar} déclarée plus haut dans ce tutoriel à notre boucle d'événement :
+\begin{pyCode}
+self.__eventsLoop.setVarList(self.__varList)
+\end{pyCode}
+
+\subsection{Lancement de la boucle}
+
+Tous les éléments sont en place, il suffit maintenant de lancer la boucle, qui analysera alors à un intervalle de temps régulier l'état de toutes les variables et enverra à l'automate l'état des variables "OUTPUT" qui ont été modifiées depuis la dernière scrutation.\newline
+Cela vous permettra de ne pas avoir à vous soucier de la communication avec l'automate.\newline
+Le lancement de tout ce système se fait à l'aide d'une seule commande :
+\begin{pyCode}
+self.__eventsLoop.start()
+\end{pyCode}
+\smallSkip
+
+Si vous exécutez le programme sans que l'automate ne soit accessible, vous devriez voir plusieurs messages d'erreurs apparaître comme ici :
+
+\iImage{\rootIm enibSup_error_cannotConnectToPLC.png}{Messages d'erreurs typiques}{0.3}
+
+Ceux-ci ne font que prévenir l'utilisateur qu'il est impossible de se connecter à l'automate pendant l'écriture/la lecture d'une variable tout en précisant celle-ci.
+\smallSkip
+
+Maintenant que nous avons mis en place les outils essentiels pour le bon fonctionnement de la suite, nous allons aborder les outils plus avancés mis à la disposition des utilisateurs du module \ib{ENIBSupervision}.\smallSkip
+
+Mais avant ça, voici un petit rappel de ce à quoi votre fichier \ib{UI\_MainWindow.py} devrait ressembler au complet : %COMPLETE_FILE
+\begin{pyCode}
+# -*- coding: utf-8 -*-
+#on explicite l’encodage du fichier
+
+#importation des modules nécessaires à Qt
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+#importation du module nécessaire à la création de notre fenêtre principale
+from UI_pyFiles.MainWindow import Ui_MainWindow
+
+#importation des modules de supervision
+from ENIBSupervision.PLC.Variable import PLCVar
+import ENIBSupervision.PLC.Variable as PLCVariable
+import ENIBSupervision.EventsLoop as EventsLoop
+import ENIBSupervision.PLC.communication as Com
+
+class MainWindow(QtWidgets.QMainWindow): #déclaration de la class MainWindow
+
+	#déclaration du constructeur avec un possible parent
+	def __init__(self,parent = None):
+		#on appelle le constructeur de la class parent
+		super().__init__(parent)
+
+		#initialisation de l'interface graphique
+		self.__ui = Ui_MainWindow()
+		#Affectation de l'interface à notre fenêtre principale
+		self.__ui.setupUi(self)
+
+		#stockage de la liste de variable initialisée
+		self.__varList = initVarList()
+
+		#récupération de l'index de la variable "dcy"
+		dcyIndex = PLCVariable.findVariableInList(self.__varList,"dcy")
+		#affichage de la variable
+		print(str(self.__varList[dcyIndex]))
+
+		#déclaration de l'automate
+		self.__plcClient = Com.initPLC("192.168.69.12")
+		
+
+		#déclaration de la boucle d'événements
+		self.__eventsLoop = EventsLoop.EventsLoop(self.__plcClient)
+		#affectation de la liste de variables à la boucle d'événements
+		self.__eventsLoop.setVarList(self.__varList)
+		#lancement de la boucle
+		self.__eventsLoop.start()
+
+
+
+def initVarList():
+	varList = [] #initialisation de la liste de variables
+
+	#déclarations des différentes variables
+	varList.append(PLCVar("dcy",5,"Bouton permettant de lancer un cycle","BIT","INPUT"))
+
+	varList.append(PLCVar("new_cycle_count",0,"Nouveau nombre de cycle à exécuter","WORD","OUTPUT"))
+
+	return varList#on retourne la liste de variables
+\end{pyCode}
+
+
+\section{Tables d'animations}
+
+Nous arrivons maintenant dans les outils graphiques proposés par le module \ib{ENIBSupervision}.\newline
+Nous allons voir dans cette section comment créer facilement et rapidement des tables d'animations utilisables.\newline
+Ces tables d'animations se présentent sous la forme d'une fenêtre dockable.\smallSkip
+
+La création de ces tables se fait en deux lignes. Il suffit de les déclarer et les affichers.\newline
+Cependant, nous en avons maintenant l'habitude, il nous faut tout d'abord importer le type (\ib{AnimationTables}) nécessaire depuis le module adapté, le module \ib{ENIBSupervision.UI\_class.UI\_AnimationTables}, cela se traduit par :
+\begin{pyCode}
+from ENIBSupervision.UI_class.UI_AnimationTables import AnimationTables
+\end{pyCode}
+\smallSkip
+
+Voici le prototype du type \bold{AnimationTables} :
+\begin{pyCode}
+AnimationTables(plcVarList,parent = None,qdockWidgetArea = QtCore.Qt.RightDockWidgetArea)
+\end{pyCode}
+Et une description rapide des arguments :
+\begin{enumerate}
+    \item \bold{plcVarList} : Il s'agit d'une liste de variables de type "\ib{PLCVar}"
+    \item \bold{parent} : Il s'agit du widget Qt parent de nos tables d'animations. Souvenez-vous, je vous avais dit qu'il était d'usage de fournir à un widget Qt un parent. Ici, \ib{AnimationTables} est un type pour lequel ce parent est important pour profiter de toutes les possibilités offertes.
+    \item \bold{qdockWidgetArea} : il s'agit de la zone dans laquelle les tables d'animations seront dockées par défaut. C'est un paramètre un peu particulier, voici quelques exemples de valeurs acceptées :
+    \begin{enumerate}
+        \item \italic{QtCore.Qt.RightDockWidgetArea}
+        \item \italic{QtCore.Qt.LeftDockWidgetArea}
+        \item \italic{QtCore.Qt.BottomDockWidgetArea}
+        \item \italic{QtCore.Qt.TopDockWidgetArea}
+    \end{enumerate}
+\end{enumerate}
+\smallSkip
+
+Maintenant que nous voyons à peu près comment initialiser les tables d'animations, voici comment l'on pourrait faire en pratique :
+\begin{pyCode}
+self.__animTables = AnimationTables(self.__varList,self)
+\end{pyCode}
+Si l'on analyse rapidement cette déclaration, on constate que nous ne faisons que initialiser une variable \eVar{self.\_\_animTables} avec comme liste de variables \eVar{self.\_\_varList} et comme parent, notre \eType{MainWindow}.\newline
+Notez que c'est à nouveau une variable membre de notre class \eType{MainWindow} car encore une fois, nous pourrions en avoir besoin dans d'autres fonctions.\smallSkip
+
+Nous avons déclaré nos tables, nous n'avons plus qu'à les afficher, ce qui se fera à l'aide de la fonction membre \eFunc{.show()} :
+\begin{pyCode}
+self.__animTables.show() #on les affiche
+\end{pyCode}
+\smallSkip
+
+En rappel, voici maintenant à quoi devrait ressembler le constructeur de votre type \eType{MainWindow} :
+\begin{pyCode}
+def __init__(self,parent = None):
+	#on appelle le constructeur de la class parent
+	super().__init__(parent)
+
+	#initialisation de l'interface graphique
+	self.__ui = Ui_MainWindow()
+	#Affectation de l'interface à notre fenêtre principale
+	self.__ui.setupUi(self)
+
+	#stockage de la liste de variable initialisée
+	self.__varList = initVarList()
+
+	#récupération de l'index de la variable "dcy"
+	dcyIndex = PLCVariable.findVariableInList(self.__varList,"dcy")
+	#affichage de la variable
+	print(str(self.__varList[dcyIndex]))
+
+	#déclaration de l'automate
+	self.__plcClient = Com.initPLC("192.168.69.12")
+		
+
+	#déclaration de la boucle d'événements
+	self.__eventsLoop = EventsLoop.EventsLoop(self.__plcClient)
+	#affectation de la liste de variables à la boucle d'événements
+	self.__eventsLoop.setVarList(self.__varList)
+	#lancement de la boucle
+	self.__eventsLoop.start()
+
+
+	#déclaration des tables d'animations
+	self.__animTables = AnimationTables(self.__varList,self)
+	self.__animTables.show() #on les affiche
+\end{pyCode}
+\smallSkip
+
+Vous devriez maintenant avoir des tables d'animations que vous pouvez "détacher" de la fenêtre principale, manipuler normalement. Je vous laisse explorer les possibilités.\newline
+Voici le type de résultat que vous devriez obtenir :
+\iImage{\rootIm enibSup_window_animationTables.png}{Tables d'animations dans\protect\\la fenêtre principale}{0.4}
+
+
+
+
+
+
+
+%###########################################################################
+%############################### NEW PAGE ##################################
+%###########################################################################
+
+\chapter{Code de l'exemple au complet}
+
+
+%#######################################################
+%##################### NEW PAGE ########################
+%#######################################################
+\newpage
+\section{main.py}
+
+\begin{pyCode}
+# -*- coding: utf-8 -*-
+#on  explicite l’encodage  du  fichier
+
+#importation des modules nécessaires à Qt
+import sys
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+#importation du module d'interface graphique créé
+from UI_class.UI_MainWindow import MainWindow
+
+
+#si c'est ce module qui est lancé directement
+if(__name__ == "__main__"):
+
+	#déclaration de l'application Qt
+	app = QtWidgets.QApplication(sys.argv)
+
+	mainWindow = MainWindow()
+	mainWindow.show()
+
+	#exécution de l'application Qt
+	sys.exit(app.exec())
+\end{pyCode}
+
+
+%#######################################################
+%##################### NEW PAGE ########################
+%#######################################################
+\newpage
+\section{UI\_class/UI\_MainWindow.py}
+
+\begin{pyCode}
+# -*- coding: utf-8 -*-
+#on explicite l’encodage du fichier
+
+#importation des modules nécessaires à Qt
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+#importation du module nécessaire à la création de notre fenêtre principale
+from UI_pyFiles.MainWindow import Ui_MainWindow
+
+#importation des modules de supervision
+from ENIBSupervision.PLC.Variable import PLCVar
+import ENIBSupervision.PLC.Variable as PLCVariable
+import ENIBSupervision.EventsLoop as EventsLoop
+import ENIBSupervision.PLC.communication as Com
+from ENIBSupervision.UI_class.UI_AnimationTables import AnimationTables
+
+class MainWindow(QtWidgets.QMainWindow): #déclaration de la class MainWindow
+
+	#déclaration du constructeur avec un possible parent
+	def __init__(self,parent = None):
+		#on appelle le constructeur de la class parent
+		super().__init__(parent)
+
+		#initialisation de l'interface graphique
+		self.__ui = Ui_MainWindow()
+		#Affectation de l'interface à notre fenêtre principale
+		self.__ui.setupUi(self)
+
+		#stockage de la liste de variable initialisée
+		self.__varList = initVarList()
+
+		#récupération de l'index de la variable "dcy"
+		dcyIndex = PLCVariable.findVariableInList(self.__varList,"dcy")
+		#affichage de la variable
+		print(str(self.__varList[dcyIndex]))
+
+		#déclaration de l'automate
+		self.__plcClient = Com.initPLC("192.168.69.12")
+		
+
+		#déclaration de la boucle d'événements
+		self.__eventsLoop = EventsLoop.EventsLoop(self.__plcClient)
+		#affectation de la liste de variables à la boucle d'événements
+		self.__eventsLoop.setVarList(self.__varList)
+		#lancement de la boucle
+		self.__eventsLoop.start()
+
+
+		#déclaration des tables d'animations
+		self.__animTables = AnimationTables(self.__varList,self)
+		self.__animTables.show() #on les affiche
+
+
+
+
+
+def initVarList():
+	varList = [] #initialisation de la liste de variables
+
+	#déclarations des différentes variables
+	varList.append(PLCVar("dcy",5,"Bouton permettant de lancer un cycle","BIT","INPUT"))
+
+	varList.append(PLCVar("new_cycle_count",0,"Nouveau nombre de cycle à exécuter","WORD","OUTPUT"))
+
+	return varList#on retourne la liste de variables
+\end{pyCode}
+
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ END DOC ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+\end{document}

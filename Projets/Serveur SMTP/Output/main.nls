@@ -1,0 +1,13 @@
+
+\begin{thenomenclature} 
+\nomgroup{A}
+  \item [{$\varepsilon$}]\begingroup Tension différentielle $(\varepsilon = E_+ - E_-)$\addUnit{V}\nomeqref {15.0}\nompageref{41}
+  \item [{$A_d$}]\begingroup Coefficient d'amplification, gain differentiel \nomeqref {15.0}\nompageref{41}
+  \item [{$E_+$}]\begingroup Tension entrée non inverseuse \addUnit{V}\nomeqref {15.0}\nompageref{41}
+  \item [{$E_-$}]\begingroup Tension entrée inverseuse \addUnit{V}\nomeqref {15.0}\nompageref{41}
+\nomgroup{E}
+  \item [{$\eta$}]\begingroup Rendement d'un mécanisme \addUnit{\%}\nomeqref {15.0}\nompageref{41}
+  \item [{$\varphi$}]\begingroup Dépahasage entre deux signaux \addUnit{rad}\nomeqref {15.0}\nompageref{41}
+  \item [{$r$}]\begingroup Rapport cyclique d'un signal périodique\nomeqref {15.0}\nompageref{41}
+
+\end{thenomenclature}

@@ -1,0 +1,17 @@
+#!/bin/bash
+output_dir="Output"
+if [[ $1 = "" ]]; then
+	echo "Veuillez préciser le nom du fichier principal à générer..."
+	echo "Arret prématuré"
+	exit
+fi
+echo -e "Start generating main file"
+echo "" > render_report.txt
+pdflatex --output-dir=$output_dir $1 >> render_report.txt
+makeglossaries $output_dir/$1 >> render_report.txt
+makeindex $output_dir/$1 >> render_report.txt
+makeindex $output_dir/$1.nlo -s nomencl.ist -o $output_dir/$1.nls >> render_report.txt
+pdflatex --output-dir=$output_dir $1 >> render_report.txt
+pdflatex --output-dir=$output_dir $1 >> render_report.txt
+mv $output_dir/$1.pdf $1.pdf >> render_report.txt
+echo "Done !"

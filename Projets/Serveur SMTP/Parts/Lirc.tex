@@ -1,0 +1,29 @@
+\chapter{Lirc}
+
+
+\section{Présentation}
+
+
+Lirc est un utilitaire permettant de récuperer le signal d'une télécommande IR pour exploiter le signal par la suite.
+
+
+\begin{Bash} 
+
+sudo apt-get update
+sudo apt-get install ir-keytable
+sudo apt-get install lirc
+sudo ir-keytable -p all #Ouverture de tous les protocoles
+
+
+sudo ir-keytable -t --sysdev rc0 #récupère les infos de la touche
+
+
+sudo systemctl start lircd
+
+
+
+sudo nano /etc/lirc/lircd.conf.d/devinput.lircd.conf #clé par default
+
+lirc-make-devinput
+
+\end{Bash}

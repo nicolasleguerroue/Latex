@@ -1,0 +1,160 @@
+\documentclass[12pt]{report}
+\usepackage[frenchb]{babel}     %french language
+
+\usepackage{../Adding}
+\usepackage{../Graphics}
+\usepackage{../Layout}
+\usepackage{../Maths}
+\usepackage{../Programming}
+
+
+\nomenclature[E]{$r$}{Rapport cyclique d'un signal périodique}
+\nomenclature[E]{$r$}{Rapport cyclique d'un signal périodique}
+
+\begin{document}
+
+\title{Exemples Utils}
+\author{Nicolas LE GUERROUE}
+\maketitle
+\tableofcontents
+\newpage
+
+
+\part{test}
+
+\section{Exemples Graphics}
+
+
+\begin{exemple}
+\begin{graphics}{0.8}{0.6}{0}{2.1}{-1.1}{1.1}{t(ms)}{vs}{Oscilloscope}
+\addPointsFromCSV{red}{comma}{input_1.txt}
+\addPointsFromCSV{blue}{comma}{input_2.txt}
+\addLegend{voie A, voie B}
+\end{graphics}
+\end{exemple}
+
+
+\begin{exemple}
+\begin{graphics}{0.8}{0.4}{0}{40}{-1}{6}{t(s)}{vs}{Courbe avec données brutes}
+\addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
+\addLegend{Ve}
+\end{graphics}
+\end{exemple}
+
+
+
+\begin{figure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include first image
+   \centering
+ \begin{graphics}{0.9}{0.4}{-0.05}{20}{-1}{6}{t(ms)}{vs}{KEY\_DOWN}
+\addPointsFromCSV{red}{comma}{out.csv}
+%\addLegend{Signal "KEY\_POWER"}
+\end{graphics}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+   \centering
+ \begin{graphics}{0.9}{0.4}{-0.05}{80}{-1}{6}{t(ms)}{vs}{KEY\_UP}
+\addPointsFromCSV{red}{comma}{out.csv}
+%\addLegend{Signal "KEY\_POWER"}
+\end{graphics}
+\end{subfigure}
+
+\begin{subfigure}{.5\textwidth}
+  \centering
+ \begin{graphics}{0.9}{0.4}{-0.05}{60}{-1}{6}{t(ms)}{vs}{KEY\_RIGHT}
+\addPointsFromCSV{red}{comma}{out.csv}
+%\addLegend{Signal "KEY\_POWER"}
+\end{graphics}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  % include fourth image
+   \centering
+ \begin{graphics}{0.9}{0.4}{-0.05}{40}{-1}{6}{t(ms)}{vs}{KEY\_LEFT}
+\addPointsFromCSV{red}{comma}{out.csv}
+%\addLegend{Signal "KEY\_POWER"}
+\end{graphics}
+\end{subfigure}
+\caption{Put your caption here}
+\label{fig:fig}
+\end{figure}
+
+
+
+\begin{exemple}
+\begin{graphics}{0.9}{0.4}{-0.05}{125}{-1}{6}{t(ms)}{vs}{Données capteur IR}
+\addPointsFromCSV{cyan}{comma}{out.csv}
+\addLegend{Signal "KEY\_POWER"}
+\end{graphics}
+\end{exemple}
+
+
+\begin{exemple}
+\begin{graphics}{0.4}{0.4}{-10}{10}{-1}{100}{x}{y}{Courbe avec équation}
+\addTrace{green}{-10}{10}{x*x}
+\addLegend{f(x)}
+\end{graphics}
+\end{exemple}
+
+
+\begin{exemple}
+\begin{graphics}{0.8}{0.4}{0}{20}{-1}{10}{x}{y}{Courbes de provenances diverses}
+\addPointsFromCSV{red}{comma}{input_2.txt}
+\addTrace{green}{-10}{10}{x}
+\addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
+\addLegend{s1,s2,s3}
+\end{graphics}
+\end{exemple}
+
+\begin{exemple}
+\plot{Titre}{x*y*y}
+\end{exemple}
+
+
+\section{Exemples Maths}
+
+$\evec{\v x}{\v y}{\v z}$ \\
+$\emat{A}{B}{C} \cdot \emat{A'}{B'}{C'} $
+
+
+\section{Exemples Programming}
+
+\begin{Python}{Titre code python}
+for a in liste:
+    lst.remove(a)
+if(condition):
+    run()
+else:
+    exit()
+\end{Python}
+
+\begin{Cpp}{Code C++}
+int a = 0;
+float b = 0.0;
+a = b*b;
+std::cout << a << b <<std::endl;
+\end{Cpp}
+
+\begin{Bash}{Exemple Bash}
+sudo apt-get update
+sudo apt-get -y upgrade
+source ~/.bashrc
+\end{Bash}
+
+
+\section{Exemples Layout}
+
+
+Une onomatopée\index{onomatopée} est une catégorie d'interjections\index{interjection}
+émise pour simuler un bruit particulier associé à un être,
+un animal ou un objet, par l'imitation des sons\index{son} que ceux-ci produisent
+
+
+
+\printnomenclature
+\printindex 
+
+\end{document}

@@ -1,0 +1,192 @@
+ \input{Settings.tex}
+
+\begin{document}
+
+\setHeader{Générateur de documentation}{CHARLES Mathieu \and Mathieu FAGET \and Nicolas LE GUERROUÉ \and Titouan LESEC-ROLLAND}{juin 2020}
+
+\maketitle
+\tableofcontents
+
+\newpage
+\chapter{Mise en équation}
+
+\section{Objectif}
+
+L'objectif est de prédire l'évolution de la température sur une barre de fer. 
+
+\section{Contexte}
+
+Nous possédons les données de température sur 99 intervalles de temps. Ces données concernent un pas de temps évidemment petit car nous souhaitons prédire la température.
+
+\section{Un premier modèle de température}
+
+A partir du fichier mesures précises ,
+en mettant en relation l'évolution de température, le temps et les positions sur la barre, on a crée un modèle de température.
+
+\img{Images/temperature.png}{Modèle de température}{0.5}
+
+On obtient l'équation suivante
+$$
+T(x, t+\Delta t) - T(x,t) = C \times ( (T(x+\Delta x, t)-T(x,t)) + (T(x-\Delta x,t)-T(x,t)))
+$$
+
+avec \( \Delta t \) l'intervalle de temps entre les deux mesures,
+et \( \Delta x \) un déplacement infinitésimal de la position du capteur de température . \newline
+\newpage
+On a une relation de proportionnalité entre  \( \Delta t \),\( \Delta x \) et C, d'où :
+
+$$
+\frac{\partial T}{\partial t} = \alpha \frac{\partial^2 T}{\partial x^2}
+$$
+
+
+Par lecture graphique sur le fichier des températures, on a :
+$$
+\alpha =  0.049
+$$
+
+\section{L'équation résolvable}
+Cependant, nous ne savons pas résoudre cette équation. L'objectif suivant sera de chercher une équation plus simple que nous pourrons calculer. \newline
+On cherche donc une équation de la forme suivante
+$$
+T(x,t) = f(t)\times g(x)
+$$
+\newline
+Nous allons poser \( T(x,t) = f(t)\times g(x) \). \newline
+De ce fait, l'équation de la chaleur devient :
+$$
+f'(t)\times g(x) = \alpha f(t)\times g''(x)
+$$
+
+avec \(\frac{f'(t)}{\alpha f(t)}\) constante,
+que nous appelerons \(\beta\).
+
+
+La première équation devient alors :
+$$g''(x) = \beta g(x)$$
+on en déduit la deuxième :
+$$f'(t) = \alpha \beta f(t)$$
+
+Solution de la deuxième équation :
+$$f(t) = C \times e^{\alpha \beta t}$$
+
+nous cherchons à avoir une combinaison linéaire qui sera pour nous une solution pour se rapprocher au mieux de la réalité .
+on prendra donc un 
+\(\beta\) strictement négatif puisque la température sera ammenée à décroître.
+Ici, nous sommes dans le troisième cas :
+$$
+g(x) = C_1\mbox{cos}(\sqrt{-\beta}x) + C_2\mbox{sin}(\sqrt{-\beta}x)$$
+
+De plus, sous savons que g(0)=0, ce qui impose que \(C_1=0\). Il reste donc
+$$ g(x) = C_2\mbox{sin}(\sqrt{-\beta}x)$$
+
+Or g(2)=0,on a donc
+$$ C_2\sin(2\sqrt{-\beta}) = 0 $$
+Comme les solutions de \(\sin \phi =0\) sont les \(\phi=k\pi\) avec \(k\) entier, on en déduit
+que \(2\sqrt{-\beta} = k\pi\) , donc que les valeurs possibles pour \(\beta\) sont
+$$
+\beta = -\frac{k^2\pi^2}{4}
+$$ pour tout k entier.
+
+ \(T(x,t)=f(t)g(x)\), nous permet de trouver une famille de solutions
+possibles, tous les :
+$$
+e^{-\alpha\frac{k^2\pi^2}{4} t} \sin(\frac{k\pi}{2} x)
+$$
+pour k entier.
+Or nous savons également que la combinaison linéaire de ces éléments est aussi solution , alors nous avons 
+l'expression possible suivante :
+$$
+e^{-\alpha\frac{\pi^2}{4} t} \sin(\frac{\pi}{2} x), 
+e^{-\alpha\frac{4\pi^2}{4} t} \sin(\frac{2\pi}{2} x), 
+e^{-\alpha\frac{9\pi^2}{4} t} \sin(\frac{3\pi}{2} x), 
+e^{-\alpha\frac{16\pi^2}{4} t} \sin(\frac{4\pi}{2} x), 
+...
+$$
+avec les conditions initiales (t=0) on a :
+$$
+\alpha_1 e^{-\alpha\frac{\pi^2}{4} t} \sin(\frac{\pi}{2} x) +
+\alpha_2 e^{-\alpha\frac{4\pi^2}{4} t} \sin(\frac{2\pi}{2} x) +
+\alpha_3 e^{-\alpha\frac{9\pi^2}{4} t} \sin(\frac{3\pi}{2} x) +
+...
+=
+\alpha_1 \sin(\frac{\pi}{2} x) +
+\alpha_2 \sin(\frac{2\pi}{2} x) +
+\alpha_3 \sin(\frac{3\pi}{2} x) +
+...
+$$
+
+
+
+On cherche à calculer les coefficient alpha
+
+On part de la relation suivante
+$$
+\alpha_i =  \int_{0}^{2} M(x)\cdot sin(\frac{i\cdot \pi}{2}) dx
+$$
+
+avec i represantant le numéro du coefficient $ \alpha $.
+
+\newpage 
+
+
+\chapter{Solution}
+\section{Programme Python}
+
+Nous avons codé un programme Python pour calculer automatiquement les coefficients alphas. 
+\newline
+Ce programme possède une fonction main qui permet de :
+
+\begin{enumerate}
+    \item calculer autant de coefficient alpha que souhaité
+    \item Afficher la température de la barre à un t donnée (tableau des temps)
+    \item Calculer et afficher l'écart de température entre t(0) et t(final) du tableur
+    \item Calculer et afficher l'écart de température entre t(0) et t(variable) avec les coefficients calculés
+\end{enumerate}
+
+
+Le code source (classe Data) est disponible en annexe du dossier.
+Voici la fonction main
+
+\begin{Python}
+def main():
+    #Création d'un objet Data
+	data = Data() 													
+	data.accuracy(15)   											#Nombre de alphas
+	data.alpha(0.0495) 												#Alpha
+	
+	#Lis les valeurs à t=0
+	data.readCSV("mesuresPrecises.csv", step=0)
+	
+	#calcul des coefficients alphas
+	data.compute() 	
+	
+	#Affiche le graphique des températures réelles et calculées avec les alphas
+	data.displayGraph()  
+	
+	#Affiche le graphique de la température à t=...
+	#data.displayGraphTime(0.1)
+	
+	
+	#Affiche le graphique des températures passée en argument
+	data.displayGraphTimes([0.0098, 0.2, 1, 2,  5, 20])  	
+	
+    #Affiche la différence de température entre t(0) et t(final) du tableau
+    #et la différence de température entre t(0) et t(0.0098)
+	data.displayDelta(0.0098)
+
+if __name__ == '__main__':
+	main()
+\end{Python}
+
+\section{Prédictions et résultats}
+
+\img{Images/alphas.PNG}{Calcul des coefficients alphas}{0.8}
+\img{Images/g1.PNG}{Vérification du modèle à t=0}{0.9}
+\img{Images/g2.PNG}{Prédictions des températures}{0.9}
+\img{Images/g3.PNG}{Vérification des résultats}{0.3}
+La courbe bleue représente la différence de température de la barre enter t=0 et t=0.0098s
+
+
+
+\end{document}

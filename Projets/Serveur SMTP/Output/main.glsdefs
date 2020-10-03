@@ -1,0 +1,60 @@
+\ifglsentryexists{ADSR}{}%
+{%
+\gls@defglossaryentry{ADSR}%
+{%
+name={ADSR},%
+sort={ADSR},%
+type={acronym},%
+first={ADSR},%
+firstplural={ADSRs},%
+text={ADSR},%
+plural={ADSRs},%
+description={Attack, Decrease, Sustain, Release : Générateur d'enveloppe analogique},%
+descriptionplural={Attack, Decrease, Sustain, Release : Générateur d'enveloppe analogique},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ADLN}{}%
+{%
+\gls@defglossaryentry{ADLN}%
+{%
+name={ADLN},%
+sort={ADLN},%
+type={acronym},%
+first={ADLN},%
+firstplural={ADLNs},%
+text={ADLN},%
+plural={ADLNs},%
+description={Attack, Decrease, Sustain, Numeric : Générateur d'enveloppe numerique},%
+descriptionplural={Attack, Decrease, Sustain, Numeric : Générateur d'enveloppe numerique},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

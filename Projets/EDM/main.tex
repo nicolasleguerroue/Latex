@@ -1,0 +1,695 @@
+\input{header.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%dossier des images
+\newcommand{\imRoot}{Images/}
+
+\newcommand{\evec}[3]{\left (\begin{array}{ccc} #1 \\ #2 \\ #3\end{array} \right )}
+%Vecteur à 3 composantes
+
+\newcommand{\emat}[3]{\left [\begin{array}{ccc} #1 \\ #2 \\ #3\end{array} \right ]}
+%Matrice à 3 composantes
+% \emat{a & b & c}{d & e & f}{g & h & i}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Projet EDM S4P }
+\author{Antoine SCAVINER - Théo MAINGUENÉ - Mathieu CHARLES - Nicolas LE GUERROUÉ}
+\date{Année 2019-2020}
+\usepackage{titlesec}
+\titlespacing*{\section}
+{0}{0}{0}
+\begin{document}
+
+\makeatletter
+\begin{titlepage}
+\begin{tikzpicture}[overlay,remember picture]
+    \coordinate (SW) at (current page.south west);
+    \coordinate (SE) at (current page.south east);
+    \coordinate (NW) at (current page.north west);
+    \coordinate (NE) at (current page.north east);
+    \node at ($(NW)!0.5!(SE)$)[anchor=north,yshift=6cm,align=center]
+        {\huge \@title};
+    \node at ($(NW)!0.5!(SE)$)[anchor=north,yshift=4cm,align=center]
+        {\Large Notice de calcul};
+    \node at ($(NW)!0.5!(SE)$) [anchor=north,yshift=2cm,align=center]
+        {\Large \@date};
+    \node at ($(NW)!0.5!(SE)$) [anchor=north,yshift=0cm,align=center]
+        {\large {\@author}};
+    \node at ($(NE)!0.92!(SW)$)[anchor=south,xshift=14cm,align=right]{\includegraphics[width=0.3\linewidth]{./img/ENIB.png}};
+    \node at ($(NW)$)[align=left,xshift=10.77cm,yshift=-0.3cm,]{\includegraphics[width=1.35\linewidth]{./img/cover.png}};
+\end{tikzpicture}
+\end{titlepage}
+
+
+
+\tableofcontents
+	
+\titlespacing{\chapter}{0pt}{*-5}{*5}
+\chapter{Cahier des charges}
+
+\section{Contexte}
+On se propose de dimensionner un monte-charge permettant de soulever un poids de 10 kilogrammes.\newline
+Ce dernier doit pouvoir déplacer la charge de 2.6m  en un maximum de 12 secondes.\newline
+Le diamètre du bout d'enroulement est de 8mm. \newline
+L'ensemble sera fixé sur une plaque de 200x280mm et de 5mm d'épaisseur.\newline
+L'enroulement sera sur 8 tours +/-1.\newline
+Le moteur devra être alimenté en 24V.\newline
+Le système sera auto-bloquant en cas d'absence d'énergie d'alimentation.\newline
+
+\endgroup% toutes les modifications vont disparaitre après
+
+
+%\chapter{Calculs des puissances}
+\chapter{Calculs des puissances}
+
+
+\section{Paramétrisation}
+
+Diamètre du bout : 8mm \newline
+%Diamètre du tambour : 52 mm \newline
+%Largeur du tambour : 64 mm \newline
+Vitesse linéaire de charge minimale : 0.22 m/s \newline
+Masse de la charge : 10 kg (15 kg avec le coefficient de sécurité appliqué) \newline
+Coefficient de sécurité : \textbf{1.5} \newline
+Accélération de la pesanteur (g) : 10 $m/s^2$
+\sskip
+
+
+\section{Déterminations des contraintes}
+
+
+\subsection{Calcul du nombre d'enroulement}
+
+La largeur du tambour correspond au nombre d'enroulements multiplié par le diamètre du bout.
+
+$$Largeur_{tambour}=enroulements\cdot diamètre_{bout}= 8 * 8 =64 mm$$
+
+\subsection{Calcul du rayon minimum}
+
+Afin de déterminer le rayon minimum on divise la distance totale parle nombre d'enroulement, ce qui nous donne le périmètre \newline
+$$Perimetre=\frac{Distance}{Enroulement}$$ 
+
+On isole alors le rayon
+
+$$R_{minimum}= \frac{Perimetre}{2 \pi} = \frac{0.325}{2 \pi}=52mm$$
+
+Il y aura donc au total 1 enroulement de câble autour du tambour. \newline
+
+\subsection{Calcul du rayon maximal}
+
+Le rayon maximal correspond ici au rayon où sera exercé l'action de la charge. \newline
+
+$$Rayon_{max} = Rayon_{tambour} + (Enroulement \cdot \phi_{câble}) - \frac{\phi_{câble}}{2} $$ \newline \newline (toutes les distances en mm) \newline
+
+\iImage{Images/tambour.png}{Point d'application de la charge}{0.5}
+
+$$Rayon_{max} = 52 + (1\cdot 8) - \frac{8}{2} = 56 mm = 0.056m$$
+\n
+
+\textbf{Le rayon maximal sera de 56 mm
+}
+
+\subsection{Calcul du couple de sortie}
+
+Le couple de sortie correspond au produit du poids par la distance orthogonal à l'axe de rotation
+
+$ Couple_{sortie} = R_{max} \cdot m_{charge} \cdot g$ \newline
+(Unités de longueur en m) \newline
+
+$ Couple_{sortie} =  0.056 \cdot 15 \cdot 10  $ \newline
+ 
+D'où \newline
+
+$ Couple_{sortie} =  8.4 Nm $\n
+
+\textbf{Le couple développé sur l'arbre de sortie devra être supérieur à 8.4 N.m.}
+
+
+\chapter{Rapport de réduction}
+
+\section{Référence du moteur}
+On choisira par conséquent de prendre le moteur suivant :
+\n\n
+Moteur \bold{EC050.24E ( S2 30' )} \newline
+Lien d'achat : \href{https://www.technoindus.com/moteur-frein-a-courant-continu/moteur-a-courant-continu-ferrite-frein-350w-3000t-mn-24v-o11-bride-o90-ip40-3665948288223-4641.html}{\bold{ICI}} \newline
+Tension nominale ($U_{nom}$): 24 V CC. - Courant nominal ($I_{nom}$): 29.4 A\newline
+Couple nominal ($C_{nom}$) : 1.57 N.m \newline
+Vitesse nominale ($V_{nom}$): 3000 tr/min ($\Omega_{nom} = 314.15 rad/s$) \newline
+Documentation : \href{https://www.technoindus.com/index.php?controller=attachment&id_attachment=138}{\bold{Page 18, cycle de vie S1}} \n\n
+On se propose de vérifier que le choix de ce moteur est cohérent avec le cahier des charges. 
+
+
+\subsection{Calcul du rapport de réduction}
+
+
+$ r_{réduction} = \frac{Couple_{entrée}}{Couple_{sortie}}$ \newline
+
+D'ou : \newline
+
+$ r_{réduction} = \frac{1.57}{8.4} = 0.186$
+
+Il faudra donc que le rapport de réduction soit inférieur à 0.186
+
+Nous choisirons le jeu suivant 17/114 qui donne un rapport de 0.149
+
+\sskip
+\section{Vérification du choix du jeu}
+\subsection{Vérification du couple de sortie}
+On a un couple en sortie de moteur de 1.57 Nm.
+Or: 1.57*(1/0.149) = 10.53 Nm\n
+Cela se conforme avec notre couple de sortie minimal de 8.4Nm.
+
+$ Vitesse_{charge} = \Omega \cdot R_{max}$
+
+
+%Données Roulement & RDM
+%Diamètres roulement : 26 ou 30 mm
+%Diamètre arbre :  17 mm ou 20 mm
+
+
+\subsection{Calcul du module minimal}
+
+
+
+Nous avons choisi de partir sur des roues dentées de module 1.25 et possédant 17 et 114 dents.
+
+Il nous a fallu vérifier que ce module était suffisant pour que les roues puissent supporter les efforts imposés par la charge. \newline
+Il nous faut pour cela calculer l'effort tangentiel auquel les dents des roues sont soumises : $ F_T = \frac{2C_{moteur}}{m_{choisi}*Z_{min}*10^{-3}} = \frac{2*1.57}{1.25*17*10^{-3}} = 147.76 N$\newline
+Ainsi, nous pouvons vérifier que notre module rempli bien la condition $$ m \geq 2.34*\sqrt{\frac{F_T}{k*R_{pe}}} $$
+Ce qui nous donne : $ 2.34 * \sqrt{\frac{147.76}{8*250}} = 0.636 $ or, $ 1.25 \geq 0.636 $ donc ce choix est valide.
+
+
+Les références des dents avec un module de 1.25 sont disponible à l'adresse \newline
+\url{https://www.michaud-chailly.fr/fr/roue-cylindrique-droite-acier-module-1-25-largeur-denture-10mm-a1-30/}
+
+
+\chapter{Calculs PFS}
+
+
+
+\section{Bilan des actions extérieures}
+
+On isole le tambour. Ce système est appelé \{1\}
+On considère le repère galiléen $R_0=(\v{x}, \v{y}, \v{z})$
+
+\subsection{Action de l'engrenage au point I}
+
+$\{T_{3 \rightarrow 1}\}_I = \{ {\v{R}_{3 \rightarrow 1} \v{M}(3 \rightarrow 1)}_I\}_I =
+\left\{ \begin{array}{ccc}
+0&0\\
+Y_I&0\\
+Z_I&0\\
+\end{array}
+\right\}_{I,R_0=(\v{x}, \v{y}, \v{z})}$
+
+
+\subsection{Action du roulement au point A}
+$\{T_{2 \rightarrow 1}\}_A = \{ {\v{R}_{2 \rightarrow 1} \v{M}(2 \rightarrow 1)}_A\}_A =
+\left\{ \begin{array}{ccc}
+0&0\\
+Y_A&0\\
+Z_A&0\\
+\end{array}
+\right\}_{A,R_0=(\v{x}, \v{y}, \v{z})}
+$
+
+\subsection{Action du roulement au point B}
+$\{T_{2 \rightarrow 1}\}_B = \{ {\v{R}_{2 \rightarrow 1} \v{M}(2 \rightarrow 1)}_B\}_B =
+\left\{ \begin{array}{ccc}
+X_B&0\\
+Y_B&0\\
+Z_B&0\\
+\end{array}
+\right\}_{B,R_0(\v{x}, \v{y}, \v{z})}
+$
+
+\subsection{Action la charge au point P}
+$\{T_{4 \rightarrow 1}\}_P = \{ {\v{R}_{4 \rightarrow 1} \v{M}(4 \rightarrow 1)}_P\}_P =
+\left\{ \begin{array}{ccc}
+0&0\\
+-m\cdot g&M\\
+0&0\\
+\end{array}
+\right\}_{P,R_0=(\v{x}, \v{y}, \v{z})}
+$
+
+\section{Principe Fondamental de la Statique}
+
+Le système est à l'équilibre, on peut donc appliquer le PFS. \newline
+Les moments seront calculés par rapport au point B car son torseur associé possède 3 inconnues.
+\subsection{Énoncé du PFS}
+$$\sum(\v{F}_{\bar 1 \rightarrow 1}) = 0$$
+$$\sum\v{M}_B(\v{F}_{\bar 1 \rightarrow 1}) = 0$$
+\textit{Nous obtenons donc les équations suivantes} \newline
+$$ \left\{
+\begin{array}{ccc}
+\sum \v{F}_{\bar 1 \rightarrow 1}\cdot \v{x} & = 0 \\
+\sum \v{F}_{\bar 1 \rightarrow 1}\cdot \v{y} & = 0 \\
+\sum \v{F}_{\bar 1 \rightarrow 1}\cdot \v{z} & = 0
+\end{array}
+\right.
+$$
+
+
+$$ \left\{
+\begin{array}{ccc}
+\sum \v{M}_B(\v{F}_{\bar 1 \rightarrow 1})\cdot \v{x} & = 0 \\
+\sum \v{M}_B(\v{F}_{\bar 1 \rightarrow 1})\cdot \v{y} & = 0 \\
+\sum \v{M}_B(\v{F}_{\bar 1 \rightarrow 1})\cdot \v{z} & = 0 
+\end{array}
+\right.
+$$
+
+
+
+\subsection{Calculs des moments}
+
+
+\subsection{Calcul au point I}
+$$ 
+\begin{array}{cc}
+\v{M}_B(\v{T}_{3 \rightarrow 1}) = &  \v{M}_I + \v{BI} \wedge \v{R}_{3 \rightarrow 1} \\
+
+\v{M}_B(\v{T}_{3 \rightarrow 1}) = &  \v{0} + 
+                                \bigg(  
+                               \begin{array}{ccc}
+                                -L_B+L_I\\
+                                -R_I\\
+                                0
+                                \end{array}
+                                \bigg)  
+                                \wedge 
+                                 \bigg(  
+                               \begin{array}{ccc}
+                                0\\
+                                Y_I\\
+                                Z_I
+                                \end{array}
+                                \bigg)  \\
+
+
+\v{M}_B(\v{T}_{3 \rightarrow 1}) = &  
+                                \bigg(  
+                               \begin{array}{ccc}
+                                -R_I\cdot Z_I\\
+                                (L_B-L_I)\cdot Z_I\\
+                                -(L_B-L_I)\cdot Y_I
+                                \end{array}
+                                \bigg)  
+                                
+\end{array}
+$$
+
+
+
+\subsection{Calcul au point A}
+$$ 
+\begin{array}{cc}
+\v{M}_B(\v{T}_{(2 \rightarrow 1)_A}) = &  \v{M}_A + \v{BA} \wedge \v{R}_{(2 \rightarrow 1)}_A \\
+
+\v{M}_B(\v{T}_{(2 \rightarrow 1)_A}) = &  \v{0} + 
+                                \bigg(  
+                               \begin{array}{ccc}
+                                -(L_B-L_A)\\
+                                0\\
+                                0
+                                \end{array}
+                                \bigg)  
+                                \wedge 
+                                 \bigg(  
+                               \begin{array}{ccc}
+                                0\\
+                                Y_A\\
+                                Z_A
+                                \end{array}
+                                \bigg)  \\
+
+
+\v{M}_B(\v{T}_{(2 \rightarrow 1)_A}) = &  
+                                \bigg(  
+                               \begin{array}{ccc}
+                               0\\
+                               (L_B-L_A) \cdot Z_A\\
+                                -(L_B-L_A) \cdot Y_A
+                                \end{array}
+                                \bigg)  
+                                
+\end{array}
+$$
+
+
+\subsection{Calcul au point B}
+$$ 
+\begin{array}{cc}
+\v{M}_B(\v{T}_{(2 \rightarrow 1)_B}) = &  \v{M}_B + \v{BB} \wedge \v{R}_{(2 \rightarrow 1)}_B = \v{0}
+\end{array}
+
+$$
+
+
+
+\subsection{Calcul au point P}
+$$ 
+\begin{array}{cc}
+\v{M}_B(\v{T}_{(4 \rightarrow 1)}) = &  \v{M}_P + \v{BP} \wedge \v{R}_{(4 \rightarrow 1)} \\
+
+\v{M}_B(\v{T}_{(4 \rightarrow 1)}) = &  \v{0} + 
+                                \bigg(  
+                               \begin{array}{ccc}
+                                -(L_B-L_A)\\
+                                0\\
+                                R_d
+                                \end{array}
+                                \bigg)  
+                                \wedge 
+                                 \bigg(  
+                               \begin{array}{ccc}
+                                0\\
+                                -m\cdot g\\
+                                0
+                                \end{array}
+                                \bigg)  \\
+
+
+\v{M}_B(\v{T}_{(4 \rightarrow 1)}) = &  
+                                \bigg(  
+                               \begin{array}{ccc}
+                               R_d \cdot m \cdot g\\
+                               0\\
+                                (L_B-L_A)\cdot m \cdot g
+                                \end{array}
+                                \bigg)  
+                                
+\end{array}
+$$
+
+\newpage
+\subsection{Calculs des Résultantes}
+
+\textit{Avec les résultantes, nous avons les 3 équations suivantes } 
+
+$$ \left\{
+\begin{array}{ccc}
+     0 + X_B + 0 & = 0\\
+     Y_A + Y_B + Y_I -m\cdot g & = 0 \\
+     Z_A + Z_B + Z_I  & = 0
+\end{array}
+\right.
+$$
+
+\textit{Avec les calculs des moments, nous en déduisons les 3 équations suivantes }
+
+$$ \left\{
+\begin{array}{ccc}
+0 - R_I\cdot Z_I + R_d\cdot m\cdot g & = 0 \\
+(L_B-L_A)\cdot Z_A + (L_B-L_I)\dcot Z_I & = 0 \\
+-(L_B-L_A)\cdot Y_A -(L_B-L_I)\cdot Y_I +(L_B-L_A)\cdot m \cdot g & = 0 
+\end{array}
+\right.
+$$
+
+Donc 
+
+$$ \left\{
+\begin{array}{ccc}
+Z_I = &  \frac{R_d\cdot m \cdot g}{R_I} \\
+Z_A =  & \frac{-(L_B-L_I)\cdot Z_I}{(L_B-L_A)} \\
+Z_B =  & \frac{-R_d\cdot m \cdot g}{R_I} + \frac{(L_B-L_I)\cdot Z_I}{(L_B-L_A)} \\
+Y_A =  & (m\cdot g) - \frac{(L_B-L_I)\cdot Y_I}{(L_B-L_A)}  \\
+Y_B =  & \frac{(L_B-L_I)\cdot Y_I}{(L_B-L_A)} - Y_I \\
+\end{array}
+\right.
+$$
+
+\iImage{img/pfs_excel.png}{Tableau de calculs}{0.6}
+
+\chapter{Dimensionnement des roulements}
+
+Dans un premier temps on regarde le rapport   $\frac{F_{axiale}}{F_{radiale}}$ \n
+
+Or ce rapport est égal a 0 pour tous les roulements car la force axiale est nul dans chacun des cas. \node
+
+Or comme ce rapport est inférieur à $e_{min} = 0.19 $\n
+On obtient : \n 
+
+$C = P \cdot (\frac{L_h \cdot 60 \cdot n}{10^6})^{\frac{1}{k}}$ \n
+
+avec $ P = F_R $ la charge dynamique équivalente [N] \n
+
+On calcul ensuite avec \n 
+ n : la vitesse de rotation en tr/min du tambour \n
+ $n = N_{mot} \cdot r = 3000 \cdot 0.185 = 558 tr/min $ \node
+ 
+$k = 3$ car il s’agit d’un roulement avec des billes \n
+
+
+$F_{R_A} = \sqrt{ {Y_A}^2 + {Z_A}^2 } = \sqrt{ {51}^2 + {22.8}^2 } = 55.9 N $ \n
+
+$F_{R_B} = \sqrt{ {Y_B}^2 + {Z_B}^2 } = \sqrt{ {-147.2}^2 + {0}^2 } = 147.2 N $ \n
+
+D'ou \n
+(Les roulements possèdent la même vitesse de rotation) \n 
+
+$Lh_A = 10000000  $: la durée de vie de la liaison en heures au roulement A \n\n
+
+$C_{roulement\ A} = P_A \cdot (\frac{L_h \cdot 60 \cdot n}{10^6})^{\frac{1}{k}} = 55.9 \cdot (\frac{10000000 \cdot 60 \cdot 558}{10^6})^{\frac{1}{3}} = 3881 N \n
+
+$Lh_B = 1000000  $: la durée de vie de la liaison en heures au roulement B \n\n 
+
+$C_{roulement\ A} = P_A \cdot (\frac{L_h \cdot 60 \cdot n}{10^6})^{\frac{1}{k}} = 147.2 \cdot (\frac{1000000 \cdot 60 \cdot 558}{10^6})^{\frac{1}{3}} = 4744 N \n
+
+On obtient donc : \n
+
+Pour le roulement en A, C = 3881 N \n
+Pour le roulement en B, C = 4744 N \n
+
+Nous allons prendre des roulements identiques avec une charge dynamique supérieure à 4744 N. \n
+
+Le roulement choisi sera un roulement avec un $C_{dynamique}$ de 4750N. \n 
+La référence est la suivante : 6000-2-RSL - Diamètre intérieur :26 mm \n 
+Fournisseur : SKF\n (\url{https://www.skf.com/binary/57-121486/0901d196803382dc-Roulements---10000_2.pdf}) \n
+
+Achat :\n \url{https://www.123roulement.com/roulement-6000-2RS-SKF.php?gclid=CjwKCAjw8J32BRBCEiwApQEKgd79bcpisw-5aedWfZZesB3fOOI8trrD2N1c2Y_O8lwlZChrIWU0ARoCaKYQAvD_BwE&gclsrc=aw.ds}
+
+
+
+\chapter{Dimensionnement de l'arbre}
+
+Nous isolons la partie de droite de l'arbre pour effectuer les calculs de résistance des matériaux sur l'arbre.
+
+\iImage{\imRoot Arbre_EDM}{Schéma de l'arbre utilisé pour les calculs}{0.4}
+\newpage
+\section{Bilan des actions mécaniques}
+
+\begin{enumerate}
+    \item Action de la partie gauche sur la partie de droite : 
+    $\{\Gamma_{Coh_P}\} =
+    \left\{ \begin{array}{ccc}
+    N  &  M_t \\
+    T_y & M_{fy}\\
+    T_Z & M_{fz} \\
+    \end{array} \right\}_{\v{x},\v{y},\v{z}}
+    $
+
+    \item Action du roulement en A : 
+    $\{\Gamma_{A}\} =
+    \left\{ \begin{array}{ccc}
+    0  &  0 \\
+    Y_A & 0 \\
+    Z_A & 0 \\
+    \end{array} \right\}_{\v{x},\v{y},\v{z}}
+    $
+    
+    \item Action du roulement en B : 
+    $\{\Gamma_{B}\} =
+    \left\{ \begin{array}{ccc}
+    X_B  &  0 \\
+    Y_B & 0 \\
+    Z_B & 0 \\
+    \end{array} \right\}_{\v{x},\v{y},\v{z}}
+    $
+\end{enumerate}
+
+\n 
+La partie de droite est en équilibre par rapport au repère galiléen $R_0$, on peut donc appliquer le PFS :\n
+$\Gamma_{5/D} = \Gamma_{coh} + \Gamma_A + \Gamma_B$
+
+\subsection{Transposition des torseurs au point \bold{P}}
+
+\subsubsection{Transposition du torseur $\Gamma_A$}
+
+$
+\v{M}(P,\Gamma_A) = \v{M}(A,\Gamma_A)+\v{PA}\wedge \evec{0}{Y_A}{Z_A} = \evec{-x + \frac{Leng}{2}}{0}{0} \wedge \evec{0}{Y_A}{Z_A} \newline \v{M}(P,\Gamma_A) = \evec{0}{-(-x+\frac{Leng}{2})Z_A}{(-x+\frac{Leng}{2})Y_A} $
+
+\subsubsection{Transposition du torseur $\Gamma_B$}
+
+$
+\v{M}(P,\Gamma_B) = \v{M}(B,\Gamma_B) + \v{PB} \wedge \evec{X_B}{Y_B}{Z_B} = \evec{Leng + 64 - x}{0}{0} \wedge \evec{X_B}{Y_B}{Z_B} \n
+\v{M}(P,\Gamma_B) = \evec{0}{(Leng + 64 - x)(-Z_B)}{(Leng + 64 - x)Y_B}
+$\n\n 
+
+
+Le morceau de droite est en équiliber par rapport au repere galiléen $R_0$, on peut donc appliquer le PFS
+
+
+
+
+$\Gamma_{\overline{D}/D} = \Gamma_{coh} + \Gamma_A +\Gamma_B $
+\section{Calcul du Torseur de cohésion}
+
+$$ \v{R}_{(\overline{D}/D)} \left\{
+\begin{array}{ccc}
+\v{R}_{(\overline{D}/D)} . \v{x} =  & N + X_B &=  0 \\
+\v{R}_{(\overline{D}/D)} . \v{y} =  & T_y + Y_A + Y_B & = 0 \\
+\v{R}_{(\overline{D}/D)} . \v{z} =  & T_z + Z_A + Z_B & = 0\\
+\end{array}
+\right.
+$$
+\newline
+$$ \v{M}_{(S,\overline{D}/D)}  \left\{
+\begin{array}{ccc}
+\v{M}_{(S,\overline{D}/D)} . \v{x} =  & M_T &=  0 \\
+\v{M}_{(S,\overline{D}/D)} . \v{y} =  & M_{fy} - (-x+\frac{Leng}{2})  Z_A -(Leng + 64 - x) Z_B & = 0 \\
+\v{M}_{(S,\overline{D}/D)} . \v{z} =  & M_{fz} + (-x+\frac{Leng}{2}) Y_A +(Leng + 64 - x)Y_B  &= 0\\
+\end{array}
+\right.
+$$
+\newline
+$$  \left\{
+\begin{array}{ccc}
+ N   = - X_B \\
+ T_y = - Y_A - Y_B  \\
+ T_z = - Z_A - Z_B \\
+\end{array}
+\right.
+$$
+
+
+$$ \left\{
+\begin{array}{ccc}
+ M_T =& 0 \\
+ M_{fy} =& (-Z_A-Z_B)x -\frac{Leng}{2}Z_A + (Leng +64) Z_B  \\
+ M_{fz} =& (Y_B+Y_A)x  -\frac{Leng}{2}Y_A - (Leng + 64)Y_B \\
+\end{array}
+\right.
+$$
+
+
+\n
+Vérification :\n
+
+$$\frac{dM_{fy}}{dx} = -Z_A - Z_B = T_Z $$
+$$ \frac{dM_{fz}}{dx} = Y_B+ Y_A = -T_Y$$
+
+\iImage{img/torseur_cohesion.png}{Point d'application de la charge}{0.7}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Matrice de contrainte}
+
+\subsection{Traction}
+
+\begin{bmatrix}
+\sigma_t(M)
+\end{bmatrix}
+=\emat{\sigma_t & 0 & 0}{0 & 0 & 0}{0 & 0 & 0}
+\n
+
+$$\sigma_t= \frac{N}{S}=\frac{4 N }{\pi D^2}$$
+
+\subsection{Flexion}
+
+Avec $M_f=M_{fz}$ \n
+
+\begin{bmatrix}
+\sigma_{f}(M)
+\end{bmatrix}
+=\emat{\sigma_{M_f} & 0 & 0}{0 & 0 & 0}{0 & 0 & 0}
+
+\n
+
+$$\sigma_{Mf}= -\frac{M_f}{\frac{\pi D^4}{64}}\cdot \frac{D}{2}$$
+$$\sigma_{Mf}= -\frac{32M_{f}}{\pi D^3}$$
+
+On est au niveau d'un épaulement donc : \sskip
+$ \frac{D}{d} = \frac{20}{17} = 1.18 $ \sskip
+$\frac{r}{d} = \frac{2}{17} = 0.12$ \n
+
+$\Rightarrow Ktf=1.5$
+\subsection{Cisaillement}
+
+Avec $M_f=M_{fz}$ \n
+
+\begin{bmatrix}
+\sigma_{ci}(M)
+\end{bmatrix}
+=\emat{0 & r_{ci} & 0}{r_{ci} & 0 & 0}{0 & 0 & 0}
+
+$ r_{ci} = - \frac{F}{S} = -\frac{4N}{\pi D^2}$ \n
+
+Torsion : $Mt=0$
+\subsection {Principe de superposition}
+
+\begin{bmatrix}
+\sigma_{(M)}
+\end{bmatrix}
+=\emat{\sigma_t+\sigma_{Mf} & r_{ci} & 0}{r_{ci} & 0 & 0}{0 & 0 & 0}
+\n
+
+\subsection{Condition de résistance}
+
+$r_{torsion\ idéale} \leq R_{pg }= \frac{R_{eg}}{K_s}$ \n
+
+avec $R_{eg}=\frac{R_e}{2}$ 
+
+$$r_{ti}=  \frac{16 \cdot \sqrt{{M_f}^2 + {M_t}^2}}{\pi D^3} \leq R_{pg} = \frac{R_e}{2K_s} $$
+
+
+ $$\Rightarrow \frac{32 K_s M_{fz} K_{tf}}{\pi R_e} \leq D^3$$
+
+\n 
+$K_{tf} $ lié à l'épaulement 
+
+$ D_{min} = (\frac{32\cdot K_s \cdot K_{tf} \cdot M_{fz}}{\pi R_e})^{\frac{1}{3}} = {(\frac{96 \cdot M_{fz}}{\pi \cdot 300\cdot 10^{6}})}^{\frac{1}{3}} $\n
+
+Résultat obtenu avec EXCEL :  
+\iImage{img/RDM.png}{Point d'application de la charge}{0.7}
+
+\chapter{Conclusion}
+A travers ce projet nous avons pu réinvestir les connaissances acquises au cours des précédents
+semestres, notamment le Principe Fondamentale de la Statique mais également revoir la démarche de dimensionnement d'une pièce avec la détermination des efforts et l'application des contraintes avec les critères de Tresca.\n
+    Nous avons également utilisé des   
+connaissances générale sur les principe électrique 
+et mécanique que sont les rapports entre 
+puissance,énergie et force, ceci afin de choisir le 
+matériel adéquat aux contraintes imposées.
+    Nous avons également eu une réflexion sur les 
+choix
+technologiques (arbre double, système roue vis sans, 
+frein à manque de courant, etc...)  ceci dans une 
+démarche de réduction des coûts et de l'utilisation des matières 
+premières. \n
+
+Nous avons aussi abordé la mise en plan, à travers plusieurs schémas de principe que ce soit pour la modélisation des liaisons mais aussi, la répartition des efforts, ou encore une ébauche de système technologique. \n
+
+Ceci permettant de nous questionner sur les choix pratique de montage et d'assemblage du réducteur.\n
+
+
+
+\chapter{Annexes}
+
+\subsubsection{Croquis pour PFS}
+\iImage{\imRoot schema_treuil.png}{Croquis}{0.15}
+
+\subsubsection{Image de principe}
+\iImage{\imRoot shema_principe.jpg}{Schéma de principe}{0.55}
+% arg 1 : chemin image
+% arg 2 : description
+% arg 3 : taille
+
+
+
+\end{document}

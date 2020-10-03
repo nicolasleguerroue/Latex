@@ -1,0 +1,72 @@
+\documentclass[12pt]{report}    %Type de document
+\input{header.tex}  %le fichier header fonctionne pour les sous-fichiers
+
+\newcommand{\eSumBigBrother}[1]{\textcolor{bigBrother}{#1}}
+
+
+%Page de garde
+%\title{Automatisme S4P ENIB}
+%\author{CHARLES Mathieu \and GAUTIER Nicolas \and LE GUERROUÉ Nicolas}  
+%Génère la table des matières des sous-fichiers
+%\maketitle 
+
+\title{Projet Supervision S4P }
+\author{Mathieu CHARLES - Nicolas GAUTIER - Nicolas LE GUERROUÉ}
+\date{juin 2020}
+\usepackage{titlesec}
+\titlespacing*{\section}
+{0}{0}{0}
+\begin{document}
+
+
+\makeatletter
+\begin{titlepage}
+\begin{tikzpicture}[overlay,remember picture]
+    \coordinate (SW) at (current page.south west);
+    \coordinate (SE) at (current page.south east);
+    \coordinate (NW) at (current page.north west);
+    \coordinate (NE) at (current page.north east);
+    \node at ($(NW)!0.5!(SE)$)[anchor=north,yshift=6cm,align=center]
+        {\huge \@title};
+    \node at ($(NW)!0.5!(SE)$)[anchor=north,yshift=4cm,align=center]
+        {\Large \@date};
+    \node at ($(NW)!0.5!(SE)$) [anchor=north,yshift=0cm,align=center]
+        {\large {\@author}};
+    \node at ($(NE)!0.92!(SW)$)[anchor=south,xshift=14cm,align=right]{\includegraphics[width=0.3\linewidth]{img/ENIB.png}};
+    \node at ($(NW)$)[align=left,xshift=10.77cm,yshift=-0.3cm,]{\includegraphics[width=1.35\linewidth]{img/cover.png}};
+\end{tikzpicture}
+\end{titlepage}
+
+
+
+
+\tableofcontents
+
+\addtocontents{toc}{\eSumBigBrother{\LARGE Présentation du projet}}
+\BIGBROTHER{Présentation du projet}
+\input{Compilation/tmp_Presentation.tex}
+
+\BIGBROTHER{Tutoriel PyQt5 et ses outils}
+\addtocontents{toc}{\eSumBigBrother{ \protect \newpage \LARGE Tutoriel PyQt5 et ses outils} }
+
+\input{Compilation/tmp_PyQt5.tex}
+
+
+\addtocontents{toc}{\eSumBigBrother{ \protect \vskip 2.5cm \LARGE Module ENIBSupervision} }
+\BIGBROTHER{Module ENIBSupervision}
+\input{Compilation/tmp_ENIBSupervision.tex}
+
+
+\addtocontents{toc}{\eSumBigBrother{ \vskip 2.5cm \LARGE Objets dynamiques} }
+\BIGBROTHER{Objets dynamiques}
+\input{Compilation/tmp_DynamicObject.tex}
+
+\addtocontents{toc}{\vskip 2.5cm \eSumBigBrother{\LARGE Conclusions} }
+\BIGBROTHER{Conclusions}
+\input{Compilation/tmp_Conclusion.tex}
+
+\addtocontents{toc}{\eSumBigBrother{\protect \vskip \LARGE Bibliographie et ressources} }
+\input{Compilation/Bibliographie.tex}
+
+
+\end{document}

@@ -1,0 +1,38 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{ENIB} [2018/07/13 v0.01 LaTeX package for my own purpose]
+
+\RequirePackage{tikz,pgfplots,amsmath,amssymb,amsthm}
+
+\frenchbsetup{StandardLayout}
+
+\definecolor{ENIBblack}{RGB}{62,62,64}
+\definecolor{ENIB1}{RGB}{199,188,172}
+\definecolor{ENIB2}{RGB}{232,137,34}
+\definecolor{ENIB3}{RGB}{237,137,34}
+\definecolor{ENIB4}{RGB}{237,137,158}
+\definecolor{ENIB5}{RGB}{174,221,230}
+\definecolor{ENIB6}{RGB}{183,184,214}
+\definecolor{ENIB7}{RGB}{185,190,115}
+\definecolor{ENIB8}{RGB}{209,200,186}
+
+\newtheorem{propriete}{Propriété}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remarque}{Remarque}
+\newtheorem*{exemple}{Exemple}
+\newtheorem{definition}{Definition}
+
+
+
+\pgfplotsset{compat=1.15}
+
+
+
+%TIKZ STYLE
+\tikzstyle{start} = [minimum height=1cm]
+\tikzstyle{box} = [rectangle, minimum width=1.25cm ,text width=1.9cm,minimum height=1.7cm,text centered, draw=black]
+\tikzstyle{fgain} = [isosceles triangle,isosceles triangle apex angle=60,draw=black]
+\tikzstyle{fbox} = [rectangle, minimum width=0.75cm,minimum height=0.75cm,text centered, draw=black]
+\tikzstyle{foperation} = [circle, radius=0.2, minimum size=0.75cm,inner sep=0pt, draw=black]
+\tikzstyle{stop} = [minimum height=1cm]
+
+\endinput

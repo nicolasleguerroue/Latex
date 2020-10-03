@@ -1,0 +1,15 @@
+
+\chapter{Générer un index}
+\begin{Bash}{Génération de l'index}
+makeindex filename.idx
+\end{Bash}
+
+\chapter{Générer une nomenclatures}
+\begin{Bash}{Génération de la nomenclature}
+makeindex filename.nlo -s nomencl.ist -o filename.nls
+#filename est le nom du fichier .tex
+\end{Bash}
+
+\begin{Bash}{Installation glossaire \LaTeX}
+sudo apt install xindy #pour glossaire bfrench paquage
+\end{Bash}

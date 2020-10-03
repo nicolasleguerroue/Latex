@@ -1,0 +1,329 @@
+
+\chapter{Introduction}
+
+Cet article a pour but de détailler la génération d'une documentation sur le site \url{http://electron-56.ddns.net}
+
+\section{Principe}
+
+La documentation repose sur des mot-clés précis qui permettent de définir les propriétés de la documentation. Ces mot-clés seront appelés \textbf{balises}. \newline
+Certaines balises permettront de délimiter du contenu de code tandis que d'autres permettrons de stocker des informations de type, de description, etc... \newline
+
+\bold{Chaque balise commence obligatoirement avec le caractère @ (arobase)} et doit être considérée comme un commentaire dans le langage à documenter. \newline
+
+
+Voici un exemple de syntaxe : 
+
+
+\begin{Bash}
+@project Nom du projet
+@author Auteur
+@language Langage
+@lv version_du_langage
+@version version_du_projet
+@date date_du_projet
+\end{Bash}
+
+
+
+\section{Remarques importantes}
+
+Ce modèle de documentation présenté est valable uniquement pour les langages proposant des fonctions et procédures ayant un nom, le tout encapsulé dans une classe. \newline
+Les balises de classes et de méthode ne seront pas valide pour documenter un fichier CSS. \footnote{Pour une documentation CSS, se reporter ici}
+Il est obligatoire de limiter à une classe chaque fichier analysé.
+Un fichier qui contiendrait deux classes soulèverait une erreur de la part du site.
+
+\chapter{Les types de balise}
+
+Il existe deux types de balises : 
+
+
+\begin{enumerate}
+    \item les balises \bold{uniques}
+    \item les balises \bold{de classe et méthode (ou fonctions)}
+\end{enumerate}
+
+
+\chapter{Les balises uniques}
+
+Dans le cas des balises uniques, ces balises peuvent être situées \bold{n'importe où dans le fichier source}, à condition que les balises ne soit pas exécutées (ou interprétées) comme du code.
+
+\section{Présentation des balises}
+
+\begin{enumerate}
+    \item 
+    \begin{Bash}{Le nom du projet }
+    @project Nom du projet
+    \end{Bash}
+    
+    \item 
+    \begin{Bash}{Le ou les auteurs}
+    @author Auteur
+    \end{Bash}
+
+    \item 
+    \begin{Bash}{Le langage}
+    @language Langage
+    \end{Bash}
+    
+    \item 
+    \begin{Bash}{La version du langage}
+    @lv Version du langage
+    \end{Bash}
+    
+    \item 
+    \begin{Bash}{La date du projet}
+    @date XX/XX/XXXX
+    \end{Bash}
+    
+    \item 
+    \begin{Bash}{Le nom de la classe}
+    @class Nom de la classe
+    \end{Bash}
+    
+    \item La description du projet \newline
+    
+    Il est possible de faire une description sur plusieurs ligne en ajoutant une balise @presentation à chaque nouvelle ligne.
+    \begin{Bash}
+    @presentation Description du projet
+    @presentation Suite de la description du projet
+    @presentation Suite de la description du projet
+    \end{Bash}
+  
+\end{enumerate}
+
+
+\section{Gestion de l'héritage}
+
+Il est possible d'afficher les méthodes de la classe parent dans la documentation. Pour cela, dans la classe Fille, il faut rajouter la balise \bold{@parent} avec comme argument le nom du fichier comportant la classe Mère.
+\begin{Python}
+@parent File.py 
+\end{Python}
+Cette déclaration se fait n'importe où dans le fichier.
+
+\section{Exemple}
+
+
+Voici un exemple complet de l'utilisation des balises uniques (Exemple avec le langage Python)
+
+\begin{Python}
+"""
+@project générateur de fichier LTSpice
+@author Nicolas LE GUERROUE
+@language PYTHON
+@lv 3.7
+@version 1.0
+@date 05 juin 2020
+@presentation La bibliothèque LTSpice permet de générer des fichiers LTSpice en commandes Python.
+@presentation L'unité de placement des composants est une valeur entière qui, unitairement, représente le coefficient commun de taille des composants LTSpice
+@presentation Le curseur se déplacant de 16 en 16, cette unité de mesure introduite par la bibliothèque permet de toujours bien placer les composants pour qu'ils soient
+@presentation accessibles par le curseur
+@class LTSpice
+"""
+\end{Python}
+
+
+\section{Levée d'avertissement}
+
+Une absence constatée d'une des balises soulèvera un avertissement de la part du site. La documentation va néanmoins s'afficher sur le site, sans les informations absentes.
+
+\img{Images/error.png}{Levée d'erreur avec une balise @date absente}{0.8}
+
+\newpage
+
+\chapter{Les balises de classe et \\de méthode}
+
+Pour les balises de classe et de méthode, ces balises doivent être situées \bold{entre une balise @begin et une balise @end.}
+
+\section{Présentation des balises}
+
+\begin{enumerate}
+    \item Le \bold{nom de la méthode ou de la fonction}
+\begin{Bash}{nom de la méthode ou de la fonction}
+@method Nom_de_la_methode
+\end{Bash}
+    
+   Pour documenter un constructeur, il faut remplacer \bold{@method} par \bold{@constructor}
+    
+    \item La \bold{portée de la méthode ou fonction}
+        
+        A ce propos, 3 portées sont disponibles :
+        
+        \begin{enumerate}
+            \item portée \bold{publique} \newline
+            La méthode est accessible dès lors de l'instanciation de la classe.
+\begin{Bash}{Portée publique}
+@range public
+#ou bien
+@range publique
+\end{Bash}
+Il est possible de mettre d'autres variantes du moment que le contenu de la balise contienne au moins le mot 'publi'
+
+            \item portée \bold{protégée} \newline
+            La méthode est accessible en interne de la classe et par héritage.
+            
+\begin{Bash}{Portée protégée}
+@range protected
+#ou bien
+@range protégé(e)
+\end{Bash}
+Il est possible de mettre d'autre variante du moment que le contenu de la balise contienne au moins le mot 'prote'
+
+            \item portée \bold{privée} \newline
+            La méthode est accessible uniquement au sein de la classe.
+\begin{Bash}{Portée privée}
+@range private
+#ou bien
+@range privé(e)
+\end{Bash}
+Il est possible de mettre d'autre variante du moment que le contenu de la balise contienne au moins le mot 'priv'
+
+        \end{enumerate}
+
+    \item La \bold{description de la méthode} \newline
+    Le contenu de la description de la méthode doit être contenu entre les balises @des et @sed
+    \begin{Bash}{Description}
+    @des
+    Description de la méthode
+    Suite de la description de la méthode
+    Suite de la description de la méthode
+    @sed
+    \end{Bash}
+
+    \item Les \bold{arguments de la méthode}
+    Pour déclarer un paramètre attendu, il convient de mettre une balise @input pour chaque argument.
+    La ligne de balise @input doit contenir une balise de type. \newline
+    Quelques types d'arguments\footnote{Tous les types pris en charge sont situés en annexes (Types supportés)} :
+    
+    \begin{enumerate}
+    \item \bold{@integer} - Entier 
+    \item \bold{@string} - Chaine de caractère 
+    \item \bold{@float} - Nombre décimal (ou @double) 
+    \item \bold{@list} - Liste 
+    \end{enumerate}
+    Enfin, on ajoute la description de l'argument
+    
+    \begin{Bash}{Arguments}
+    @input @integer Nombre pris en argument
+    @input @string Chaine de caractère prise en argument
+    \end{Bash}
+    L'ordre des balises est sans importance, cependant, dans un souci de lecture, il convient de mettre la balise @input en première.\newline
+    \img{Images/werror.png}{Un type @string faisant parti des types autorisés}{0.7}
+    
+    Lorsque une balise de type n'est pas reconnu, le nom de la balise va s'afficher dans la documentation afin de mettre en valeur le type choisi (type erroné par exemple)
+    \newpage
+    En cas d'erreur, la documentation va afficher ceci : \newline \newline
+    \img{Images/error2.png}{Un type @str ne faisant parti des types autorisés}{0.7}
+    
+    Lorsque il n'y a aucun argument, ne mettez pas de balise @input.
+   
+    \item Les \bold{types de retour} \newline
+    Pour déclarer un type de retour attendu, il convient de mettre une balise \bold{@type\_return} puis de mettre une balise de type. \newline
+    Lorsqu'il n'y a pas de type de retour, précisez le type comme \bold{@none}
+\begin{Bash}{Retour}
+@type_return @integer
+\end{Bash}
+    
+    \item Les \bold{descriptions de retour} \newline
+    Pour expliquer un retourde méthode, il convient de mettre une balise \bold{@return} puis de mettre l'explication. \newline
+    Lorsqu'il n'y a pas de type de retour, précisez que la fonction ne retourne rien \bold{@none}
+\begin{Bash}{Valeur de retour}
+@return False en cas de succès, True en cas d'erreur
+\end{Bash}
+
+
+    \item Les \bold{exemples de code} \newline
+    Il est possible d'ajouter un éxemple d'utilisation de la méthode. Pour cela, il suffut d'ajouter la balise \bold{@example} puis le code associé (sur la même ligne, pas de retour à la ligne).
+\begin{Bash}{Exemple}
+@example x = ltpice.getX()
+\end{Bash}
+
+    \item Le \bold{code intégral de la méthode} \newline
+    Afin de pouvoir récuperer le code de la méthode, il convient de placer le contenu de la méthode entre les balises \bold{@code} et \bold{@end}
+
+    
+\end{enumerate}
+
+
+\newpage
+\section{Exemple}
+
+
+\begin{Python}
+  #documentation complète d'une méthode
+	"""
+	@begin
+	@method getX
+	@range public
+	@des 
+	Cette méthode permet de retourner la position courante en x du curseur dans le fichier.
+	@sed
+	@type_return @integer
+	@return La position du curseur en unité standard (unité=16)
+	@example position_x = ltspice.x()
+	@code
+	"""
+	def getX(self):
+		return int(self.__x/16)
+	"""
+	@end
+	"""
+\end{Python}
+
+\section{Levée d'avertissement}
+
+Une absence constatée d'une des balises soulèvera un avertissement de la part du site. La documentation va néanmoins s'afficher sur le site, sans les informations absentes. \newline
+\bold{Il faut être conscient qu'une absence de balise va impacter la suite de la documentation, des décalages dans les noms, arguments et autres risquent d'apparaître.}
+
+    \img{Images/error3.png}{Deux balises manquantes}{0.7}
+    
+
+\chapter{Annexe}
+
+\section{Types supportés}
+
+Voici la liste des types pris en charges.
+
+\begin{enumerate}
+    \item caractère - \bold{@char}
+    \item caractère non signé- \bold{@uchar}
+    \item Chaîne de caractère - \bold{@string}
+    \item Entier signé - \bold{@integer}
+    \item Entier non signé - \bold{@uinteger}
+    \item Booléen - \bold{@bool}
+    \item Nombre décimal - \bold{@double} ou \bold{@float}
+    \item Type automatique (C++)- \bold{@auto}
+    \item Entier signé sur 8 bits - \bold{@int8\_t}
+    \item Entier non signé sur 8 bits - \bold{@uint8\_t}
+    \item Entier signé sur 16 bits - \bold{@int16\_t}
+    \item Entier non signé sur 16 bits - \bold{@uint16\_t}    
+    \item Vecteur (C++) - \bold{@vector}    
+    \item Tableau (C++, PHP) - \bold{@array}  
+    \item Iterateur (C++) - \bold{@iterator}  
+    
+    \item Pointeur sur caractère - \bold{@*char}
+    \item Pointeur sur caractère non signé- \bold{@*uchar}
+    \item Pointeur sur chaîne de caractère - \bold{@*string}
+    \item Pointeur sur entier signé - \bold{@*integer}
+    \item Pointeur sur entier non signé - \bold{@*uinteger}
+    \item Pointeur sur booléen - \bold{@*bool}
+    \item Pointeur sur nombre décimal - \bold{@*double} ou \bold{@*float}
+    \item Pointeur sur entier signé sur 8 bits - \bold{@*int8\_t}
+    \item Pointeur sur entier non signé sur 8 bits - \bold{@*uint8\_t}
+    \item pointeur sur entier signé sur 16 bits - \bold{@*int16\_t}
+    \item Pointeur sur entier non signé sur 16 bits - \bold{@*uint16\_t}    
+    \item Pointeur sur Iterateur (C++) - \bold{@*iterator}    
+    
+    \item Référence sur caractère - \bold{@\&char}
+    \item Référence sur caractère non signé- \bold{@\&uchar}
+    \item Référence sur chaîne de caractère - \bold{@\&string}
+    \item Référence sur entier signé - \bold{@\&integer}
+    \item Référence sur entier non signé - \bold{@\&uinteger}
+    \item Référence sur booléen - \bold{@\&bool}
+    \item Référence sur nombre décimal - \bold{@\&double} ou \bold{@\&float}
+    \item Référence sur entier signé sur 8 bits - \bold{@\&int8\_t}
+    \item Référence sur entier non signé sur 8 bits - \bold{@\&uint8\_t}
+    \item Référence sur entier signé sur 16 bits - \bold{@\&int16\_t}
+    \item Référence sur entier non signé sur 16 bits - \bold{@\&uint16\_t}    
+    \item Référence sur Iterateur (C++) - \bold{@\&iterator}  
+    
+\end{enumerate}

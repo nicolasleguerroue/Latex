@@ -1,0 +1,16 @@
+\babel@toc {french}{}
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Principe}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Remarques importantes}{3}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Les types de balise}{5}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Les balises uniques}{6}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Présentation des balises}{6}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Gestion de l'héritage}{7}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Exemple}{7}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Levée d'avertissement}{8}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Les balises de classe et \\de méthode}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Présentation des balises}{9}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Exemple}{13}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Levée d'avertissement}{13}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Annexe}{14}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Types supportés}{14}{section.5.1}%

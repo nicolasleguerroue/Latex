@@ -1,0 +1,205 @@
+\chapter{Introduction}     
+
+\section{Présentation}
+
+Ce document a pour but de fournir un ensemble d'outils pour Linux. \\
+Ces outils concernent notamment : 
+
+\begin{itemize}
+
+    \item L'installation et la configuration d'un serveur Web
+    \item La mise en place d'un serveur SMTP
+    \item L'utilisation de Latex
+
+\end{itemize}
+
+
+\section{Prérequis}
+Avant toute chose, il faut vous assurer que les prérequis soient correctement établis. \\
+
+Il vous faudra être sur une distribution Debian [GNU Linux] ou sur une de ses dérivées.\\
+
+Pour information, le tutoriel a été rédigé et testé sur une distribution UBuntu-20.04
+Voici une liste non exhaustive des ces distributions :
+\begin{itemize}
+    \item Debian
+    \item Ubuntu - Lubuntu - Xubuntu - Kubuntu
+    \item Linux Mint
+\end{itemize}
+
+
+
+\section{Conventions}
+
+L’ordinateur sur lequel vous travaillez (qu’il soit distant ou non) sera appelé le \bold{serveur} ou encore la machine
+
+Les commandes à saisir sont dans des encadrés similaires : \\
+\begin{Bash}{Exemple de commande}
+sudo apt-get update
+\end{Bash}
+
+Parfois, ces encadrés contiendront des instructions qu'il faudra placer dans certains fichiers.
+
+%image commande
+Toutes les commandes peuvent être saisies une fois que le prompt (l’invité de commande) est affiché : 
+Chaque prompt est de la forme suivante : \\
+\begin{Bash}{Invité de commande}
+user@name-pc:~\$ 
+\end{Bash}
+
+
+où 	
+
+\begin{itemize}
+    \item \bold{user} représente l’identifiant de la personne connectée
+    \item \bold{name-pc} représente le nom de la machine lorsqu’elle est visible sur le réseau
+    \item \bold{$\sim$} représente le répertoire de travail de l’utilisateur ($\sim$=espace personnel)
+    \item \bold{\$} veut dire que l'utilisateur est en invité standard. Si ce dernier est en  
+super-utilisateur, le \$ devient un \# (mode administrateur) et il faut, dans ce cas, faire attention aux commandes que l’on tape, sous peine de détruire la machine.
+\end{itemize}
+
+
+\section{Mise à jour du système}
+
+Avant toute chose, il convient de mettre à jour la liste des paquets et de mettre à jour les logiciels déjà présents sur la machine. \\
+Les commandes suivantes sont à saisir dans un terminal.
+
+\subsection{Mise à jour de la liste des paquets}
+
+\begin{Bash}{Mise à jour de la liste des paquets}
+sudo apt-get update
+\end{Bash}
+
+puis
+
+\subsection{Mise à jour des logiciels}
+\begin{Bash}{Mise à jour des logiciels}
+sudo apt-get -y upgrade
+\end{Bash}
+
+\textit{Le -y sert à accepter automatiquement la mise à jour.}
+
+
+
+\chapter{Les serveurs distants}
+
+\section{Utilisation}
+Si vous souhaiter installer un serveur sur une autre machine que celle où vous êtes en train de lire ce document, cette section est faite pour vous. Le cas échéant, vous vous pouvez directement passer à la section \ref{apache}
+
+\section{SSH}
+
+\subsection{Présentation}
+Le logiciel SSH est un logiciel permettant de se connecter à une machine distante à travers le réseau. Sa particularité réside dans le fait que les communications entre les deux machines sont sécurisées par l’intermédiaire de clés publiques et privées.\\
+
+Ainsi, le protocole SSH créé un tunnel sécurisé où les données peuvent transiter de manière sécurisées.  \\
+
+\subsection{Installation}
+Afin de pouvoir travailler sur le serveur à distance et de le configurer à loisir, nous allons donc installer le logiciel SSH. \\
+Sur certaines distributions, SSH est déjà installé. \\
+Le cas échéant : 
+\begin{Bash}{Installation de SSH}
+sudo apt-get install -y ssh
+\end{Bash} 
+
+\subsection{Connexion au serveur} \label{ssh_login}
+
+Dorénavant, vous pourrez vous connecter à votre serveur depuis votre réseau local, à condition que l’ordinateur qui se connecte posséder une connexion internet et ait installé le logiciel ssh (même commande que sur le serveur).
+Pour information, lorsque vous serez connecté, vous ne verrez donc qu’un terminal. \\
+
+Ainsi, il est intéressant de travailler sur le serveur sans utiliser d’écran relié au serveur. On peut configurer le serveur avec un ordinateur portable qui se charge d’envoyer les commandes pour installer le serveur. Pour cela : 
+
+Sur l’ordinateur qui se connecte :
+
+\begin{Bash} {Connexion d'un client SSH}
+sudo ssh -p 22 user@adresse_ip_du_serveur
+\end{Bash}
+
+
+avec 
+\begin{itemize}
+    \item -p 22 précise le numéro du port de connexion : par défaut, le      
+ 					port 22 (Nous serons amenés à le changer)
+ 	\item user nom d’utilisateur sur le serveur (identifiant du compte)
+ 	\item addresse\_ip\_du\_serveur	adresse IP du serveur
+\end{itemize}
+
+La section suivante permet de récupérer l’adresse IP du serveur dans le cas d’un réseau local.
+
+\section{Récuperer l'adresse IP du serveur}
+
+Plusieurs méthodes permettent de récupérer l’adresse IP du serveur qui est de la forme :
+
+\begin{itemize}
+    \item XXX.XXX.XXX.XXX pour une adresse IPV4. \\
+X prend pour valeur numérique un décimal (base 10) et un groupement de X est codé sur un octet. \\
+Exemple : 192.168.1.122
+
+\item XXXX:XXXX:XXXX:XXXX:XXXX:XXXX pour une adresse IPV6 
+X représente un caractère hexadécimal (base 16). \\
+Exemple : 2001:0db8:0000:85a3:0000:0000:ac1f:8001
+\end{itemize}
+
+La notation IPV6 va progressivement remplacer l’IPV4 du fait de l’augmentation du nombre de machine connectée sur le Web. \\
+
+En effet, chaque adresse IP sur un réseau globale est unique. Par exemple, sur le réseau local chez vous, il ne peut pas y avoir deux ordinateurs possédant l’adresse 192.168.1.4. \\
+
+En revanche, votre voisin peut très bien avoir une adresse IP 192.168.1.4 chez lui car vous n'êtes pas sur le même réseau.
+
+Si vous êtes relié à votre serveur en direct via un écran, une souris et un clavier, vous pouvez saisir la commande suivante :   
+\begin{Bash}{Récupération de l'adresse IP}
+hostname -I
+\end{Bash}
+
+Vous pouvez également saisir les commandes suivantes :	
+
+\begin{Bash}{Récupération de l'adresse IP}
+ip a
+#ou
+ifconfig
+\end{Bash}
+
+
+Ensuite deux cas s’offrent à vous : 
+
+\begin{itemize}
+    \item \bold{La machine est reliée à Internet via un câble Ethernet.}
+    Dans ce cas, il faut chercher la ligne correspondant à votre carte réseau ethernet, généralement eth0. \\
+    Une fois la ligne trouvée, l’adresse IP est sous la forme inet XXX.XXX.XXX.XXX
+
+    \item \bold{La machine est reliée en Wifi} : la carte réseau est couramment appelée wlan0, l’adresse IP est sur la ligne inet XXX.XXX.XXX.XXX
+
+\end{itemize}
+
+Dans mon cas, l’adresse IP est 192.168.1.22
+Le 192.168.1.22/24 veut dire que le masque de sous-réseau est codé sur 24 bits, c’est à dire sur 3 octets. \\
+La méthode suivante permet de connaître l’adresse IP du serveur sans être connecté à ce dernier. Il faut simplement connaître le masque de sous réseau. \\
+
+Pour trouver le masque de sous-réseau, c’est sur la même ligne que inet XXX.XXX.XXX.XXX, à la suite de “brd” : 192.168.1.255 \\
+“brd” veut dire \bold{broadcast} et cette adresse est celle utilisée par le routeur pour connaître toutes les adresses IP sur le réseau. \\
+On sait que le masque de sous réseau est codé sur 3 octets. Pour une adresse IPV4, on prendra les trois premiers champs de l’adresse et le dernier champ sera mis à 1. \\
+Ainsi, le masque devient : 192.168.1.1
+
+\subsection{Nmap}
+Nous allons scanner le réseau local afin de trouver l’adresse IP.
+
+
+Dans un premier temps, on installe le logiciel Nmap :
+\begin{Bash}{Installation de Nmap}
+sudo apt-get install -y nmap
+\end{Bash}
+
+
+Enfin, on scanne le réseau en saisissant :
+\begin{Bash}{Scan du réseau}
+sudo nmap -sP 192.168.1.1-255 
+\end{Bash}
+
+\bold{-sP} veut dire “scan Ping” et indique que l’on cherche juste la liste des machines sur le réseau local.
+le \bold{1-255} indique que l’on va scanner sur toute la plage des adresses disponibles. \\
+chaque champ étant codé sur un octet, il y  a théoriquement 256 adresses. \\
+
+
+Une fois l’adresse récupérée, on peut se connecter au serveur via son propre ordinateur :
+\begin{Bash}{Connexion au serveur}
+sudo ssh -p 22 nico@192.168.1.22
+\end{Bash}

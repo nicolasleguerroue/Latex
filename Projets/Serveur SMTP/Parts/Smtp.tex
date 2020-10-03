@@ -1,0 +1,75 @@
+
+\chapter{Introduction}
+
+
+\section{Connexion SFTP}
+
+\begin{Bash}{Connexion SFTP}
+sftp://nico@192.168.1.22
+a2ensite crep.conf 00.tab -> mettre à jour les fichier
+\end{Bash}
+
+\section{Présentation}
+Ce tutoriel vous permettra d'envoyer des mails via un serveur SMTP. \\
+Le serveur SMTP sera un serveur GMail. \\
+
+Il sera possible d'envoyer des mails de manière automatique via un script Bash ou PHP.
+
+La version utilisée de PHP pour ce document est la 7.4
+
+\section{Installation}
+
+Le serveur de mail est Postfix. Il convient donc de mettre les paquets à jour et d'installer le paquet \bold{postfix} 
+
+\begin{Bash}{Mise à jours et installation du paquet}
+sudo apt-get update
+sudo apt-get install -y postfix
+\end{Bash}
+
+Lors de l'installation du paquet \bold{postfix}, on vous demande le type de configuration du serveur. Veuillez choisir le type \bold{Site internet} 
+
+\img{Images/select.png}{Choix du serveur Postfix}{0.6}
+
+
+
+\chapter{Édition du fichier \\de configuration}
+
+
+
+Nous allons définir un ensemble de propriétés dans le fichier de configuration de Postfix. \\
+Ce fichier, appelé \bold{main.cf}, se trouve à l'emplacement \bold{/etc/postfix} \\
+
+Tout d'abord, on commence par modifier le fichier de configuration. \\
+La ligne concernée est celle contenant le mot clé \bold{relayhost}.
+
+
+\begin{Bash}{Fichier de configuration \bold{/etc/postfix/main.cf}}
+relayhost = [smtp.gmail.com]:587
+\end{Bash}
+
+
+Ensuite, on ajoute, à la fin du fichier les directives suivantes : \\
+\begin{Bash}{Edition du fichier main.cf}
+#... code précédent
+
+# Activer l'authentication SASL
+smtp_sasl_auth_enable = yes
+# Disallow methods that allow anonymous authentication
+smtp_sasl_security_options = noanonymous
+# Location of sasl_passwd
+smtp_sasl_password_maps = hash:/etc/postfix/sasl/sasl_passwd
+# Enable STARTTLS encryption
+smtp_tls_security_level = encrypt
+# Location of CA certificates
+smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
+\end{Bash}
+
+\chapter{Beep}
+
+\begin{Bash}{Commandes Beep}
+sudo apt-get install -y beep
+sudo modprobe -a pcspkr
+beep -f 440 -d 1000
+\end{Bash}
+
+
