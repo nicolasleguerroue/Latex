@@ -331,14 +331,14 @@ y) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty))))
 Writing index file main.idx
-)) (./Utils/Labels.sty
+) (./Utils/Labels.sty
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
 Library (tcolorbox): 'tcblistings.code.tex' version '4.22'
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingscore.code.tex
 Library (tcolorbox): 'tcblistingscore.code.tex' version '4.22'
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
 Library (tcolorbox): 'tcbprocessing.code.tex' version '4.22'
-))))
+))))) (./Utils/Fonts.sty)
 
 Package hyperref Warning: Option `bookmarks' has already been used,
 (hyperref)                setting the option has no effect on input line 52.
@@ -378,8 +378,9 @@ been already used, duplicate ignored
                    \relax 
 l.12 \chapter
              *{Introduction} [1]
+(/usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesomeone.fd)
 
-LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 17.
+LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 19.
 
 [2]
 Section 1.
@@ -390,29 +391,29 @@ Section 1.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
 
-LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 54.
+LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 56.
 
 [3]
 
-LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 94.
+LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 96.
 
 [4]
 
-LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 130.
+LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 132.
 
 [5]
 
-LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 177.
+LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 179.
 
 [6]
 Section 2.
 
-LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 193.
+LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 195.
 
 [7]
 Section 3.
 
-LaTeX Warning: Reference `LastPage' on page 8 undefined on input line 216.
+LaTeX Warning: Reference `LastPage' on page 8 undefined on input line 218.
 
 [8]
 Section 4.
@@ -420,83 +421,44 @@ Section 4.
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd)
 
-Package Listings Warning: Text dropped after begin of listing on input line 246
+Package Listings Warning: Text dropped after begin of listing on input line 248
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
 
-LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 260.
+LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 262.
 
 [9]
 
-Package Listings Warning: Text dropped after begin of listing on input line 273
+Package Listings Warning: Text dropped after begin of listing on input line 275
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
 
-LaTeX Warning: Reference `LastPage' on page 10 undefined on input line 300.
+LaTeX Warning: Reference `LastPage' on page 10 undefined on input line 302.
 
 [10]
 Section 5.
 
-LaTeX Warning: Reference `LastPage' on page 11 undefined on input line 335.
+LaTeX Warning: Reference `LastPage' on page 11 undefined on input line 339.
 
 [11]
 
-LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 359.
+LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 438.
 
 [12]
-Section 6.
-
-LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 379.
-
-[13]
-Overfull \hbox (14.71407pt too wide) in paragraph at lines 392--392
- [] 
-
-Overfull \hbox (14.7215pt too wide) in paragraph at lines 400--400
- [] 
-
-Overfull \hbox (2.61105pt too wide) in paragraph at lines 385--402
-[]$[]$ $[]$ 
-
-Overfull \hbox (14.7148pt too wide) in paragraph at lines 408--408
- [] 
-
-Overfull \hbox (14.72153pt too wide) in paragraph at lines 417--417
- [] 
-
-Overfull \hbox (2.61105pt too wide) in paragraph at lines 403--419
-[]$[]$ $[]$ 
-
-LaTeX Warning: Reference `LastPage' on page 14 undefined on input line 423.
-
-[14]
-
-LaTeX Warning: Reference `LastPage' on page 15 undefined on input line 423.
-
-[15]
-
-LaTeX Warning: Reference `LastPage' on page 16 undefined on input line 455.
-
-[16]
-
-LaTeX Warning: Reference `LastPage' on page 17 undefined on input line 455.
-
-[17]
-Section 7.
 No file main.nls.
 No file main.ind.
 
-Package lastpage Warning: Rerun to get the references right on input line 483.
+Package lastpage Warning: Rerun to get the references right on input line 499.
 
 
 AED: lastpage setting LastPage
 
-LaTeX Warning: Reference `LastPage' on page 18 undefined on input line 483.
+LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 499.
 
-[18]
+[13]
 
 Package glossaries Warning: No \printglossary or \printglossaries found. 
 (Remove \makeglossaries if you don't want any glossaries.) 
@@ -511,19 +473,21 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  )
 (see the transcript file for additional information){/usr/share/texmf/fonts/enc
-/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/sh
+/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/sh
 are/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-
-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf
-/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi
-10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fo
-nts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/
-share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/publ
-ic/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/sha
-re/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on Output/main.pdf (19 pages, 622966 bytes).
+mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texli
+ve/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomeone.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/font
+s/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type
+1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
+Output written on Output/main.pdf (14 pages, 346839 bytes).
 Transcript written on Output/main.log.
 makeglossaries version 4.45 (2020-01-18)
 added glossary type 'acronym' (alg,acr,acn)
@@ -859,14 +823,14 @@ y) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty))))
 Writing index file main.idx
-)) (./Utils/Labels.sty
+) (./Utils/Labels.sty
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
 Library (tcolorbox): 'tcblistings.code.tex' version '4.22'
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingscore.code.tex
 Library (tcolorbox): 'tcblistingscore.code.tex' version '4.22'
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
 Library (tcolorbox): 'tcbprocessing.code.tex' version '4.22'
-))))
+))))) (./Utils/Fonts.sty)
 
 Package hyperref Warning: Option `bookmarks' has already been used,
 (hyperref)                setting the option has no effect on input line 52.
@@ -907,7 +871,9 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.34 ...Bilbiothèque 'Programming'}{9}{chapter.4}
-                                                  % [1]) [2] [3]
+                                                  % [1]) [2]
+(/usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesomeone.fd)
+[3]
 Section 1.
 [4] [5] [6] [7]
 Section 2.
@@ -919,40 +885,18 @@ Section 4.
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd)
 
-Package Listings Warning: Text dropped after begin of listing on input line 246
+Package Listings Warning: Text dropped after begin of listing on input line 248
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty) [10]
 
-Package Listings Warning: Text dropped after begin of listing on input line 273
+Package Listings Warning: Text dropped after begin of listing on input line 275
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty) [11]
 Section 5.
-[12] [13]
-Section 6.
-[14]
-Overfull \hbox (14.71407pt too wide) in paragraph at lines 392--392
- [] 
-
-Overfull \hbox (14.7215pt too wide) in paragraph at lines 400--400
- [] 
-
-Overfull \hbox (2.61105pt too wide) in paragraph at lines 385--402
-[]$[]$ $[]$ 
-
-Overfull \hbox (14.7148pt too wide) in paragraph at lines 408--408
- [] 
-
-Overfull \hbox (14.72153pt too wide) in paragraph at lines 417--417
- [] 
-
-Overfull \hbox (2.61105pt too wide) in paragraph at lines 403--419
-[]$[]$ $[]$ 
-[15] [16] [17] [18]
-Section 7.
-(Output/main.nls [19]) (Output/main.ind [20] [21])
+[12] [13] (Output/main.nls [14]) (Output/main.ind [15] [16])
 
 AED: lastpage setting LastPage
 
@@ -968,17 +912,19 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 (see the transcript file for additional information){/usr/share/texmf/fonts/enc
 /dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/us
 r/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm
-/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texmf
-/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi
-10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fo
-nts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/publi
-c/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/
-texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt
-12.pfb>
-Output written on Output/main.pdf (22 pages, 640455 bytes).
+/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texli
+ve/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomeone.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/font
+s/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type
+1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/te
+xmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12
+.pfb>
+Output written on Output/main.pdf (17 pages, 363250 bytes).
 Transcript written on Output/main.log.

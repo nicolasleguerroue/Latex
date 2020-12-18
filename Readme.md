@@ -18,4 +18,3 @@ Le dossier Projets regroupe les projets Latex
 Le doosier Utils contient les fichiers de la bibliothèque Utils.  
 De plus, un fichier de date de version est placé à la racine du dossier Utils pour indique la version.  
 Le fichier est appelé year.month.date
-

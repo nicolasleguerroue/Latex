@@ -14,8 +14,10 @@
 Ce document a pour but de présenter les fonctionnalités de la bibliothèque Utils. \n
 Chaque bibliothèque doit être indépendante afin de fonctionner correctement.
 
-\chapter{Bibliothèque 'Layout'}
+\arobase
 
+\chapter{Bibliothèque Layout}
+\file{de}
 \section{Les commandes}
 
 \paragraph{la bibliothèque 'Layout' permet de gérer la disposition et la mise en forme de certains élements du document. \\}
@@ -322,6 +324,12 @@ echo -e "content"
 \ugrey{content}
 \index{ugrey}
 
+\section{Le surlignage générique}
+
+\highlight{orange}{Texte à surligner}
+
+Ce texte est généré par la fonction \bold{highlight}
+
 \section{Les labels avancés}
 
 \subsection{Affichage d'un label de bibliothèque}
@@ -352,73 +360,80 @@ echo -e "content"
 \bin{0100101}
 \index{bin}
 
+
+
+
+\highlight{blue}{content is here}
+\highlight{green}{content is here}
+\highlight{pink}{content is here}
+
 %###########################################################################
 %GRAPHIC
 %###########################################################################
 
-\chapter{Bilbiothèque 'Graphic'}
+% \chapter{Bilbiothèque 'Graphic'}
 
-\section{Graphiques 2D}
-\subsection{Affichage d'un graphique 2D avec insertion des données depuis un fichier txt (csv)}
-
-
-\begin{graphics}{0.8}{0.6}{0}{2.1}{-1.1}{1.1}{t(ms)}{vs}{Oscilloscope}
-\addPointsFromCSV{red}{comma}{src_examples/input_1.txt}
-\addPointsFromCSV{blue}{comma}{src_examples/input_2.txt}
-\addLegend{voie A, voie B}
-\end{graphics}
-\index{graphic}
-\index{addPointsFromCSV}
-
-\subsection{Affichage d'un graphique 2D avec insertion des données depuis une liste de points}
+% \section{Graphiques 2D}
+% \subsection{Affichage d'un graphique 2D avec insertion des données depuis un fichier txt (csv)}
 
 
-\begin{graphics}{0.8}{0.4}{0}{40}{-1}{6}{t(s)}{vs}{Courbe avec données brutes}
-\addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
-\addLegend{Ve}
-\end{graphics}
+% \begin{graphics}{0.8}{0.6}{0}{2.1}{-1.1}{1.1}{t(ms)}{vs}{Oscilloscope}
+% \addPointsFromCSV{red}{comma}{src_examples/input_1.txt}
+% \addPointsFromCSV{blue}{comma}{src_examples/input_2.txt}
+% \addLegend{voie A, voie B}
+% \end{graphics}
+% \index{graphic}
+% \index{addPointsFromCSV}
+
+% \subsection{Affichage d'un graphique 2D avec insertion des données depuis une liste de points}
 
 
-\subsection{Affichage de plusieurs graphiques avec insertion des données depuis un fichier externe}
+% \begin{graphics}{0.8}{0.4}{0}{40}{-1}{6}{t(s)}{Tension (V)}{Signal numérique}
+% \addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
+% \addLegend{Tension (V)}
+% \end{graphics}
 
-\begin{figure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include first image
-   \centering
- \begin{graphics}{0.9}{0.4}{-0.05}{20}{-1}{6}{t(ms)}{vs}{KEY\_DOWN}
-\addPointsFromCSV{red}{comma}{src_examples/out.csv}
-%\addLegend{Signal "KEY\_POWER"}
-\end{graphics}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-   \centering
- \begin{graphics}{0.9}{0.4}{-0.05}{80}{-1}{6}{t(ms)}{vs}{KEY\_UP}
-\addPointsFromCSV{red}{comma}{src_examples/out.csv}
-%\addLegend{Signal "KEY\_POWER"}
-\end{graphics}
-\end{subfigure}
 
-\begin{subfigure}{.5\textwidth}
-  \centering
- \begin{graphics}{0.9}{0.4}{-0.05}{60}{-1}{6}{t(ms)}{vs}{KEY\_RIGHT}
-\addPointsFromCSV{red}{comma}{src_examples/out.csv}
-%\addLegend{Signal "KEY\_POWER"}
-\end{graphics}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include fourth image
-   \centering
- \begin{graphics}{0.9}{0.4}{-0.05}{40}{-1}{6}{t(ms)}{vs}{KEY\_LEFT}
-\addPointsFromCSV{red}{comma}{src_examples/out.csv}
-%\addLegend{Signal "KEY\_POWER"}
-\end{graphics}
-\end{subfigure}
-\caption{Titre}
-\label{fig:fig}
-\end{figure}
+% \subsection{Affichage de plusieurs graphiques avec insertion des données depuis un fichier externe}
+
+% \begin{figure}
+% \begin{subfigure}{.5\textwidth}
+%   \centering
+%   % include first image
+%    \centering
+%  \begin{graphics}{0.9}{0.4}{-0.05}{20}{-1}{6}{t(ms)}{vs}{KEY\_DOWN}
+% \addPointsFromCSV{red}{comma}{src_examples/out.csv}
+% %\addLegend{Signal "KEY\_POWER"}
+% \end{graphics}
+% \end{subfigure}
+% \begin{subfigure}{.5\textwidth}
+%   \centering
+%    \centering
+%  \begin{graphics}{0.9}{0.4}{-0.05}{80}{-1}{6}{t(ms)}{vs}{KEY\_UP}
+% \addPointsFromCSV{blue}{comma}{src_examples/out.csv}
+% %\addLegend{Signal "KEY\_POWER"}
+% \end{graphics}
+% \end{subfigure}
+
+% \begin{subfigure}{.5\textwidth}
+%   \centering
+%  \begin{graphics}{0.9}{0.4}{-0.05}{60}{-1}{6}{t(ms)}{vs}{KEY\_RIGHT}
+% \addPointsFromCSV{green}{comma}{src_examples/out.csv}
+% %\addLegend{Signal "KEY\_POWER"}
+% \end{graphics}
+% \end{subfigure}
+% \begin{subfigure}{.5\textwidth}
+%   \centering
+%   % include fourth image
+%    \centering
+%  \begin{graphics}{0.9}{0.4}{-0.05}{40}{-1}{6}{t(ms)}{vs}{KEY\_LEFT}
+% \addPointsFromCSV{black}{comma}{src_examples/out.csv}
+% %\addLegend{Signal "KEY\_POWER"}
+% \end{graphics}
+% \end{subfigure}
+% \caption{Titre}
+% \label{fig:fig}
+% \end{figure}
 
 \newpage
 
@@ -426,37 +441,38 @@ echo -e "content"
 
 
 
-\begin{graphics}{0.4}{0.4}{-10}{10}{-1}{100}{x}{y}{Courbe avec équation}
-\addTrace{green}{-10}{10}{x*x}
-\addLegend{f(x)}
+\begin{graphics}{0.4}{0.4}{0}{3}{-1}{5}{t(s)}{Tension V}{Signal analogique}
+\addPointsFromCSV{red}{comma}{src_examples/input_2.txt}
+\addLegend{Signal}
 \end{graphics}
 \index{addTrace}
 \index{addLegend}
 
-\subsection{Affichage d'un graphique 2D avec insertion des données depuis plusieurs sources}
+
+% \subsection{Affichage d'un graphique 2D avec insertion des données depuis plusieurs sources}
 
 
-\begin{graphics}{0.8}{0.4}{0}{20}{-1}{10}{x}{y}{Courbes de provenances diverses}
-\addPointsFromCSV{red}{comma}{src_examples/input_2.txt}
-\addTrace{green}{-10}{10}{x}
-\addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
-\addLegend{s1,s2,s3}
-\end{graphics}
-\index{addTrace}
+% \begin{graphics}{0.8}{0.4}{0}{20}{-1}{10}{x}{y}{Courbes de provenances diverses}
+% \addPointsFromCSV{red}{comma}{src_examples/input_2.txt}
+% \addTrace{green}{-10}{10}{x}
+% \addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
+% \addLegend{s1,s2,s3}
+% \end{graphics}
+% \index{addTrace}
 
 
-\section{Graphiques 3D}
+% \section{Graphiques 3D}
 
-\subsection{Affichage d'un graphique 3D avec insertion des données depuis une équation}
+% \subsection{Affichage d'un graphique 3D avec insertion des données depuis une équation}
 
-\plot{Titre 3D}{x*y*y}
-\index{plot}
+% \plot{Titre 3D}{x*y*y}
+% \index{plot}
 
-\chapter{Bilbiothèque 'Adding'}
+% \chapter{Bilbiothèque 'Adding'}
 
-\section{Nomenclature}
+% \section{Nomenclature}
 
-Un exemple de nomenclature est présenté à la page suivante
+% Un exemple de nomenclature est présenté à la page suivante
 % \section{Exemples Layout}
 
 

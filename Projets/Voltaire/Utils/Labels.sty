@@ -41,7 +41,32 @@
   overlay={\begin{tcbclipinterior}\fill[purple!75!blue!50!white] (frame.south west)
     rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {KEY} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
 
-%Old label
-% \newtcbox{\lib}{nobeforeafter,colframe=gray,colback=gray!10!white,boxrule=0.5pt,arc=2pt,
-%   boxsep=0pt,left=2pt,right=2pt,top=2pt,bottom=2pt,tcbox raise base}
+\newtcbox{\bin}{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe=blue!50!black,coltext=blue!25!black,colback=blue!10!white,
+  overlay={\begin{tcbclipinterior}\fill[blue!75!blue!50!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {BIN} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
 
+\newtcbox{\hexa}{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe=blue!50!black,coltext=blue!25!black,colback=blue!10!white,
+  overlay={\begin{tcbclipinterior}\fill[blue!75!blue!50!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {HEX} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+
+
+%Old label
+\newtcbox{\ugrey}{nobeforeafter,colframe=gray,colback=gray!10!white,boxrule=0.5pt,arc=2pt,
+  boxsep=0pt,left=2pt,right=2pt,top=2pt,bottom=2pt,tcbox raise base}
+
+%Old label
+\newtcbox{\ugreen}{nobeforeafter,colframe=white,colback=green!40!white,boxrule=0pt,arc=0pt,
+  boxsep=0pt,left=1pt,right=1pt,top=1pt,bottom=1pt,tcbox raise base}
+
+\newtcbox{\ublue}{nobeforeafter,colframe=white,colback=blue!10!white,boxrule=0pt,arc=0pt,
+  boxsep=0pt,left=1pt,right=1pt,top=1pt,bottom=1pt,tcbox raise base}
+
+\newtcbox{\uorange}{nobeforeafter,colframe=white,colback=orange!40!white,boxrule=0pt,arc=0pt,
+  boxsep=0pt,left=1pt,right=1pt,top=1pt,bottom=1pt,tcbox raise base}
+
+\newtcbox{\ured}{nobeforeafter,colframe=white,colback=orange!40!red,boxrule=0pt,arc=0pt,
+  boxsep=0pt,left=1pt,right=1pt,top=1pt,bottom=1pt,tcbox raise base}

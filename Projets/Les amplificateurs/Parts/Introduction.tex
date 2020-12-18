@@ -1,0 +1,581 @@
+ \part{Principes}
+
+ \chapter{Introduction }
+ 
+ \section{Généralités}
+
+  
+Un AOP (Amplificateur OPérationnel) est un composant actif qui permet de réaliser des opérations mathématiques (addition, soustraction, intégration, dérivation, etc) et du fait de sa miniaturisation et de sa fiabilité, on le rencontre aujourd’hui dans de nombreuses applications comme l’audio, la radio, l’asservissement…
+
+\img{Images/pinout.png}{Les entrées et sorties de l'AOP}{0.5}
+
+Un AOP possède deux entrées notées appelées {\color{red}entrée non inverseuse} et {\color{red}entrée inverseuse}, une {\color{red}sortie} et deux broches d’{\color{red}alimentation}.
+L’AOP dispose souvent d’une alimentation symétrique ($Vcc+$ et $Vcc-$) avec comme référence de tension le point milieu (GND) des alimentations.
+
+\img{Images/power.png}{L'alimentation d'un AOP}{0.6}
+
+
+\section{Conventions}
+
+
+Afin de simplifier les calculs sur les AOP, quelques conventions ont été adoptées :
+
+\begin{itemize}
+  \item La tension de sortie de l’AOP est notée $Vs$
+  \item La tension sur l’entrée inverseuse est appelée $E_-$
+  \item La tension sur l’entrée non inverseuse est appelée $E_+$
+  \item La tension différentielle {\color{red}$(E+-E-)$ est appelée $\varepsilon$}
+  \item Le gain d’amplification différentiel de l’AOP est appelé $Ad$
+  Ce gain est variable entre différentes familles d’AOP mais reste constant dans le temps
+  \item Le gain d’amplification du montage est appelé $A_0$ et varie en fonction des différents montages possibles 
+\end{itemize}
+
+\messageBox{Remarque}{green}{white}{L’alimentation des montages suivants ne sera pas représenté par souci de clarté.}{black}
+
+
+\chapter{Modélisation de l'AOP}
+\section{Modèle théorique}
+
+Dans un souci de simplification des calculs, un AOP peut être vu physiquement comme un composant ayant des caractéristiques parfaites. Ces caractéristiques sont les suivantes :
+
+\begin{itemize}
+  \item impédance d’entrée :  $Z\rightarrow+\infty \Omega$
+  \item Impédance de sortie : $Z=0 \Omega$ 
+  \item $Ad\rightarrow+\infty$
+  \item Vsmax $ = Vcc_+$
+  \item Vsmin $ = Vcc_-$
+  \item Bande passante : $Fmax\rightarrow+\infty$
+\end{itemize}
+
+Cela se traduit par un modèle dont les deux entrées sont ouvertes (courant nul) et avec une tension de sortie qui ne serait pas affectée par le courant de sortie
+
+\img{Images/theorique.png}{Le modèle théorique de l'AOP}{0.6}
+
+\section{Modèle réel} 
+
+
+Cependant, il convient de noter que ce modèle n’est que théorique.\\
+
+Du fait de la nature des composants constituant les AOP (transistors, condensateurs), la tension de sortie ne peut pas être égale à la tension d’alimentation. 
+
+Cette tension de sortie max est appelée $Vsat_+$et $Vsat_-$ \\
+
+D'ou le modèle suivant : 
+
+\begin{itemize}
+  \item impédance d’entrée :  $Z>10^5 \Omega$
+  \item Impédance de sortie : $Z>0 \Omega$ (courant de sortie max $20mA$)
+  \item $Ad \gg 1000$
+  \item $Vs_{max}$ =$Vcc_{sat_+}$
+  \item $Vs_{min}$ =$Vcc_{sat_-}-$
+  \item Bande passante : imposée par le constructeur (Ex : le LM324 tolère 1MHz)
+\end{itemize}
+
+
+\img{Images/real.png}{Le modèle réel de l'AOP}{0.6}
+
+
+Cependant, pour les calculs, {\color{red}l’hypothèse du courant d’entrée} nul sera retenue, tout comme celle du gain $Ad$
+
+
+\section{ Modes de fonctionnement}
+
+
+\subsection{Montages linéaires }
+Le signal $V_s$ est une fonction mathématique du signal d’entrée $V_e$. \\
+
+Dans certains cas, le signal de sortie conserve la forme du signal d’entrée sous couvert que que l’AOP ne rentre pas en saturation. \\
+
+
+Un {\color{red}montage linéaire impose un $\varepsilon$ nul, sauf si l’AOP est saturé}, c’est à dire si $V_s=V_{sat}$
+
+
+
+
+\subsection{Montages comparateurs}
+
+Le signal de sortie ne peut prendre que deux valeurs, $Vsat_+$ou $Vsat_-$
+En l’absence de contre-réaction, $Vs=\varepsilon Ad$ \\
+
+\bold{Une réaction est un retour du signal sur une des deux entrées. Celle ci peut être positive ou négative en fonction de l’entrée choisie (entrée -,réaction négative et entrée +, réaction positive).}
+
+\img{Images/52.png}{Les modes de fonctionnement de l'AOP}{0.6}
+
+\section{Résistance de charge}
+
+Il est possible de mettre une résistance de charge entre $V_s$ et la masse. \\
+
+Cette résistance symbolise un circuit relié directement à l'AOP. \\
+
+Cependant, le courant de l’AOP étant limité à quelques dizaines de mA, il convient de prendre une résistance de charge $R_c$ suffisamment grande ($Rc>1000 \omega$). \\
+
+Si $R_{c}$ est suffisamment élevée, cette dernière n’influence pas la tension de sortie $V_s$ \\
+
+
+\img{Images/load.png}{La résistance de charge}{0.8}
+
+
+
+\chapter{Étude d’un AOP \\en mode linéaire}
+\section{Intérêt de l’étude }
+
+Les AOP en fonctionnement linéaire permettent de réaliser les opérations mathématiques :
+
+\begin{itemize}
+  \item \bold{amplification} : $Vs=A_0 \cdot Ve$
+  $A_0$ est le coefficient d’amplification du montage (A ne pas confondre avec $A_d$ le coefficient d’amplification différentiel imposé par le constructeur)
+  $A_0$ peut être positif ou négatif
+  \item \bold{addition algébrique} : $V_s=\sum_{k=0}^{n} V_k$
+  \item \bold{intégration et dérivation} (avec des condensateurs) à une constante près
+  \item \bold{logarithme et exponentielle}
+\end{itemize}
+
+\section{Méthode de résolution}
+La {\color{red}réaction négative} (liaison entre la sortie et l’entrée inverseuse) impose un fonctionnement stable et linéaire, d'où {\color{red}$\varepsilon=0, E_+=E_-$} \\
+
+L’hypothèse de la résistance d’entrée de l’AOP implique que $I_+=I_-=0$
+
+Afin de déterminer $Vs$, il faut exprimer \bold{$E_+$et $E_-$ en fonction des éléments du montage}. \\
+
+\bold{En égalisant les deux équations obtenues ($E_+=k$ et $E_-=k'$)}, on obtient une relation de type $V_s = f(V_e)$
+
+
+\messageBox{Remarque}{orange}{white}{$I_s$ est issu d’une source de tension, il n’y a donc pas de loi simple permettant de déterminer sa valeur algébrique. Il ne faut pas avoir d’a priori sur son sens}{black}
+
+
+ \part{Montages}
+
+\chapter{Montage suiveur }
+
+
+\section{Présentation}
+
+
+Ce montage permet de reproduire à l’identique une tension d'entrée. \\
+L'intérêt de ce montage réside dans le fait que l’impédance d’entrée de l’AOP est considérée comme infinie et que son impédance de sortie est considérée comme nulle.\\
+
+Ainsi, le comportement de la charge en entrée ne sera pas affecté par l’AOP, le signal d'entrée ne sera donc pas modifié. \\
+
+Ce montage sert donc à faire une \bold{adaptation d’impédance}.
+
+\section{Montage}
+
+\img{Images/suiveur.png}{Le montage suiveur}{0.6}
+
+
+\section{Démonstration} 
+La réaction négative implique que $\varepsilon=0$ (fonctionnement linéaire)
+$$ E_+=Ve $$
+$$ E_-=Vs $$
+
+$$ \Rightarrow Ve=Vs$$ car $E_+=E_-$
+
+
+\section{Application}
+
+\begin{exemple}
+On souhaite mesurer une tension au borne d’un capteur avec un appareil de mesure.
+
+\img{Images/sensor.png}{Le capteur}{0.6}
+
+On place ensuite une charge $R_c$ au bornes de $A$ et $b$. Cette résistance $R_c$ représente l'appareil d'acquision.
+
+\img{Images/rc.png}{Le modèle d'acquisition}{0.3}
+\end{exemple}
+
+\begin{question}
+Quelle est l’influence de $Rc$ sur $U_{AB}$ dans le montage suivant ?
+\end{question}
+
+\begin{reponse}
+
+Sans la charge $Rc$ : 
+
+$$ U_{AB}= \frac{U \cdot R_2}{R_1+R_2}$$
+
+Avec  la charge $Rc$ :
+
+$$ U_{AB}= \frac{U \cdot R_{equ}}{R_1+R_{equ}}$$
+
+
+Avec $R_{equ}$ la résistance équivalente entre $R_2$ et $R_c$ \\
+
+
+
+Si $R_c \rightarrow + \infty$ alors $R_{equ} \rightarrow \frac{U_{AB} \cdot R_2}{R_1+R_2}$ \\
+
+Si $R_c \rightarrow + 0 $ alors $R_{equ} \rightarrow 0 \Rightarrow U_{AB} \rightarrow 0$
+
+\end{reponse}
+
+
+D'où le montage suivant, avec $R_c \rightarrow + \infty$, le signal n'est pas déformé.
+
+
+\img{Images/measure.png}{L'adaptation d'impédance}{0.8}
+
+
+
+\chapter{Montage amplificateur \\non-inverseur }
+
+
+\section{Présentation}
+
+Ce montage amplifie la tension $V_e$ par un \bold{gain $A_0$ positif}. \\
+L’amplificateur reste en mode linéaire si $Ve < Vcc_{sat} \cdot A_0$
+
+\section{Montage}
+
+\img{Images/non_inv.png}{Le montage amplificateur non inverseur}{0.8}
+
+\section{Démonstration }
+
+Un AOP en mode linéaire impose $\varepsilon=0$
+D'où $E_+ =E_-$ 
+
+$$E_+=V_e$$
+$$E_-=V_s \cdot \frac{R_2}{R_1+R_2}$$
+
+\begin{align}
+E_+ = E_- &\Rightarrow V_e = V_s \cdot \frac{R_2}{R_1+R_2}\\
+ &\Rightarrow \frac{V_e}{V_s} = \frac{R_2}{R_1+R_2}\\
+ &\Rightarrow V_s = V_e \cdot \frac{R_1+R_2}{R_2}
+\end{align}
+avec $A_0=\frac{R_1+R_2}{R_2}$
+
+\section{Application}
+
+\begin{exemple}
+On souhaite amplifier un signal sinusoïdal par un coefficient $k=5$.\\
+On peut donc utiliser le montage précédent. \\
+On prendra $R_1=1 k\Omega$ et $R_2=4k\Omega$ pour avoir $A_0=5$
+\img{Images/inv_img.png}{Amplification du signal noir par 5}{0.4}
+\end{exemple}
+
+
+
+
+
+\chapter{Montage amplificateur \\inverseur}
+\section{Présentation}
+
+Ce montage amplifie la tension $V_e$ par un \bold{gain $A_0$ négatif}.
+
+\section{Montage}
+
+\img{Images/non_inv.png}{Le montage amplificateur non inverseur}{0.8}
+
+\section{Démonstration}
+
+Mode linéaire : $\varepsilon = 0$
+\begin{align}
+E_+&=0 \\
+E_-&= \frac{ \frac{V_e}{R_1}+\frac{V_s}{R_2} } { \frac{1}{R_1} + \frac{1}{R_2}} \\
+E_-&=\frac{V_e \cdot R_2 + V_s \cdot R_1}{R_1 + R_2} \\
+\Rightarrow \frac{V_e}{V_s} &= -\frac{R_1}{R_2}\\
+\Rightarrow V_s &= -V_e \cdot \frac{R_2}{R_1} 
+\end{align}
+
+Avec $A0= -\frac{R_2}{R1}$
+
+\section{Application}
+
+\begin{exemple}
+On souhaite amplifier un signal sinusoïdal par un coefficient $k=-5$.\\
+On peut donc utiliser le montage précédent. \\
+On prendra $R_1=1 k\Omega$ et $R_2=5k\Omega$ pour avoir $A_0=-5$
+\img{Images/inv_signal.png}{Amplification du signal noir par -5}{0.4}
+
+\end{exemple}
+
+
+\chapter{Montages comparateurs}
+\section{Présentation}
+
+Un montage comparateur se reconnaît par son branchement : 
+
+\begin{itemize}
+  \item {\color{red}Aucune contre réaction} n’est présente
+  \item Une {\color{red} contre réaction a lieu sur l’entrée non inverseuse} via un dipôle passif
+\end{itemize}
+
+Le montage comparateur permet de comparer deux tensions entre elles. \\
+Cependant, cette comparaison peut s’effectuer de plusieurs manières, avec un ou deux seuils, de manière inversée ou non...
+
+\subsection{Comparateur non inverseur simple seuil}
+
+\subsubsection{Présentation}
+
+Ce montage permet de comparer simplement deux tensions entre elle.
+
+\subsubsection{Montage}
+
+\img{Images/cmp.png}{Comparateur simple seuil}{0.7}
+
+Ce mode est le plus simple et est régi de la manière suivante : \\
+
+On sait que $\varepsilon = E_+ - E_-$ et que $V_s=\varepsilon \cdot A_d$ avec $Ad=+\infty$ \\
+(Circuit en boucle ouverte) \\
+
+
+Si $E_+>E_-$ :
+$$Vs=Vsat_+$$ 
+ si $E_+<E_-$ :
+$$Vs=Vsat_-$$
+
+Si $V_2=0V$, on obtient la caractéristique de transfert suivante  
+
+\img{Images/12.jpg}{Caractéristique de transfert, $V_1$ est la tension d’entrée de l’AOP}{0.3}
+
+
+\subsection{Comparateur inverseur simple seuil}
+
+Le raisonnement est le même sauf que les entrées sont inversées. \\
+De ce fait, le seuil de basculement se fait dans l’autre sens. \\
+
+Si $E_+>E_-$ :
+$$Vs=Vsat-$$
+Si $E_+<E_-$ :
+$$V_s=Vsat_+$$
+
+\subsection{Comparateur non inverseur double seuil}
+
+
+\subsubsection{Présentation}
+
+Ce type de montage permet d’éliminer les tensions “parasites”, c’est à dire les tensions bruités et non indésirables. \\
+
+\subsubsection{Montage}
+
+\img{Images/double_cmp.png}{Montage comparateur non inverseur double seuil }{0.8}
+
+\subsubsection{Application}
+
+Par exemple, un capteur de lumière résistif (photo-résistance) sera sensible aux variations de lumière (nuages…). \\
+
+\img{Images/14.png}{Un signal bruité}{0.5}
+
+Or, si on compare ce signal par rapport à une référence, on ne veut pas que le capteur déclenche plusieurs fois l’action.
+
+\img{Images/trig.png}{Le cycle de déclenchement}{1}
+
+Pour éviter ce problème, on utilise un comparateur à double seuil : \\
+toute les tensions parasites ayant une amplitude inférieure à la tension de différence entre les deux seuils seront ignorées.\\
+
+\img{Images/dual.png}{Le principe}{0.8}
+
+On va chercher les deux valeurs de basculement : 
+
+$$E_+ = \frac{V_eR_2 + V_s R_1}{R_1 + R_2}$$
+$$E_- = U_0=0$$
+
+Etudions le cas où $\varepsilon>0$
+
+\begin{align}
+\varepsilon>0 & \Leftrightarrow E_+ > E_-\\
+& \Leftrightarrow \frac{V_eR_2 + V_s R_1}{R_1 + R_2} > U_0 \\
+& \Leftrightarrow \frac{V_eR_2}{R_1 + R_2} > U_0 -  \frac{V_s R_1 }{R_1 + R_2} \\
+& \Leftrightarrow  V_eR_2 > R_1 + R_2 \cdot  U_0 -  V_s R_1 \\
+& \Leftrightarrow  V_e > \frac{R_1 + R_2 \cdot  U_0 -  V_s R_1}{R_2}
+\end{align}
+
+Ici, $U_0=0$ et $V_s=V_{sat_+}$ car $\varepsilon>0$
+
+D'ou $V_e > \frac{-V_{sat} + R_1}{R_2}$
+
+
+\messageBox{Remarque}{orange}{white}{$U_0$ peut être différent de $0V$ en mettant une source de tension sur $E_-$}{black}
+
+
+Étudions le cas où $\varepsilon>0$ : 
+
+\begin{align}
+\varepsilon>0 & \Leftrightarrow E_+ < E_-\\
+& \Leftrightarrow \frac{V_eR_2 + V_s R_1}{R_1 + R_2} < U_0 \\
+& \Leftrightarrow  \frac{V_eR_2}{R_1 + R_2} < U_0 -  \frac{V_s R_1 }{R_1 + R_2} \\
+& \Leftrightarrow  V_eR_2 < R_1 + R_2 \cdot  U_0 -  V_s R_1 \\
+& \Leftrightarrow  V_e < \frac{R_1 + R_2 \cdot  U_0 -  V_s R_1}{R_2}
+\end{align}
+
+Ici, $U_0=0$ et $V_s=V_{sat_-}$ car $\varepsilon<0$ \\
+
+D'ou $V_e < \frac{-V_{sat} + R_1}{R_2}$
+
+
+
+On obtient deux seuils $S1$ et $S2$ de valeurs respectives : \\
+
+
+$\frac{-V_{sat}+R1}{R2}$ et $\frac{Vsat - R_1}{R_2}$ \\
+
+
+
+Afin de basculer, la tension d’entrée doit dépasser $S1 V$ et afin de basculer dans l’autre sens, la tension d’entrée doit être inférieure à $S2 V$ \\
+
+
+On obtient le cycle d’hystérésis suivant : \\
+
+$(VB=S2 et VH=S1)$
+
+\img{Images/hys1.png}{Cycle d'hystérésis non inverseur}{0.8}
+
+
+
+$U_{milieu\_de\_cycle}=(V_{seuil1}+V_{seuil2}) \cdot 0.5$ \\
+$Largeur_{cycle}=V_{seuil1}-V_{seuil2}$
+
+
+\subsection{Comparateur inverseur double seuil}
+
+\subsubsection{Montage}
+
+\img{Images/double_inv.png}{Montage comparateur inverseur double seuil}{0.5} %dede
+
+\subsubsection{Démonstration}
+
+La démarche est rigoureusement identique avec $\varepsilon>0$, on a $V_s=Vsat_+$
+et pour  $\varepsilon<0$ on a $V_s=Vsat_-$
+
+On obtient le cycle d’hystérésis suivant : \\
+
+
+\img{Images/hys2.png}{Cycle d'hystérésis inverseur}{0.8}
+
+
+\chapter{Montage intégrateur}
+\section{Présentation}
+Ce montage intègre une tension d’entrée. \\
+En sortie, on obtient une tension $V_s$ valant $V_s=k \cdot \int V_e$
+
+\section{Montage}
+
+\img{Images/integrateur.png}{Montage intégrateur}{0.6}
+
+\section{Démonstration}
+
+Montage en mode linéaire car contre-réaction négative. \\
+
+
+\begin{align}
+I_{R1} + I_{C1}  = 0 & 
+& \Leftrightarrow I_{R1} = -I_{C1} \\
+& \Leftrightarrow \frac{E}{R} = - C \cdot \frac{dV_s}{dt} \\
+& \Leftrightarrow -\frac{1}{RC}\cdot E = \frac{dV_s}{dt} \\
+& \Leftrightarrow V_s = -\frac{1}{RC} \int V_e \\
+k=-\frac{1}{RC} &
+\end{align}
+   
+Ce montage est notamment présent dans certains Convertisseurs Analogiques Numériques dit “simple” ou “double” rampe. 
+
+
+\section{Application}
+
+\begin{exemple}
+On souhaite générer un signal triangulaire.
+\end{exemple}
+
+
+En intégrant un signal rectangulaire, on obtient un signal triangulaire.
+
+
+\img{Images/triangle.png}{Un signal triangulaire généré depuis un signal carré}{0.4}
+
+Soit $V_e=2V$ ou $V_e=-2V$
+
+Si $V_e=2V$ \\
+
+\begin{align}
+k \int V_e &= k V_e\cdot t + x\\
+&= - \frac{2}{RC}t+c 
+\end{align}
+
+avec $k=-\frac{1}{RC} $ \\
+
+$\Rightarrow$ droite d'équation $y=-\frac{2}{RC}+c$ \\
+
+
+Si $V_e=-2V$ \\
+
+\begin{align}
+k \int V_e &= k V_e\cdot t + x \\
+&= \frac{2}{RC}t+c 
+\end{align}
+
+avec $k=-\frac{1}{RC} $ \\
+
+$\Rightarrow$ droite d'équation $y=\frac{2}{RC}+c$
+
+
+
+
+\chapter{Montage soustracteur}
+\section{Présentation}
+Ce montage permet de soustraire deux tensions d’entrée afin d’obtenir la différence en sortie.
+
+\section{Montage}
+
+\img{Images/sous.png}{Montage soustracteur}{0.6}
+
+\section{Démonstration}
+
+
+Contre-réaction négative donc mode linéaire.\\
+
+
+$$E_+=U_2\frac{R_4}{R_2+R_4}$$
+
+\begin{align}
+E_-&=\frac{\frac{U_1}{R_1}+\frac{U_5}{R3}}{\frac{1}{R_1}+\frac{1}{R_3}}\\
+&=\frac{U_1R_3+U_5R_1}{R_1+R_3}
+\end{align}
+
+Or $E_+=E_-$
+
+\begin{align}
+&\Leftrightarrow U_2 \cdot \frac{R_4}{R_2+R_4} = \frac{U_1R_3+U_5R_1}{R_1+R_3} \\
+&\Leftrightarrow  \frac{U_5R_1}{R_1+R_3} = \frac{U_2R_4}{R_2+R_4} -\frac{U_1R_3}{R_1+R_3} \\
+&\Leftrightarrow  U_5R_1 = \frac{R_4(R_1+R_3)}{R_2+R_4} - \frac{U_1R_3}{R_1} 
+\end{align}
+
+
+Si $R_1=R_2=R_3=R_4$, on obtient : \\
+
+$U_s=U_2-U_1$\\
+
+\section{Application}
+
+\begin{exemple}
+On souhaite mesurer une tension entre deux points A et B d’un circuit (tension différentielle)
+\img{Images/variable.png}{Tension différentielle $AB$}{0.4}
+\end{exemple}
+
+
+Pour étudier la différence de potentiel entre les deux points du circuit, on peut utiliser un montage soustracteur afin qu’en sortie du montage avec l’AOP, on ait : $$V_s=V_a-V_b$$
+
+On peut réaliser le montage suivant.
+
+\img{Images/diff.png}{Un montage pour lire une tension entre deux points}{0.55}
+
+
+\chapter{Montage sommateur \\inverseur }
+
+\section{Présentation}
+Ce montage permet d'additionner en sortie plusieurs tensions d’entrée. Avec ce montage, la tension de sortie est multipliée par un coefficient -1
+
+\section{Montage}
+\img{Images/somme.png}{Montage sommateur inverseur}{0.6}
+
+\section{Démonstration}
+
+Contre-réaction négative donc montage linéaire. \\
+On applique le théorème de Millman \footnote{on fera abstraction de U3}
+
+$$E_+=0$$
+$$ E_- = \frac{ \frac{U_1}{R_1} + \frac{U_2}{R_1} + \frac{U_s}{R_1} }{\frac{1}{R_1} + \frac{1}{R_1} + \frac{1}{R_1}}=0$$
+
+\begin{align}
+&\Leftrightarrow \frac{U_1+U_2+U_s}{R_1}=0 \\
+&\Leftrightarrow \frac{U_s}{R_1} = \frac{-(U_1+U_2)}{R_1} \\
+&\Leftrightarrow U_s = -(U_1+U_2)
+\end{align}
+

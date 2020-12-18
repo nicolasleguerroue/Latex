@@ -40,10 +40,10 @@ L'ESP8266 étant raccordé, l'ordinateur lui a affecté un nom de port de type \
 Pour récupérer la valeur de ce numéro, nous allons lancer la commande suivante : 
 
 \begin{Bash}{Récupération du numéro du port série}
-esptool.py flash_id
+ls /dev/ttyUSB*
 \end{Bash}
 
-\img{Images/lsusb.png}{Résultat de la commande esptool.py flash\_id}{0.8} %@change
+\img{Images/lsusb.png}{Résultat de la commande}{0.8} %@change
 
 Dans le cas présent,le nom du port est \italic{/dev/ttyUSB0}
 

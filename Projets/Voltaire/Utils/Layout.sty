@@ -32,7 +32,8 @@
 \RequirePackage{bookmark}           %use for hyperref
 \RequirePackage{makeidx}            %make index
 
-\RequirePackage{wrapfig} %Figure flottantes
+
+\RequirePackage{fontawesome}
 
 %################################################################
 \begin{comment}
@@ -125,14 +126,23 @@ Cette commande permet de mettre une image centrée avec un titre et une taille d
 @sed
 @input Source et nom de l'image
 @input Titre de l'image
-@input Taille de l'image ]0;1+]
+@input Taille de l'image ]0;1+] par rapport au texte
+@input Taille de l'image par rapport à l'espace qui lui est reservé
+
 @begin_example 
-\img{Image.png}{Titre de l'image}{0.5}
+\img{Image.png}{Titre de l'image}{0.5}{0.5}
 @end_example
 @end
 \end{comment}
 
-\newcommand{\imgf}[3]{\begin{wrapfig}[l]\centering\ \includegraphics[scale=#3]{#1}\caption{#2}\end{wrapfig}}
+\newcommand{\imgf}[4]{
+\begin{wrapfigure}{l}{#4\textwidth}
+\begin{centering}
+    \includegraphics[scale=#3]{#1}
+  \caption{#2}
+\end{centering}
+\end{wrapfigure}
+}
 %################################################################
 \begin{comment}
 @begin
@@ -166,7 +176,7 @@ Text \sn Next text
 %################################################################
 \begin{comment}
 @begin
-@command \setHader
+@command \setHeader
 @des 
 Cette commande permet de créer une page de garde minimaliste
 @sed

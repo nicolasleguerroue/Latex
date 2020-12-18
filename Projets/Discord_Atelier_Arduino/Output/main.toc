@@ -1,0 +1,13 @@
+\babel@toc {french}{}
+\contentsline {section}{\numberline {0.1}Connexion au serveur}{3}{section.0.1}%
+\contentsline {subsection}{\numberline {0.1.1}Enregistrement du compte}{9}{subsection.0.1.1}%
+\contentsline {section}{\numberline {0.2}Navigation et utilisation du serveur}{12}{section.0.2}%
+\contentsline {subsection}{\numberline {0.2.1}Première vue}{12}{subsection.0.2.1}%
+\contentsline {subsection}{\numberline {0.2.2}Accéder à l'Atelier Arduino}{12}{subsection.0.2.2}%
+\contentsline {subsection}{\numberline {0.2.3}Présentation}{12}{subsection.0.2.3}%
+\contentsline {subsection}{\numberline {0.2.4}Entrer dans un salon}{14}{subsection.0.2.4}%
+\contentsline {subsection}{\numberline {0.2.5}Activer votre microphone}{14}{subsection.0.2.5}%
+\contentsline {subsection}{\numberline {0.2.6}Partager son écran}{15}{subsection.0.2.6}%
+\contentsline {section}{\numberline {0.3}Accéder aux paramètres}{16}{section.0.3}%
+\contentsline {section}{\numberline {0.4}Déconnexion du serveur}{16}{section.0.4}%
+\contentsline {section}{Table des figures}{17}{figure.caption.31}%
