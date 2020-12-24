@@ -10,13 +10,15 @@
 \RequirePackage[many]{tcolorbox}
 %...
 
-
-\newtcbox{\badge}[1][red]{
+%1 : txt color
+%2 : bg color 
+%3 : text
+\newtcbox{\badge}[3][red]{
   on line, 
   arc=2pt,
-  colback=#1!50!black,
-  colframe=#1!50!black,
-  fontupper=\color{white},
+  colback=#3,
+  colframe=#3,
+  fontupper=\color{#2},
   boxrule=1pt, 
   boxsep=0pt,
   left=6pt,

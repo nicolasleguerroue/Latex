@@ -1,0 +1,64 @@
+\documentclass[12pt]{report}  
+%book, report, beamer, article
+\usepackage[frenchb]{babel}     %french language
+\usepackage{Utils/Utils}        %Utils package
+
+\usepackage[Lenny]{fncychap}   %Sonny, Lenny, Glenn, Conny, Rejne, Bjarne
+%#############################################################
+%#### Settings
+%#############################################################
+%#############################################################
+%If you want to set on fullpage, change this bloc
+%#############################################################
+\geometry{hmargin=2.5cm,vmargin=2.5cm}
+%#############################################################
+%#############################################################
+%If you want rename the chapter name, change the value of argument
+%#############################################################
+\setAliasChapter{Section}
+%#############################################################
+%#############################################################
+%If you want to add presentation, modify the next bloc
+%The firt line is about the header : 
+% {left content}{center content}{right content}
+%The second line is about the footer : 
+% {left content}{center content}{right content}
+%####
+%to get the current chapter name, use \currentChapter command as content
+%to get the current number page, use \currentPagecommand as content
+\addPresentation
+{Circuits de puissance} {} {\currentChapter}
+{Club de Robotique et d'Electronique\\ Programmable de Ploemeur} {} {\currentPage}
+%#############################################################
+%Change the width of footer line and header line
+%To delete it, set value to 0
+\setHeaderLine{0.2}
+\setFooterLine{0.2}
+%#############################################################
+%Change the name of the section "Nomenclature"
+%To delete it, set value to 0
+\renewcommand{\nomname}{Conventions}
+%Setting up the parameter of PDF file as name, author...
+\begin{comment}
+@input Titre du PDF
+@input Auteur(s)
+@input Sujet du fichier PDF (courte phrase)
+@input Créateur du fichier PDF
+@input Producteur du fichier PDF
+@input Mots-clés (liste)
+@input Couleurs des liens
+@input Couleurs des citations dans la bibliographie
+@input Couleurs des liens de fichier
+\end{comment}
+\setParameters {Les Circuits de puissance} {Nicolas LE GUERROUE} {Transistors, MOSFETS, Bipolaires, relais} {Nicolas LE GUERROUÉ}{Circuits de puissance}{green}{blue}{blue}
+  
+
+\addtocounter{tocdepth}{1}
+
+
+
+
+
+
+
+

@@ -82,7 +82,7 @@ Je vous invite à télécharger la dernière version stable (latest)
 
 \section{Installation du logiciel}
 
-\bold{Tout d'abord, placez-vous dans le même répertoire que votre fichier binaire installé précédemment et ouvrez un terminal.} \\
+\bold{Tout d'abord, placez vous dans le même répertoire que votre fichier binaire installé précédemment et ouvrez un terminal.} \\
 
 La commande \shortcut{ls} devrait confirmer votre contenu du répertoire.
 
@@ -101,7 +101,7 @@ Comme précédemment, si vous avez un nom de fichier différent, je vous laisse 
 
 \img{Images/espinstall.png}{Résultat de la commande pour installer le firmware}{0.45}
 
-Après le déploiement du firmware, le module redémarre et il est configuré en point d’accès WiFi avec pour nom \bold{MicroPython-6953}. \\ Les chiffres correspondent aux quatres derniers chiffres de l'adresse MAC du module. 
+Après le déploiement du firmware, le module redémarre et il est configuré en point d’accès WiFi avec pour nom \bold{MicroPython-6953}. \\ Les chiffres correspondent aux quatre derniers chiffres de l'adresse MAC du module. 
 
 
 \chapter{Configurer le mot de passe \\WebRepl}
@@ -125,7 +125,7 @@ Celle-ci contient les fichiers suivants :
 
 \section{Installation de screen}
 
-\lib{screen} est un utilitaire qui va nous permettre de se connecter à l'ESP8266 via le cable USB car actuellement, il nous est impossible d'utiliser WebRepl.\\
+\lib{screen} est un utilitaire qui va nous permettre de se connecter à l'ESP8266 via le câble USB car actuellement, il nous est impossible d'utiliser WebRepl.\\
 On installe l'utilitaire avec la commande suivante : 
 \begin{Bash}{Installation de screen}
 sudo apt-get install -y screen
@@ -137,7 +137,7 @@ sudo apt-get install -y screen
 
 On peut accéder à l’interpréteur de commande Python REPL \footnote{Read Evaluate Print Loop} via le port série en tapant la commande suivante dans un terminal :
 
-\begin{Bash}{Execution de screen}
+\begin{Bash}{Exécution de screen}
 screen /dev/ttyUSB0 115200
 \end{Bash}
 
@@ -160,7 +160,7 @@ Le système vous demande tout d'abord d’activer l’accès par le réseau Wifi
 
 Il vous invite ensuite à saisir le mot de passe pour l'accès à WebRepl. Ici le mot de passe choisi est \shortcut{crepp}
 \img{Images/password.png}{Activation de l'ESP8266 screen}{0.6}
-Enfin, saissisez \shortcut{y} pour redémarrer l'ESP8266.\\
+Enfin, saisissez \shortcut{y} pour redémarrer l'ESP8266.\\
 A ce moment là, les lignes suivantes apparaissent : 
 \img{Images/end.png}{Fin de la configuration}{0.6}
 
@@ -180,9 +180,9 @@ Lors de la connexion, un mot de passe est demandé, saisir \shortcut{micropythoN
 \subsection{Lancement de WebRepl}
 
  Veuillez lancer, à l'aide de votre navigateur Internet, le fichier \file{webrepl.html}  situé dans le dossier WebRepl précédemment installé. \\
- Pour cela, veuiller faire un \shortcut{Click droit + "Ouvrir avec le navigateur Web ..."}. \\
+ Pour cela, veuillez faire un \shortcut{Click droit + "Ouvrir avec le navigateur Web ..."}. \\
 Vous tombez sur l’interface Web. Il suffit de cliquer sur \shortcut{Connect} et d’entrer le mot de passe que vous avez définie.
-(en l'occurence \bold{crepp}).
+(en l'occurrence \bold{crepp}).
 
 
 \chapter{Se connecter automatiquement à un \\réseau Wifi}

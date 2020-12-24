@@ -1,0 +1,339 @@
+%############################################################
+%###### Package 'Layout' 
+%###### This package contains some tools to set page layout or text
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage{lmodern}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}     %UTF-8 encoding
+\RequirePackage{graphicx}           %Images
+\RequirePackage{caption}            %légende
+\RequirePackage{textcomp}           %special characters
+\RequirePackage{fancyhdr}           %headers & footers
+\RequirePackage{lastpage}           %page counter
+%\RequirePackage{fullpage}          %entire page
+\RequirePackage{float}              %image floating
+\RequirePackage{wrapfig}
+\RequirePackage{subcaption}         %Subcaption
+\RequirePackage{listings}           %new env such as Bash, Python
+%\RequirePackage{tcolorbox}          %messageBox
+\RequirePackage[many]{tcolorbox}
+\RequirePackage{color}              %colors
+\RequirePackage{geometry}
+\RequirePackage{listings}           %new env such as Bash, Python
+\RequirePackage{xcolor}             %define new colors
+\RequirePackage{graphicx}             %define new colors
+\RequirePackage{xparse}
+\RequirePackage{amssymb,amsthm}     %math
+\RequirePackage{multirow}
+\RequirePackage{tabularx}           %use for csv file [table]
+
+\RequirePackage{bookmark}           %use for hyperref
+\RequirePackage{makeidx}            %make index
+
+
+\RequirePackage{fontawesome}
+
+%################################################################
+\begin{comment}
+@begin
+@command \bold
+@des 
+Cette commande permet de mettre le texte en gras
+@sed
+@input Texte à mettre en gras
+@begin_example 
+\bold{texte en gras}
+@end_example
+@end
+\end{comment}
+
+\renewcommand{\bold}[1]{\textbf{#1}}
+
+%################################################################
+\begin{comment}
+@begin
+@command \italic
+@des 
+Cette commande permet de mettre le texte en italique
+@sed
+@input Texte à mettre en italique
+@begin_example 
+\italic{texte en italique}
+@end_example
+@end
+\end{comment}
+
+\newcommand{\italic}[1]{\textit{#1}}
+
+%################################################################
+\begin{comment}
+@begin
+@command \ib
+@des 
+Cette commande permet de mettre le texte en italique et en gras
+@sed
+@input Texte à mettre en italique et gras
+@begin_example 
+\ib{texte en italique et gras}
+@end_example
+@end
+\end{comment}
+
+\newcommand{\ib}[1]{\textit{\textbf{#1}}}
+
+%################################################################
+\begin{comment}
+@begin
+@command \bi
+@des 
+Cette commande permet de mettre le texte en italique et en gras
+@sed
+@input Texte à mettre en italique et gras
+@begin_example 
+\bi{texte en italique et gras}
+@end_example
+@end
+\end{comment}
+
+\newcommand{\bi}[1]{\textit{\textbf{#1}}}
+
+%################################################################
+\begin{comment}
+@begin
+@command \img
+@des 
+Cette commande permet de mettre une image centrée avec un titre et une taille
+@sed
+@input Source et nom de l'image
+@input Titre de l'image
+@input Taille de l'image ]0;1+]
+@begin_example 
+\img{Image.png}{Titre de l'image}{0.5}
+@end_example
+@end
+\end{comment}
+
+\newcommand{\img}[3]{\begin{figure}[H]\centering\ \includegraphics[scale=#3]{#1}\caption{#2}\end{figure}}
+
+%################################################################
+\begin{comment}
+@begin
+@command \imgf
+@des 
+Cette commande permet de mettre une image centrée avec un titre et une taille de manière flottante avec le contenu
+@sed
+@input Source et nom de l'image
+@input Titre de l'image
+@input Taille de l'image ]0;1+] par rapport au texte
+@input Taille de l'image par rapport à l'espace qui lui est reservé
+
+@begin_example 
+\img{Image.png}{Titre de l'image}{0.5}{0.5}
+@end_example
+@end
+\end{comment}
+
+\newcommand{\imgf}[4]{
+\begin{wrapfigure}{l}{#4\textwidth}
+\begin{centering}
+    \includegraphics[scale=#3]{#1}
+  \caption{#2}
+\end{centering}
+\end{wrapfigure}
+}
+%################################################################
+\begin{comment}
+@begin
+@command \n
+@des 
+Cette commande permet de faire un saut de ligne
+@sed
+@begin_example 
+Text \n Next text
+@end_example
+@end
+\end{comment}
+
+\newcommand{\n}{\\}
+
+%################################################################
+\begin{comment}
+@begin
+@command \sn
+@des 
+Cette commande permet de faire un espace vertical
+@sed
+@begin_example 
+Text \sn Next text
+@end_example
+@end
+\end{comment}
+
+\newcommand{\sn}{\vskip 0.5cm}
+
+%################################################################
+\begin{comment}
+@begin
+@command \setHeader
+@des 
+Cette commande permet de créer une page de garde minimaliste
+@sed
+@input Titre du document
+@input Auteur(s) - Les retours à la ligne se font en utilisant la commande \\
+@input La date
+@begin_example 
+\setHeader{Titre}{Auteur 1 \\ Auteur 2}{XX/XX/XXXX}
+@end_example
+@end
+\end{comment}
+
+\newcommand{\setHeader}[3]{
+\title{#1}
+\author{#2}
+\date{#3}
+\maketitle
+}
+
+
+%###############################################################
+\begin{comment}
+@begin
+@command \partImg
+@des 
+Cette commande permet de créer une page de partie avec une image
+@sed
+@input Titre de la partie
+@input Source de l'image \\
+@input Ratio
+@begin_example 
+\partImg{Partie}{Images/file.png}{0.2}
+@end_example
+@end
+\end{comment}
+\newcommand{\partImg}[3]{
+    \part[#1]{#1 \\\vspace*{2cm} \makebox{\centering \includegraphics[width=#3\textwidth]{#2}}}
+}
+
+
+%###############################################################
+\begin{comment}
+@begin
+@command \setHeaderImage
+@des 
+Cette commande permet de créer une page de garde avec une image centrée, un titre, sous titre en plus
+@sed
+@input Titre du document
+@input Auteur(s) - Les retours à la ligne se font en utilisant la commande \\
+@input La date
+@begin_example 
+\setHeaderImage{Titre}{Auteur 1 \\ Auteur 2}{XX/XX/XXXX}
+@end_example
+@end
+\end{comment}
+
+\newcommand{\setHeaderImage}[6]{
+\begin{titlepage}
+  \begin{sffamily}
+  \begin{center}
+    \includegraphics[scale=#2]{#1} \sn \sn
+    \hfill
+%\HRule \\[0.4cm]
+\begin{center}
+    {\Huge \textbf{#3}} \sn
+    \textbf{#4}\sn \sn
+\end{center}
+\sn \sn
+ #5 \sn
+   \vfill
+   {\large #6}
+  \end{center}
+  \end{sffamily}
+\end{titlepage}
+}
+
+
+\newtheorem{question}{Question}
+\newtheorem{reponse}{$>>>$}
+\newtheorem{propriete}{Propriété}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remarque}{Remarque}
+\newtheorem{exemple}{Exemple}
+\newtheorem{definition}{Definition}
+
+
+%#######################################
+\newcommand{\messageBox}[5]{
+% 1: title
+% 2: color frame
+% 3: color bg
+% 4: content
+% 5: titlecolor
+%\messageBox{Remarque}{green}{white}{Erreur 0xff58}{black}
+%\messageBox{Installation}{gray}{white}{DE}{black}
+%\messageBox{Avertissement}{orange}{white}{dede}{black}
+%\messageBox{Erreur}{red}{white}{dede}{black}
+ \begin{tcolorbox}[title=#1,
+colframe=#2!80,
+colback=#3!10,
+coltitle=#5!100,  
+]
+#4
+\end{tcolorbox}
+}
+
+
+
+%######################### PAGE STYLE
+
+\newcommand{\setRightHeader}[1]{\rhead{#1}}
+\newcommand{\setCenterHeader}[1]{\chead{#1}}
+\newcommand{\setLeftHeader}[1]{\lhead{#1}}
+
+\newcommand{\setRightFooter}[1]{\rfoot{#1}}
+\newcommand{\setCenterFooter}[1]{\cfoot{#1}}
+\newcommand{\setLeftFooter}[1]{\lfoot{#1}}
+
+
+\newcommand{\setFullPage}{\RequirePackage{fullpage}}
+
+%Raccourcis
+\newcommand{\currentChapter}{\leftmark}
+\newcommand{\currentPage}{\thepage/\pageref{LastPage}}
+\newcommand{\setAliasChapter}[1]{
+\makeatletter
+\renewcommand{\@chapapp}{#1}   %Le mot 'Chapitre' est remplacé par 'Section'
+}
+
+
+%### Définition du style de page 'classic'
+\newcommand{\addPresentation}[6]{
+\fancypagestyle{classic}{
+    \rhead{#3}  
+    \lhead{#1}
+    \chead{#2}
+    \rfoot{#6}  %Page courante / Nombre de page
+    \cfoot{#5}
+    \lfoot{#4}
+}
+
+\makeatletter
+\renewcommand\chapter{\if@openright\cleardoublepage\else\clearpage\fi
+                      \thispagestyle{classic} %Thème 'classic'
+                      \global\@topnum\z@
+                      \@afterindentfalse
+                      \secdef\@chapter\@schapter}
+\makeatother
+\pagestyle{classic}
+}
+
+
+
+\newcommand{\setHeaderLine}[1]{ 
+\renewcommand{\headrulewidth}{#1pt} 
+}
+\newcommand{\setFooterLine}[1]{ 
+\renewcommand{\footrulewidth}{#1pt} 
+}
+   

@@ -24,5 +24,5 @@ git clone https://github.com/nicolasleguerroue/Utils.git
 
 #se placer dans le dossier courznt
 #git add .
-#git ommit -m "message"
+#git commit -m "message"
 #git push origin master

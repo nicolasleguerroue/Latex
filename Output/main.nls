@@ -1,13 +1,13 @@
 
 \begin{thenomenclature} 
 \nomgroup{A}
-  \item [{$\varepsilon$}]\begingroup Tension différentielle $(\varepsilon = E_+ - E_-)$\addUnit{V}\nomeqref {5.0}\nompageref{13}
-  \item [{$A_d$}]\begingroup Coefficient d'amplification, gain differentiel \nomeqref {5.0}\nompageref{13}
-  \item [{$E_+$}]\begingroup Tension entrée non inverseuse \addUnit{V}\nomeqref {5.0}\nompageref{13}
-  \item [{$E_-$}]\begingroup Tension entrée inverseuse \addUnit{V}\nomeqref {5.0}\nompageref{13}
+  \item [{$\varepsilon$}]\begingroup Tension différentielle $(\varepsilon = E_+ - E_-)$\addUnit{V}\nomeqref {5.0}\nompageref{15}
+  \item [{$A_d$}]\begingroup Coefficient d'amplification, gain differentiel \nomeqref {5.0}\nompageref{15}
+  \item [{$E_+$}]\begingroup Tension entrée non inverseuse \addUnit{V}\nomeqref {5.0}\nompageref{15}
+  \item [{$E_-$}]\begingroup Tension entrée inverseuse \addUnit{V}\nomeqref {5.0}\nompageref{15}
 \nomgroup{E}
-  \item [{$\eta$}]\begingroup Rendement d'un mécanisme \addUnit{\%}\nomeqref {5.0}\nompageref{13}
-  \item [{$\varphi$}]\begingroup Dépahasage entre deux signaux \addUnit{rad}\nomeqref {5.0}\nompageref{13}
-  \item [{$r$}]\begingroup Rapport cyclique d'un signal périodique\nomeqref {5.0}\nompageref{13}
+  \item [{$\eta$}]\begingroup Rendement d'un mécanisme \addUnit{\%}\nomeqref {5.0}\nompageref{15}
+  \item [{$\varphi$}]\begingroup Dépahasage entre deux signaux \addUnit{rad}\nomeqref {5.0}\nompageref{15}
+  \item [{$r$}]\begingroup Rapport cyclique d'un signal périodique\nomeqref {5.0}\nompageref{15}
 
 \end{thenomenclature}
