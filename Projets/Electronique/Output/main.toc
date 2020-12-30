@@ -125,3 +125,12 @@
 \contentsline {subsection}{\numberline {23.1.2}Principe CMOS}{81}{subsection.23.1.2}%
 \contentsline {section}{\numberline {23.2}Comment les distinguer ?}{81}{section.23.2}%
 \contentsline {section}{\numberline {23.3}Avantages et inconvénients}{82}{section.23.3}%
+\contentsline {chapter}{\numberline {24}Les signaux}{83}{chapter.24}%
+\contentsline {section}{\numberline {24.1}Introduction}{83}{section.24.1}%
+\contentsline {subsection}{\numberline {24.1.1}Les grandeurs physiques}{83}{subsection.24.1.1}%
+\contentsline {subsection}{\numberline {24.1.2}Les atomes}{83}{subsection.24.1.2}%
+\contentsline {subsection}{\numberline {24.1.3}La charge électrique}{83}{subsection.24.1.3}%
+\contentsline {subsection}{\numberline {24.1.4}Les électrons}{83}{subsection.24.1.4}%
+\contentsline {section}{\numberline {24.2}La tension électrique}{83}{section.24.2}%
+\contentsline {section}{\numberline {24.3}Analogie}{84}{section.24.3}%
+\contentsline {subsection}{\numberline {24.3.1}Exemples}{84}{subsection.24.3.1}%

@@ -546,7 +546,7 @@ f/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10
 e1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Output/main.pdf (17 pages, 824665 bytes).
+Output written on Output/main.pdf (17 pages, 824964 bytes).
 Transcript written on Output/main.log.
 makeglossaries version 4.45 (2020-01-18)
 added glossary type 'acronym' (alg,acr,acn)
@@ -1032,5 +1032,5 @@ f/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10
 e1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Output/main.pdf (17 pages, 826766 bytes).
+Output written on Output/main.pdf (17 pages, 827085 bytes).
 Transcript written on Output/main.log.

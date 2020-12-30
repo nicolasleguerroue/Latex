@@ -12,6 +12,11 @@
 \RequirePackage{tikz,pgfplots,pgf}  
 \RequirePackage{version}            %use commented code
 
+\RequirePackage{graphics} %include figures
+\RequirePackage{graphicx} %include figures
+\RequirePackage{caption}
+
+\RequirePackage{version}            %use commented code
 \pgfplotsset{compat=1.7}
 %###### Checking if babel is loaded
 \makeatletter
@@ -54,14 +59,20 @@ Cet environnement permet de tracer des courbes en 2D à partir de points, d'équ
 \newenvironment{graphics}[9]
 {
     \begin{center}
-    \begin{tikzpicture}
-    \setGraphic %command to display with frenchb babel
+        \makeatletter
+        \def\@captype{figure}
+        \makeatother
+
+        \newcommand{\TitleGraphic}{#9}%use var to print title 
+        \begin{tikzpicture}
+        \setGraphic %command to display with frenchb babel
     %\shorthandoff{:;!?} %Compulsory if frenchb package is used (from babel)
-    \begin{axis}[width=#1\linewidth,height=#2\linewidth,xmin=#3,xmax=#4,  ymin=#5, ymax=#6, scale only axis,xlabel=#7,ylabel=#8, title=#9] %grid=both
+    \begin{axis}[width=#1\linewidth,height=#2\linewidth,xmin=#3,xmax=#4,  ymin=#5, ymax=#6, scale only axis,xlabel=#7,ylabel=#8] %grid=both
     }
     { 
-	\end{axis}
-    	\end{tikzpicture}
+    \end{axis}
+        \end{tikzpicture}
+        \captionof{figure}{\TitleGraphic}
     \end{center}
 }
     

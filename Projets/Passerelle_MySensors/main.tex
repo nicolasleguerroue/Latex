@@ -1,0 +1,35 @@
+%#########################################################
+%####### Project name : 
+%####### Name
+%#########################################################
+%####### Author(s) : 
+%####### Auth1, Auth2 ...
+%#########################################################
+%####### File settings
+%#########################################################
+\input{Settings.tex}
+\usepackage{quotchap}
+%#########################################################
+%####### Begin document
+\begin{document}
+%#########################################################
+%####### First Page
+\setHeaderImage{Images/power/24}{0.3}{Domoticz}{Passerelle \og My Sensors\fg{}}{Club de Robotique et d'Electronique\\ Programmable de Ploemeur}{\today}
+\input{Make/Contacts.tex}  
+%#########################################################
+%####### Table of content
+\setcounter{page}{2}
+\tableofcontents
+\newpage
+%#########################################################
+%#########################################################
+
+\input{Output/add_content.tex} %load chapters
+\listoffigures
+\addcontentsline{toc}{section}{Table des figures}
+
+
+
+\end{document}
+
+

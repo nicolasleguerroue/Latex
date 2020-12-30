@@ -1,92 +1,14 @@
 \begin{theindex}
 
-  \item addLegend, \hyperpage{15}
-  \item addTrace, \hyperpage{15}
-  \item addUnit, \hyperpage{15}
+  \item addUnit, \hyperpage{6}
 
   \indexspace
 
-  \item bash, \hyperpage{12}
-  \item bin, \hyperpage{14}
-  \item bold, \hyperpage{5}
+  \item nomenclature, \hyperpage{6}
 
   \indexspace
 
-  \item cpp, \hyperpage{11}
-
-  \indexspace
-
-  \item definition, \hyperpage{8}
-  \item dir, \hyperpage{14}
-
-  \indexspace
-
-  \item emat, \hyperpage{10}
-  \item evec, \hyperpage{10}
-  \item exemple, \hyperpage{8}
-
-  \indexspace
-
-  \item file, \hyperpage{14}
-
-  \indexspace
-
-  \item hexa, \hyperpage{14}
-
-  \indexspace
-
-  \item ib, \hyperpage{5}
-  \item img, \hyperpage{6}
-  \item imgf, \hyperpage{6}
-  \item italic, \hyperpage{5}
-
-  \indexspace
-
-  \item lib, \hyperpage{14}
-
-  \indexspace
-
-  \item messageBox, \hyperpage{7}
-
-  \indexspace
-
-  \item nomenclature, \hyperpage{15}
-
-  \indexspace
-
-  \item printindex, \hyperpage{15}
-  \item printnomenclature, \hyperpage{15}
-  \item proposition, \hyperpage{7}
-  \item propriete, \hyperpage{7}
-  \item python, \hyperpage{12}
-
-  \indexspace
-
-  \item question, \hyperpage{7}
-
-  \indexspace
-
-  \item remarque, \hyperpage{7}
-  \item reponse, \hyperpage{7}
-
-  \indexspace
-
-  \item setAliasChapter, \hyperpage{5}
-  \item setFooterLine, \hyperpage{5}
-  \item setFullpage, \hyperpage{5}
-  \item setHeader, \hyperpage{5}
-  \item setHeaderImage, \hyperpage{4}
-  \item setHeaderLine, \hyperpage{5}
-  \item setParameters, \hyperpage{9}
-  \item shortcut, \hyperpage{14}
-  \item sn, \hyperpage{6}
-
-  \indexspace
-
-  \item ublue, \hyperpage{13}
-  \item ugreen, \hyperpage{13}
-  \item ugrey, \hyperpage{13}
-  \item uorange, \hyperpage{13}
-  \item ured, \hyperpage{13}
+  \item printindex, \hyperpage{6}
+  \item printnomenclature, \hyperpage{6}
 
 \end{theindex}

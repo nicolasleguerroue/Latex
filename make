@@ -2,6 +2,8 @@
 #Ce fichier permet de compiler un projet Latex
 #La première phase permet de préparer le répertoire de compilation
 
+
+
 default="\033[0m"
 black="\033[30m"
 red="\033[31m"
@@ -12,14 +14,28 @@ blue="\033[34m"
 
 output_dir="Output"
 img_dir="Images"
+utils_dir="Utils"
 
-#Gestion des images
 
 #Vérification du dossier $output_dir
 if [[ ! -d $output_dir ]]; then
 	mkdir $output_dir
 fi
 main="main" #Nom du fichier de compilation principal
+
+#Fast compilation
+
+if [ "$1" == "-f" ];then
+	echo "Fast compiling..."
+	pdflatex --output-dir=$output_dir $main >> render_report.txt
+	pdflatex --output-dir=$output_dir $main >> render_report.txt
+	mv $output_dir/$main.pdf $main.pdf >> render_report.txt
+	echo -e "Done !"
+	exit
+fi
+
+#Gestion des images
+
 
 
 parts_dir="Parts"
@@ -70,8 +86,43 @@ then
 		done
 fi
 done
+
+
 echo -e "$green"
-echo -e "[Etape 3 / 8] >>> Génération du fichier d'importation..."
+echo -e "[Etape 3 / 8] >>> Génération du fichier d'importation des parties effectuée"
+
+echo -e "[Etape 4 / 8] >>> Génération du fichier d'importation des bilbiothèques..."
+#Génération du fichier d'inclusion des bibliothèques
+echo -e "$blue"
+
+#create Utils file
+echo -e "%############################################################
+%###### Package Utils 
+%###### This package include Latex tools
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+%######
+%###### Include packages
+%######
+%############################################################" > $utils_dir/Utils.sty
+for item in $utils_dir/*
+do
+	#echo $output_dir/$item
+	if [ -f "$item" ];then
+		if [ `echo $item | grep Utils/Utils.sty` ];then
+			echo -e "$green"
+			echo -e ">>> Fichier d'inclusion des bibliothèques trouvée!"
+			echo -e "$blue"
+		else
+			echo -e ">>> Bibliothèques "$item" importée !"
+			lib_name=`echo $item | cut -d '.' -f1`
+			echo -n "\usepackage{$lib_name}" >> $utils_dir/Utils.sty
+			echo -e "" >> $utils_dir/Utils.sty
+		fi
+	fi
+done
+echo -e "$green"
 echo -e "[Etape 4 / 8] >>> Première compilation du fichier $main.tex..."
 echo -e "$orange"
 pdflatex --output-dir=$output_dir $main >> render_report.txt
@@ -99,3 +150,15 @@ mv $output_dir/$main.pdf $main.pdf >> render_report.txt
 echo -e "$green"
 echo -e "[Etape 8 / 8] >>> Déplacement du fichier $main.pdf à la racine du projet..."
 echo -e ">>> Compilation terminée ! $default"
+
+if [ "$1" == "--git" ];then
+	if [ "$2" == "" ];then
+	echo -e "$red Abandon de la requête Git : message de mise à jour vide.$default"
+	exit
+	fi
+	git add .
+	git commit -m "$2"
+	git push origin master
+	echo -e "Mise à jour du dépot terminée !"
+	exit
+fi

@@ -21,11 +21,75 @@ Package babel-french Warning: Option `frenchb' for Babel is *deprecated*,
 (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)))))
 (/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
-(./Utils/Utils.sty (./Utils/Badges.sty
+(./Utils/Utils.sty (./Utils/Adding.sty
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/xfor/xfor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/substr/substr.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-fp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp.sty
+`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
+(/usr/share/texlive/texmf-dist/tex/latex/fp/defpattern.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-basic.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-addons.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-snap.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-exp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-trigo.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-pas.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-random.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eqn.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-upn.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eval.sty))))
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries-compatible-
+307.sty) (/usr/share/texlive/texmf-dist/tex/latex/tracklang/tracklang.sty
+(/usr/share/texlive/texmf-dist/tex/generic/tracklang/tracklang.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries-french/glossaries-french.ld
+f)
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.st
+y) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-super.sty
+(/usr/share/texlive/texmf-dist/tex/latex/supertabular/supertabular.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/nomencl/nomencl.sty
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/tocbasic.sty
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty))))
 (/usr/share/texmf/tex/latex/lm/lmodern.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 (/usr/share/texmf/tex/latex/lm/t1lmr.fd))
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg))
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
@@ -36,11 +100,6 @@ ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
@@ -121,7 +180,6 @@ tex)
 .sty)) (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
 (/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
 Library (tcolorbox): 'tcbraster.code.tex' version '4.22'
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
@@ -150,27 +208,25 @@ Library (tcolorbox): 'tcbbreakable.code.tex' version '4.22'
 Library (tcolorbox): 'tcbhooks.code.tex' version '4.22'
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
 Library (tcolorbox): 'tcbtheorems.code.tex' version '4.22'
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-For additional information on amsmath, use the `?' option.
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty)))
-(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
 Library (tcolorbox): 'tcbfitting.code.tex' version '4.22'
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbxparse.code.tex
 Library (tcolorbox): 'tcbxparse.code.tex' version '4.22'
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def))))))
-(./Utils/Citations.sty (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/epigraph/epigraph.sty
-(/usr/share/texlive/texmf-dist/tex/latex/nextpage/nextpage.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/quotchap/quotchap.sty))
-(./Utils/Colors.sty) (./Utils/Links.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def)))))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
 (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
 (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
@@ -190,41 +246,73 @@ Library (tcolorbox): 'tcbxparse.code.tex' version '4.22'
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 (/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
-(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))))
-(./Utils/Maths.sty) (./Utils/Images.sty
-(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
-(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty))
-(./Utils/Fonts.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-pdftex.def))
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty)
+Writing index file main.idx
+) (./Utils/Badges.sty (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+)) (./Utils/Citations.sty
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/epigraph/epigraph.sty
+(/usr/share/texlive/texmf-dist/tex/latex/nextpage/nextpage.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/quotchap/quotchap.sty))
+(./Utils/Colors.sty) (./Utils/Electronic.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tikz-timing/tikz-timing.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarycalc.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarybackgrounds.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.pathmorphing.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
+e.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.pathmorphing.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/circuitikz/circuitikz.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.
+code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarybending.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulebending.code.te
+x
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulenonlineartransf
+ormations.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibrarycurvilinear.
+code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcirc.defines.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircutils.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircshapes.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircmonopoles.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircbipoles.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcirctripoles.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircquadpoles.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircmultipoles.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcirclabel.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircvoltage.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcirccurrent.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircflow.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircpath.tex)
+
+Package circuitikz Warning: You did not specify one of the voltage directions:
+(circuitikz)                  oldvoltagedirection, nooldvoltagedirection, 
+(circuitikz)                  RPvoltages or EFvoltages 
+(circuitikz)                Default directions may have changed, 
+(circuitikz)                please check the manual.
+
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarybabel.code.tex)) (./Utils/Fonts.sty
 (/usr/share/texlive/texmf-dist/tex/latex/fontawesome/fontawesome.sty
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifxetex.sty)
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-generic
 .tex)
 (/usr/share/texlive/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-pdftex.
-tex))) (./Utils/Header.sty
+tex))) (./Utils/Graphics.sty
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty)))
-(./Utils/Layout.sty (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg))
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
-(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty)))
-(./Utils/Graphics.sty (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
-) (/usr/share/texlive/texmf-dist/tex/latex/csvsimple/csvsimple.sty
-(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/csvsimple/csvsimple.sty
 (/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty))
 (/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
@@ -281,14 +369,6 @@ e.tex)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarydecorations.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
-e.tex))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarydecorations.pathmorphing.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
-decorations.pathmorphing.code.tex))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarydecorations.pathreplacing.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
 decorations.pathreplacing.code.tex)))
@@ -296,60 +376,20 @@ decorations.pathreplacing.code.tex)))
 zlibraryplotmarks.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.co
 de.tex))) (/usr/share/texlive/texmf-dist/tex/latex/version/version.sty))
-(./Utils/Programming.sty) (./Utils/Adding.sty
-(/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
-(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
-(/usr/share/texlive/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/xfor/xfor.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-base.sty
-(/usr/share/texlive/texmf-dist/tex/latex/substr/substr.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-fp.sty
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp.sty
-`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
-(/usr/share/texlive/texmf-dist/tex/latex/fp/defpattern.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-basic.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-addons.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-snap.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-exp.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-trigo.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-pas.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-random.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eqn.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-upn.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eval.sty))))
-(/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries-compatible-
-307.sty) (/usr/share/texlive/texmf-dist/tex/latex/tracklang/tracklang.sty
-(/usr/share/texlive/texmf-dist/tex/generic/tracklang/tracklang.tex))
-(/usr/share/texlive/texmf-dist/tex/latex/translator/translator.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/glossaries-french/glossaries-french.ld
-f)
-(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.st
-y) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
-) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty
-(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-super.sty
-(/usr/share/texlive/texmf-dist/tex/latex/supertabular/supertabular.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/nomencl/nomencl.sty
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/tocbasic.sty
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty))))
-(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
-(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-pdftex.def))
-(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty)
-Writing index file main.idx
-)) (./Utils/Labels.sty
+(./Utils/Header.sty (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty))
+(./Utils/Images.sty (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty))
+ (./Utils/Labels.sty
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
 Library (tcolorbox): 'tcblistings.code.tex' version '4.22'
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingscore.code.tex
 Library (tcolorbox): 'tcblistingscore.code.tex' version '4.22'
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
 Library (tcolorbox): 'tcbprocessing.code.tex' version '4.22'
-)))) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty)
+)))) (./Utils/Layout.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)) (./Utils/Links.sty)
+ (./Utils/Maths.sty)) (./Utils/Programming.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/fncychap/fncychap.sty)
 
 Package hyperref Warning: Option `bookmarks' has already been used,
@@ -359,17 +399,16 @@ Package hyperref Warning: Option `bookmarks' has already been used,
 (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
 (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
 No file main.aux.
-ABD: EveryShipout initializing macros
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+ABD: EveryShipout initializing macros
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty)
-*geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.16} (current compat level: 1.7).
 
@@ -378,7 +417,7 @@ enefit from \pgfplotsset{compat=1.16} (current compat level: 1.7).
 LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 9.
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Images/content/tux.png
->] (./Output/add_content.tex (./Parts/0.content/0.content.tex
+>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
 Make it at least 15.35403pt.
@@ -386,124 +425,94 @@ We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
 
-LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 1.
+LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 13.
 
 [2]
-
-LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 10.
-
-[3]
 Section 1.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd)
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
-(/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+(./Output/add_content.tex (./Parts/0.content/0.content.tex
+
+LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 1.
+
+[3] (/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
 (/usr/share/texmf/tex/latex/lm/omllmm.fd)
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd)
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd)
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
 
-LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 29.
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 476.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (45.32106pt too wide) in paragraph at lines 478--480
+[]\T1/lmr/m/n/12 Notre si-gnal d'hor-loge ([]) pro-vient d'un os-cil-la-teur à 
+quartz. [] 
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 490.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 490.
 
 [4]
 
-LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 73.
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 553.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 553.
 
 [5]
+Overfull \hbox (14.7215pt too wide) in paragraph at lines 596--596
+ [] 
 
-LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 109.
-
-[6]
-
-LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 158.
-
-[7]
-
-LaTeX Warning: Reference `LastPage' on page 8 undefined on input line 173.
-
-[8]
-Section 2.
-
-LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 189.
-
-[9]
-Section 3.
-
-LaTeX Warning: Reference `LastPage' on page 10 undefined on input line 212.
-
-[10]
-Section 4.
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
-(/usr/share/texmf/tex/latex/lm/t1lmtt.fd)
-
-Package Listings Warning: Text dropped after begin of listing on input line 242
-.
-
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
-
-LaTeX Warning: Reference `LastPage' on page 11 undefined on input line 256.
-
-[11]
-
-Package Listings Warning: Text dropped after begin of listing on input line 269
-.
-
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
-
-LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 296.
-
-[12]
-Section 5.
-
-LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 333.
-
-[13]
-
-LaTeX Warning: Reference `LastPage' on page 14 undefined on input line 432.
-
-[14]
+Overfull \hbox (2.61105pt too wide) in paragraph at lines 570--598
+[]$[]$ $[]$ 
 No file main.nls.
 No file main.ind.
-
-Package lastpage Warning: Rerun to get the references right on input line 493.
-
-
-AED: lastpage setting LastPage
-
-LaTeX Warning: Reference `LastPage' on page 15 undefined on input line 493.
-
-[15]
 
 Package glossaries Warning: No \printglossary or \printglossaries found. 
 (Remove \makeglossaries if you don't want any glossaries.) 
 This document will not have a glossary.
 
-(Output/main.aux)
+
+Package lastpage Warning: Rerun to get the references right on input line 664.
+
+
+AED: lastpage setting LastPage
+
+LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 664.
+
+[6]
+
+LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 664.
+
+[7] (Output/main.aux)
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
- ) ) ){/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/font
-s/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/s
-hare/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/l
-m/lm-mathit.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
-r/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/publi
-c/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/t
-exmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lm
-r17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/font
-s/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb
-></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/typ
-e1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></
-usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/
-public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uh
-vr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Output/main.pdf (15 pages, 393752 bytes).
+ ) ) )
+(see the transcript file for additional information){/usr/share/texmf/fonts/enc
+/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/
+texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-
+mathit.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/sha
+re/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lm
+r10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fon
+ts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvet
+ic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on Output/main.pdf (7 pages, 209023 bytes).
 Transcript written on Output/main.log.
 makeglossaries version 4.45 (2020-01-18)
 added glossary type 'acronym' (alg,acr,acn)
@@ -529,11 +538,75 @@ Package babel-french Warning: Option `frenchb' for Babel is *deprecated*,
 (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)))))
 (/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
-(./Utils/Utils.sty (./Utils/Badges.sty
+(./Utils/Utils.sty (./Utils/Adding.sty
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/xfor/xfor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/substr/substr.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-fp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp.sty
+`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
+(/usr/share/texlive/texmf-dist/tex/latex/fp/defpattern.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-basic.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-addons.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-snap.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-exp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-trigo.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-pas.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-random.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eqn.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-upn.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eval.sty))))
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries-compatible-
+307.sty) (/usr/share/texlive/texmf-dist/tex/latex/tracklang/tracklang.sty
+(/usr/share/texlive/texmf-dist/tex/generic/tracklang/tracklang.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries-french/glossaries-french.ld
+f)
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.st
+y) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-super.sty
+(/usr/share/texlive/texmf-dist/tex/latex/supertabular/supertabular.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/nomencl/nomencl.sty
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/tocbasic.sty
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty))))
 (/usr/share/texmf/tex/latex/lm/lmodern.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 (/usr/share/texmf/tex/latex/lm/t1lmr.fd))
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg))
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
@@ -544,11 +617,6 @@ ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
@@ -629,7 +697,6 @@ tex)
 .sty)) (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
 (/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
 Library (tcolorbox): 'tcbraster.code.tex' version '4.22'
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
@@ -658,27 +725,25 @@ Library (tcolorbox): 'tcbbreakable.code.tex' version '4.22'
 Library (tcolorbox): 'tcbhooks.code.tex' version '4.22'
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
 Library (tcolorbox): 'tcbtheorems.code.tex' version '4.22'
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-For additional information on amsmath, use the `?' option.
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty)))
-(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
 Library (tcolorbox): 'tcbfitting.code.tex' version '4.22'
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbxparse.code.tex
 Library (tcolorbox): 'tcbxparse.code.tex' version '4.22'
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def))))))
-(./Utils/Citations.sty (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/epigraph/epigraph.sty
-(/usr/share/texlive/texmf-dist/tex/latex/nextpage/nextpage.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/quotchap/quotchap.sty))
-(./Utils/Colors.sty) (./Utils/Links.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def)))))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
 (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
 (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
@@ -698,41 +763,73 @@ Library (tcolorbox): 'tcbxparse.code.tex' version '4.22'
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 (/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
-(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))))
-(./Utils/Maths.sty) (./Utils/Images.sty
-(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
-(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty))
-(./Utils/Fonts.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-pdftex.def))
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty)
+Writing index file main.idx
+) (./Utils/Badges.sty (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+)) (./Utils/Citations.sty
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/epigraph/epigraph.sty
+(/usr/share/texlive/texmf-dist/tex/latex/nextpage/nextpage.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/quotchap/quotchap.sty))
+(./Utils/Colors.sty) (./Utils/Electronic.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tikz-timing/tikz-timing.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarycalc.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarybackgrounds.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.pathmorphing.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
+e.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.pathmorphing.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/circuitikz/circuitikz.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.
+code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarybending.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulebending.code.te
+x
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulenonlineartransf
+ormations.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibrarycurvilinear.
+code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcirc.defines.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircutils.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircshapes.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircmonopoles.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircbipoles.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcirctripoles.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircquadpoles.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircmultipoles.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcirclabel.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircvoltage.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcirccurrent.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircflow.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircpath.tex)
+
+Package circuitikz Warning: You did not specify one of the voltage directions:
+(circuitikz)                  oldvoltagedirection, nooldvoltagedirection, 
+(circuitikz)                  RPvoltages or EFvoltages 
+(circuitikz)                Default directions may have changed, 
+(circuitikz)                please check the manual.
+
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarybabel.code.tex)) (./Utils/Fonts.sty
 (/usr/share/texlive/texmf-dist/tex/latex/fontawesome/fontawesome.sty
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifxetex.sty)
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-generic
 .tex)
 (/usr/share/texlive/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-pdftex.
-tex))) (./Utils/Header.sty
+tex))) (./Utils/Graphics.sty
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty)))
-(./Utils/Layout.sty (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg))
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
-(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty)))
-(./Utils/Graphics.sty (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
-) (/usr/share/texlive/texmf-dist/tex/latex/csvsimple/csvsimple.sty
-(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/csvsimple/csvsimple.sty
 (/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty))
 (/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
@@ -789,14 +886,6 @@ e.tex)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarydecorations.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
-e.tex))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarydecorations.pathmorphing.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
-decorations.pathmorphing.code.tex))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarydecorations.pathreplacing.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
 decorations.pathreplacing.code.tex)))
@@ -804,60 +893,20 @@ decorations.pathreplacing.code.tex)))
 zlibraryplotmarks.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.co
 de.tex))) (/usr/share/texlive/texmf-dist/tex/latex/version/version.sty))
-(./Utils/Programming.sty) (./Utils/Adding.sty
-(/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
-(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
-(/usr/share/texlive/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/xfor/xfor.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-base.sty
-(/usr/share/texlive/texmf-dist/tex/latex/substr/substr.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-fp.sty
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp.sty
-`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
-(/usr/share/texlive/texmf-dist/tex/latex/fp/defpattern.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-basic.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-addons.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-snap.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-exp.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-trigo.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-pas.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-random.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eqn.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-upn.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eval.sty))))
-(/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries-compatible-
-307.sty) (/usr/share/texlive/texmf-dist/tex/latex/tracklang/tracklang.sty
-(/usr/share/texlive/texmf-dist/tex/generic/tracklang/tracklang.tex))
-(/usr/share/texlive/texmf-dist/tex/latex/translator/translator.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/glossaries-french/glossaries-french.ld
-f)
-(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.st
-y) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
-) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty
-(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-super.sty
-(/usr/share/texlive/texmf-dist/tex/latex/supertabular/supertabular.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/nomencl/nomencl.sty
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/tocbasic.sty
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty))))
-(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
-(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-pdftex.def))
-(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty)
-Writing index file main.idx
-)) (./Utils/Labels.sty
+(./Utils/Header.sty (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty))
+(./Utils/Images.sty (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty))
+ (./Utils/Labels.sty
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
 Library (tcolorbox): 'tcblistings.code.tex' version '4.22'
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingscore.code.tex
 Library (tcolorbox): 'tcblistingscore.code.tex' version '4.22'
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
 Library (tcolorbox): 'tcbprocessing.code.tex' version '4.22'
-)))) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty)
+)))) (./Utils/Layout.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)) (./Utils/Links.sty)
+ (./Utils/Maths.sty)) (./Utils/Programming.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/fncychap/fncychap.sty)
 
 Package hyperref Warning: Option `bookmarks' has already been used,
@@ -866,22 +915,33 @@ Package hyperref Warning: Option `bookmarks' has already been used,
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def))
 (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
 (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
-(Output/main.aux) ABD: EveryShipout initializing macros
+(Output/main.aux)
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+ABD: EveryShipout initializing macros
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
-(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty)
-*geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.16} (current compat level: 1.7).
 
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd) [1{/var/lib/texmf/fonts/map/pdftex/up
-dmap/pdftex.map} <./Images/content/tux.png>] (Output/main.toc
+dmap/pdftex.map} <./Images/content/tux.png>] (Output/main.toc)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+Make it at least 15.35403pt.
+We now make it that large for the rest of the document.
+This may cause the page layout to be inconsistent, however.
+
+[2]
+Section 1.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
+(./Output/add_content.tex (./Parts/0.content/0.content.tex [3]
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
 (/usr/share/texmf/tex/latex/lm/omllmm.fd)
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd)
@@ -889,72 +949,57 @@ dmap/pdftex.map} <./Images/content/tux.png>] (Output/main.toc
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
-Make it at least 15.35403pt.
-We now make it that large for the rest of the document.
-This may cause the page layout to be inconsistent, however.
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 476.
+See the caption package documentation for explanation.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.32 ...n d'une matrice 3*3}{10}{subsection.3.1.1}
-                                                  % [1])
-(./Output/add_content.tex (./Parts/0.content/0.content.tex [2] [3]
-Section 1.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd)
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd) [4] [5] [6] [7]
-[8]
-Section 2.
-[9]
-Section 3.
-[10]
-Section 4.
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
-(/usr/share/texmf/tex/latex/lm/t1lmtt.fd)
 
-Package Listings Warning: Text dropped after begin of listing on input line 242
-.
+Overfull \hbox (45.32106pt too wide) in paragraph at lines 478--480
+[]\T1/lmr/m/n/12 Notre si-gnal d'hor-loge ([]) pro-vient d'un os-cil-la-teur à 
+quartz. [] 
 
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty) [11]
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 490.
+See the caption package documentation for explanation.
 
-Package Listings Warning: Text dropped after begin of listing on input line 269
-.
+[4]
 
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty) [12]
-Section 5.
-[13] [14] (Output/main.nls [15]) (Output/main.ind [16] [17])
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 553.
+See the caption package documentation for explanation.
 
-AED: lastpage setting LastPage
+[5]
+Overfull \hbox (14.7215pt too wide) in paragraph at lines 596--596
+ [] 
+
+Overfull \hbox (2.61105pt too wide) in paragraph at lines 570--598
+[]$[]$ $[]$ 
+(Output/main.nls [6] [7]) (Output/main.ind [8] [9])
 
 Package glossaries Warning: No \printglossary or \printglossaries found. 
 (Remove \makeglossaries if you don't want any glossaries.) 
 This document will not have a glossary.
 
+
+AED: lastpage setting LastPage
 (Output/main.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) ) )
 (see the transcript file for additional information){/usr/share/texmf/fonts/enc
-/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/us
-r/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm
-/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texli
-ve/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/type1/public/
-lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/t
-exmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/
-lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf
-/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/t
-ype1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/pub
-lic/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public
-/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/te
-xmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lm
-tt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Output/main.pdf (18 pages, 410494 bytes).
+/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/sh
+are/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-
+mathit.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/sha
+re/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lm
+r10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fon
+ts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb><
+/usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1
+/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
+w/times/utmr8a.pfb>
+Output written on Output/main.pdf (9 pages, 224221 bytes).
 Transcript written on Output/main.log.
