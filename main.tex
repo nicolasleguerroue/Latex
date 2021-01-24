@@ -1,21 +1,22 @@
+\documentclass[12pt]{Utils/utils_article}  
 \input{Settings.tex}
-
-\usepackage{lipsum}  
-
 
 
 \begin{document}
 
-\setHeaderImage{Images/content/tux.png}{0.8}{Synthèse Latex}{Exemples et références}{Nicolas Le Guerroué}{\today \pageref{LastPage} pages}
+%\includepdf[pages=1]{a}
+
+
+\setHeaderImage{Images/aop/aop}{0.8}{Synthèse Latex}{Exemples et références}{Nicolas Le Guerroué}{\today \pageref{LastPage} pages}
+
 \tableofcontents
 \setcounter{page}{2}
+\newpage
+\input{Make/Contacts.tex}
 
-\chapter{tts}
-\colors{red}{INPUT\\}
-\colors{green}{INPUT\\}
-\colors{blue}{INPUT\\}
-\colors{water}{INPUT\\}
 \input{Output/add_content.tex}
 
 
+
 \end{document}
+

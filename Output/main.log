@@ -1,11 +1,17 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.10.3)  30 DEC 2020 14:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.4)  19 JAN 2021 00:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **main
 (./main.tex
 LaTeX2e <2020-02-02> patch level 2
-L3 programming layer <2020-02-14> (./Settings.tex
+L3 programming layer <2020-02-14> (./Utils/utils_article.cls
+
+LaTeX Warning: You have requested document class `Utils/utils_article',
+               but the document class provides `utils_report'.
+
+Document Class: utils_report 15/01/2021 Classe personnelle Utils pour document 
+report, V1.0
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
@@ -30,14 +36,6 @@ Package: babel 2020/02/14 3.40 The Babel package
 (/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
 File: switch.def 2020/02/14 3.40 Babel switching mechanism
 )
-(/usr/share/texlive/texmf-dist/tex/generic/babel-french/frenchb.ldf
-Language: frenchb 2020/01/30 v3.5g French support from the babel system
-
-
-Package babel-french Warning: Option `frenchb' for Babel is *deprecated*,
-(babel-french)                it might be removed sooner or later. Please
-(babel-french)                use `french' instead; reported on input line 35.
-
 (/usr/share/texlive/texmf-dist/tex/generic/babel-french/french.ldf
 Language: french 2020/01/30 v3.5g French support from the babel system
 
@@ -75,12 +73,12 @@ Package babel Info: Making ? an active character on input line 422.
 \leftmarginFB=\dimen141
 \parindentFFN=\dimen142
 \FBfnindent=\dimen143
-)))
+))
 (/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
-)
+))
 (./Utils/Utils.sty (./Utils/Adding.sty
 (/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
 Package: glossaries 2020/02/13 v4.45 (NLCT)
@@ -1063,28 +1061,7 @@ Package glossaries Info: Writing glossary file main.acn on input line 42.
 Package nomencl Info: Writing nomenclature file main.nlo on input line 43.
 ) (./Utils/Badges.sty (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
-)) (./Utils/Citations.sty
-(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
-LaTeX Info: Redefining \cite on input line 302.
-LaTeX Info: Redefining \nocite on input line 332.
-Package: cite 2015/02/27  v 5.5
-)
-(/usr/share/texlive/texmf-dist/tex/latex/epigraph/epigraph.sty
-Package: epigraph 2020/01/02 v1.5e typesetting epigraphs
-
-(/usr/share/texlive/texmf-dist/tex/latex/nextpage/nextpage.sty
-Package: nextpage 2009/09/03 v1.1a additional page commands
-)
-\beforeepigraphskip=\skip75
-\afterepigraphskip=\skip76
-\epigraphwidth=\skip77
-\epigraphrule=\skip78
-)
-(/usr/share/texlive/texmf-dist/tex/latex/quotchap/quotchap.sty
-Package: quotchap 2019/07/09 v1.2 Decorative Chapter Headings with Quotes
-\@quotebox=\box84
-))
-(./Utils/Colors.sty) (./Utils/Electronic.sty
+)) (./Utils/Chapter_1.sty) (./Utils/Colors.sty) (./Utils/Electronic.sty
 (/usr/share/texlive/texmf-dist/tex/latex/tikz-timing/tikz-timing.sty
 Package: tikz-timing 2017/12/20 v0.7f Digital Timing Diagrams using TikZ
 
@@ -1095,8 +1072,8 @@ File: tikzlibrarycalc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@layerbox@background=\box85
-\pgf@layerboxsaved@background=\box86
+\pgf@layerbox@background=\box84
+\pgf@layerboxsaved@background=\box85
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarydecorations.pathmorphing.code.tex
@@ -1113,14 +1090,14 @@ e.tex
 \pgfdecorationsegmentamplitude=\dimen315
 \pgfdecorationsegmentlength=\dimen316
 )
-\tikz@lib@dec@box=\box87
+\tikz@lib@dec@box=\box86
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
 decorations.pathmorphing.code.tex))
 \tikztiming@numint=\count357
 \tikztiming@numfrac=\count358
-\tikztiming@xunit=\skip79
-\tikztiming@yunit=\skip80
+\tikztiming@xunit=\skip75
+\tikztiming@yunit=\skip76
 \tikztiming@debug=\count359
 \c@tikztiming@nrows=\count360
 \c@tikztimingrows=\count361
@@ -1334,19 +1311,42 @@ Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
-\f@nch@headwidth=\skip81
-\f@nch@O@elh=\skip82
-\f@nch@O@erh=\skip83
-\f@nch@O@olh=\skip84
-\f@nch@O@orh=\skip85
-\f@nch@O@elf=\skip86
-\f@nch@O@erf=\skip87
-\f@nch@O@olf=\skip88
-\f@nch@O@orf=\skip89
+\f@nch@headwidth=\skip77
+\f@nch@O@elh=\skip78
+\f@nch@O@erh=\skip79
+\f@nch@O@olh=\skip80
+\f@nch@O@orh=\skip81
+\f@nch@O@elf=\skip82
+\f@nch@O@erf=\skip83
+\f@nch@O@olf=\skip84
+\f@nch@O@orf=\skip85
 ))
 (./Utils/Images.sty (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
-)) (./Utils/Labels.sty
+)) (./Utils/Items.sty
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip86
+\enit@outerparindent=\dimen346
+\enit@toks=\toks65
+\enit@inbox=\box87
+\enit@count@id=\count377
+\enitdp@description=\count378
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/pifont.sty
+Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
+LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))) (./Utils/Labels.sty
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
 Library (tcolorbox): 'tcblistings.code.tex' version '4.22'
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingscore.code.tex
@@ -1354,56 +1354,10 @@ Library (tcolorbox): 'tcblistingscore.code.tex' version '4.22'
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
 Library (tcolorbox): 'tcbprocessing.code.tex' version '4.22'
 )
-\c@tcblisting=\count377
+\c@tcblisting=\count379
 ))) (./Utils/Layout.sty
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
-)
-\c@question=\count378
-\c@reponse=\count379
-\c@propriete=\count380
-\c@proposition=\count381
-\c@remarque=\count382
-\c@exemple=\count383
-\c@definition=\count384
-) (./Utils/Links.sty) (./Utils/Maths.sty)) (./Utils/Programming.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
-Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box88
-\beforetitleunit=\skip90
-\aftertitleunit=\skip91
-\ttl@plus=\dimen346
-\ttl@minus=\dimen347
-\ttl@toksa=\toks65
-\titlewidth=\dimen348
-\titlewidthlast=\dimen349
-\titlewidthfirst=\dimen350
-)
-(/usr/share/texlive/texmf-dist/tex/latex/fncychap/fncychap.sty
-Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
-\RW=\skip92
-\mylen=\skip93
-\myhi=\skip94
-\px=\skip95
-\py=\skip96
-\pyy=\skip97
-\pxx=\skip98
-)
-
-Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 68.
-
-Package hyperref Info: Option `unicode' set `true' on input line 68.
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
-Now handling font encoding PU ...
-... no UTF-8 mapping file for font encoding PU
-)
-Package hyperref Info: Option `pdftoolbar' set `true' on input line 68.
-Package hyperref Info: Option `pdfmenubar' set `true' on input line 68.
-Package hyperref Info: Option `pdffitwindow' set `false' on input line 68.
-Package hyperref Info: Option `pdfnewwindow' set `true' on input line 68.
-Package hyperref Info: Option `colorlinks' set `true' on input line 68.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
@@ -1411,44 +1365,113 @@ Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
 (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex
 File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
 ))
-(Output/main.aux)
+\c@question=\count380
+\c@reponse=\count381
+\c@propriete=\count382
+\c@proposition=\count383
+\c@remarque=\count384
+\c@exemple=\count385
+\c@definition=\count386
+)
+(./Utils/Links.sty) (./Utils/Maths.sty) (./Utils/Pdf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2020/01/28 v0.5q Insert pages of external PDF documents (AM)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count387
+\calc@Bcount=\count388
+\calc@Adimen=\dimen347
+\calc@Bdimen=\dimen348
+\calc@Askip=\skip87
+\calc@Bskip=\skip88
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count389
+\calc@Cskip=\skip89
+)
+(/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
+)
+\AM@pagewidth=\dimen349
+\AM@pageheight=\dimen350
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2020/01/28 v0.5q Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box88
+\AM@global@opts=\toks66
+\AM@pagecnt=\count390
+\AM@toc@title=\toks67
+\c@AM@survey=\count391
+\AM@templatesizebox=\box89
+))
+(./Utils/Programming.sty)) (./Utils/Titles.sty
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2019/10/16 v2.13 Sectioning titles
+\ttl@box=\box90
+\beforetitleunit=\skip90
+\aftertitleunit=\skip91
+\ttl@plus=\dimen351
+\ttl@minus=\dimen352
+\ttl@toksa=\toks68
+\titlewidth=\dimen353
+\titlewidthlast=\dimen354
+\titlewidthfirst=\dimen355
+))
+(./Settings.tex
+
+Package hyperref Warning: Option `bookmarks' has already been used,
+(hyperref)                setting the option has no effect on input line 52.
+
+Package hyperref Info: Option `unicode' set `true' on input line 52.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `pdftoolbar' set `true' on input line 52.
+Package hyperref Info: Option `pdfmenubar' set `true' on input line 52.
+Package hyperref Info: Option `pdffitwindow' set `false' on input line 52.
+Package hyperref Info: Option `pdfnewwindow' set `true' on input line 52.
+Package hyperref Info: Option `colorlinks' set `true' on input line 52.
+) (Output/main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Info: Redefining \degres on input line 7.
-LaTeX Info: Redefining \dots on input line 7.
-LaTeX Info: Redefining \up on input line 7.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Info: Redefining \degres on input line 5.
+LaTeX Info: Redefining \dots on input line 5.
+LaTeX Info: Redefining \up on input line 5.
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count385
-\scratchdimen=\dimen351
-\scratchbox=\box89
-\nofMPsegments=\count386
-\nofMParguments=\count387
-\everyMPshowfont=\toks66
-\MPscratchCnt=\count388
-\MPscratchDim=\dimen352
-\MPnumerator=\count389
-\makeMPintoPDFobject=\count390
-\everyMPtoPDFconversion=\toks67
+\scratchcounter=\count392
+\scratchdimen=\dimen356
+\scratchbox=\box91
+\nofMPsegments=\count393
+\nofMParguments=\count394
+\everyMPshowfont=\toks69
+\MPscratchCnt=\count395
+\MPscratchDim=\dimen357
+\MPnumerator=\count396
+\makeMPintoPDFobject=\count397
+\everyMPtoPDFconversion=\toks70
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1466,8 +1489,8 @@ Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 7.
-\c@lstlisting=\count391
+(lastpage)             ! on input line 5.
+\c@lstlisting=\count398
 
 ABD: EveryShipout initializing macros
 *geometry* driver: auto-detecting
@@ -1478,15 +1501,15 @@ ABD: EveryShipout initializing macros
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(85.35826pt, 443.57848pt, 85.35826pt)
-* v-part:(T,H,B)=(85.35826pt, 624.25346pt, 85.35826pt)
+* h-part:(L,W,R)=(56.9055pt, 500.484pt, 56.9055pt)
+* v-part:(T,H,B)=(71.13188pt, 652.70622pt, 71.13188pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=443.57848pt
-* \textheight=624.25346pt
-* \oddsidemargin=13.08827pt
-* \evensidemargin=13.08827pt
-* \topmargin=-23.91173pt
+* \textwidth=500.484pt
+* \textheight=652.70622pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-38.1381pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
@@ -1504,8 +1527,8 @@ ABD: EveryShipout initializing macros
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box90
-Package hyperref Info: Link coloring ON on input line 7.
+\AtBeginShipoutBox=\box92
+Package hyperref Info: Link coloring ON on input line 5.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -1515,31 +1538,83 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count392
+\c@section@level=\count399
 )
-LaTeX Info: Redefining \ref on input line 7.
-LaTeX Info: Redefining \pageref on input line 7.
-LaTeX Info: Redefining \nameref on input line 7.
+LaTeX Info: Redefining \ref on input line 5.
+LaTeX Info: Redefining \pageref on input line 5.
+LaTeX Info: Redefining \nameref on input line 5.
 
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.16} (current compat level: 1.7).
 
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 9
-.
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
+0.
+
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<Images/content/tux.png, id=7, 154.5775pt x 180.675pt>
-File: Images/content/tux.png Graphic file (type png)
-<use Images/content/tux.png>
-Package pdftex.def Info: Images/content/tux.png  used on input line 9.
-(pdftex.def)             Requested size: 123.66214pt x 144.54018pt.
+<Images/aop/aop.jpeg, id=7, 213.79875pt x 236.885pt>
+File: Images/aop/aop.jpeg Graphic file (type jpg)
+<use Images/aop/aop.jpeg>
+Package pdftex.def Info: Images/aop/aop.jpeg  used on input line 10.
+(pdftex.def)             Requested size: 171.03922pt x 189.50824pt.
  [1
 
 \openout7 = `main.xdy'.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Images/content/tux.png>]
- (Output/main.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Images/aop/aop.jpeg>]
+
+LaTeX Font Warning: Font shape `T1/lmss/bx/sc' undefined
+(Font)              using `T1/lmss/bx/n' instead on input line 12.
+
+(Output/main.toc
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
+.
+ (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
+.
+
+(/usr/share/texmf/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+3.
+
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+3.
+
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
 \tf@toc=\write11
 \openout11 = `main.toc'.
 
@@ -1552,106 +1627,50 @@ This may cause the page layout to be inconsistent, however.
 
 [2
 
-]
-Section 1.
-LaTeX Font Info:    Trying to load font information for OT1+phv on input line 1
-3.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
-File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
-)
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
-3.
+] (./Make/Contacts.tex
+LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
+ut line 14.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-(./Output/add_content.tex (./Parts/0.content/0.content.tex [3
+(/usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
+File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
+))
+(./Output/add_content.tex (./Parts/0.content/0.content.tex [3]
+Chapitre 1.
+PGFPlots: reading {src_examples/sinus.txt}
 
-]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
-47.
+Overfull \hbox (10.92348pt too wide) in paragraph at lines 89--90
+[][] 
+ []
 
-(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
-47.
+PGFPlots: reading {src_examples/jack01.txt}
 
-(/usr/share/texmf/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-447.
-
-(/usr/share/texmf/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-447.
-
-(/usr/share/texmf/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 447.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 447.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 447.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 447
-.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 447
-.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 476.
-See the caption package documentation for explanation.
-
-
-Overfull \hbox (45.32106pt too wide) in paragraph at lines 478--480
-[]\T1/lmr/m/n/12 Notre si-gnal d'hor-loge ([]) pro-vient d'un os-cil-la-teur à 
-quartz. [] 
+Overfull \hbox (15.49348pt too wide) in paragraph at lines 96--97
+[][] 
  []
 
 
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 490.
-See the caption package documentation for explanation.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 [4
 
 ]
-\realshift=\dimen353
-\realshift=\dimen354
-\realshift=\dimen355
-\realshift=\dimen356
-
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 553.
+(caption)                particular \caption on input line 578.
 See the caption package documentation for explanation.
 
 [5]
-\realshift=\dimen357
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 592.
+See the caption package documentation for explanation.
+
 \realshift=\dimen358
-
-Overfull \hbox (14.7215pt too wide) in paragraph at lines 596--596
- [] 
- []
-
-
-Overfull \hbox (2.61105pt too wide) in paragraph at lines 570--598
-[]$[]$ $[]$ 
- []
-
+\realshift=\dimen359
+\realshift=\dimen360
+\realshift=\dimen361
+\realshift=\dimen362
+\realshift=\dimen363
 (Output/main.nls [6] [7]) (Output/main.ind [8
 
 ] [9
@@ -1665,41 +1684,44 @@ This document will not have a glossary.
 
 
 AED: lastpage setting LastPage
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 664.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 664.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 766.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 766.
 (Output/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 664.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 664.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 766.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 766.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) ) ) 
 Here is how much of TeX's memory you used:
- 62751 strings out of 481239
- 1466640 string characters out of 5920377
- 2269229 words of memory out of 5000000
- 77008 multiletter control sequences out of 15000+600000
- 579929 words of font info for 56 fonts, out of 8000000 for 9000
+ 63642 strings out of 481239
+ 1482519 string characters out of 5920378
+ 3686371 words of memory out of 8000000
+ 77867 multiletter control sequences out of 15000+600000
+ 586348 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,17n,118p,1051b,2223s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 86i,21n,118p,1050b,2428s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/font
-s/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/s
-hare/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texlive/texmf-dist/font
-s/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></us
-r/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/p
-ublic/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/sha
-re/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf
-/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/font
-s/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Output/main.pdf (9 pages, 224221 bytes).
+s/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/u
+sr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texlive/texmf-dist/font
+s/enc/dvips/fontawesome/fontawesometwo.enc}</usr/share/texlive/texmf-dist/fonts
+/type1/public/fontawesome/FontAwesome.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/l
+mmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb>
+</usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type
+1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></u
+sr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on Output/main.pdf (9 pages, 276466 bytes).
 PDF statistics:
- 143 PDF objects out of 1000 (max. 8388607)
- 114 compressed objects within 2 object streams
- 16 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 149 PDF objects out of 1000 (max. 8388607)
+ 122 compressed objects within 2 object streams
+ 20 named destinations out of 1000 (max. 500000)
+ 34 words of extra memory for PDF output out of 10000 (max. 10000000)
 

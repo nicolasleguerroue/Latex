@@ -1,11 +1,109 @@
-\chapter*{Introduction}
+  
+\chapter{La bataille de Waterloo}
 
+\section{Introduction}
+
+À première vue, La bataille de Waterloo voit la confrontation finale entre deux puissances. Or, la troisième puissance partipante est vite oubliée : il s'agit de la Prusse, nation ayant émergée sous le règne du roi Frédéric.
+
+Dans l'histoire collective, le vainquu a éclipsé le vainqueur. Combien de personnes conaissent le nom du vainqueur de Waterloo ? Sans doute un anglais, mais qui ?
+
+La légende napoléonnienne a fait le reste, seul le dernier carré de la garde et le mot de Cambronne sont restés.
+
+
+
+\begin{items}{orange}{\Triangle}
+    \item A
+    \item B
+    \item C
+\end{items}
+
+\subsubsection{Introduction}
+
+eu, accumsan eleifend, sagittis quis, diam. Duis eget orci sit amet orci dignissim rutrum.
+Nam dui ligula, fringilla a, euismod sodales, sollicitudin vel, wisi. Morbi auctor lorem
+non justo. Nam lacus libero, pretium at, lobortis vitae, ultricies et, tellus. Donec aliquet,
+tortor sed accumsan bibendum, erat ligula aliquet magna, vitae ornare odio metus a mi.
+Morbi ac orci et nisl hendrerit mollis. Suspendisse ut massa. Cras nec ante. Pellentesque
+a nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridicu-
+lus mus. Aliquam tincidunt urna. Nulla ullamcorper vestibulum turpis. Pellentesque cur-
+sus
+
+
+
+\begin{figure}[!t]
+  \centering
+  \begin{subfigure}{.22\linewidth}
+    \centering
+   \begin{tikzpicture}
+  \begin{axis}[height=1\linewidth]
+    \addplot+[thick,mark=none, color=blue] coordinates{ (0,1)(1,1)(1.01,0)(3,0) };
+  \end{axis}
+  \end{tikzpicture}
+    \caption{Passe-bas}
+    \label{fig2:sub1}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}{.22\linewidth}
+    \centering
+     \begin{tikzpicture}
+  \begin{axis}[height=1\linewidth]
+    \addplot+[thick,mark=none, color=blue] coordinates{(0,0) (0.99,0) (1,1) (3,1)} ;
+  \end{axis}
+  \end{tikzpicture}
+    \caption{Passe-haut}
+    \label{fig2:sub2}
+  \end{subfigure}\hfill
+  \begin{subfigure}{.22\linewidth}
+    \centering
+     \begin{tikzpicture}
+  \begin{axis}[height=1\linewidth]
+    \addplot+[thick,mark=none, color=blue] coordinates{(0,0) (0.99,0) (1,1) (2,1) (2.01,0) (3,0)};
+  \end{axis}
+  \end{tikzpicture}
+    \caption{Passe-bande}
+    \label{fig2:sub3}
+  \end{subfigure}\hfill
+  \begin{subfigure}{.22\linewidth}
+    \centering
+     \begin{tikzpicture}
+  \begin{axis}[height=1\linewidth]
+    \addplot+[thick,mark=none, color=blue] coordinates{(0,1) (0.99,1) (1,0) (2,0) (2.01,1)(3,1)};
+  \end{axis}
+  \end{tikzpicture}
+    \caption{Coupe bande}
+    \label{fig2:sub4}
+  \end{subfigure}
+  \caption{Filtres en "mur de briques"}
+  \label{fig:murbrique}
+  \end{figure}
+
+%\chapter{La Bilbiothèque Layout}
+hello
+
+  \begin{figure}[h]  
+  \centering 
+    \begin{subfigure}[b]{0.4\linewidth}
+      \begin{graphic}{0.8}{1}{0}{1.2}{-1}{5}{t(s)}{Tension V}{h}
+        \addPointsFromCSV{red}{comma}{src_examples/sinus.txt}
+        \addLegend{sin(t)}
+        \end{graphic}%NO END  LINE HERE
+      \caption{No interaction} 
+    \end{subfigure}
+  \begin{subfigure}[b]{0.4\linewidth}
+    \begin{graphic}{0.8}{1}{0}{4}{-0.3}{0.3}{t(s)}{Tension V}{g}
+      \addPointsFromCSV{blue}{comma}{src_examples/jack01.txt}
+      \addLegend{g(t)}
+      \end{graphic}%NO END  LINE HERE
+  \caption{Interaction}
+  \end{subfigure}
+  \caption{Les tensions de service}
+  \end{figure}  
 
 % Ce document a pour but de présenter les fonctionnalités de la bibliothèque Utils. \n
 % Chaque bibliothèque doit être indépendante afin de fonctionner correctement.
 
 
-% \chapter{Bibliothèque Layout}
+%\chapter{Bibliothèque Layout}
 % \addQuote{En temps de guerre, la vérité est si précieuse qu'elle doit etre escortée par une garde de mensonge}{Sir Winston Spencer Churchill,\\ Duc de Malborought}
 % \addQuote{Si Dieu nous fait la grâce de perdre encore une pareille bataille, Votre Majesté peut compter que ses ennemis sont détruits}{Maréchal de Villars, \\ 1709}
 
@@ -296,7 +394,7 @@
 % \section{Les labels de surlignage}
 
 % \subsection{Affichage d'un label de surlignage vert}
-
+<true>
 % \ugreen{content}
 % \index{ugreen}
 % \subsection{Affichage d'un label de surlignage orange}
@@ -389,56 +487,60 @@
 % \subsection{Affichage de plusieurs graphiques avec insertion des données depuis un fichier externe}
 
 % \begin{figure}
-% \begin{subfigure}{.5\textwidth}
 %   \centering
-%   % include first image
-%    \centering
-%  \begin{graphics}{0.9}{0.4}{-0.05}{20}{-1}{6}{t(ms)}{vs}{KEY\_DOWN}
-% \addPointsFromCSV{red}{comma}{src_examples/out.csv}
-% %\addLegend{Signal "KEY\_POWER"}
-% \end{graphics}
-% \end{subfigure}
-% \begin{subfigure}{.5\textwidth}
-%   \centering
-%    \centering
-%  \begin{graphics}{0.9}{0.4}{-0.05}{80}{-1}{6}{t(ms)}{vs}{KEY\_UP}
-% \addPointsFromCSV{blue}{comma}{src_examples/out.csv}
-% %\addLegend{Signal "KEY\_POWER"}
-% \end{graphics}
-% \end{subfigure}
+%   \subfloat[fig 1]{
+%     \begin{graphic}{0.9}{0.4}{0.0}{5}{-2}{2}{t(ms)}{vs}{$sin(t)$}
+%     \addPointsFromCSV{red}{comma}{src_examples/sinxx.txt}
+%     \addPointsFromCSV{blue}{comma}{src_examples/gauss.txt}
+%     \addLegend{Sinus}
+%     \end{graphic}} 
+%   \subfloat[fig 2]{\includegraphics[width = 1in]{\rootImages/tux}}\\
+%   \subfloat[fig 3]{\includegraphics[width = 1in]{\rootImages/tux}}
+%   \subfloat[fig 4]{\includegraphics[width = 1in]{\rootImages/tux}} 
+%   \caption{Add your own figures before compiling}
+%   \label{some example}
+%   \end{figure}
 
-% \begin{subfigure}{.5\textwidth}
-%   \centering
-%  \begin{graphics}{0.9}{0.4}{-0.05}{60}{-1}{6}{t(ms)}{vs}{KEY\_RIGHT}
-% \addPointsFromCSV{green}{comma}{src_examples/out.csv}
-% %\addLegend{Signal "KEY\_POWER"}
-% \end{graphics}
-% \end{subfigure}
-% \begin{subfigure}{.5\textwidth}
-%   \centering
-%   % include fourth image
-%    \centering
-%  \begin{graphics}{0.9}{0.4}{-0.05}{40}{-1}{6}{t(ms)}{vs}{KEY\_LEFT}
-% \addPointsFromCSV{black}{comma}{src_examples/out.csv}
-% %\addLegend{Signal "KEY\_POWER"}
-% \end{graphics}
-% \end{subfigure}
-% \caption{Titre}
-% \label{fig:fig}
-% \end{figure}
 
-% \newpage
+% \begin{figure}
+
+%     \begin{subfigure}{.30\textwidth}
+%      \begin{graphic}{0.9}{0.4}{0.0}{5}{-2}{2}{t(ms)}{vs}{$sin(t)$}
+%     \addPointsFromCSV{red}{comma}{src_examples/sinxx.txt}
+%     \addPointsFromCSV{blue}{comma}{src_examples/gauss.txt}
+%     \addLegend{Sinus}
+%     \end{graphic}
+
+%     \begin{graphic}{0.9}{0.4}{0.0}{5}{-2}{2}{t(ms)}{vs}{$sin(t)$}
+%       \addPointsFromCSV{red}{comma}{src_examples/gauss.txt}
+%       \addLegend{Sinus}
+%       \end{graphic}
+
+%     \end{subfigure}
+    
+
+%     \begin{subfigure}{.30\textwidth}
+%      \begin{graphic}{0.9}{0.4}{0.0}{5}{-2}{2}{t(ms)}{vs}{$sin(t)$}
+%     \addPointsFromCSV{red}{comma}{src_examples/gauss.txt}
+%     \addLegend{Sinus}
+%     \end{graphic}
+
+%     \end{subfigure}
+
+%   \caption{plots of....}
+%   \label{fig:fig}
+%   \end{figure}
+
+\newpage
 
 % \subsection{Affichage d'un graphique 2D avec insertion des données depuis une équation}
 
 
 
-% \begin{graphics}{0.4}{0.4}{0}{3}{-1}{5}{t(s)}{Tension V}{Signal analogique}
+% \begin{graphicFigure}{0.4}{0.4}{0}{3}{-1}{5}{t(s)}{Tension V}{Signal analogique}
 % \addPointsFromCSV{red}{comma}{src_examples/input_2.txt}
-% \addLegend{Signal}
-% \end{graphics}
-% \index{addTrace}
-% \index{addLegend}
+% \addLegend{AA}
+% \end{graphicFigure}
 
 
   
@@ -547,10 +649,10 @@ Notre signal d'horloge (\texttiming{[blue]CCCCCC}) provient d'un oscillateur à 
 \end{schema}
 
 
-\begin{graphics}{0.8}{0.4}{0}{40}{-1}{6}{t(s)}{Tension (V)}{Signal numérique}
-\addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
-\addLegend{Tension (V)}
-\end{graphics}
+% \begin{graphics}{0.8}{0.4}{0}{40}{-1}{6}{t(s)}{Tension (V)}{Signal numérique}
+% \addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
+% \addLegend{Tension (V)}
+% \end{graphics}
 
 \begin{tabular}{|c|c||c|}
           \hline
@@ -589,11 +691,11 @@ Notre signal d'horloge (\texttiming{[blue]CCCCCC}) provient d'un oscillateur à 
 \end{subfigure}
 \begin{subfigure}{.5\textwidth}
 \centering
-\centering
-\begin{graphics}{0.9}{0.4}{-0.05}{80}{-1}{6}{t(ms)}{vs}{}
-\addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
-%\addLegend{Signal "KEY\_POWER"}
-\end{graphics}
+% \centering
+% \begin{graphics}{0.9}{0.4}{-0.05}{80}{-1}{6}{t(ms)}{vs}{}
+% \addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
+% %\addLegend{Signal "KEY\_POWER"}
+% \end{graphics}
 \end{subfigure}
 
 \begin{subfigure}{1\textwidth}
@@ -646,12 +748,12 @@ VALUE & L 2D{0} 2D{1} 2D{2} 2D{3} 2D{4} 2D{5} 2D{6} 2D{7} 2D{8} 2D{9} 2D{10} 2D{
 % un animal ou un objet, par l'imitation des sons\index{son} que ceux-ci produisent
 
 \nomenclature[E]{$r$}{Rapport cyclique d'un signal périodique}
-\nomenclature[A]{$A_d$}{Coefficient d'amplification, gain differentiel }
+\nomenclature[A]{$A_d$}{Coefficient d'amplification, gain différentiel }
 \nomenclature[A]{$\varepsilon$}{Tension différentielle $(\varepsilon = E_+ - E_-)$\addUnit{V}}
 \nomenclature[A]{$E_+$}{Tension entrée non inverseuse \addUnit{V}}
 \nomenclature[A]{$E_-$}{Tension entrée inverseuse \addUnit{V}}
 \nomenclature[E]{$\eta$}{Rendement d'un mécanisme \addUnit{\%}}
-\nomenclature[E]{$\varphi$}{Dépahasage entre deux signaux \addUnit{rad}}
+\nomenclature[E]{$\varphi$}{Déphasage entre deux signaux \addUnit{rad}}
 
 \printnomenclature
 \index{printnomenclature}

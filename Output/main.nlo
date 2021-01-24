@@ -1,7 +1,7 @@
 \nomenclatureentry{E$r$@[{$r$}]\begingroup Rapport cyclique d'un signal périodique\nomeqref {1.0}|nompageref}{6}
-\nomenclatureentry{A$A_d$@[{$A_d$}]\begingroup Coefficient d'amplification, gain differentiel \nomeqref {1.0}|nompageref}{6}
+\nomenclatureentry{A$A_d$@[{$A_d$}]\begingroup Coefficient d'amplification, gain différentiel \nomeqref {1.0}|nompageref}{6}
 \nomenclatureentry{A$\varepsilon$@[{$\varepsilon$}]\begingroup Tension différentielle $(\varepsilon = E_+ - E_-)$\addUnit{V}\nomeqref {1.0}|nompageref}{6}
 \nomenclatureentry{A$E_+$@[{$E_+$}]\begingroup Tension entrée non inverseuse \addUnit{V}\nomeqref {1.0}|nompageref}{6}
 \nomenclatureentry{A$E_-$@[{$E_-$}]\begingroup Tension entrée inverseuse \addUnit{V}\nomeqref {1.0}|nompageref}{6}
 \nomenclatureentry{E$\eta$@[{$\eta$}]\begingroup Rendement d'un mécanisme \addUnit{\%}\nomeqref {1.0}|nompageref}{6}
-\nomenclatureentry{E$\varphi$@[{$\varphi$}]\begingroup Dépahasage entre deux signaux \addUnit{rad}\nomeqref {1.0}|nompageref}{6}
+\nomenclatureentry{E$\varphi$@[{$\varphi$}]\begingroup Déphasage entre deux signaux \addUnit{rad}\nomeqref {1.0}|nompageref}{6}

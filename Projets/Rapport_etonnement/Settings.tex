@@ -1,0 +1,42 @@
+%#######################################################
+%### Settings file
+%### Project : Rapport_etonnement
+%#######################################################
+\documentclass[12pt]{report}
+\usepackage[frenchb]{babel} %Select langage
+\usepackage{Utils/Utils} %Load Utils library
+%#############################################################
+%Geometry
+%#############################################################
+\geometry{hmargin=3cm,vmargin=3cm}
+%#############################################################
+%#############################################################
+%Rename chapter name
+%#############################################################
+\setAliasChapter{Section}
+%#############################################################
+%#############################################################
+%If you want to add presentation, modify the next bloc
+%The firt line is about the header :
+%{left content}{center content}{right content}
+%The second line is about the footer :
+%{left content}{center content}{right content}
+%####
+%to get the current chapter name, use \currentChapter command as content
+%#############################################################
+\addPresentation
+{} {} {\currentChapter}
+{} {} {\currentPage}
+%#############################################################
+%#############################################################
+%Change the width of footer line and header line
+%To delete it, set value to 0
+%#############################################################
+\setHeaderLine{0.2}
+\setFooterLine{0.2}
+%#############################################################
+%#############################################################
+%URL and data settings
+%#############################################################
+\setParameters{}{Mathieu CHARLES, Théo MAINGUENE, Romain POSSEME, Nicolas LE GUERROUE}{}{}{}{blue}{blue}{green}
+%#############################################################

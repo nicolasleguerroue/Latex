@@ -1,0 +1,131 @@
+===
+=== Rédaction avec LaTeX (paquetage formation-latex-ul)
+===
+
+# 2020.10
+
+## Document de référence
+
+- Correction de l'intralien dans l'exercice 1.1.
+- Couleur plus douce pour les commentaires.
+- Nouvelle image de couverture (bis). 
+- Utilisation des icônes de la police Fontawesome 5.
+
+## Diapositives
+
+- Dans le but de réduire la durée de la formation, élimination de
+  quelques diapositives moins importantes pour les premiers pas.
+- Simplification de la navigation avec le retrait des sous-sections.
+- Exercices maintenant identifiés par une icône dans le titre.
+- Nouvelle image de couverture (bis). 
+- Utilisation des icônes de la police Fontawesome 5 (bis).
+
+
+# 2019.03
+
+## Document de référence
+
+- Ajout de la liste des tableaux et de la liste des figures dans les
+  pages liminaires. Celles-ci ainsi que la table des matières
+  apparaissent dans la table des matières afin de faciliter l'accès
+  par la table des matières logique du document PDF.
+- L'introduction a été révisée et bonifiée pour mieux présenter les
+  fonctionnalités interactives du document, expliquer l'utilisation
+  des couleurs et présenter la signification de chacun des blocs
+  signalétiques.  
+- Ajout de références vers *Paul à la campagne* (Rabagliati, 1999) et
+  le film *The Post* (2017) dans l'introduction du chapitre 1 pour de
+  bonnes illustrations du processus de création d'un document.
+- Sections 1.2 et 1.3 inversées.
+- Correction de la ligature des tirets dans le premier paragraphe de
+  la section 10.2.
+- Nouvelle façon de présenter les liens vers des vidéos à l'aide d'un
+  bloc signalétique.
+- Utilisation de Fira Sans comme police sans empattements. Il est plus
+  simple de se procurer cette police libre que Myriad Pro. En plus,
+  elle convient mieux à la police Lucida du texte principal.
+- Nouvelle image de couverture.
+- Vérification de la validité de tous les hyperliens du document.
+
+## Diapositives
+
+- Diapositives complètement révisées en vue d'une formation de 120
+  minutes plutôt que 180.
+- Diapositives dans le thème Metropolis et en format 16 x 9.
+- Nouvelles diapositives sur les tableaux.
+- Nouvelles diapositives sur la programmation lettrée avec Sweave.
+- Exercice sur les mathématiques.
+- Nouvelle image de couverture. 
+
+## Général
+
+- L'historique des versions se trouve maintenant dans le fichier
+  `NEWS`.
+- Des instructions pour collaborer à l'amélioration du paquetage se
+  trouvent maintenant dans le fichier `CONTRIBUTING.md`.
+
+
+# 2016.11-3
+
+- Liens vers le code source modifiés suite au déplacement du projet
+  vers [Github](https://github.com/vigou3/formation-latex-ul).
+- Correction du numéro de version dans les documents PDF.
+
+
+# 2016.11-2
+
+- Incorporation des sources du document principal et des diapositives
+  dans la distribution tel que requis par TeX Live.
+- Retouches au fichier `README`.
+
+
+# 2016.11-1
+
+- Mise à jour des URL vers les vidéos dans YouTube. Celles-ci ont été
+  refaites avec le nouveau visuel de couverture.
+- Ajout d'un exercice au chapitre 1 tiré des pré-requis de la
+  formation, soit composer un document simple de type «Hello, World!».
+  Liens vers les vidéos explicatives dans YouTube.
+
+
+# 2016.11
+
+- Importante refonte de la documentation en un document unique. Les
+  diapositives ne sont plus qu'un support visuel pour la formation qui
+  couvre grosso modo les quatre premiers chapitre de l'ouvrage de
+  référence.
+- Nouveau visuel des couvertures. Trop cuuuute.
+- Nouveau mode de numérotation des versions.
+
+
+# 2016-04-04
+
+- Fichier `exercice_demo.tex`: utilisation du style de bibliographie
+  `plainnat` puisque le paquetage **francais-bst** ne fait pas partie de la
+  distribution standard de TeX Live 2015.
+- Fichiers d'exercices: utilisation systématique des options `og` et
+  `fg` dans `\frenchbsetup`.
+
+
+# 2016-03-24
+
+- Partie I: révision des diapositives pour baser davantage la
+  présentation sur des exemples de code source.
+- Partie I: ajout d'images dans les diapos.
+- Partie I: correction du fichier `exemple_demo.tex` qui ne compilait
+  pas correctement.
+- Partie II: ajout d'une introduction au chapitre 7 (tous les autres
+  en avaient une) ainsi qu'une nouvelle section 7.1 sur le contrôle
+  des sauts de ligne, sauts de page et coupures de mots.
+- Partie II: corrections mineures à l'index.
+- Fichiers d'exercices et gabarits: langue déclarée comme `french`
+  plutôt que `francais` et dans `\documentclass` plutôt que dans
+  `\usepackage`.
+- Fichiers d'exercices et gabarits: chargement du paquetage icomma
+  déplacé vers la fin de la liste, plus particulièrement après
+  fontspec.
+
+
+# 2015-03-18
+
+- Première publication sur CTAN.

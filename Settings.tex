@@ -1,24 +1,11 @@
-\documentclass[12pt]{report}  
-%book, report, beamer, article
-\usepackage[frenchb]{babel}     %french language
-\usepackage{Utils/Utils}        %Utils package
-
-\usepackage[explicit]{titlesec}
-
-%\titleformat{\chapter}[display] {\fontsize{24pt}{12pt}\selectfont \bfseries}{\textcolor{darkblue} {\chaptertitlename\ \thechapter \\ \\ #1}}{30pt}{\Huge}
-%\titleformat{name=\chapter,numberless}[display] {\fontsize{20pt}{12pt}\selectfont \bfseries}{\textcolor{darkblue} {#1}}{20pt}{\Huge}
-\usepackage[Lenny]{fncychap}   %Sonny, Lenny, Glenn, Conny, Rejne, Bjarne
-
-
-
-%\titleformat*{\section}{\textcolor{blue}}
+%\usepackage[Lenny]{fncychap}   %Sonny, Lenny, Glenn, Conny, Rejne, Bjarne
 %#############################################################
 %#### Settings
 %#############################################################
 %#############################################################
 %If you want to set on fullpage, change this bloc
 %#############################################################
-\geometry{hmargin=3cm,vmargin=3cm}
+\geometry{hmargin=2cm,vmargin=2.5cm}
 %#############################################################
 %#############################################################
 %If you want rename the chapter name, change the value of argument
@@ -43,8 +30,6 @@
 \setHeaderLine{0.2}
 \setFooterLine{0.2}
 
-
-
 \setcounter{tocdepth}{2} %depth of table of content
 \setcounter{secnumdepth}{2}
 
@@ -64,14 +49,30 @@
 @input Couleurs des citations dans la bibliographie
 @input Couleurs des liens de fichier
 \end{comment}
-%\setParameters {Tutoriel Latex} {Nicolas Le Guerroué} {Tutoriel Latex pour la mise en place des outils} {Nicolas Le Guerroué}{Latex, Linux}{blue}{blue}{green}{blue}
 \setParameters {Tutoriel Latex} {Nicolas Le Guerroué} {Bibliothèque Utils} {Nicolas Le Guerroué}{Latex}{green}{blue}{blue}
   
 
 
-
-
-
-
+\titleformat{\chapter}
+  {\gdef\chapterlabel{}
+   \normalfont\sffamily\Huge\bfseries\scshape}
+  {\gdef\chapterlabel{\thechapter)\ }}{0pt}
+  {\begin{tikzpicture}[remember picture,overlay]
+    \node[yshift=-2cm] at (current page.north west)
+      {\begin{tikzpicture}[remember picture, overlay]
+        \draw[fill=MediumBlue] (0,0) rectangle
+          (\paperwidth,2cm);
+        \node[anchor=east,xshift=.9\paperwidth,rectangle,
+              rounded corners=20pt,inner sep=11pt,
+              fill=white]
+              {\color{black}#1};%\chapterlabel
+          \node[anchor=west,yshift=1cm,xshift=2cm,inner sep=11pt,
+              fill=MediumBlue]
+              {\color{white}{\large Synthèse Latex}};%\chapterlabel
+       \end{tikzpicture}
+      };
+   \end{tikzpicture}
+  }
+  \titlespacing*{\chapter}{0pt}{50pt}{-60pt}
 
 

@@ -15,7 +15,7 @@
 \RequirePackage{graphics} %include figures
 \RequirePackage{graphicx} %include figures
 \RequirePackage{caption}
-
+\RequirePackage{subcaption} %Add
 \RequirePackage{version}            %use commented code
 \pgfplotsset{compat=1.7}
 %###### Checking if babel is loaded
@@ -56,7 +56,7 @@ Cet environnement permet de tracer des courbes en 2D à partir de points, d'équ
 @end
 \end{comment}
 
-\newenvironment{graphics}[9]
+\newenvironment{graphicFigure}[9]
 {
     \begin{center}
         \makeatletter
@@ -74,6 +74,19 @@ Cet environnement permet de tracer des courbes en 2D à partir de points, d'équ
         \end{tikzpicture}
         \captionof{figure}{\TitleGraphic}
     \end{center}
+}
+
+
+\newenvironment{graphic}[9]
+{
+        %\newcommand{\TitleGraphic}{#9}%use var to print title 
+        \begin{tikzpicture}
+        \setGraphic %command to display with frenchb babel
+    \begin{axis}[width=#1\linewidth,height=#2\linewidth,xmin=#3,xmax=#4,  ymin=#5, ymax=#6, scale only axis,xlabel=#7,ylabel=#8, title=#9] %grid=both
+    }
+    { 
+    \end{axis}
+        \end{tikzpicture}
 }
     
 %############################################################
@@ -161,7 +174,11 @@ Il faut que cette commande soit utilisées dans l'environnement \textbf{graphics
 \end{comment}
 
 \newcommand{\addPointsFromCSV}[3]{
+    \IfFileExists{#3}{
     \addplot+[thick, mark=none, color=#1] table[mark=none,col sep=#2] {#3};
+    }
+    {\raiseError{[import failed]'#3' \stop}
+    }
 }
 
 %############################################################

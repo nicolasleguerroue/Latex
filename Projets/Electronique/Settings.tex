@@ -3,7 +3,7 @@
 \usepackage[frenchb]{babel}     %french language
 \usepackage{Utils/Utils}        %Utils package
 
-\usepackage[Lenny]{fncychap}   %Sonny, Lenny, Glenn, Conny, Rejne, Bjarne
+%\usepackage[Lenny]{fncychap}   %Sonny, Lenny, Glenn, Conny, Rejne, Bjarne
 %#############################################################
 %#### Settings
 %#############################################################
@@ -34,6 +34,7 @@
 %To delete it, set value to 0
 \setHeaderLine{0.2}
 \setFooterLine{0.2}
+
 %#############################################################
 %Change the name of the section "Nomenclature"
 %To delete it, set value to 0
@@ -57,6 +58,27 @@
 
 
 
+\titleformat{\chapter}
+  {\gdef\chapterlabel{}
+   \normalfont\sffamily\Huge\bfseries\scshape}
+  {\gdef\chapterlabel{\thechapter)\ }}{0pt}
+  {\begin{tikzpicture}[remember picture,overlay]
+    \node[yshift=-2cm] at (current page.north west)
+      {\begin{tikzpicture}[remember picture, overlay]
+        \draw[fill=MediumBlue] (0,0) rectangle
+          (\paperwidth,2cm);
+        \node[anchor=east,xshift=.9\paperwidth,rectangle,
+              rounded corners=20pt,inner sep=11pt,
+              fill=white]
+              {\color{black}#1};%\chapterlabel
+          \node[anchor=west,yshift=1cm,xshift=2cm,inner sep=11pt,
+              fill=MediumBlue]
+              {\color{white}{\large Synthèse Latex}};%\chapterlabel
+       \end{tikzpicture}
+      };
+   \end{tikzpicture}
+  }
+  \titlespacing*{\chapter}{0pt}{50pt}{-60pt}
 
 
 

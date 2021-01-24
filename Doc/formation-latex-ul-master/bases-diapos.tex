@@ -1,0 +1,154 @@
+%%% Copyright (C) 2020 Vincent Goulet
+%%%
+%%% Ce fichier fait partie du projet
+%%% «Rédaction avec LaTeX»
+%%% https://gitlab.com/vigou3/formation-latex-ul
+%%%
+%%% Cette création est mise à disposition sous licence
+%%% Attribution-Partage dans les mêmes conditions 4.0
+%%% International de Creative Commons.
+%%% https://creativecommons.org/licenses/by-sa/4.0/
+
+\section{Principes de base}
+
+\begin{frame}
+  \frametitle{Rédaction}
+
+  L'apparence du document est prise en charge par {\LaTeX} et
+  il est généralement préférable de ne pas la modifier.
+
+  \begin{itemize}
+  \item On se concentre sur le \alert{contenu} et la \alert{structure} du
+    document
+  \item Mots séparés par une ou plusieurs \alert{espaces}
+  \item Paragraphes séparés par une ou plusieurs \alert{lignes blanches}
+  \item Utilisation de \alert{commandes} pour indiquer la structure du texte
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile=singleslide]
+  \frametitle{Caractères réservés}
+
+  \begin{itemize}
+  \item Caractères réservés par {\TeX}:
+    \begin{quote}
+      \code{\#~\$~\&~\string~~\_~\string^~\%~\{~\}}
+    \end{quote}
+  \item Pour les utiliser, précéder par «\bs»
+    \begin{demo}
+      \begin{texample}
+\begin{lstlisting}
+L'augmentation de 2~\$
+représente une hausse
+de 5~\%.
+\end{lstlisting}
+        \producing
+        L'augmentation de 2~\$ représente une
+        hausse de 5~\%.
+      \end{texample}
+    \end{demo}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Structure d'un document {\LaTeX}}
+
+  Un fichier source {\LaTeX} est toujours composé de deux parties.
+
+  \begin{minipage}{0.2\linewidth}
+    %\color{alert}
+    \onslide<2->{
+      \begin{minipage}{\linewidth}
+        \hfill préambule \quad
+        \rule[-10mm]{1pt}{21mm}
+      \end{minipage} \\[5mm]
+    }
+    \onslide<3->{
+      \begin{minipage}{\linewidth}
+        \hfill corps \quad
+        \rule[-15mm]{1pt}{30mm}
+      \end{minipage}
+    }
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.75\linewidth}
+\begin{lstlisting}[emph={documentclass,begin,end,document}]
+\documentclass[11pt,french]{article}
+  \usepackage{babel}
+  \usepackage[autolanguage]{numprint}
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+
+\begin{document}
+
+Lorem ipsum dolor sit amet, consectetur
+adipiscing elit. Donec quam nulla, bibendum
+vitae ipsum vel, fermentum pellentesque orci.
+
+\end{document}
+\end{lstlisting}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}[fragile=singleslide]
+  \frametitle{Commandes}
+  \begin{itemize}
+  \item Débutent toujours par «\bs»
+  \item Exemples de syntaxe
+\begin{lstlisting}
+\LaTeX                     % aucun argument
+\emph{toujours}            % un argument obligatoire
+\section*{Introduction}    % effet modifié
+\rule[6pt]{5mm}{2pt}       % un argument optionnel, deux obligatoires
+\end{lstlisting}
+   \item Commande sans argument: le nom se termine par tout
+    caractère qui n'est \alert{pas une lettre} (y compris l'espace!)
+  \item Portée d'une commande limitée à la zone entre \code{\{~\}}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile=singleslide]
+  \frametitle{Environnements}
+  \begin{itemize}
+  \item Délimités par
+\begin{lstlisting}
+\begin`\marg{environnement}'
+   ...
+\end`\marg{environnement}'
+    \end{lstlisting}
+  \item Contenu de l'environnement traité différemment du reste du texte
+  \item Changements s'appliquent uniquement à l'intérieur de
+    l'environnement
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{{\LaTeX} en français}
+
+  Il faut charger un certain nombre de paquetages pour franciser \LaTeX.
+
+  \begin{itemize}
+  \item \pkg{babel}: traduction des mots-clés prédéfinis,
+    typographie française, coupure de mots, document multilingue
+  \item \pkg{inputenc} et \pkg{fontenc}: lettres accentuées dans le
+    code source (pdf{\LaTeX} seulement)
+  \item \pkg{icomma}: virgule comme séparateur décimal
+  \item \pkg{numprint}: espace comme séparateur des milliers
+  \end{itemize}
+\end{frame}
+
+\begin{exercice}
+  Modifier le fichier \fichier{exercice\_commandes.tex} afin de
+  produire le texte ci-dessous.
+
+  \bigskip
+  \centering
+  \fbox{\includegraphics[viewport=108 551 502 665,%
+    clip=true,width=0.9\linewidth]{auxdoc/exercice_commandes-solution}}
+\end{exercice}
+
+%%% Local Variables:
+%%% TeX-master: "formation-latex-ul-diapos"
+%%% TeX-engine: xetex
+%%% coding: utf-8
+%%% End:

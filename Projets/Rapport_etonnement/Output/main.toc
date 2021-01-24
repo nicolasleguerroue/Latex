@@ -1,0 +1,3 @@
+\babel@toc {french}{}
+\contentsline {section}{\numberline {0.1}La Fresque du Climat}{3}{section.0.1}%
+\contentsline {section}{\numberline {0.2}Les Petits Débrouillards }{3}{section.0.2}%
