@@ -1,0 +1,49 @@
+
+
+\part{Configuration de Domoticz}
+
+\chapter{La passerelle}
+
+Une fois que la passerelle est fonctionnelle, nous allons configurer Domoticz pour que la plateforme recoive 
+les données en provenance de la passerelle.
+
+\section{Ajout de la passerelle}
+
+Tout d'abord, allez dans la section \bold{Configuration > Matériel}
+
+\img{\rootImages/hardware.png}{Emplacement du matériel}{0.5}
+
+Ensuite, saississez les informations suivantes :
+
+\img{\rootImages/add_gateway.png}{Paramétrage de la passerelle}{0.5}
+
+Le port série séléctionné sera celui où est raccordé la passerelle en liaison USB.
+Il ne faut pas prendre les noms simplifiés des ports USB (\italic{COM\_XXX}) mais le nom le plus complet.\\
+Pour plus de simplicité, veuillez déconnectez tous les autres périphériques du Raspberry-Pi\\.
+
+
+\section{Affichage des données}
+
+Visualisons les données en provenance de la sonde en allant dans \\
+\bold{Configuration > Matériel}\\.
+
+L'ensemble de vos dispositif apparait. En cas de liste trop longue, saisissez \bold{Gateway} dans la barre de recherche.
+
+
+\img{\rootImages/search.png}{Recherche de la passerelle}{0.5}
+
+
+\messageBox{Remarque}{orange}{white}{Si le dispositif n'apparait pas immdiatemment, 
+c'est normal, Domoticz fait des mesures par défaut toutes les 5 min.... 
+Donc la passerelle devrait apparaitre au bout de 10 min environ.}{black}
+
+\img{\rootImages/see.png}{La passerelle est détectée}{0.5}
+
+\messageBox{Précision}{green}{white}{Dans notre programme \bold{Sonde\_MySensors.ino}, 
+nous avons défini la valeur du noeud à 1.\\On retrouve bien cette valeur dans la colonne \bold{Idx}}{black}
+
+Pour visualiser les données, il suffit de cliquer sur le bouton \bold{logs}
+
+\img{\rootImages/cursor_log.png}{Affichage des données}{0.5}
+
+

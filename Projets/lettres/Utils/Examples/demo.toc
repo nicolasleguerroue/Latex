@@ -1,6 +1,0 @@
-\babel@toc {french}{}
-\contentsline {part}{I\hspace {1em}test}{2}{part.1}%
-\contentsline {section}{\numberline {0.1}Exemples Graphics}{3}{section.0.1}%
-\contentsline {section}{\numberline {0.2}Exemples Maths}{7}{section.0.2}%
-\contentsline {section}{\numberline {0.3}Exemples Programming}{7}{section.0.3}%
-\contentsline {section}{\numberline {0.4}Exemples Layout}{8}{section.0.4}%

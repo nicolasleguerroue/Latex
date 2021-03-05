@@ -4,68 +4,6 @@
 %#############################################################
 \documentclass[12pt]{report}
 %############################################################
-%###### Package 'Adding' 
-%###### This package contains some tools to generate index, glossary
-%###### nomenclature, acronym
-%###### Author  : Nicolas LE GUERROUE
-%###### Contact : nicolasleguerroue@gmail.com
-%############################################################
-%\ProvidesPackage{Utils}[2013/01/13 Utils Package]
-%############################################################
-%##### Glossaries
-\RequirePackage[xindy, acronym, nomain, toc]{glossaries}
-\RequirePackage{ifthen} 
-\RequirePackage{nomencl}  %nomenclature
-\RequirePackage{lmodern}
-\RequirePackage[T1]{fontenc}
-\RequirePackage[utf8]{inputenc}     %UTF-8 encoding
-\RequirePackage{graphicx}           %Images
-\RequirePackage{caption}            %légende
-\RequirePackage{textcomp}           %special characters
-
-\RequirePackage{lastpage}           %page counter
-%\RequirePackage{fullpage}          %entire page
-\RequirePackage{float}              %image floating
-\RequirePackage{wrapfig}
-\RequirePackage{subcaption}         %Subcaption
-\RequirePackage{listings}           %new env such as Bash, Python
-%\RequirePackage{tcolorbox}          %messageBox
-\RequirePackage[many]{tcolorbox}
-\RequirePackage{color}              %colors
-\RequirePackage{geometry}
-\RequirePackage{listings}           %new env such as Bash, Python
-\RequirePackage{xcolor}             %define new colors
-\RequirePackage{xparse}
-\RequirePackage{amssymb,amsthm}     %math
-\RequirePackage{multirow}
-\RequirePackage{tabularx}           %use for csv file [table]
-
-\RequirePackage{bookmark}           %use for hyperref
-\RequirePackage{makeidx}            %make index
-
-\makeindex
-\makeglossaries
-\makenomenclature
-
-%##### Convention [Nomenclature]
-  \renewcommand{\nomgroup}[1]{%
-  \item[\bfseries
-  \ifthenelse{\equal{#1}{P}}{Constantes physiques}{%
-  \ifthenelse{\equal{#1}{O}}{Autres symboles}{%
-  \ifthenelse{\equal{#1}{N}}{Nombres spéciaux}{ 
-  \ifthenelse{\equal{#1}{A}}{Amplificateurs Opérationnels}{ 
-  \ifthenelse{\equal{#1}{M}}{Mécanique}{ 
-  \ifthenelse{\equal{#1}{E}}{Électronique}{}}}}}}%
-  ]}
-
-  \renewcommand{\glossary}[1]{%
-  \gls{#1}
-}
-% Add unit on convention [nomenclature]
-%----------------------------------------------
-\newcommand{\addUnit}[1]{%
-\renewcommand{\nomentryend}{\hspace*{\fill}#1}}
-%----------------------------------------------%############################################################
 %###### Package 'name' 
 %###### This package contains ...
 %###### Author  : Nicolas LE GUERROUE
@@ -75,8 +13,6 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}     %UTF-8 encoding
 \RequirePackage[many]{tcolorbox}
-%...
-
 %1 : txt color
 %2 : bg color 
 %3 : text
@@ -144,10 +80,19 @@
 
 \newcommand{\colors}[2]{
 {\color{#1}{#2}}
-}
+}%############################################################
+%###### Package 'Check' 
+%###### This package contains soem tools to check data
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+%################################################################
 
-
-%------------------Section Default Setting-------------%############################################################
+  \makeatletter%
+  \@ifpackageloaded{babel}
+    {\typeout{>>> Utils : Babel package is loaded}}%
+    {\typeout{>>> Utils : Babel package is not loaded}}%
+  \makeatother%%############################################################
 %###### Package 'Electronic' 
 %###### This package contains some tools to generate electornic circuits
 %###### Author  : Nicolas LE GUERROUE
@@ -270,6 +215,7 @@
 
 \newcommand{\addLogicGate}[7] {
     %\Colors
+    \raiseMessage{Adding logic gate device [type=#3]}
     \ifthenelse{\equal{\deviceBorderColor}  {black}}
     {\draw (#1)         node (#2) [rotate=\rotate,xshift=0cm,fill=\deviceBackgroundColor,#3 port] {#7}}%if equal to black
     {\draw (#1)         node (#2) [rotate=\rotate,xshift=0cm,color=\deviceBorderColor,#3 port] {#7}}
@@ -287,10 +233,8 @@
         \def\@captype{figure}
         \makeatother
         \newcommand{\TitleSchema}{#1}%use var to print title 
-
-        
         %\shorthandoff{:;!?} %Compulsory if frenchb package is used (from babel)
-            
+        \raiseMessage{Creating new schema ['#1']}
         \begin{tikzpicture}
             %\setGraphic %command to display with frenchb babel
     }
@@ -308,6 +252,7 @@
     \def\@captype{figure}
     \makeatother
     \newcommand{\TitleNumeric}{#1}%use var to print title 
+    \raiseMessage{Creating new chronogram ['#1']}
 \begin{tikztimingtable}
 }
 {
@@ -325,6 +270,7 @@
 %E
 \newcommand{\addTransistor}[6] {
 
+    \raiseMessage{Adding transistor device [type=#3]}
     \ifthenelse{\equal{\deviceBorderColor}  {black}}
     {\draw (#1)         node (#2) [xshift=0cm,fill=\deviceBackgroundColor,#3] {}}%if equal to black
     {\draw (#1)         node (#2) [xshift=0cm,color=\deviceBorderColor,#3] {}}
@@ -363,6 +309,7 @@
 %name
 %value
 \newcommand{\addPower}[3] {
+    \raiseMessage{Adding power device [name=#2, value=#3]}
     \draw (#1) node (#2) [vcc] {#3};
 }%end addPower
 
@@ -377,6 +324,7 @@
 %orientation de départ
 %position arrivée
 \newcommand{\addResistor}[4] {
+    \raiseMessage{Adding resistor device}
     \draw (#1) to[R,l=$R$] +(#2) #4 (#3);
 }%end addResistor
 
@@ -386,6 +334,7 @@
 %type de liaison
 %nom de la led
 \newcommand{\addLed}[5] {
+    \raiseMessage{Adding LED device [name=#5]}
     \ifthenelse{\equal{\deviceBorderColor}  {black}}
     {\draw (#1) to[leD,l_=#5,fill=\deviceBackgroundColor] +(#2) #4 (#3);}
     {\draw (#1) to[leD,l_=#5,color=\deviceBorderColor] +(#2) #4 (#3);}
@@ -402,9 +351,19 @@
 %############################################################
 \RequirePackage{fontawesome}
 
-\newcommand{\arobase}{\faAt}
-
    %############################################################
+%###### Package 'Glossaries' 
+%###### This package contains some tools to set glossaries
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage[xindy, acronym, nomain, toc]{glossaries}
+%################################################################
+\makeglossaries
+
+\renewcommand{\glossary}[1]{%
+\gls{#1}
+}%############################################################
 %###### Package 'Graphics' 
 %###### This package contains some tools to create graphics 2D or 3D
 %###### Author  : Nicolas LE GUERROUE
@@ -464,6 +423,7 @@ Cet environnement permet de tracer des courbes en 2D à partir de points, d'équ
 
 \newenvironment{graphicFigure}[9]
 {
+    \raiseMessage{Creating new graphic figure [title='#9']}
     \begin{center}
         \makeatletter
         \def\@captype{figure}
@@ -485,7 +445,8 @@ Cet environnement permet de tracer des courbes en 2D à partir de points, d'équ
 
 \newenvironment{graphic}[9]
 {
-        %\newcommand{\TitleGraphic}{#9}%use var to print title 
+    \raiseMessage{Creating new graphic [title='#9']}
+    \newcommand{\TitleGraphic}{#9}%use var to print title 
         \begin{tikzpicture}
         \setGraphic %command to display with frenchb babel
     \begin{axis}[width=#1\linewidth,height=#2\linewidth,xmin=#3,xmax=#4,  ymin=#5, ymax=#6, scale only axis,xlabel=#7,ylabel=#8, title=#9] %grid=both
@@ -493,32 +454,8 @@ Cet environnement permet de tracer des courbes en 2D à partir de points, d'équ
     { 
     \end{axis}
         \end{tikzpicture}
+
 }
-    
-%############################################################
-\begin{comment}
-@begin
-@command plot
-@des 
-Cette commande permet de tracer des surfaces 3D
-@sed
-@input Iitre du graphique
-@input Equation à deux variables (x et y)
-@begin_example 
-\plot{Titre}{x*x+y*5}
-@end_example
-@end
-\end{comment}   
-    
-\newcommand{\plot}[2]{
-\begin{tikzpicture}
-\setGraphic %command to display with frenchb babel
- \begin{axis}[title={#1}, xlabel=x, ylabel=y]
- \addplot3[surf,domain=0:360,samples=50]
- {#2};
- \end{axis}
- \end{tikzpicture}
- }
     
 %############################################################
 \begin{comment}
@@ -582,6 +519,7 @@ Il faut que cette commande soit utilisées dans l'environnement \textbf{graphics
 \newcommand{\addPointsFromCSV}[3]{
     \IfFileExists{#3}{
     \addplot+[thick, mark=none, color=#1] table[mark=none,col sep=#2] {#3};
+    \raiseMessage{File '#3' loaded !}
     }
     {\raiseError{[import failed]'#3' \stop}
     }
@@ -651,11 +589,9 @@ Cette commande permet de créer une page de garde minimaliste
 \maketitle
 }
 
-% \makeatletter%
-% \@ifclassloaded{babel}%
-%   {BABEL is LOADED}%
-%   {NOT}%
-% \makeatother%
+
+
+
 
 
 %###############################################################
@@ -808,7 +744,13 @@ Cette commande permet de créer une page de garde avec une image centrée, un ti
 \RequirePackage{float}              %image floating
 \RequirePackage{wrapfig}
 \RequirePackage{subcaption}         %Subcaption
+
 %################################################################
+
+
+\newcounter{imgCounter}  %Number of img
+
+%##################
 \begin{comment}
     @begin
     @command \img
@@ -822,18 +764,34 @@ Cette commande permet de créer une page de garde avec une image centrée, un ti
     \img{Image.png}{Titre de l'image}{0.5}
     @end_example
     @end
-  \end{comment}
+\end{comment}
     
-    \newcommand{\img}[3]{\IfFileExists{#1}{\begin{figure}[H]\centering\ \includegraphics[scale=#3]{#1}\caption{#2}\end{figure}}{\raiseWarning{[import failed]'#1'}}}
+\newcommand{\img}[3]{\IfFileExists{#1}{\begin{figure}[H]\centering\ \includegraphics[scale=#3]{#1}\caption{#2}\end{figure} \addtocounter{imgCounter}{1} \raiseMessage{Image '#1' [size=#3,id \arabic{imgCounter}] loaded !}  }{\raiseWarning{Image '#1' no loaded}}}
 
-    %\newcommand{\imgd}[3]{\IfFileExists{#1}{\begin{figure}[H]\centering\ \includegraphics[scale=#3]{#1}\caption{#2}\end{figure}}{\raiseWarning{[import failed]'#1'}}}
-    
+
+\begin{comment}
+      @begin
+      @command \imgr
+      @des 
+      Cette commande permet de mettre une image centrée avec un titre et une taille et un angle
+      @sed
+      @input Source et nom de l'image
+      @input Titre de l'image
+      @input Taille de l'image ]0;1+]
+      @input angle en degres
+      @begin_example 
+      \img{Image.png}{Titre de l'image}{0.5}{90}
+      @end_example
+      @end
+\end{comment}
+\newcommand{\imgr}[4]{\IfFileExists{#1}{\begin{figure}[H]\centering\ \includegraphics[scale=#3,angle=#4]{#1}\caption{#2}\end{figure} \addtocounter{imgCounter}{1} \raiseMessage{Image '#1' [size=#3,id \arabic{imgCounter},angle=#4] loaded !} }{\raiseWarning{Image '#1' no loaded}}}
+
     %################################################################
     \begin{comment}
     @begin
     @command \imgf
     @des 
-    Cette commande permet de mettre une image centrée avec un titre et une taille de manière flottante avec le contenu
+    Cette commande permet de mettre une image centrée sans titre et une taille de manière flottante avec le contenu
     @sed
     @input Source et nom de l'image
     @input Titre de l'image
@@ -846,13 +804,19 @@ Cette commande permet de créer une page de garde avec une image centrée, un ti
     @end
     \end{comment}
     
-    \newcommand{\imgf}[4]{
-    \begin{subfigure}{#4\textwidth}
-        \includegraphics[scale=#3]{#1}
-      %\caption{#2}
-    \end{subfigure}
-    }
+
+
+
     %################################################################%############################################################
+%###### Package 'Index' 
+%###### This package contains some tools to set index
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+%################################################################
+\RequirePackage{makeidx}            %make index
+
+\makeindex%############################################################
 %###### Package 'name' 
 %###### This package contains ...
 %###### Author  : Nicolas LE GUERROUE
@@ -876,12 +840,10 @@ Cette commande permet de créer une page de garde avec une image centrée, un ti
 
 \newenvironment{items}[2]
 {      
-        \begin{itemize}[font=\color{#1}, label=#2]
-           
+        \begin{itemize}[font=\color{#1}, label=#2]  
     }
     { 
         \end{itemize}
-
 }%############################################################
 %###### Package 'name' 
 %###### This package contains ...
@@ -893,70 +855,66 @@ Cette commande permet de créer une page de garde avec une image centrée, un ti
 
 %################################################################
 
-\newtcbox{\file}{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+\newtcbox{\lorange}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
   right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
   colframe=orange!50!black,coltext=orange!25!black,colback=orange!10!white,
   overlay={\begin{tcbclipinterior}\fill[orange!75!white] (frame.south west)
-    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {FILE} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
 
-\newtcbox{\lib}{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+\newtcbox{\lred}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe=red!50!black,coltext=red!25!black,colback=red!10!white,
+  overlay={\begin{tcbclipinterior}\fill[red!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+
+\newtcbox{\lgreen}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
   right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
   colframe=green!50!black,coltext=green!25!black,colback=green!10!white,
-  overlay={\begin{tcbclipinterior}\fill[green!75!green!50!white] (frame.south west)
-    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {LIB} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+  overlay={\begin{tcbclipinterior}\fill[green!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
 
-\newtcbox{\dir}{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+\newtcbox{\lmagenta}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
   right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
-  colframe=blue!50!black,coltext=blue!25!black,colback=blue!10!white,
-  overlay={\begin{tcbclipinterior}\fill[blue!75!blue!50!white] (frame.south west)
-    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {DIR} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
-
-
-\newtcbox{\shortcut}{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
-  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
-  colframe=purple!50!black,coltext=purple!25!black,colback=purple!10!white,
-  overlay={\begin{tcbclipinterior}\fill[purple!75!blue!50!white] (frame.south west)
-    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {KEY} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
-
-\newtcbox{\link}{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  colframe=magenta!50!black,coltext=magenta!25!black,colback=magenta!10!white,
+  overlay={\begin{tcbclipinterior}\fill[magenta!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+  
+\newtcbox{\lpurple}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
   right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
   colframe=purple!50!black,coltext=purple!25!black,colback=purple!10!white,
-  overlay={\begin{tcbclipinterior}\fill[purple!75!blue!50!white] (frame.south west)
-    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {URL} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
-
-
-\newtcbox{\bin}{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  overlay={\begin{tcbclipinterior}\fill[purple!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+    
+\newtcbox{\lblue}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
   right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
   colframe=blue!50!black,coltext=blue!25!black,colback=blue!10!white,
-  overlay={\begin{tcbclipinterior}\fill[blue!75!blue!50!white] (frame.south west)
-    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {BIN} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
-
-\newtcbox{\hexa}{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  overlay={\begin{tcbclipinterior}\fill[blue!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+   
+   
+\newtcbox{\lcyan}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
   right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
-  colframe=blue!50!black,coltext=blue!25!black,colback=blue!10!white,
-  overlay={\begin{tcbclipinterior}\fill[blue!75!blue!50!white] (frame.south west)
-    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {HEX} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+  colframe=cyan!50!black,coltext=cyan!25!black,colback=cyan!10!white,
+  overlay={\begin{tcbclipinterior}\fill[cyan!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
 
-
-
-\newtcbox{\ugrey}{nobeforeafter,colframe=gray,colback=gray!10!white,boxrule=0.5pt,arc=2pt,
-  boxsep=0pt,left=2pt,right=2pt,top=2pt,bottom=2pt,tcbox raise base}
-
-
-\newtcbox{\ugreen}{nobeforeafter,colframe=white,colback=green!40!white,boxrule=0pt,arc=0pt,
-  boxsep=0pt,left=1pt,right=1pt,top=1pt,bottom=1pt,tcbox raise base}
-
-\newtcbox{\ublue}{nobeforeafter,colframe=white,colback=blue!10!white,boxrule=0pt,arc=0pt,
-  boxsep=0pt,left=1pt,right=1pt,top=1pt,bottom=1pt,tcbox raise base}
-
-\newtcbox{\uorange}{nobeforeafter,colframe=white,colback=orange!40!white,boxrule=0pt,arc=0pt,
-  boxsep=0pt,left=1pt,right=1pt,top=1pt,bottom=1pt,tcbox raise base}
-
-\newtcbox{\ured}{nobeforeafter,colframe=white,colback=orange!40!red,boxrule=0pt,arc=0pt,
-  boxsep=0pt,left=1pt,right=1pt,top=1pt,bottom=1pt,tcbox raise base}
-
-\newtcbox{\highlight}[1]{nobeforeafter,colframe=white,colback=#1,boxrule=0pt,arc=0pt,
-  boxsep=0pt,left=1pt,right=1pt,top=1pt,bottom=1pt,tcbox raise base}%############################################################
+\newtcbox{\lbrown}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+    right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+    colframe=brown!50!black,coltext=brown!25!black,colback=brown!10!white,
+    overlay={\begin{tcbclipinterior}\fill[brown!75!white] (frame.south west)
+      rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+   
+\newtcbox{\lyellow}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe=yellow!50!black,coltext=yellow!25!black,colback=yellow!10!white,
+  overlay={\begin{tcbclipinterior}\fill[yellow!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+        
+\newtcbox{\lblack}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+    right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+    colframe=black!50!black,coltext=black!25!black,colback=black!10!white,
+    overlay={\begin{tcbclipinterior}\fill[black!75!white] (frame.south west)
+      rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}%############################################################
 %###### Package 'Layout' 
 %###### This package contains some tools to set page layout or text
 %###### Author  : Nicolas LE GUERROUE
@@ -965,29 +923,11 @@ Cette commande permet de créer une page de garde avec une image centrée, un ti
 \RequirePackage{lmodern}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}     %UTF-8 encoding
-\RequirePackage{graphicx}           %Images
-\RequirePackage{caption}            %légende
-\RequirePackage{textcomp}           %special characters
 
-\RequirePackage{lastpage}           %page counter
-%\RequirePackage{fullpage}          %entire page
-\RequirePackage{float}              %image floating
-\RequirePackage{wrapfig}
-\RequirePackage{subcaption}         %Subcaption
-\RequirePackage{listings}           %new env such as Bash, Python
-%\RequirePackage{tcolorbox}          %messageBox
-\RequirePackage[many]{tcolorbox}
-\RequirePackage{color}              %colors
-\RequirePackage{geometry}
-\RequirePackage{listings}           %new env such as Bash, Python
 \RequirePackage{xcolor}             %define new colors
 \RequirePackage{xparse}
 \RequirePackage{amssymb,amsthm}     %math
-\RequirePackage{multirow}
-\RequirePackage{tabularx}           %use for csv file [table]
 
-\RequirePackage{lipsum}  
-\RequirePackage{fontawesome}
 
 %################################################################
 \begin{comment}
@@ -1085,50 +1025,13 @@ Text \sn Next text
 
 %################################################################
 
-
-\newtheorem{question}{Question}
-\newtheorem{reponse}{$>>>$}
-\newtheorem{propriete}{Propriété}
-\newtheorem{proposition}{Proposition}
-\newtheorem{remarque}{Remarque}
-\newtheorem{exemple}{Exemple}
-\newtheorem{definition}{Definition}
-
-
-%#######################################
-\newcommand{\messageBox}[5]{
-% 1: title
-% 2: color frame
-% 3: color bg
-% 4: content
-% 5: titlecolor
-%\messageBox{Remarque}{green}{white}{Erreur 0xff58}{black}
-%\messageBox{Installation}{gray}{white}{DE}{black}
-%\messageBox{Avertissement}{orange}{white}{dede}{black}
-%\messageBox{Erreur}{red}{white}{dede}{black}
- \begin{tcolorbox}[title=#1,
-colframe=#2!80,
-colback=#3!10,
-coltitle=#5!100,  
-]
-#4
-\end{tcolorbox}
-}
-
-
-
-%######################### PAGE STYLE
-
-
-
-\newcommand{\setFullPage}{\RequirePackage{fullpage}}%############################################################
+%#######################################%############################################################
 %###### Package 'name' 
 %###### This package contains tools to use links, url and other
 %###### Author  : Nicolas LE GUERROUE
 %###### Contact : nicolasleguerroue@gmail.com
 %############################################################
 \RequirePackage{hyperref}           %Url
-
 
 %################################################################
 \begin{comment}
@@ -1153,6 +1056,14 @@ Cette commande permet de définir les propriétés du document PDF (auteur, titr
 \end{comment}
 
 \newcommand{\setParameters}[8]{
+   \typeout{>>> Utils - [MData] : title='#1}
+   \typeout{>>> Utils - [MData] : author(s)='#2'}
+   \typeout{>>> Utils - [MData] : subject='#3'}
+   \typeout{>>> Utils - [MData] : creator='#4'}
+   \typeout{>>> Utils - [MData] : keywords='#5'}
+   \typeout{>>> Utils - [MData] : link colors='#6'}
+   \typeout{>>> Utils - [MData] : bib links colors='#7'}
+   \typeout{>>> Utils - [MData] : link file colors='#8'}
 \hypersetup{
     bookmarks=true,         % show bookmarks bar?
     unicode=true,          % non-Latin characters in Acrobat’s bookmarks
@@ -1172,7 +1083,7 @@ Cette commande permet de définir les propriétés du document PDF (auteur, titr
     citecolor=#6,        % color of links to bibliography
     filecolor=#7,         % color of file links
     urlcolor=#8        % color of external links
-}}%############################################################
+} }%############################################################
 %###### Package 'Maths' 
 %###### This package contains some tools to set mathematic tools
 %###### Author  : Nicolas LE GUERROUE
@@ -1183,6 +1094,122 @@ Cette commande permet de définir les propriétés du document PDF (auteur, titr
 %Matrice à 3 composantes
 \newcommand{\emat}[3]{\left [\begin{array}{ccc} #1 \\ #2 \\ #3\end{array} \right ]}
 % \emat{a & b & c}{d & e & f}{g & h & i}%############################################################
+%###### Package 'MessageBox' 
+%###### This package contains some tools to set messageBox
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage[many]{tcolorbox}
+\RequirePackage{color}              %colors
+\RequirePackage{geometry}
+%################################################################
+\newcounter{messageBoxCounter}  %Number of msgBox
+%###############################################################
+
+\newcommand{\messageBox}[5]{
+% 1: title
+% 2: color frame
+% 3: color bg
+% 4: content
+% 5: titlecolor
+%\messageBox{Remarque}{green}{white}{Erreur 0xff58}{black}
+%\messageBox{Installation}{gray}{white}{DE}{black}
+%\messageBox{Avertissement}{orange}{white}{dede}{black}
+%\messageBox{Erreur}{red}{white}{dede}{black}
+\addtocounter{messageBoxCounter}{1}
+\raiseMessage{MessageBox '#1' [id \arabic{messageBoxCounter}] created !}
+ \begin{tcolorbox}[title=#1,
+colframe=#2!80,
+colback=#3!10,
+coltitle=#5!100,  
+]
+#4
+\end{tcolorbox}
+}%############################################################
+%###### Package 'Glossaries' 
+%###### This package contains some tools to set glossaries
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage{nomencl}  %nomenclature
+%################################################################
+
+
+\makenomenclature
+
+%##### Convention [Nomenclature]
+  \renewcommand{\nomgroup}[1]{%
+  \item[\bfseries
+  \ifthenelse{\equal{#1}{P}}{Constantes physiques}{%
+  \ifthenelse{\equal{#1}{O}}{Autres symboles}{%
+  \ifthenelse{\equal{#1}{N}}{Nombres spéciaux}{ 
+  \ifthenelse{\equal{#1}{A}}{Amplificateurs Opérationnels}{ 
+  \ifthenelse{\equal{#1}{M}}{Mécanique}{ 
+  \ifthenelse{\equal{#1}{E}}{Électronique}{}}}}}}%
+  ]}
+
+
+  % Add unit on convention [nomenclature]
+%----------------------------------------------
+\newcommand{\addUnit}[1]{%
+\renewcommand{\nomentryend}{\hspace*{\fill}#1}}
+%----------------------------------------------%############################################################
+%###### Package 'name' 
+%###### This package contains ...
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+
+\RequirePackage{csvsimple} 
+\RequirePackage{tikz,pgfplots,pgf}  
+\RequirePackage{version}            %use commented code
+
+\RequirePackage{graphics} %include figures
+\RequirePackage{graphicx} %include figures
+\RequirePackage{caption}
+\RequirePackage{subcaption} %Add
+\RequirePackage{version}            %use commented code
+\pgfplotsset{compat=1.7}
+
+%############################################################
+%################################################################
+%1 : color
+%2 : diameter
+\newcommand{\ball}[2]{
+    \tikz\path[shading=ball,
+    ball color=#1] circle (#2mm);
+}
+
+
+
+
+
+%############################################################
+\begin{comment}
+    @begin
+    @command plot
+    @des 
+    Cette commande permet de tracer des surfaces 3D
+    @sed
+    @input Iitre du graphique
+    @input Equation à deux variables (x et y)
+    @begin_example 
+    \plot{Titre}{x*x+y*5}
+    @end_example
+    @end
+    \end{comment}   
+        
+    \newcommand{\plot}[2]{
+        \raiseMessage{Creating new plot [title='#1']}
+    \begin{tikzpicture}
+    \setGraphic %command to display with frenchb babel
+     \begin{axis}[title={#1}, xlabel=x, ylabel=y]
+     \addplot3[surf,domain=0:360,samples=50]
+     {#2};
+     \end{axis}
+     \end{tikzpicture}
+     }
+        %############################################################
 %###### Package 'Titles' 
 %###### This package contains some tools to set title color
 %###### Author  : Nicolas LE GUERROUE
@@ -1246,11 +1273,6 @@ Cette commande permet de définir les propriétés du document PDF (auteur, titr
 }
 \lstnewenvironment{Python}[1]{\lstset{language=Python, title=#1}}{}
 %###############################################################
-%### Couleurs programmation
-\definecolor{green}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{purple}{rgb}{0.58,0,0.82}
-\definecolor{bg}{rgb}{0.98,0.98,0.98}
 %###############################################################
 %### définition du style 'Cpp' [begin{Cpp}]
 \lstdefinestyle{Cpp}{
@@ -1287,18 +1309,32 @@ Cette commande permet de définir les propriétés du document PDF (auteur, titr
     morekeywords={sudo,apt-get,install, autoremove, update, upgrade}
 }
 \lstnewenvironment{Bash}[1]{\lstset{style=Bash, title=#1}}{}%############################################################
+%###### Package 'Theorems' 
+%###### This package contains some tools to set theorems
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage{amssymb,amsthm}     %math
+%################################################################
+%###############################################################
+\newtheorem{question}{Question}
+\newtheorem{reponse}{$>>>$}
+\newtheorem{propriete}{Propriété}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remarque}{Remarque}
+\newtheorem{exemple}{Exemple}
+\newtheorem{definition}{Definition}%############################################################
 %###### Package 'Titles' 
 %###### This package contains some tools to set title color
 %###### Author  : Nicolas LE GUERROUE
 %###### Contact : nicolasleguerroue@gmail.com
 %############################################################
-%\RequirePackage{titlesec} 
 \RequirePackage[explicit]{titlesec} 
 %################################################################
 
-\@ifclassloaded{report}{
-    \titleformat{\chapter}[display] {\fontsize{17pt}{12pt}\selectfont \bfseries}{\textcolor{red} {\chaptertitlename\ \thechapter: #1}}{20pt}{\Huge}
-}
+% \@ifclassloaded{report}{
+%     \titleformat{\chapter}[display] {\fontsize{17pt}{12pt}\selectfont \bfseries}{\textcolor{blue} {\chaptertitlename\ \thechapter: #1}}{20pt}{\Huge}
+% }
 
 \titleformat{\section}[display] {\fontsize{17pt}{12pt}\selectfont \bfseries}{\textcolor{DarkBlue} {#1}}{20pt}{\Huge}
 \titleformat{\subsection}[display] {\fontsize{15pt}{12pt}\selectfont \bfseries}{\textcolor{orange} {#1}}{20pt}{\large}
@@ -1342,7 +1378,7 @@ Cette commande permet de définir les propriétés du document PDF (auteur, titr
 %#############################################################
 %Change the name of the section "Nomenclature"
 %To delete it, set value to 0
-%\renewcommand{\nomname}{Conventions}
+\renewcommand{\nomname}{Conventions}
 %Setting up the parameter of PDF file as name, author...
 \begin{comment}
 @input Titre du PDF
@@ -1384,15 +1420,62 @@ Cette commande permet de définir les propriétés du document PDF (auteur, titr
 \setHeader{A}{A}{A}
 \tableofcontents
 \setcounter{page}{2}
-  
+
 \chapter{La bataille de Waterloo}
 
+\ball{red}{2}
+\ball{green}{2}
+\ball{red}{2}
+\ball{red}{2}
+\ball{green}{2}
+\ball{green}{2}
+\ball{red}{2}
+\ball{red}{2}
+\ball{red}{2}
+\ball{red}{2}
+
+\ball{red}{2}
+\ball{red}{2}
+\ball{red}{2}
+\ball{red}{2}
+\ball{red}{2}
+\ball{green}{2}
+\ball{red}{2}
+\ball{green}{2}
+\ball{red}{2}
+\ball{red}{2}
+
+\lorange{LIB}{OUT}
+\lred{LIB}{OUT}
+\lgreen{LIB}{OUT}
+\lmagenta{LIB}{OUT}
+\lpurple{LIB}{OUT}
+\lcyan{LIB}{OUT}
+\lblue{LIB}{OUT}
+\lbrown{LIB}{OUT}
+\lyellow{LIB}{OUT}
+\lblack{LIB}{OUT}
+
+
 \section{Introduction}
+
+\badge{white}{black}{Electronique}
+\badge{white}{blue}{Mécanique}
+\badge{white}{green}{Informatique}
+
+\img{\rootImages/tux.png}{Légende de l'image}{0.5}
+
+% \img{\rootImages/tux.png}{Légende de l'image}{0.7}
+% \imgr{\rootImages/tux.png}{Légende de l'image}{0.7}{30}
+% \img{\rootImages/tu.png}{Légende de l'image}{0.9}
+
+\foreach \i in {a,b,c,d,e,f,g,h,i,j}{
+  \noindent\i\dotfill\\
+}
 
 À première vue, La bataille de Waterloo voit la confrontation finale entre deux puissances. Or, la troisième puissance partipante est vite oubliée : il s'agit de la Prusse, nation ayant émergée sous le règne du roi Frédéric.
 
 Dans l'histoire collective, le vainquu a éclipsé le vainqueur. Combien de personnes conaissent le nom du vainqueur de Waterloo ? Sans doute un anglais, mais qui ?
-
 La légende napoléonnienne a fait le reste, seul le dernier carré de la garde et le mot de Cambronne sont restés.
 
 
@@ -1485,86 +1568,86 @@ hello
   \caption{Les tensions de service}
   \end{figure}  
 
-% Ce document a pour but de présenter les fonctionnalités de la bibliothèque Utils. \n
-% Chaque bibliothèque doit être indépendante afin de fonctionner correctement.
+Ce document a pour but de présenter les fonctionnalités de la bibliothèque Utils. \n
+Chaque bibliothèque doit être indépendante afin de fonctionner correctement.
 
 
-%\chapter{Bibliothèque Layout}
-% \addQuote{En temps de guerre, la vérité est si précieuse qu'elle doit etre escortée par une garde de mensonge}{Sir Winston Spencer Churchill,\\ Duc de Malborought}
-% \addQuote{Si Dieu nous fait la grâce de perdre encore une pareille bataille, Votre Majesté peut compter que ses ennemis sont détruits}{Maréchal de Villars, \\ 1709}
+\chapter{Bibliothèque Layout}
+\addQuote{En temps de guerre, la vérité est si précieuse qu'elle doit etre escortée par une garde de mensonge}{Sir Winston Spencer Churchill,\\ Duc de Malborought}
+\addQuote{Si Dieu nous fait la grâce de perdre encore une pareille bataille, Votre Majesté peut compter que ses ennemis sont détruits}{Maréchal de Villars, \\ 1709}
 
 
-% \section{Les commandes}
+\section{Les commandes}
 
-% \paragraph{la bibliothèque 'Layout' permet de gérer la disposition et la mise en forme de certains élements du document. \\}
+\paragraph{la bibliothèque 'Layout' permet de gérer la disposition et la mise en forme de certains élements du document. \\}
 
-% \subsection{Mise en forme de la page de garde avec image}
+\subsection{Mise en forme de la page de garde avec image}
 
-% \italic{Se référer au code source de la page.\footnote{Commande setHeaderImage}}
-% \index{setHeaderImage}
+\italic{Se référer au code source de la page.\footnote{Commande setHeaderImage}}
+\index{setHeaderImage}
 
-% \subsection{Mise en forme de la page de garde sans image}
+\subsection{Mise en forme de la page de garde sans image}
 
-% \bi{Se référer à la commande setHeader}
-% \index{setHeader}
+\bi{Se référer à la commande setHeader}
+\index{setHeader}
 
-% \subsection{Ajout d'un trait entre l'en-tête et le corps de la page}
+\subsection{Ajout d'un trait entre l'en-tête et le corps de la page}
 
-% \bi{Se référer à la commande setHeaderLine}
-% \index{setHeaderLine}
+\bi{Se référer à la commande setHeaderLine}
+\index{setHeaderLine}
 
-% \subsection{Ajout d'un trait entre le corps de la page et le bas de page}
+\subsection{Ajout d'un trait entre le corps de la page et le bas de page}
 
-% \bi{Se référer à la commande setFooterLine}
-% \index{setFooterLine}
+\bi{Se référer à la commande setFooterLine}
+\index{setFooterLine}
 
-% \subsection{Définition de la présentation globale des pages}
+\subsection{Définition de la présentation globale des pages}
 
-% \bi{Se référer à la commande addPresentation}
-% \index{setFooterLine}
+\bi{Se référer à la commande addPresentation}
+\index{setFooterLine}
 
 
-% \subsection{Redéfinir les titres des chapitres}
+\subsection{Redéfinir les titres des chapitres}
 
-% \bi{Se référer à la commande setAliasChapter}
-% \index{setAliasChapter}
+\bi{Se référer à la commande setAliasChapter}
+\index{setAliasChapter}
 
-% \subsection{Mettre le document en pleine page}
+\subsection{Mettre le document en pleine page}
 
-% \bi{Se référer à la commande setFullPage}
-% \index{setFullpage}
+\bi{Se référer à la commande setFullPage}
+\index{setFullpage}
 
-% \subsection{Mise en gras}
+\subsection{Mise en gras}
 
-% \bold{Texte en gras}
-% \index{bold}
+\bold{Texte en gras}
+\index{bold}
 
-% \subsection{Mise en italique}
+\subsection{Mise en italique}
 
-% \italic{texte en italic}
-% \index{italic}
+\italic{texte en italic}
+\index{italic}
 
-% \subsection{Mise en gras et italique}
+\subsection{Mise en gras et italique}
 
-% \ib{Texte en gras et italique}
-% \index{ib}
+\ib{Texte en gras et italique}
+\index{ib}
 
-% \subsection{Ajout d'une image non-flottante}
+\subsection{Ajout d'une image non-flottante}
 
-% \img{\rootImages/tux.png}{Légende de l'image}{0.5}
-% \index{img}
+\img{\rootImages/tux.png}{Légende de l'image}{0.5}
+\index{img}
 
-% \subsection{Ajout d'une image flottante}
+\subsection{Ajout d'une image flottante}
 
-% Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum
-% ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris. Nam arcu li-
-% bero, nonummy eget, consectetuer id, vulputate a, magna. Donec vehicula augue eu
-% neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-% turpis egestas. Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibu-
-% lum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer
-% sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices
-% bibendum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac,
-% nulla. Curabitur auctor semper nulla. Donec varius orci eget risus. Duis nibh mi, congue
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum
+ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris. Nam arcu li-
+bero, nonummy eget, consectetuer id, vulputate a, magna. Donec vehicula augue eu
+neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+turpis egestas. Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibu-
+lum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer
+sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices
+bibendum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac,
+nulla. Curabitur auctor semper nulla. Donec varius orci eget risus. Duis nibh mi, congue
 
 % \imgf{\rootImages/tux.png}{Tux}{0.6}{0.5}
 % \index{imgf}
@@ -1580,193 +1663,193 @@ hello
 % luctus
 % mauris.
 
-% \subsection{Ajout d'un espace vertical}
+\subsection{Ajout d'un espace vertical}
 
-% Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum
-% ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris. Nam arcu li- \sn
-% \index{sn}
-% bero, nonummy eget, consectetuer id, vulputate a, magna. Donec vehicula augue eu
-% neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-% turpis egestas. Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibu-
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum
+ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris. Nam arcu li- \sn
+\index{sn}
+bero, nonummy eget, consectetuer id, vulputate a, magna. Donec vehicula augue eu
+neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+turpis egestas. Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibu-
 
-% \subsection{Ajout d'une boite de dialogue}
+\subsection{Ajout d'une boite de dialogue}
 
-% \messageBox{Message}{orange}{white}{Voici un message}{black}
-% \index{messageBox}
-% \messageBox{Message}{red}{white}{Et un autre message}{black}
-% \messageBox{Message}{green}{white}{bref...}{white}
+\messageBox{Message}{orange}{white}{Voici un message}{black}
+\index{messageBox}
+\messageBox{Message}{red}{white}{Et un autre message}{black}
+\messageBox{Message}{green}{white}{bref...}{white}
 
-% \section{Les environnements de la bibliothèque}
+\section{Les environnements de la bibliothèque}
 
-% \subsection{Environnement 'question' }
+\subsection{Environnement 'question' }
 
-% \begin{question}
-% Quelle heure est-il ?
-% \end{question}
-% \index{question}
+\begin{question}
+Quelle heure est-il ?
+\end{question}
+\index{question}
 
-% \subsection{Environnement 'reponse' }
+\subsection{Environnement 'reponse' }
 
-% \begin{reponse}
-% il est 18 h.
-% \end{reponse}
-% \index{reponse}
+\begin{reponse}
+il est 18 h.
+\end{reponse}
+\index{reponse}
 
-% \subsection{Environnement 'propriete' }
+\subsection{Environnement 'propriete' }
 
-% \begin{propriete}
-% Un produit scalaire est commutatif.
-% \end{propriete}
-% \index{propriete}
+\begin{propriete}
+Un produit scalaire est commutatif.
+\end{propriete}
+\index{propriete}
 
-% \subsection{Environnement 'proposition' }
+\subsection{Environnement 'proposition' }
 
-% \begin{proposition}
-% Les chats sont des mammifères.
-% \end{proposition}
-% \index{proposition}
+\begin{proposition}
+Les chats sont des mammifères.
+\end{proposition}
+\index{proposition}
 
-% \subsection{Environnement 'remarque' }
+\subsection{Environnement 'remarque' }
 
-% \begin{remarque}
-% Les chats sont des mammifères.
-% \end{remarque}
-% \index{remarque}
+\begin{remarque}
+Les chats sont des mammifères.
+\end{remarque}
+\index{remarque}
 
-% \subsection{Environnement 'exemple' }
+\subsection{Environnement 'exemple' }
 
-% \begin{exemple}
-% Ceci est un exemple d'exemple
-% \end{exemple}
-% \index{exemple}
+\begin{exemple}
+Ceci est un exemple d'exemple
+\end{exemple}
+\index{exemple}
 
-% \subsection{Environnement 'definition' }
+\subsection{Environnement 'definition' }
 
-% \begin{definition}
-% Une phrase est un ensemble de mots.
-% \end{definition}
-% \index{definition}
-
-
-%###########################################################################
-%LINKS
-%###########################################################################
-
-% \chapter{Bilbiothèque 'Links'}
+\begin{definition}
+Une phrase est un ensemble de mots.
+\end{definition}
+\index{definition}
 
 
-% \section{Les commandes}
+% ###########################################################################
+% LINKS
+% ###########################################################################
+
+\chapter{Bilbiothèque 'Links'}
 
 
-% \subsection{définition des liens dans le document}
-
-% \bi{Se référer à la commande setParameters}
-% \index{setParameters}
+\section{Les commandes}
 
 
-%###########################################################################
-%MATHS
-%###########################################################################
+\subsection{définition des liens dans le document}
 
-% \chapter{Bilbiothèque 'maths'}
-
-
-% \section{Les commandes}
+\bi{Se référer à la commande setParameters}
+\index{setParameters}
 
 
-% \subsection{Création d'une matrice 3*3}
+% ###########################################################################
+% MATHS
+% ###########################################################################
+
+\chapter{Bilbiothèque 'maths'}
 
 
-% $\emat{a & b & c}{d & e & f}{g & h & i}  $
-% \index{emat}
-
-% \subsection{Création d'un vecteur à trois dimensions}
-% $\evec{a}{b}{c}  $
-% \index{evec}
+\section{Les commandes}
 
 
+\subsection{Création d'une matrice 3*3}
 
 
-%###########################################################################
-%PROGRAMMING
-%###########################################################################
+$\emat{a & b & c}{d & e & f}{g & h & i}  $
+\index{emat}
 
-% \chapter{Bilbiothèque 'Programming'}
-
-
-% \section{Les environnements}
+\subsection{Création d'un vecteur à trois dimensions}
+$\evec{a}{b}{c}  $
+\index{evec}
 
 
-% \subsection{Affichage d'un code C/C++ avec titre}
 
 
-% \begin{Cpp}{Titre}
-% #include <iostream>
+% ###########################################################################
+% PROGRAMMING
+% ###########################################################################
 
-% #define CONST 1
+\chapter{Bilbiothèque 'Programming'}
 
-% int var = 1;
-% float 
 
-% int main() {
+\section{Les environnements}
+
+
+\subsection{Affichage d'un code C/C++ avec titre}
+
+
+\begin{Cpp}{Titre}
+#include <iostream>
+
+#define CONST 1
+
+int var = 1;
+float 
+
+int main() {
   
-%   call();
-%   return 0;
+  call();
+  return 0;
 
-% }//End main
+}//End main
 
-% \end{Cpp}
-% \index{cpp}
-% \subsection{Affichage d'un code C/C++ sans titre}
-
-
-% \begin{Cpp}
-% #include <iostream>
-
-% #define CONST 1 #const var
-
-% int var = 1;
-% float g = 2.5;
-% ...
-
-% \end{Cpp}
+\end{Cpp}
+\index{cpp}
+\subsection{Affichage d'un code C/C++ sans titre}
 
 
-% \subsection{Affichage d'un code Python avec titre}
+\begin{Cpp}
+#include <iostream>
+
+#define CONST 1 #const var
+
+int var = 1;
+float g = 2.5;
+...
+
+\end{Cpp}
 
 
-% \begin{Python}{Titre du code}
-% def call(input):
-
-%   """docstring"""
-%   a = input
-%   for elem in a:
-%     print(elem) #show
-% \end{Python}
-% \index{python}
-% \subsection{Affichage d'un code Python sans titre}
+\subsection{Affichage d'un code Python avec titre}
 
 
-% \begin{Python}
-% def call(input):
+\begin{Python}{Titre du code}
+def call(input):
 
-%   """docstring"""
-%   ...
-% \end{Python}
+  """docstring"""
+  a = input
+  for elem in a:
+    print(elem) #show
+\end{Python}
+\index{python}
+\subsection{Affichage d'un code Python sans titre}
 
 
-% \subsection{Affichage d'un code Bash avec titre}
+\begin{Python}
+def call(input):
+
+  """docstring"""
+  ...
+\end{Python}
 
 
-% \begin{Bash}{Titre du code}
-% sudo apt-get -y update
-% sudo apt-get -y upgrade
-% echo -e "content"
-% \end{Bash}
-% \index{bash}
-% \subsection{Affichage d'un code bash sans titre}
+\subsection{Affichage d'un code Bash avec titre}
 
-% \bold{Ce type d'affichage n'est pas encore supporté par la bibliothèque.}
+
+\begin{Bash}{Titre du code}
+sudo apt-get -y update
+sudo apt-get -y upgrade
+echo -e "content"
+\end{Bash}
+\index{bash}
+\subsection{Affichage d'un code bash sans titre}
+
+\bold{Ce type d'affichage n'est pas encore supporté par la bibliothèque.}
 
 
 
@@ -1775,102 +1858,38 @@ hello
 %PROGRAMMING
 %###########################################################################
 
-% \chapter{Bilbiothèque 'Labels'}
-
-% \section{Les labels de surlignage}
-
-% \subsection{Affichage d'un label de surlignage vert}
-<true>
-% \ugreen{content}
-% \index{ugreen}
-% \subsection{Affichage d'un label de surlignage orange}
-
-% \uorange{content}
-% \index{uorange}
-% \subsection{Affichage d'un label de surlignage rouge}
-
-% \ured{content}
-% \index{ured}
-% \subsection{Affichage d'un label de surlignage bleu}
-
-% \ublue{content}
-% \index{ublue}
-% \subsection{Affichage d'un label de surlignage gris encadré}
-
-% \ugrey{content}
-% \index{ugrey}
-
-% \section{Le surlignage générique}
-
-% \highlight{orange}{Texte à surligner}
-
-% Ce texte est généré par la fonction \bold{highlight}
-
-% \section{Les labels avancés}
-
-% \subsection{Affichage d'un label de bibliothèque}
-
-% \lib{Gparted}
-% \index{lib}
-% \subsection{Affichage d'un label de fichier}
-
-% \file{Fichier.txt}
-% \index{file}
-% \subsection{Affichage d'un label de dossier ou d'emplacement}
-
-% \dir{/var/www/html}
-% \index{dir}
-% \subsection{Affichage d'un label de raccourci-clavier}
-
-% \shortcut{Ctrl+'A'}
-% \index{shortcut}
-
-% \section{Les labels numérique}
-
-% \subsection{Affichage d'un label de nombre hexadécimal}
-
-% \hexa{FF45DE}
-% \index{hexa}
-% \subsection{Affichage d'un label de nombre binaire}
-
-% \bin{0100101}
-% \index{bin}
+\chapter{Bilbiothèque 'Labels'}
 
 
-
-
-% \highlight{blue}{content is here}
-% \highlight{green}{content is here}
-% \highlight{pink}{content is here}
 
 %###########################################################################
 %GRAPHIC
 %###########################################################################
 
-% \chapter{Bilbiothèque 'Graphic'}
+\chapter{Bilbiothèque 'Graphic'}
 
-% \section{Graphiques 2D}
-% \subsection{Affichage d'un graphique 2D avec insertion des données depuis un fichier txt (csv)}
-
-
-% \begin{graphics}{0.8}{0.6}{0}{2.1}{-1.1}{1.1}{t(ms)}{vs}{Oscilloscope}
-% \addPointsFromCSV{red}{comma}{src_examples/input_1.txt}
-% \addPointsFromCSV{blue}{comma}{src_examples/input_2.txt}
-% \addLegend{voie A, voie B}
-% \end{graphics}
-% \index{graphic}
-% \index{addPointsFromCSV}
-
-% \subsection{Affichage d'un graphique 2D avec insertion des données depuis une liste de points}
+\section{Graphiques 2D}
+\subsection{Affichage d'un graphique 2D avec insertion des données depuis un fichier txt (csv)}
 
 
-% \begin{graphics}{0.8}{0.4}{0}{40}{-1}{6}{t(s)}{Tension (V)}{Signal numérique}
-% \addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
-% \addLegend{Tension (V)}
-% \end{graphics}
+\begin{graphic}{0.8}{0.6}{0}{2.1}{-1.1}{1.1}{t(ms)}{vs}{Oscilloscope}
+\addPointsFromCSV{red}{comma}{src_examples/input_1.txt}
+\addPointsFromCSV{blue}{comma}{src_examples/input_2.txt}
+\addLegend{voie A, voie B}
+\end{graphic}
+\index{graphic}
+\index{addPointsFromCSV}
+
+\subsection{Affichage d'un graphique 2D avec insertion des données depuis une liste de points}
 
 
-% \subsection{Affichage de plusieurs graphiques avec insertion des données depuis un fichier externe}
+\begin{graphic}{0.8}{0.4}{0}{40}{-1}{6}{t(s)}{Tension (V)}{Signal numérique}
+\addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
+\addLegend{Tension (V)}
+\end{graphic}
+
+
+\subsection{Affichage de plusieurs graphiques avec insertion des données depuis un fichier externe}
 
 % \begin{figure}
 %   \centering
@@ -2035,10 +2054,10 @@ Notre signal d'horloge (\texttiming{[blue]CCCCCC}) provient d'un oscillateur à 
 \end{schema}
 
 
-% \begin{graphics}{0.8}{0.4}{0}{40}{-1}{6}{t(s)}{Tension (V)}{Signal numérique}
-% \addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
-% \addLegend{Tension (V)}
-% \end{graphics}
+\begin{graphic}{0.8}{0.4}{0}{40}{-1}{6}{t(s)}{Tension (V)}{Signal numérique}
+\addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
+\addLegend{Tension (V)}
+\end{graphic}
 
 \begin{tabular}{|c|c||c|}
           \hline
@@ -2054,84 +2073,84 @@ Notre signal d'horloge (\texttiming{[blue]CCCCCC}) provient d'un oscillateur à 
           \hline
 \end{tabular}
 
-\begin{figure}
-\begin{subfigure}{.5\textwidth}
-\centering
-% include first image
-\centering
-\begin{schema}{Pont de Graëtz}
-\setBipolesLength{0.5}
-\addNode{0,0}{a}{A}
-\addNode{2.5,2.5}{c}{C}
-\addNode{5,5}{b}{B}
-\addLogicGate{0,2}{mynand}{nand}{}{C}{D}
-
-\addTransistor{4,1}{npnA}{nmos}{B}{C}{E}
-
-\addResistor{mynand.out}{1.5,0}{b}{\orthogonalWireA}
-
-\addPower{1,4}{power1}{$+5V$}
-\addResistor{power1}{\Down}{npnA.B}{\orthogonalWireB}
-
-\end{schema}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-\centering
+% \begin{figure}
+% \begin{subfigure}{.5\textwidth}
 % \centering
-% \begin{graphics}{0.9}{0.4}{-0.05}{80}{-1}{6}{t(ms)}{vs}{}
-% \addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
-% %\addLegend{Signal "KEY\_POWER"}
-% \end{graphics}
-\end{subfigure}
+% % include first image
+% \centering
+% \begin{schema}{Pont de Graëtz}
+% \setBipolesLength{0.5}
+% \addNode{0,0}{a}{A}
+% \addNode{2.5,2.5}{c}{C}
+% \addNode{5,5}{b}{B}
+% \addLogicGate{0,2}{mynand}{nand}{}{C}{D}
 
-\begin{subfigure}{1\textwidth}
-\centering
-\begin{numeric}{Chronogramme du compteur 4 bits}
-INPUT &  CC [blue]16{CC} CCC   \\
-D0 &  HL 8{LHHL} LHL   \\
-D1 &  H  4{LLLLHHHH} LLLL \\
-D2 &  H 2{LLLLLLLLHHHHHHHH} LLLL   \\
-D3 &  H{LLLLLLLLLLLLLLLLHHHHHHHHHHHHHHHH} LLLL  \\
-END &  LL [green]14{LL} LHHLLL  \\
-VALUE & L 2D{0} 2D{1} 2D{2} 2D{3} 2D{4} 2D{5} 2D{6} 2D{7} 2D{8} 2D{9} 2D{10} 2D{11} 2D{12} 2D{13} 2D{14} 2D{15} 2D{0} 2D{1}  \\
-\end{numeric}%
+% \addTransistor{4,1}{npnA}{nmos}{B}{C}{E}
 
-\end{subfigure}
-\caption{Titre}
-\label{fig:fig}
-\end{figure}
+% \addResistor{mynand.out}{1.5,0}{b}{\orthogonalWireA}
 
+% \addPower{1,4}{power1}{$+5V$}
+% \addResistor{power1}{\Down}{npnA.B}{\orthogonalWireB}
 
-% \subsection{Affichage d'un graphique 2D avec insertion des données depuis plusieurs sources}
+% \end{schema}
+% \end{subfigure}
+% \begin{subfigure}{.5\textwidth}
+% \centering
+% % \centering
+% % \begin{graphics}{0.9}{0.4}{-0.05}{80}{-1}{6}{t(ms)}{vs}{}
+% % \addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
+% % %\addLegend{Signal "KEY\_POWER"}
+% % \end{graphics}
+% \end{subfigure}
 
+% \begin{subfigure}{1\textwidth}
+% \centering
+% \begin{numeric}{Chronogramme du compteur 4 bits}
+% INPUT &  CC [blue]16{CC} CCC   \\
+% D0 &  HL 8{LHHL} LHL   \\
+% D1 &  H  4{LLLLHHHH} LLLL \\
+% D2 &  H 2{LLLLLLLLHHHHHHHH} LLLL   \\
+% D3 &  H{LLLLLLLLLLLLLLLLHHHHHHHHHHHHHHHH} LLLL  \\
+% END &  LL [green]14{LL} LHHLLL  \\
+% VALUE & L 2D{0} 2D{1} 2D{2} 2D{3} 2D{4} 2D{5} 2D{6} 2D{7} 2D{8} 2D{9} 2D{10} 2D{11} 2D{12} 2D{13} 2D{14} 2D{15} 2D{0} 2D{1}  \\
+% \end{numeric}%
 
-% \begin{graphics}{0.8}{0.4}{0}{20}{-1}{10}{x}{y}{Courbes de provenances diverses}
-% \addPointsFromCSV{red}{comma}{src_examples/input_2.txt}
-% \addTrace{green}{-10}{10}{x}
-% \addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
-% \addLegend{s1,s2,s3}
-% \end{graphics}
-% \index{addTrace}
-
-
-% \section{Graphiques 3D}
-
-% \subsection{Affichage d'un graphique 3D avec insertion des données depuis une équation}
-
-% \plot{Titre 3D}{x*y*y}
-% \index{plot}
-
-% \chapter{Bilbiothèque 'Adding'}
-
-% \section{Nomenclature}
-
-% Un exemple de nomenclature est présenté à la page suivante
-% \section{Exemples Layout}
+% \end{subfigure}
+% \caption{Titre}
+% \label{fig:fig}
+% \end{figure}
 
 
-% Une onomatopée\index{onomatopée} est une catégorie d'interjections\index{interjection}
-% émise pour simuler un bruit particulier associé à un être,
-% un animal ou un objet, par l'imitation des sons\index{son} que ceux-ci produisent
+\subsection{Affichage d'un graphique 2D avec insertion des données depuis plusieurs sources}
+
+
+\begin{graphic}{0.8}{0.4}{0}{20}{-1}{10}{x}{y}{Courbes de provenances diverses}
+\addPointsFromCSV{red}{comma}{src_examples/input_2.txt}
+\addTrace{green}{-10}{10}{x}
+\addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
+\addLegend{s1,s2,s3}
+\end{graphic}
+\index{addTrace}
+
+
+\section{Graphiques 3D}
+
+\subsection{Affichage d'un graphique 3D avec insertion des données depuis une équation}
+
+\plot{Titre 3D}{x*y*y}
+\index{plot}
+
+\chapter{Bilbiothèque 'Adding'}
+
+\section{Nomenclature}
+
+Un exemple de nomenclature est présenté à la page suivante
+\section{Exemples Layout}
+
+
+Une onomatopée\index{onomatopée} est une catégorie d'interjections\index{interjection}
+émise pour simuler un bruit particulier associé à un être,
+un animal ou un objet, par l'imitation des sons\index{son} que ceux-ci produisent
 
 \nomenclature[E]{$r$}{Rapport cyclique d'un signal périodique}
 \nomenclature[A]{$A_d$}{Coefficient d'amplification, gain différentiel }

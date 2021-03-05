@@ -1,0 +1,35 @@
+%#########################################################
+%####### Project name : 
+%####### Name
+%#########################################################
+%####### Author(s) : 
+%####### Auth1, Auth2 ...
+%#########################################################
+%####### File settings
+%#########################################################
+\input{Settings.tex}
+%#########################################################
+%####### Begin document
+\usepackage{silence}
+\WarningFilter{latex}{Underfull \hbox (badness 10000) }
+\begin{document}
+%#########################################################
+%####### First Page
+\setHeaderImage{Images/content/STM32}{1}{Microprocesseurs}{Principes}{Nicolas LE GUERROUE}{\today}
+%\input{Make/Contacts.tex}
+%#########################################################
+%####### Table of content
+\setcounter{page}{1}
+\addtocounter{page}{1}
+\tableofcontents
+\newpage
+%#########################################################
+%#########################################################
+
+\input{Output/add_content.tex} %load chapters
+%\setcounter{page}{31}
+
+
+\end{document}
+
+

@@ -1,0 +1,33 @@
+%############################################################
+%###### Package 'MessageBox' 
+%###### This package contains some tools to set messageBox
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage[many]{tcolorbox}
+\RequirePackage{color}              %colors
+\RequirePackage{geometry}
+%################################################################
+\newcounter{messageBoxCounter}  %Number of msgBox
+%###############################################################
+
+\newcommand{\messageBox}[5]{
+% 1: title
+% 2: color frame
+% 3: color bg
+% 4: content
+% 5: titlecolor
+%\messageBox{Remarque}{green}{white}{Erreur 0xff58}{black}
+%\messageBox{Installation}{gray}{white}{DE}{black}
+%\messageBox{Avertissement}{orange}{white}{dede}{black}
+%\messageBox{Erreur}{red}{white}{dede}{black}
+\addtocounter{messageBoxCounter}{1}
+\raiseMessage{MessageBox '#1' [id \arabic{messageBoxCounter}] created !}
+ \begin{tcolorbox}[title=#1,
+colframe=#2!80,
+colback=#3!10,
+coltitle=#5!100,  
+]
+#4
+\end{tcolorbox}
+}

@@ -1,0 +1,13 @@
+%############################################################
+%###### Package 'Glossaries' 
+%###### This package contains some tools to set glossaries
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage[xindy, acronym, nomain, toc]{glossaries}
+%################################################################
+\makeglossaries
+
+\renewcommand{\glossary}[1]{%
+\gls{#1}
+}

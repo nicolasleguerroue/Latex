@@ -1,0 +1,39 @@
+%#########################################################
+%####### Project name : 
+%####### Name
+%#########################################################
+%####### Author(s) : 
+%####### Auth1, Auth2 ...
+%#########################################################
+%####### File settings
+%#########################################################
+\input{Settings.tex}
+%#########################################################
+%####### Begin document
+\usepackage{silence}
+\WarningFilter{latex}{Underfull \hbox (badness 10000) }
+\begin{document}
+%#########################################################
+%####### First Page
+\setHeaderImage{Images/aop/aop}{0.5}{Les Amplificateurs Opérationnels}{Principes et montages}{Club de Robotique et d'Electronique\\ Programmable de Ploemeur}{\today}
+\input{Make/Contacts.tex}
+%#########################################################
+%####### Table of content
+\setcounter{page}{1}
+\addtocounter{page}{1}
+\tableofcontents
+\newpage
+%#########################################################
+%#########################################################
+
+\input{Output/add_content.tex} %load chapters
+\setcounter{page}{31}
+
+\addcontentsline{toc}{chapter}{Table des figures}
+\listoffigures
+
+
+
+\end{document}
+
+
