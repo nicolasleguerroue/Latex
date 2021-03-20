@@ -1,0 +1,66 @@
+%#######################################################
+%### Settings file
+%### Project : Rapport_etonnement
+%#######################################################
+\documentclass[12pt]{report}
+\usepackage[frenchb]{babel} %Select langage
+\usepackage{Utils/Utils} %Load Utils library
+%#############################################################
+%Geometry
+%#############################################################
+\geometry{hmargin=3cm,vmargin=3cm}
+%#############################################################
+%#############################################################
+%Rename chapter name
+%#############################################################
+\setAliasChapter{Section}
+%#############################################################
+%#############################################################
+%If you want to add presentation, modify the next bloc
+%The firt line is about the header :
+%{left content}{center content}{right content}
+%The second line is about the footer :
+%{left content}{center content}{right content}
+%####
+%to get the current chapter name, use \currentChapter command as content
+%#############################################################
+\addPresentation
+{} {} {}
+{Fournisseurs} {} {\currentPage}
+%#############################################################
+%#############################################################
+%Change the width of footer line and header line
+%To delete it, set value to 0
+%#############################################################
+\setHeaderLine{0}
+\setFooterLine{0.2}
+%#############################################################
+%#############################################################
+%URL and data settings
+%#############################################################
+\setParameters{}{Nicolas LE GUERROUE}{}{}{}{blue}{blue}{green}
+%#############################################################
+
+
+
+\titleformat{\chapter}
+  {\gdef\chapterlabel{}
+   \normalfont\sffamily\Huge\bfseries\scshape}
+  {\gdef\chapterlabel{\thechapter)\ }}{0pt}
+  {\begin{tikzpicture}[remember picture,overlay]
+    \node[yshift=-2cm] at (current page.north west)
+      {\begin{tikzpicture}[remember picture, overlay]
+        \draw[fill=MediumBlue] (0,0) rectangle
+          (\paperwidth,2cm);
+        \node[anchor=east,xshift=.9\paperwidth,rectangle,
+              rounded corners=20pt,inner sep=11pt,
+              fill=white]
+              {\color{black}#1};%\chapterlabel
+          \node[anchor=west,yshift=1cm,xshift=2cm,inner sep=11pt,
+              fill=MediumBlue]
+              {\color{white}{\large MySensors}};%\chapterlabel
+       \end{tikzpicture}
+      };
+   \end{tikzpicture}
+  }
+  \titlespacing*{\chapter}{0pt}{50pt}{-60pt}

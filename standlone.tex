@@ -1339,7 +1339,64 @@ coltitle=#5!100,
 \titleformat{\section}[display] {\fontsize{17pt}{12pt}\selectfont \bfseries}{\textcolor{DarkBlue} {#1}}{20pt}{\Huge}
 \titleformat{\subsection}[display] {\fontsize{15pt}{12pt}\selectfont \bfseries}{\textcolor{orange} {#1}}{20pt}{\large}
 \titlespacing*{\section}{0pt}{20pt}{-30pt}
-\titlespacing*{\subsection}{0pt}{20pt}{-20pt}
+\titlespacing*{\subsection}{0pt}{20pt}{-20pt}%############################################################
+%###### Package 'Trees' 
+%###### This package contains some tools to generate trees
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+
+\RequirePackage{tikz-timing}
+
+\RequirePackage{graphics} %include figures
+\RequirePackage{graphicx} %include figures
+\RequirePackage{pgf,tikz}
+\RequirePackage{circuitikz}
+\usetikzlibrary{babel}  %allow to use tikz library with babel
+%###############################################################
+
+%1 : content
+%2 : color
+%child { node {Sonde\_MySensors}
+%child { node [selected] {Sonde\_MySensors.ino}}
+%}
+%child [missing] {}		
+%child { node {passerelle\_MySensors}
+%child { node [selected] {Passerelle\_MySensors.ino}}
+%};
+\newcommand{\addParent}[2] {
+    \node [color=#2] {#1}
+}
+
+%title
+\newenvironment{tree}[1] {
+    \begin{figure}[h!]
+    \centering
+    \usetikzlibrary{trees}
+
+    \tikzstyle{every node}=[draw=black,thick,anchor=west]
+    \tikzstyle{selected}=[draw=blue,fill=blue!30]
+    \tikzstyle{optional}=[dashed,fill=gray!50]
+    \begin{tikzpicture}[%
+        grow via three points={one child at (0.5,-0.7) and
+        two children at (0.5,-0.7) and (0.5,-1.4)},
+        edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+}
+{
+    \end{tikzpicture}
+    \tikzstyle{every node}=[]
+    \tikzstyle{selected}=[]
+    \tikzstyle{optional}=[]
+    \caption{Arborescence du projet}
+    \end{figure}
+}
+
+  
+
+
+
+
+  
 %\usepackage[Lenny]{fncychap}   %Sonny, Lenny, Glenn, Conny, Rejne, Bjarne
 %#############################################################
 %#### Settings
@@ -1462,6 +1519,17 @@ coltitle=#5!100,
 \badge{white}{black}{Electronique}
 \badge{white}{blue}{Mécanique}
 \badge{white}{green}{Informatique}
+
+\begin{tree}{Arborescence du projet}
+  \addParent{AZE}{red} 
+  child { node {Sonde\_MySensors}
+    child { node [selected] {Sonde\_MySensors.ino}}
+  }
+  child [missing] {}		
+  child { node {passerelle\_MySensors}
+    child { node [selected] {Passerelle\_MySensors.ino}}
+  };
+\end{tree}
 
 \img{\rootImages/tux.png}{Légende de l'image}{0.5}
 

@@ -1,7 +1,8 @@
 #!/bin/bash
+
 #####################################################################################
 ##
-##    SETTINGS
+##    SETTINGS   set style fill transparent solid 0.5
 ##
 #####################################################################################
 #################################################
@@ -61,6 +62,74 @@ function loadValue {
 	
 }
 #End createDirectory
+
+#####################################################################################
+##
+##    GENERATE LOG LIBRARIES
+##
+#####################################################################################
+lib_dir="Utils"
+echo "" > data.txt
+for item in $lib_dir/*
+do
+	name=`echo $item | cut -d'/' -f2 | cut -d'.' -f1`
+	echo $name `wc -l $item | cut -d' ' -f1` >> data.txt
+done
+
+echo "set terminal png" >> graph.gnuplot
+echo "set output 'Utils.png'" >> graph.gnuplot
+echo "set title 'Nombres de lignes par bilbiothèque'" >> graph.gnuplot
+echo "set xlabel 'Bilbiothèques'" >> graph.gnuplot
+echo "set ylabel 'Nombre de lignes'" >> graph.gnuplot
+echo "set grid" >> graph.gnuplot
+echo "" >> graph.gnuplot
+echo "set style data histogram" >> graph.gnuplot
+echo "set style histogram cluster gap 1" >> graph.gnuplot
+echo "set style fill solid border -1" >> graph.gnuplot
+echo "" >> graph.gnuplot
+echo "set xtics rotate by 60 right  " >> graph.gnuplot
+echo "plot 'data.txt' using 2:xtic(1)" >> graph.gnuplot
+
+gnuplot graph.gnuplot
+
+#####################################################################################
+##
+##    GENERATE LOG PART
+##
+#####################################################################################
+part_dir="Parts"
+echo "" > data.txt
+echo "" > graph.gnuplot
+for dir in $part_dir/*
+do
+	echo $dir
+	#name=`echo $dir | cut -d'/' -f2 | cut -d'.' -f1`
+	for file in $dir/*
+	do
+	echo "NAME=$file"
+	name=`echo $file | cut -d'/' -f3`
+	echo $name `wc -l $file | cut -d' ' -f1` >> data.txt
+	echo $name
+	done
+done
+
+echo "set terminal png" >> graph.gnuplot
+echo "set output 'Parts.png'" >> graph.gnuplot
+echo "set title 'Nombres de lignes par fichier Parts'" >> graph.gnuplot
+echo "set xlabel 'Fichiers'" >> graph.gnuplot
+echo "set ylabel 'Nombre de lignes'" >> graph.gnuplot
+echo "set grid" >> graph.gnuplot
+echo "" >> graph.gnuplot
+echo "set style data histogram" >> graph.gnuplot
+echo "set style histogram cluster gap 1" >> graph.gnuplot
+echo "set style fill solid border -1" >> graph.gnuplot
+echo "" >> graph.gnuplot
+echo "set xtics rotate by 60 right  " >> graph.gnuplot
+echo "plot 'data.txt' using 2:xtic(1)" >> graph.gnuplot
+
+gnuplot graph.gnuplot
+rm graph.gnuplot
+rm data.txt
 
 #####################################################################################
 ##

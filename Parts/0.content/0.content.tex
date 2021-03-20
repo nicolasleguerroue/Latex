@@ -41,6 +41,17 @@
 \badge{white}{blue}{Mécanique}
 \badge{white}{green}{Informatique}
 
+\begin{tree}{Arborescence du projet}
+  \addParent{AZE}{red} 
+  child { node {Sonde\_MySensors}
+    child { node [selected] {Sonde\_MySensors.ino}}
+  }
+  child [missing] {}		
+  child { node {passerelle\_MySensors}
+    child { node [selected] {Passerelle\_MySensors.ino}}
+  };
+\end{tree}
+
 \img{\rootImages/tux.png}{Légende de l'image}{0.5}
 
 % \img{\rootImages/tux.png}{Légende de l'image}{0.7}

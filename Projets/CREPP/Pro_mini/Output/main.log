@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.4)  5 MAR 2021 22:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.4)  20 MAR 2021 14:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1626,7 +1626,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
-ut line 14.
+ut line 15.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
 File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
@@ -1648,7 +1648,7 @@ LaTeX Font Warning: Font shape `T1/lmss/bx/sc' undefined
 ]
 Chapitre 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--37
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
 
  []
 
@@ -1658,7 +1658,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [6
 
 ]
-Overfull \hbox (20.51584pt too wide) in paragraph at lines 69--70
+Overfull \hbox (20.51584pt too wide) in paragraph at lines 67--68
 []\T1/lmr/m/n/12 Dans un dos-sier [], pla-cez deux dos-siers ap-pe-lés []
  []
 
@@ -1897,8 +1897,9 @@ ne 35.
 
 >>> Utils : Image 'Images/electrical_checking/nrf24.jpg' [size=0.05,id 20,angle
 =-90] loaded !
-) (./Parts/3.setup_domoticz/add_gateway.tex [25 <./Images/electrical_checking/c
-.jpg>] [26 <./Images/electrical_checking/nrf24.jpg>] [27
+[25 <./Images/electrical_checking/c.jpg>])
+(./Parts/3.setup_domoticz/add_gateway.tex [26 <./Images/electrical_checking/nrf
+24.jpg>] [27
 
 ]
 Chapitre 6.
@@ -2058,7 +2059,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  62691 strings out of 481239
  1451596 string characters out of 5920378
- 2294179 words of memory out of 8000000
+ 2294180 words of memory out of 8000000
  76710 multiletter control sequences out of 15000+600000
  609096 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2075,7 +2076,7 @@ e1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/
 share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/publ
 ic/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Output/main.pdf (36 pages, 35633756 bytes).
+Output written on Output/main.pdf (36 pages, 35634383 bytes).
 PDF statistics:
  586 PDF objects out of 1000 (max. 8388607)
  474 compressed objects within 5 object streams

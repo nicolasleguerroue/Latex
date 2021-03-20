@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.4)  1 MAR 2021 23:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.4)  7 MAR 2021 15:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1678,13 +1678,13 @@ uplicate ignored
 l.2  \chapter
              {Introduction } [3]
 Chapitre 1.
-<Images/aop/pinout.png, id=630, 268.00125pt x 273.02pt>
+<Images/aop/pinout.png, id=629, 268.00125pt x 273.02pt>
 File: Images/aop/pinout.png Graphic file (type png)
 <use Images/aop/pinout.png>
 Package pdftex.def Info: Images/aop/pinout.png  used on input line 9.
 (pdftex.def)             Requested size: 134.00029pt x 136.50966pt.
 >>> Utils : Image 'Images/aop/pinout.png' [size=0.5,id 1] loaded !
-<Images/aop/power.png, id=632, 532.99126pt x 217.81375pt>
+<Images/aop/power.png, id=631, 532.99126pt x 217.81375pt>
 File: Images/aop/power.png Graphic file (type png)
 <use Images/aop/power.png>
 Package pdftex.def Info: Images/aop/power.png  used on input line 14.
@@ -1700,7 +1700,7 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 >>> Utils : MessageBox 'Remarque' [id 1] created !
 ) (./Parts/0.aop/1.modelisation.tex [5]
 Chapitre 2.
-<Images/aop/theorique.png, id=655, 447.6725pt x 256.96pt>
+<Images/aop/theorique.png, id=654, 447.6725pt x 256.96pt>
 File: Images/aop/theorique.png Graphic file (type png)
 <use Images/aop/theorique.png>
 Package pdftex.def Info: Images/aop/theorique.png  used on input line 18.
@@ -1719,7 +1719,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
 [6
 
  <./Images/aop/theorique.png>]
-<Images/aop/real.png, id=663, 428.60126pt x 255.95625pt>
+<Images/aop/real.png, id=662, 428.60126pt x 255.95625pt>
 File: Images/aop/real.png Graphic file (type png)
 <use Images/aop/real.png>
 Package pdftex.def Info: Images/aop/real.png  used on input line 41.
@@ -1742,7 +1742,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--65
  []
 
 [7 <./Images/aop/real.png>]
-<Images/aop/52.png, id=675, 728.7225pt x 101.37875pt>
+<Images/aop/52.png, id=674, 728.7225pt x 101.37875pt>
 File: Images/aop/52.png Graphic file (type png)
 <use Images/aop/52.png>
 Package pdftex.def Info: Images/aop/52.png  used on input line 68.
@@ -1769,7 +1769,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--79
 
  []
 
-<Images/aop/load.png, id=676, 587.19376pt x 250.9375pt>
+<Images/aop/load.png, id=675, 587.19376pt x 250.9375pt>
 File: Images/aop/load.png Graphic file (type png)
 <use Images/aop/load.png>
 Package pdftex.def Info: Images/aop/load.png  used on input line 81.
@@ -1805,13 +1805,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
-<Images/aop/suiveur.png, id=697, 266.9975pt x 173.64874pt>
+<Images/aop/suiveur.png, id=696, 266.9975pt x 173.64874pt>
 File: Images/aop/suiveur.png Graphic file (type png)
 <use Images/aop/suiveur.png>
 Package pdftex.def Info: Images/aop/suiveur.png  used on input line 17.
 (pdftex.def)             Requested size: 160.19972pt x 104.19005pt.
 >>> Utils : Image 'Images/aop/suiveur.png' [size=0.6,id 7] loaded !
-<Images/aop/sensor.png, id=698, 385.44pt x 276.03125pt>
+<Images/aop/sensor.png, id=697, 385.44pt x 276.03125pt>
 File: Images/aop/sensor.png Graphic file (type png)
 <use Images/aop/sensor.png>
 Package pdftex.def Info: Images/aop/sensor.png  used on input line 33.
@@ -1820,7 +1820,7 @@ Package pdftex.def Info: Images/aop/sensor.png  used on input line 33.
 [11
 
  <./Images/aop/suiveur.png>]
-<Images/aop/rc.png, id=708, 837.1275pt x 519.9425pt>
+<Images/aop/rc.png, id=707, 837.1275pt x 519.9425pt>
 File: Images/aop/rc.png Graphic file (type png)
 <use Images/aop/rc.png>
 Package pdftex.def Info: Images/aop/rc.png  used on input line 37.
@@ -1837,7 +1837,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
  []
 
-<Images/aop/measure.png, id=709, 515.9275pt x 283.0575pt>
+<Images/aop/measure.png, id=708, 515.9275pt x 283.0575pt>
 File: Images/aop/measure.png Graphic file (type png)
 <use Images/aop/measure.png>
 Package pdftex.def Info: Images/aop/measure.png  used on input line 69.
@@ -1846,13 +1846,13 @@ Package pdftex.def Info: Images/aop/measure.png  used on input line 69.
 >>> Utils : Image 'Images/aop/measure.png' [size=0.8,id 10] loaded !
 ) (./Parts/0.aop/4.non_inv.tex [13 <./Images/aop/measure.png>]
 Chapitre 5.
-<Images/aop/non_inv.png, id=729, 329.23pt x 186.6975pt>
+<Images/aop/non_inv.png, id=728, 329.23pt x 186.6975pt>
 File: Images/aop/non_inv.png Graphic file (type png)
 <use Images/aop/non_inv.png>
 Package pdftex.def Info: Images/aop/non_inv.png  used on input line 14.
 (pdftex.def)             Requested size: 263.38435pt x 149.35818pt.
 >>> Utils : Image 'Images/aop/non_inv.png' [size=0.8,id 11] loaded !
-<Images/aop/inv_img.png, id=730, 1147.28625pt x 570.13pt>
+<Images/aop/inv_img.png, id=729, 1147.28625pt x 570.13pt>
 File: Images/aop/inv_img.png Graphic file (type png)
 <use Images/aop/inv_img.png>
 Package pdftex.def Info: Images/aop/inv_img.png  used on input line 39.
@@ -1868,7 +1868,7 @@ File: Images/aop/non_inv.png Graphic file (type png)
 Package pdftex.def Info: Images/aop/non_inv.png  used on input line 11.
 (pdftex.def)             Requested size: 263.38435pt x 149.35818pt.
 >>> Utils : Image 'Images/aop/non_inv.png' [size=0.8,id 13] loaded !
-<Images/aop/inv_signal.png, id=750, 1006.76125pt x 560.0925pt>
+<Images/aop/inv_signal.png, id=749, 1006.76125pt x 560.0925pt>
 File: Images/aop/inv_signal.png Graphic file (type png)
 <use Images/aop/inv_signal.png>
 Package pdftex.def Info: Images/aop/inv_signal.png  used on input line 32.
@@ -1879,7 +1879,7 @@ Package pdftex.def Info: Images/aop/inv_signal.png  used on input line 32.
 >>> Utils : Image 'Images/aop/inv_signal.png' [size=0.4,id 14] loaded !
 ) (./Parts/0.aop/6.comp.tex [17 <./Images/aop/inv_signal.png>]
 Chapitre 7.
-<Images/aop/cmp.png, id=771, 319.1925pt x 185.69376pt>
+<Images/aop/cmp.png, id=770, 319.1925pt x 185.69376pt>
 File: Images/aop/cmp.png Graphic file (type png)
 <use Images/aop/cmp.png>
 Package pdftex.def Info: Images/aop/cmp.png  used on input line 24.
@@ -1895,7 +1895,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--30
 
  []
 
-<Images/aop/12.jpg, id=772, 488.82625pt x 507.8975pt>
+<Images/aop/12.jpg, id=771, 488.82625pt x 507.8975pt>
 File: Images/aop/12.jpg Graphic file (type jpg)
 <use Images/aop/12.jpg>
 Package pdftex.def Info: Images/aop/12.jpg  used on input line 39.
@@ -1913,7 +1913,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
-<Images/aop/double_cmp.png, id=780, 306.14375pt x 171.64125pt>
+<Images/aop/double_cmp.png, id=779, 306.14375pt x 171.64125pt>
 File: Images/aop/double_cmp.png Graphic file (type png)
 <use Images/aop/double_cmp.png>
 Package pdftex.def Info: Images/aop/double_cmp.png  used on input line 61.
@@ -1924,13 +1924,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
-<Images/aop/14.png, id=787, 867.24pt x 289.08pt>
+<Images/aop/14.png, id=786, 867.24pt x 289.08pt>
 File: Images/aop/14.png Graphic file (type png)
 <use Images/aop/14.png>
 Package pdftex.def Info: Images/aop/14.png  used on input line 67.
 (pdftex.def)             Requested size: 433.61894pt x 144.53964pt.
 >>> Utils : Image 'Images/aop/14.png' [size=0.5,id 18] loaded !
-<Images/aop/trig.png, id=788, 361.35pt x 240.9pt>
+<Images/aop/trig.png, id=787, 361.35pt x 240.9pt>
 File: Images/aop/trig.png Graphic file (type png)
 <use Images/aop/trig.png>
 Package pdftex.def Info: Images/aop/trig.png  used on input line 71.
@@ -1941,7 +1941,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--75
 
  []
 
-<Images/aop/dual.png, id=799, 475.7775pt x 227.85126pt>
+<Images/aop/dual.png, id=798, 475.7775pt x 227.85126pt>
 File: Images/aop/dual.png Graphic file (type png)
 <use Images/aop/dual.png>
 Package pdftex.def Info: Images/aop/dual.png  used on input line 76.
@@ -1974,14 +1974,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 127--128
 
  []
 
-<Images/aop/hys1.png, id=809, 268.00125pt x 252.945pt>
+<Images/aop/hys1.png, id=808, 268.00125pt x 252.945pt>
 File: Images/aop/hys1.png Graphic file (type png)
 <use Images/aop/hys1.png>
 Package pdftex.def Info: Images/aop/hys1.png  used on input line 131.
 (pdftex.def)             Requested size: 214.40128pt x 202.35626pt.
 >>> Utils : Image 'Images/aop/hys1.png' [size=0.8,id 21] loaded !
 [22]
-<Images/aop/double_inv.png, id=826, 484.81125pt x 263.98625pt>
+<Images/aop/double_inv.png, id=825, 484.81125pt x 263.98625pt>
 File: Images/aop/double_inv.png Graphic file (type png)
 <use Images/aop/double_inv.png>
 Package pdftex.def Info: Images/aop/double_inv.png  used on input line 144.
@@ -1993,7 +1993,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
 
-<Images/aop/hys2.png, id=827, 242.9075pt x 239.89626pt>
+<Images/aop/hys2.png, id=826, 242.9075pt x 239.89626pt>
 File: Images/aop/hys2.png Graphic file (type png)
 <use Images/aop/hys2.png>
 Package pdftex.def Info: Images/aop/hys2.png  used on input line 154.
@@ -2002,7 +2002,7 @@ Package pdftex.def Info: Images/aop/hys2.png  used on input line 154.
 ) (./Parts/0.aop/7.integ.tex [23 <./Images/aop/hys1.png> <./Images/aop/double_i
 nv.png>] [24 <./Images/aop/hys2.png>]
 Chapitre 8.
-<Images/aop/integrateur.png, id=844, 452.69125pt x 269.005pt>
+<Images/aop/integrateur.png, id=843, 452.69125pt x 269.005pt>
 File: Images/aop/integrateur.png Graphic file (type png)
 <use Images/aop/integrateur.png>
 Package pdftex.def Info: Images/aop/integrateur.png  used on input line 12.
@@ -2016,7 +2016,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--17
 [25
 
  <./Images/aop/integrateur.png>]
-<Images/aop/triangle.png, id=857, 1066.98625pt x 431.6125pt>
+<Images/aop/triangle.png, id=856, 1066.98625pt x 431.6125pt>
 File: Images/aop/triangle.png Graphic file (type png)
 <use Images/aop/triangle.png>
 Package pdftex.def Info: Images/aop/triangle.png  used on input line 41.
@@ -2050,7 +2050,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
 ) (./Parts/0.aop/8.sous.tex [26 <./Images/aop/triangle.png>]
 Chapitre 9.
-<Images/aop/sous.png, id=870, 457.71pt x 378.41376pt>
+<Images/aop/sous.png, id=869, 457.71pt x 378.41376pt>
 File: Images/aop/sous.png Graphic file (type png)
 <use Images/aop/sous.png>
 Package pdftex.def Info: Images/aop/sous.png  used on input line 9.
@@ -2073,13 +2073,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
-<Images/aop/variable.png, id=880, 259.97125pt x 421.575pt>
+<Images/aop/variable.png, id=879, 259.97125pt x 421.575pt>
 File: Images/aop/variable.png Graphic file (type png)
 <use Images/aop/variable.png>
 Package pdftex.def Info: Images/aop/variable.png  used on input line 41.
 (pdftex.def)             Requested size: 103.98665pt x 168.627pt.
 >>> Utils : Image 'Images/aop/variable.png' [size=0.4,id 27] loaded !
-<Images/aop/diff.png, id=881, 618.31pt x 413.545pt>
+<Images/aop/diff.png, id=880, 618.31pt x 413.545pt>
 File: Images/aop/diff.png Graphic file (type png)
 <use Images/aop/diff.png>
 Package pdftex.def Info: Images/aop/diff.png  used on input line 49.
@@ -2088,7 +2088,7 @@ Package pdftex.def Info: Images/aop/diff.png  used on input line 49.
 [28 <./Images/aop/variable.png>]) (./Parts/0.aop/9.somm.tex [29 <./Images/aop/d
 iff.png>]
 Chapitre 10.
-<Images/aop/somme.png, id=901, 440.64626pt x 257.96375pt>
+<Images/aop/somme.png, id=900, 440.64626pt x 257.96375pt>
 File: Images/aop/somme.png Graphic file (type png)
 <use Images/aop/somme.png>
 Package pdftex.def Info: Images/aop/somme.png  used on input line 7.
@@ -2112,13 +2112,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-<Images/capa/layde.jpg, id=921, 220.825pt x 170.6375pt>
+<Images/capa/layde.jpg, id=920, 220.825pt x 170.6375pt>
 File: Images/capa/layde.jpg Graphic file (type jpg)
 <use Images/capa/layde.jpg>
 Package pdftex.def Info: Images/capa/layde.jpg  used on input line 9.
 (pdftex.def)             Requested size: 242.90823pt x 187.70181pt.
 >>> Utils : Image 'Images/capa/layde.jpg' [size=1.1,id 30] loaded !
-<Images/capa/condo_type.jpg, id=922, 220.825pt x 147.55125pt>
+<Images/capa/condo_type.jpg, id=921, 220.825pt x 147.55125pt>
 File: Images/capa/condo_type.jpg Graphic file (type jpg)
 <use Images/capa/condo_type.jpg>
 Package pdftex.def Info: Images/capa/condo_type.jpg  used on input line 14.
@@ -2128,7 +2128,7 @@ Package pdftex.def Info: Images/capa/condo_type.jpg  used on input line 14.
 
  <./Images/capa/layde.jpg> <./Images/capa/condo_type.jpg>]
 Chapitre 13.
-<Images/capa/condensateur.jpg, id=930, 341.77687pt x 205.5178pt>
+<Images/capa/condensateur.jpg, id=929, 341.77687pt x 205.5178pt>
 File: Images/capa/condensateur.jpg Graphic file (type jpg)
 <use Images/capa/condensateur.jpg>
 Package pdftex.def Info: Images/capa/condensateur.jpg  used on input line 6.
@@ -2166,7 +2166,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
-<Images/capa/capacitor.png, id=937, 501.37312pt x 256.70906pt>
+<Images/capa/capacitor.png, id=936, 501.37312pt x 256.70906pt>
 File: Images/capa/capacitor.png Graphic file (type png)
 <use Images/capa/capacitor.png>
 Package pdftex.def Info: Images/capa/capacitor.png  used on input line 23.
@@ -2184,7 +2184,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-<Images/capa/classification.PNG, id=946, 493.845pt x 423.83344pt>
+<Images/capa/classification.PNG, id=945, 493.845pt x 423.83344pt>
 File: Images/capa/classification.PNG Graphic file (type png)
 <use Images/capa/classification.PNG>
 Package pdftex.def Info: Images/capa/classification.PNG  used on input line 7.
@@ -2194,7 +2194,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-<Images/capa/condo_film.png, id=948, 483.30562pt x 429.10312pt>
+<Images/capa/condo_film.png, id=947, 483.30562pt x 429.10312pt>
 File: Images/capa/condo_film.png Graphic file (type png)
 <use Images/capa/condo_film.png>
 Package pdftex.def Info: Images/capa/condo_film.png  used on input line 22.
@@ -2214,19 +2214,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--35
 
  []
 
-<Images/capa/condo_ceramique.jpg, id=963, 210.03468pt x 136.25906pt>
+<Images/capa/condo_ceramique.jpg, id=962, 210.03468pt x 136.25906pt>
 File: Images/capa/condo_ceramique.jpg Graphic file (type jpg)
 <use Images/capa/condo_ceramique.jpg>
 Package pdftex.def Info: Images/capa/condo_ceramique.jpg  used on input line 40
 .
 (pdftex.def)             Requested size: 210.03416pt x 136.25871pt.
 [37 <./Images/capa/condo_ceramique.jpg>]
-<Images/capa/condo_electro.png, id=970, 513.92pt x 319.1925pt>
+<Images/capa/condo_electro.png, id=969, 513.92pt x 319.1925pt>
 File: Images/capa/condo_electro.png Graphic file (type png)
 <use Images/capa/condo_electro.png>
 Package pdftex.def Info: Images/capa/condo_electro.png  used on input line 53.
 (pdftex.def)             Requested size: 256.95937pt x 159.59586pt.
-<Images/capa/condo_variable.png, id=971, 220.825pt x 165.61874pt>
+<Images/capa/condo_variable.png, id=970, 220.825pt x 165.61874pt>
 File: Images/capa/condo_variable.png Graphic file (type png)
 <use Images/capa/condo_variable.png>
 Package pdftex.def Info: Images/capa/condo_variable.png  used on input line 64.
@@ -2247,7 +2247,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 76--78
 
  []
 
-<Images/capa/condo_variable.jpg, id=980, 225.84375pt x 169.38281pt>
+<Images/capa/condo_variable.jpg, id=979, 225.84375pt x 169.38281pt>
 File: Images/capa/condo_variable.jpg Graphic file (type jpg)
 <use Images/capa/condo_variable.jpg>
 Package pdftex.def Info: Images/capa/condo_variable.jpg  used on input line 81.
@@ -2262,7 +2262,7 @@ Package Utils Warning: Image 'Images/capa/graetz' no loaded on input line 18.
 Package Utils Warning: Image 'Images/capa/graetz_input' no loaded on input line
  20.
 
-<Images/capa/out_filtre.png, id=988, 715.67375pt x 289.08pt>
+<Images/capa/out_filtre.png, id=987, 715.67375pt x 289.08pt>
 File: Images/capa/out_filtre.png Graphic file (type png)
 <use Images/capa/out_filtre.png>
 Package pdftex.def Info: Images/capa/out_filtre.png  used on input line 29.
@@ -2285,7 +2285,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--42
 [40
 
  <./Images/capa/out_filtre.png>]
-<Images/capa/cmos_purpose.png, id=997, 949.5475pt x 541.02126pt>
+<Images/capa/cmos_purpose.png, id=996, 949.5475pt x 541.02126pt>
 File: Images/capa/cmos_purpose.png Graphic file (type png)
 <use Images/capa/cmos_purpose.png>
 Package pdftex.def Info: Images/capa/cmos_purpose.png  used on input line 63.
@@ -2297,7 +2297,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--68
 
  []
 
-<Images/capa/real_input_cmos.png, id=999, 1026.83624pt x 616.3025pt>
+<Images/capa/real_input_cmos.png, id=998, 1026.83624pt x 616.3025pt>
 File: Images/capa/real_input_cmos.png Graphic file (type png)
 <use Images/capa/real_input_cmos.png>
 Package pdftex.def Info: Images/capa/real_input_cmos.png  used on input line 71
@@ -2309,7 +2309,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
-<Images/capa/noise.png, id=1009, 1062.97125pt x 710.655pt>
+<Images/capa/noise.png, id=1008, 1062.97125pt x 710.655pt>
 File: Images/capa/noise.png Graphic file (type png)
 <use Images/capa/noise.png>
 Package pdftex.def Info: Images/capa/noise.png  used on input line 89.
@@ -2320,7 +2320,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--98
 
  []
 
-<Images/capa/capa_decouplage.png, id=1017, 1013.7875pt x 758.835pt>
+<Images/capa/capa_decouplage.png, id=1016, 1013.7875pt x 758.835pt>
 File: Images/capa/capa_decouplage.png Graphic file (type png)
 <use Images/capa/capa_decouplage.png>
 Package pdftex.def Info: Images/capa/capa_decouplage.png  used on input line 99
@@ -2343,14 +2343,14 @@ Overfull \hbox (0.45604pt too wide) in paragraph at lines 115--116
 i-gnal d'am-pli-tude 1V, de ten-sion moyenne
  []
 
-<Images/capa/sinus.png, id=1025, 595.22375pt x 278.03876pt>
+<Images/capa/sinus.png, id=1024, 595.22375pt x 278.03876pt>
 File: Images/capa/sinus.png Graphic file (type png)
 <use Images/capa/sinus.png>
 Package pdftex.def Info: Images/capa/sinus.png  used on input line 117.
 (pdftex.def)             Requested size: 357.13701pt x 166.82454pt.
 [44 <./Images/capa/capa_decouplage.png>]
 >>> Utils : Image 'Images/capa/sinus.png' [size=0.6,id 39] loaded !
-<Images/capa/bridge.png, id=1033, 374.39874pt x 349.305pt>
+<Images/capa/bridge.png, id=1032, 374.39874pt x 349.305pt>
 File: Images/capa/bridge.png Graphic file (type png)
 <use Images/capa/bridge.png>
 Package pdftex.def Info: Images/capa/bridge.png  used on input line 124.
@@ -2361,7 +2361,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 126--128
 
  []
 
-<Images/capa/bridge_level.png, id=1034, 650.43pt x 419.5675pt>
+<Images/capa/bridge_level.png, id=1033, 650.43pt x 419.5675pt>
 File: Images/capa/bridge_level.png Graphic file (type png)
 <use Images/capa/bridge_level.png>
 Package pdftex.def Info: Images/capa/bridge_level.png  used on input line 131.
@@ -2372,7 +2372,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--134
 
  []
 
-<Images/capa/bridge_output.png, id=1042, 416.55624pt x 234.8775pt>
+<Images/capa/bridge_output.png, id=1041, 416.55624pt x 234.8775pt>
 File: Images/capa/bridge_output.png Graphic file (type png)
 <use Images/capa/bridge_output.png>
 Package pdftex.def Info: Images/capa/bridge_output.png  used on input line 135.
@@ -2384,7 +2384,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 137--140
 
  []
 
-<Images/capa/vs_liaison.png, id=1043, 627.34375pt x 414.54875pt>
+<Images/capa/vs_liaison.png, id=1042, 627.34375pt x 414.54875pt>
 File: Images/capa/vs_liaison.png Graphic file (type png)
 <use Images/capa/vs_liaison.png>
 Package pdftex.def Info: Images/capa/vs_liaison.png  used on input line 141.
@@ -2435,7 +2435,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
  []
 
-<Images/power/barrage.png, id=1078, 501.875pt x 415.5525pt>
+<Images/power/barrage.png, id=1077, 501.875pt x 415.5525pt>
 File: Images/power/barrage.png Graphic file (type png)
 <use Images/power/barrage.png>
 Package pdftex.def Info: Images/power/barrage.png  used on input line 77.
@@ -2451,7 +2451,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
-<Images/power/courant_main.png, id=1079, 510.90875pt x 295.1025pt>
+<Images/power/courant_main.png, id=1078, 510.90875pt x 295.1025pt>
 File: Images/power/courant_main.png Graphic file (type png)
 <use Images/power/courant_main.png>
 Package pdftex.def Info: Images/power/courant_main.png  used on input line 84.
@@ -2491,7 +2491,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 136--137
  []
 
 >>> Utils : MessageBox 'Remarque' [id 5] created !
-<Images/power/schema_pnp.png, id=1103, 1135.24126pt x 683.55376pt>
+<Images/power/schema_pnp.png, id=1102, 1135.24126pt x 683.55376pt>
 File: Images/power/schema_pnp.png Graphic file (type png)
 <use Images/power/schema_pnp.png>
 Package pdftex.def Info: Images/power/schema_pnp.png  used on input line 147.
@@ -2529,7 +2529,7 @@ File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )) (./Parts/2.power/2.mosfet.tex
 [55]
 Chapitre 19.
-<Images/power/mosfet.png, id=1150, 1204.5pt x 1204.5pt>
+<Images/power/mosfet.png, id=1149, 1204.5pt x 1204.5pt>
 File: Images/power/mosfet.png Graphic file (type png)
 <use Images/power/mosfet.png>
 Package pdftex.def Info: Images/power/mosfet.png  used on input line 22.
@@ -2538,7 +2538,7 @@ Package pdftex.def Info: Images/power/mosfet.png  used on input line 22.
 [56
 
  <./Images/power/mosfet.png>]
-<Images/power/mos.png, id=1162, 417.56pt x 187.70125pt>
+<Images/power/mos.png, id=1161, 417.56pt x 187.70125pt>
 File: Images/power/mos.png Graphic file (type png)
 <use Images/power/mos.png>
 Package pdftex.def Info: Images/power/mos.png  used on input line 52.
@@ -2571,7 +2571,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 95--96
  []
 
 >>> Utils : MessageBox 'Remarque' [id 7] created !
-<Images/power/schema_mosfet.png, id=1173, 974.64125pt x 614.295pt>
+<Images/power/schema_mosfet.png, id=1172, 974.64125pt x 614.295pt>
 File: Images/power/schema_mosfet.png Graphic file (type png)
 <use Images/power/schema_mosfet.png>
 Package pdftex.def Info: Images/power/schema_mosfet.png  used on input line 104
@@ -2597,13 +2597,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-<Images/power/irf520.png, id=1216, 454.69875pt x 599.23875pt>
+<Images/power/irf520.png, id=1215, 454.69875pt x 599.23875pt>
 File: Images/power/irf520.png Graphic file (type png)
 <use Images/power/irf520.png>
 Package pdftex.def Info: Images/power/irf520.png  used on input line 21.
 (pdftex.def)             Requested size: 181.87627pt x 239.69125pt.
 >>> Utils : Image 'Images/power/irf520.png' [size=0.4,id 50] loaded !
-<Images/power/rdson.png, id=1217, 884.30376pt x 158.5925pt>
+<Images/power/rdson.png, id=1216, 884.30376pt x 158.5925pt>
 File: Images/power/rdson.png Graphic file (type png)
 <use Images/power/rdson.png>
 Package pdftex.def Info: Images/power/rdson.png  used on input line 23.
@@ -2669,7 +2669,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 See the caption package documentation for explanation.
 
 [68]
-<Images/supply/diode.png, id=1277, 220.825pt x 183.68625pt>
+<Images/supply/diode.png, id=1276, 220.825pt x 183.68625pt>
 File: Images/supply/diode.png Graphic file (type png)
 <use Images/supply/diode.png>
 Package pdftex.def Info: Images/supply/diode.png  used on input line 53.
@@ -2692,7 +2692,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 71--72
 
  []
 
-<Images/supply/case.png, id=1285, 578.16pt x 578.16pt>
+<Images/supply/case.png, id=1284, 578.16pt x 578.16pt>
 File: Images/supply/case.png Graphic file (type png)
 <use Images/supply/case.png>
 Package pdftex.def Info: Images/supply/case.png  used on input line 90.
@@ -2709,7 +2709,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 99--100
  []
 
 [70 <./Images/supply/case.png>]
-<Images/supply/signal.png, id=1295, 602.25pt x 200.75pt>
+<Images/supply/signal.png, id=1294, 602.25pt x 200.75pt>
 File: Images/supply/signal.png Graphic file (type png)
 <use Images/supply/signal.png>
 Package pdftex.def Info: Images/supply/signal.png  used on input line 103.
@@ -2731,7 +2731,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
-<Images/supply/lm.png, id=1296, 185.69376pt x 200.75pt>
+<Images/supply/lm.png, id=1295, 185.69376pt x 200.75pt>
 File: Images/supply/lm.png Graphic file (type png)
 <use Images/supply/lm.png>
 Package pdftex.def Info: Images/supply/lm.png  used on input line 120.
@@ -2777,11 +2777,11 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) ) ) 
 Here is how much of TeX's memory you used:
- 63716 strings out of 481239
- 1473462 string characters out of 5920378
+ 63709 strings out of 481239
+ 1473376 string characters out of 5920378
  2304664 words of memory out of 8000000
- 77420 multiletter control sequences out of 15000+600000
- 651486 words of font info for 95 fonts, out of 8000000 for 9000
+ 77416 multiletter control sequences out of 15000+600000
+ 645717 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  87i,17n,110p,1045b,2147s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/en
@@ -2802,15 +2802,15 @@ mr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/font
 s/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1
 /public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public
-/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/
-lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Output/main.pdf (76 pages, 1784790 bytes).
+hare/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/pub
+lic/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/m
+sam10.pfb>
+Output written on Output/main.pdf (76 pages, 1773594 bytes).
 PDF statistics:
- 1500 PDF objects out of 1728 (max. 8388607)
- 1274 compressed objects within 13 object streams
+ 1496 PDF objects out of 1728 (max. 8388607)
+ 1271 compressed objects within 13 object streams
  360 named destinations out of 1000 (max. 500000)
  1246 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -5,8 +5,6 @@
 \section{Présentation}
 
 Ce document a pour but d'expliquer la mise en place d'une passerelle et d'une sonde MySensors.
-Divisé en plusieurs parties, il permet de faire le projet de A à Z.
-
 
 \subsection{Organigramme}
 
@@ -82,12 +80,12 @@ Divisé en plusieurs parties, il permet de faire le projet de A à Z.
     grow via three points={one child at (0.5,-0.7) and
     two children at (0.5,-0.7) and (0.5,-1.4)},
     edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
-    \node {Domoticz\_Crepp}
+    \node {Domoticz\_MySensors\_Crepp}
       child { node {Sonde\_MySensors}
         child { node [selected] {Sonde\_MySensors.ino}}
       }
       child [missing] {}				
-      child { node {passerelle\_MySensors}
+      child { node {Passerelle\_MySensors}
         child { node [selected] {Passerelle\_MySensors.ino}}
       };
   \end{tikzpicture}

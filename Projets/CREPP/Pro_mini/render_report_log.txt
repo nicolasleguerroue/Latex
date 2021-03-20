@@ -447,16 +447,16 @@ LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 11.
 [3] (./Output/add_content.tex (./Parts/0.prepare/Introduction.tex [4]
 Chapitre 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--37
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 65.
+LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 63.
 
 [5]
-Overfull \hbox (20.51584pt too wide) in paragraph at lines 69--70
+Overfull \hbox (20.51584pt too wide) in paragraph at lines 67--68
 []\T1/lmr/m/n/12 Dans un dos-sier [], pla-cez deux dos-siers ap-pe-lés []
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
@@ -593,11 +593,11 @@ LaTeX Warning: Reference `LastPage' on page 23 undefined on input line 20.
 [23 <./Images/electrical_checking/multi.jpg>]
 >>> Utils : Image 'Images/electrical_checking/nrf24.jpg' [size=0.05,id 20,angle
 =-90] loaded !
-) (./Parts/3.setup_domoticz/add_gateway.tex
 
-LaTeX Warning: Reference `LastPage' on page 24 undefined on input line 1.
+LaTeX Warning: Reference `LastPage' on page 24 undefined on input line 36.
 
-[24 <./Images/electrical_checking/c.jpg>]
+[24 <./Images/electrical_checking/c.jpg>])
+(./Parts/3.setup_domoticz/add_gateway.tex
 
 LaTeX Warning: Reference `LastPage' on page 25 undefined on input line 3.
 
@@ -708,5 +708,5 @@ hare/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/shar
 e/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msam10.pfb>
-Output written on Output/main.pdf (35 pages, 35628569 bytes).
+Output written on Output/main.pdf (35 pages, 35629197 bytes).
 Transcript written on Output/main.log.

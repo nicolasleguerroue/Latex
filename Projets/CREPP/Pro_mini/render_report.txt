@@ -447,13 +447,13 @@ LaTeX Font Warning: Font shape `T1/lmss/bx/sc' undefined
 (./Parts/0.prepare/Introduction.tex [5]
 Chapitre 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--37
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [6]
-Overfull \hbox (20.51584pt too wide) in paragraph at lines 69--70
+Overfull \hbox (20.51584pt too wide) in paragraph at lines 67--68
 []\T1/lmr/m/n/12 Dans un dos-sier [], pla-cez deux dos-siers ap-pe-lés []
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
@@ -537,8 +537,9 @@ loaded !
 [24 <./Images/electrical_checking/multi.jpg>]
 >>> Utils : Image 'Images/electrical_checking/nrf24.jpg' [size=0.05,id 20,angle
 =-90] loaded !
-) (./Parts/3.setup_domoticz/add_gateway.tex [25 <./Images/electrical_checking/c
-.jpg>] [26 <./Images/electrical_checking/nrf24.jpg>] [27]
+[25 <./Images/electrical_checking/c.jpg>])
+(./Parts/3.setup_domoticz/add_gateway.tex [26 <./Images/electrical_checking/nrf
+24.jpg>] [27]
 Chapitre 6.
 >>> Utils : Image 'Images/setup_domoticz/hardware.png' [size=0.5,id 21] loaded 
 !
@@ -613,5 +614,5 @@ hare/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/shar
 e/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msam10.pfb>
-Output written on Output/main.pdf (36 pages, 35633756 bytes).
+Output written on Output/main.pdf (36 pages, 35634383 bytes).
 Transcript written on Output/main.log.

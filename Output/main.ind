@@ -1,79 +1,79 @@
 \begin{theindex}
 
-  \item addPointsFromCSV, \hyperpage{15}
-  \item addTrace, \hyperpage{19}
-  \item addUnit, \hyperpage{21}
+  \item addPointsFromCSV, \hyperpage{16}
+  \item addTrace, \hyperpage{20}
+  \item addUnit, \hyperpage{22}
 
   \indexspace
 
-  \item bash, \hyperpage{13}
-  \item bold, \hyperpage{7}
+  \item bash, \hyperpage{14}
+  \item bold, \hyperpage{8}
 
   \indexspace
 
-  \item cpp, \hyperpage{12}
+  \item cpp, \hyperpage{13}
 
   \indexspace
 
-  \item definition, \hyperpage{9}
+  \item definition, \hyperpage{10}
 
   \indexspace
 
-  \item emat, \hyperpage{11}
-  \item evec, \hyperpage{11}
-  \item exemple, \hyperpage{9}
+  \item emat, \hyperpage{12}
+  \item evec, \hyperpage{12}
+  \item exemple, \hyperpage{10}
 
   \indexspace
 
-  \item graphic, \hyperpage{15}
+  \item graphic, \hyperpage{16}
 
   \indexspace
 
-  \item ib, \hyperpage{7}
-  \item img, \hyperpage{8}
-  \item interjection, \hyperpage{21}
-  \item italic, \hyperpage{7}
+  \item ib, \hyperpage{8}
+  \item img, \hyperpage{9}
+  \item interjection, \hyperpage{22}
+  \item italic, \hyperpage{8}
 
   \indexspace
 
-  \item messageBox, \hyperpage{8}
+  \item messageBox, \hyperpage{9}
 
   \indexspace
 
-  \item nomenclature, \hyperpage{21}
+  \item nomenclature, \hyperpage{22}
 
   \indexspace
 
-  \item onomatopée, \hyperpage{21}
+  \item onomatopée, \hyperpage{22}
 
   \indexspace
 
-  \item plot, \hyperpage{20}
-  \item printindex, \hyperpage{21}
-  \item printnomenclature, \hyperpage{21}
-  \item proposition, \hyperpage{9}
-  \item propriete, \hyperpage{9}
-  \item python, \hyperpage{13}
+  \item plot, \hyperpage{21}
+  \item printindex, \hyperpage{22}
+  \item printnomenclature, \hyperpage{22}
+  \item proposition, \hyperpage{10}
+  \item propriete, \hyperpage{10}
+  \item python, \hyperpage{14}
 
   \indexspace
 
-  \item question, \hyperpage{8}
+  \item question, \hyperpage{9}
 
   \indexspace
 
-  \item remarque, \hyperpage{9}
-  \item reponse, \hyperpage{9}
+  \item remarque, \hyperpage{10}
+  \item reponse, \hyperpage{10}
 
   \indexspace
 
-  \item setAliasChapter, \hyperpage{7}
-  \item setFooterLine, \hyperpage{7}
-  \item setFullpage, \hyperpage{7}
-  \item setHeader, \hyperpage{6}
-  \item setHeaderImage, \hyperpage{6}
-  \item setHeaderLine, \hyperpage{6}
-  \item setParameters, \hyperpage{10}
-  \item sn, \hyperpage{8}
-  \item son, \hyperpage{21}
+  \item setAliasChapter, \hyperpage{8}
+  \item setFooterLine, \hyperpage{8}
+  \item setFullpage, \hyperpage{8}
+  \item setHeader, \hyperpage{7}
+  \item setHeaderImage, \hyperpage{7}
+  \item setHeaderLine, \hyperpage{7}
+  \item setParameters, \hyperpage{11}
+  \item sn, \hyperpage{9}
+  \item son, \hyperpage{22}
 
 \end{theindex}

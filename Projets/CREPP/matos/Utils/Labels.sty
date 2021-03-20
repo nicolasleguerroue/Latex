@@ -1,0 +1,71 @@
+%############################################################
+%###### Package 'name' 
+%###### This package contains ...
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\tcbuselibrary{listings,breakable, skins}
+%\RequirePackage{amsmath}
+
+%################################################################
+
+\newtcbox{\lorange}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe=orange!50!black,coltext=orange!25!black,colback=orange!10!white,
+  overlay={\begin{tcbclipinterior}\fill[orange!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+
+\newtcbox{\lred}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe=red!50!black,coltext=red!25!black,colback=red!10!white,
+  overlay={\begin{tcbclipinterior}\fill[red!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+
+\newtcbox{\lgreen}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe=green!50!black,coltext=green!25!black,colback=green!10!white,
+  overlay={\begin{tcbclipinterior}\fill[green!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+
+\newtcbox{\lmagenta}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe=magenta!50!black,coltext=magenta!25!black,colback=magenta!10!white,
+  overlay={\begin{tcbclipinterior}\fill[magenta!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+  
+\newtcbox{\lpurple}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe=purple!50!black,coltext=purple!25!black,colback=purple!10!white,
+  overlay={\begin{tcbclipinterior}\fill[purple!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+    
+\newtcbox{\lblue}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe=blue!50!black,coltext=blue!25!black,colback=blue!10!white,
+  overlay={\begin{tcbclipinterior}\fill[blue!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+   
+   
+\newtcbox{\lcyan}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe=cyan!50!black,coltext=cyan!25!black,colback=cyan!10!white,
+  overlay={\begin{tcbclipinterior}\fill[cyan!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+
+\newtcbox{\lbrown}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+    right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+    colframe=brown!50!black,coltext=brown!25!black,colback=brown!10!white,
+    overlay={\begin{tcbclipinterior}\fill[brown!75!white] (frame.south west)
+      rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+   
+\newtcbox{\lyellow}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe=yellow!50!black,coltext=yellow!25!black,colback=yellow!10!white,
+  overlay={\begin{tcbclipinterior}\fill[yellow!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+        
+\newtcbox{\lblack}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+    right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+    colframe=black!50!black,coltext=black!25!black,colback=black!10!white,
+    overlay={\begin{tcbclipinterior}\fill[black!75!white] (frame.south west)
+      rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
