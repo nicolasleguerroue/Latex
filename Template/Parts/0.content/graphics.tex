@@ -1,0 +1,122 @@
+\chapter{Bilbiothèque Graphic}
+
+\section{Affichage d'un graphique 2D avec insertion des données depuis un fichier txt (csv)}
+
+\begin{graphic}{0.8}{0.6}{0}{2.1}{-1.1}{1.1}{t(ms)}{vs}{Oscilloscope}
+\addPointsFromCSV{red}{comma}{src_examples/input_1.txt}
+\addPointsFromCSV{blue}{comma}{src_examples/input_2.txt}
+\addLegend{voie A, voie B}
+\end{graphic}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'affichage d'un graphique 2D avec insertion des données depuis un fichier txt (csv)}
+\begin{graphic}{0.8}{0.6}{0}{2.1}{-1.1}{1.1}{t(ms)}{vs}{Oscilloscope}
+  \addPointsFromCSV{red}{comma}{src_examples/input_1.txt}
+  \addPointsFromCSV{blue}{comma}{src_examples/input_2.txt}
+  \addLegend{voie A, voie B}
+\end{graphic}
+\end{Latex}
+
+
+
+\section{Affichage d'un graphique 2D avec insertion des données depuis une liste de points}
+
+\begin{graphic}{0.8}{0.4}{0}{40}{-1}{6}{t(s)}{Tension (V)}{Signal numérique}
+\addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
+\addLegend{Tension (V)}
+\end{graphic}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'affichage d'un graphique 2D avec insertion des données depuis une liste de points}
+\begin{graphic}{0.8}{0.4}{0}{40}{-1}{6}{t(s)}{Tension (V)}{Signal numérique}
+  \addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
+  \addLegend{Tension (V)}
+\end{graphic}
+\end{Latex}
+
+
+\section{Affichage d'un graphique 2D avec insertion des données depuis une équation}
+
+
+
+\begin{graphicFigure}{0.4}{0.4}{0}{3}{-1}{5}{t(s)}{Tension V}{Signal analogique}
+\addPointsFromCSV{red}{comma}{src_examples/input_2.txt}
+\addLegend{Legende}
+\end{graphicFigure}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'affichage d'un graphique 2D avec insertion des données depuis une liste de points}
+\begin{graphicFigure}{0.4}{0.4}{0}{3}{-1}{5}{t(s)}{Tension V}{Signal analogique}
+  \addPointsFromCSV{red}{comma}{src_examples/input_2.txt}
+  \addLegend{Legende}
+\end{graphicFigure}
+\end{Latex}
+
+
+\section{Affichage d'un graphique 2D avec insertion des données depuis plusieurs sources}
+
+\begin{graphic}{0.8}{0.4}{0}{20}{-1}{10}{x}{y}{Courbes de provenances diverses}
+\addPointsFromCSV{red}{comma}{src_examples/input_2.txt}
+\addTrace{green}{-10}{10}{x}
+\addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
+\addLegend{s1,s2,s3}
+\end{graphic}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'affichage d'un graphique 2D avec insertion des données depuis plusieurs sources}
+\begin{graphic}{0.8}{0.4}{0}{20}{-1}{10}{x}{y}{Courbes de provenances diverses}
+  \addPointsFromCSV{red}{comma}{src_examples/input_2.txt}
+  \addTrace{green}{-10}{10}{x}
+  \addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
+  \addLegend{s1,s2,s3}
+\end{graphic}
+\end{Latex}
+
+\newpage
+\section{Affichage de deux graphiques}
+
+  \begin{figure}[h!]  
+    \centering 
+      \begin{subfigure}[b]{0.4\linewidth}
+        \begin{graphic}{0.8}{1}{0}{1.2}{-1}{5}{t(s)}{Tension V}{h}
+          \addPointsFromCSV{red}{comma}{src_examples/sinus.txt}
+          \addLegend{sin(t)}
+          \end{graphic}%NO END  LINE HERE
+        \caption{Origine} 
+      \end{subfigure}
+    \begin{subfigure}[b]{0.4\linewidth}
+      \begin{graphic}{0.8}{1}{0}{4}{-0.3}{0.3}{t(s)}{Tension V}{g}
+        \addPointsFromCSV{blue}{comma}{src_examples/jack01.txt}
+        \addLegend{g(t)}
+        \end{graphic}%NO END  LINE HERE
+    \caption{Bruit}
+    \end{subfigure}
+    \caption{Les tensions de service}
+    \end{figure}  
+
+
+  
+    \lgreen{LOC}{Body}
+    \begin{Latex}{Code pour l'affichage d'un graphique 2D avec insertion des données depuis plusieurs sources}
+
+      \begin{figure}[h]  
+        \centering 
+          \begin{subfigure}[b]{0.4\linewidth}
+            \begin{graphic}{0.8}{1}{0}{1.2}{-1}{5}{t(s)}{Tension V}{h}
+              \addPointsFromCSV{red}{comma}{src_examples/sinus.txt}
+              \addLegend{sin(t)}
+              \end{graphic}%NO END  LINE HERE
+            \caption{No interaction} 
+          \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+          \begin{graphic}{0.8}{1}{0}{4}{-0.3}{0.3}{t(s)}{Tension V}{g}
+            \addPointsFromCSV{blue}{comma}{src_examples/jack01.txt}
+            \addLegend{g(t)}
+            \end{graphic}%NO END  LINE HERE
+        \caption{Interaction}
+        \end{subfigure}
+        \caption{Les tensions de service}
+        \end{figure}  
+    \end{Latex}
+
+    

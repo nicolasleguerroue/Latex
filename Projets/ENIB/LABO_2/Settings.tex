@@ -1,0 +1,99 @@
+\documentclass[12pt]{report}  
+\usepackage[frenchb]{babel}     %french language
+\usepackage{Utils/Utils}        %Utils package
+
+\usepackage[Lenny]{fncychap}   %Sonny, Lenny, Glenn, Conny, Rejne, Bjarne
+
+
+%\titleformat{\chapter}[display] {\fontsize{24pt}{12pt}\selectfont \bfseries}{\textcolor{darkblue} {\chaptertitlename\ \thechapter \\ \\ #1}}{30pt}{\Huge}
+% \titleformat{name=\chapter,numberless}[display] {\fontsize{20pt}{12pt}\selectfont \bfseries}{\textcolor{DarkBlue} {#1}}{20pt}{\Huge}
+% \titleformat{name=\section,numberless}[display] {\fontsize{20pt}{14pt}\selectfont \bfseries}{\textcolor{DarkBlue} {#1}}{0pt}{\Huge}
+% \titleformat{name=\subsection,numberless}[display] {\fontsize{18pt}{14pt}\selectfont \bfseries}{\textcolor{orange} {#1}}{20pt}{\Huge}
+
+
+% \titleformat{\chapter}[display] {\fontsize{17pt}{12pt}\selectfont \bfseries}{\textcolor{red} {\chaptertitlename\ \thechapter: #1}}{20pt}{\Huge}
+% \titleformat{\section}[display] {\fontsize{17pt}{12pt}\selectfont \bfseries}{\textcolor{DarkBlue} {#1}}{20pt}{\Huge}
+% \titleformat{\subsection}[display] {\fontsize{15pt}{12pt}\selectfont \bfseries}{\textcolor{orange} {#1}}{20pt}{\large}
+% \titlespacing*{\section}{0pt}{20pt}{-30pt}
+% \titlespacing*{\subsection}{0pt}{20pt}{-20pt}
+
+
+%#############################################################
+%#### Settings
+%#############################################################
+%#############################################################
+%If you want to set on fullpage, change this bloc
+%#############################################################
+\geometry{hmargin=2cm,vmargin=2.5cm}
+%#############################################################
+%#############################################################
+%If you want rename the chapter name, change the value of argument
+%#############################################################
+\setAliasChapter{Section}
+%#############################################################
+%#############################################################
+%If you want to add presentation, modify the next bloc
+%The firt line is about the header : 
+% {left content}{center content}{right content}
+%The second line is about the footer : 
+% {left content}{center content}{right content}
+%####
+%to get the current chapter name, use \currentChapter command as content
+%to get the current number page, use \currentPagecommand as content
+\addPresentation
+{Labo Microprocesseur} {} {\currentChapter}
+{Romain POSSEME\\Théo MAINGUENE \\Nicolas LE GUERROUE} {} {\currentPage}
+%#############################################################
+%Change the width of footer line and header line
+%To delete it, set value to 0
+\setHeaderLine{0.2}
+\setFooterLine{0.2}
+
+
+
+\setcounter{tocdepth}{3} %depth of table of content
+\setcounter{secnumdepth}{2}
+
+%#############################################################
+%Change the name of the section "Nomenclature"
+%To delete it, set value to 0
+%\renewcommand{\nomname}{Conventions}
+%Setting up the parameter of PDF file as name, author...
+\begin{comment}
+@input Titre du PDF
+@input Auteur(s)
+@input Sujet du fichier PDF (courte phrase)
+@input Créateur du fichier PDF
+@input Producteur du fichier PDF
+@input Mots-clés (liste)
+@input Couleurs des liens
+@input Couleurs des citations dans la bibliographie
+@input Couleurs des liens de fichier
+\end{comment}
+
+\setParameters {Projet CPO} {Nicolas Le Guerroué} {Nicolas Le Guerroué} {Nicolas Le Guerroué}{Latex}{green}{blue}{blue}
+  
+
+\titleformat{\chapter}
+  {\gdef\chapterlabel{}
+   \normalfont\sffamily\Huge\bfseries\scshape}
+  {\gdef\chapterlabel{\thechapter)\ }}{0pt}
+  {\begin{tikzpicture}[remember picture,overlay]
+    \node[yshift=-2cm] at (current page.north west)
+      {\begin{tikzpicture}[remember picture, overlay]
+        \draw[fill=MediumBlue] (0,0) rectangle
+          (\paperwidth,2cm);
+        \node[anchor=east,xshift=.9\paperwidth,rectangle,
+              rounded corners=20pt,inner sep=11pt,
+              fill=white]
+              {\color{black}#1};
+          \node[anchor=west,yshift=1cm,xshift=2cm,inner sep=11pt,
+              fill=MediumBlue]
+              {\color{white}{\large Labo n°2}};
+       \end{tikzpicture}
+      };
+   \end{tikzpicture}
+  }
+  \titlespacing*{\chapter}{0pt}{50pt}{-60pt}%remove space
+
+

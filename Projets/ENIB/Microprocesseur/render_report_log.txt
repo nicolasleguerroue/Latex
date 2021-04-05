@@ -650,5 +650,5 @@ blic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share
 /texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm
 /lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/te
 xmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on Output/main.pdf (14 pages, 540276 bytes).
+Output written on Output/main.pdf (14 pages, 537941 bytes).
 Transcript written on Output/main.log.

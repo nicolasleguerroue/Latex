@@ -1,0 +1,167 @@
+%############################################################
+%###### Package 'Layout' 
+%###### This package contains some tools to set page layout or text
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage{lmodern}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}     %UTF-8 encoding
+\RequirePackage{graphicx}           %Images
+\RequirePackage{caption}            %légende
+\RequirePackage{textcomp}           %special characters
+
+\RequirePackage{lastpage}           %page counter
+%\RequirePackage{fullpage}          %entire page
+\RequirePackage{float}              %image floating
+\RequirePackage{wrapfig}
+\RequirePackage{subcaption}         %Subcaption
+\RequirePackage{listings}           %new env such as Bash, Python
+%\RequirePackage{tcolorbox}          %messageBox
+\RequirePackage[many]{tcolorbox}
+\RequirePackage{color}              %colors
+\RequirePackage{geometry}
+\RequirePackage{listings}           %new env such as Bash, Python
+\RequirePackage{xcolor}             %define new colors
+\RequirePackage{xparse}
+\RequirePackage{amssymb,amsthm}     %math
+\RequirePackage{multirow}
+\RequirePackage{tabularx}           %use for csv file [table]
+
+\RequirePackage{lipsum}  
+
+
+%################################################################
+\begin{comment}
+@begin
+@command \bold
+@des 
+Cette commande permet de mettre le texte en gras
+@sed
+@input Texte à mettre en gras
+@begin_example 
+\bold{texte en gras}
+@end_example
+@end
+\end{comment}
+
+\renewcommand{\bold}[1]{\textbf{#1}}
+
+%################################################################
+\begin{comment}
+@begin
+@command \italic
+@des 
+Cette commande permet de mettre le texte en italique
+@sed
+@input Texte à mettre en italique
+@begin_example 
+\italic{texte en italique}
+@end_example
+@end
+\end{comment}
+
+\newcommand{\italic}[1]{\textit{#1}}
+
+%################################################################
+\begin{comment}
+@begin
+@command \ib
+@des 
+Cette commande permet de mettre le texte en italique et en gras
+@sed
+@input Texte à mettre en italique et gras
+@begin_example 
+\ib{texte en italique et gras}
+@end_example
+@end
+\end{comment}
+
+\newcommand{\ib}[1]{\textit{\textbf{#1}}}
+
+%################################################################
+\begin{comment}
+@begin
+@command \bi
+@des 
+Cette commande permet de mettre le texte en italique et en gras
+@sed
+@input Texte à mettre en italique et gras
+@begin_example 
+\bi{texte en italique et gras}
+@end_example
+@end
+\end{comment}
+
+\newcommand{\bi}[1]{\textit{\textbf{#1}}}
+
+
+\begin{comment}
+@begin
+@command \n
+@des 
+Cette commande permet de faire un saut de ligne
+@sed
+@begin_example 
+Text \n Next text
+@end_example
+@end
+\end{comment}
+
+\newcommand{\n}{\\}
+
+%################################################################
+\begin{comment}
+@begin
+@command \sn
+@des 
+Cette commande permet de faire un espace vertical
+@sed
+@begin_example 
+Text \sn Next text
+@end_example
+@end
+\end{comment}
+
+\newcommand{\sn}{\vskip 0.5cm}
+
+%################################################################
+
+
+\newtheorem{question}{Question}
+\newtheorem{reponse}{$>>>$}
+\newtheorem{propriete}{Propriété}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remarque}{Remarque}
+\newtheorem{exemple}{Exemple}
+\newtheorem{definition}{Definition}
+
+
+%#######################################
+\newcommand{\messageBox}[5]{
+% 1: title
+% 2: color frame
+% 3: color bg
+% 4: content
+% 5: titlecolor
+%\messageBox{Remarque}{green}{white}{Erreur 0xff58}{black}
+%\messageBox{Installation}{gray}{white}{DE}{black}
+%\messageBox{Avertissement}{orange}{white}{dede}{black}
+%\messageBox{Erreur}{red}{white}{dede}{black}
+ \begin{tcolorbox}[title=#1,
+colframe=#2!80,
+colback=#3!10,
+coltitle=#5!100,  
+]
+#4
+\end{tcolorbox}
+}
+
+
+
+%######################### PAGE STYLE
+
+
+
+\newcommand{\setFullPage}{\RequirePackage{fullpage}}
+

@@ -6,21 +6,21 @@ This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded
 entering extended mode
 (./main.tex
 LaTeX2e <2020-02-02> patch level 2
-L3 programming layer <2020-02-14> (./Settings.tex
+L3 programming layer <2020-02-14> (./Utils/utils_report.cls
+
+LaTeX Warning: You have requested document class `Utils/utils_report',
+               but the document class provides `utils_report'.
+
+Document Class: utils_report 15/01/2021 Classe personnelle Utils pour document 
+report, V1.0
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 (/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def)
-(/usr/share/texlive/texmf-dist/tex/generic/babel-french/frenchb.ldf
-
-Package babel-french Warning: Option `frenchb' for Babel is *deprecated*,
-(babel-french)                it might be removed sooner or later. Please
-(babel-french)                use `french' instead; reported on input line 35.
-
 (/usr/share/texlive/texmf-dist/tex/generic/babel-french/french.ldf
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)))))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def))))
 (/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
 (./Utils/Utils.sty (./Utils/Badges.sty
@@ -386,7 +386,8 @@ Library (tcolorbox): 'tcbprocessing.code.tex' version '4.22'
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/tocbasic.sty
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty)))))
-(./Utils/Pdf.sty (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+(./Utils/Objects3D.sty) (./Utils/Pdf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def)))
@@ -394,22 +395,26 @@ Library (tcolorbox): 'tcbprocessing.code.tex' version '4.22'
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty)))
-(./Utils/Theorems.sty)) (./Utils/Titles.sty
-(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty))
->>> Utils - [MData] : title='micp
->>> Utils - [MData] : author(s)='Nicolas LE GUERROUE'
->>> Utils - [MData] : subject='registres'
->>> Utils - [MData] : creator='Nicolas LE GUERROUÉ'
->>> Utils - [MData] : keywords='MIP'
+(./Utils/Theorems.sty) (./Utils/Titles.sty
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty)))
+(./Utils/Tree.sty) (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/epigraph/epigraph.sty
+(/usr/share/texlive/texmf-dist/tex/latex/nextpage/nextpage.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/quotchap/quotchap.sty))
+(./Settings.tex
+>>> Utils - [MData] : title='Tutoriel Latex
+>>> Utils - [MData] : author(s)='Nicolas Le Guerroué'
+>>> Utils - [MData] : subject='Bibliothèque Utils'
+>>> Utils - [MData] : creator='Nicolas Le Guerroué'
+>>> Utils - [MData] : keywords='Latex'
 >>> Utils - [MData] : link colors='green'
 >>> Utils - [MData] : bib links colors='blue'
 >>> Utils - [MData] : link file colors='blue'
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 54.
+(hyperref)                setting the option has no effect on input line 52.
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def))
-(/usr/share/texlive/texmf-dist/tex/latex/silence/silence.sty) (Output/main.aux)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)) (Output/main.aux)
 ABD: EveryShipout initializing macros
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -427,156 +432,187 @@ enefit from \pgfplotsset{compat=1.16} (current compat level: 1.7).
 (/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty))
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd) [1{/var/lib/texmf/fonts/map/pdftex/up
-dmap/pdftex.map} <./Images/content/STM32.png>]
+dmap/pdftex.map} <./Images/aop/latex.png>]
 
 LaTeX Font Warning: Font shape `T1/lmss/bx/sc' undefined
-(Font)              using `T1/lmss/bx/n' instead on input line 24.
+(Font)              using `T1/lmss/bx/n' instead on input line 8.
 
 (Output/main.toc (/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
 (/usr/share/texmf/tex/latex/lm/omllmm.fd)
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd)
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd)
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)) [2]
-(./Output/add_content.tex (./Parts/0.content/0.Conversion.tex
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+Make it at least 15.35403pt.
+We now make it that large for the rest of the document.
+This may cause the page layout to be inconsistent, however.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.38 ...ne {7}Bibliothèque Images}{27}{chapter.7}
+                                                  % [1] [2]) [4]
+(./Make/Contacts.tex
+(/usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd))
+(./Output/add_content.tex (./Parts/0.content/0.introduction.tex [5]
 Chapitre 1.
-(/usr/share/texmf/tex/latex/lm/ts1lmr.fd)
-Underfull \hbox (badness 10000) in paragraph at lines 22--24
 
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
 
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 34.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 38--39
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 46--47
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 50--51
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 52--53
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 54--55
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--78
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 81--82
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 83--84
-
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 89.
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 106--107
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
-
-) (./Parts/0.content/1.Introduction.tex [5]
-Chapitre 2.
-
-Underfull \hbox (badness 10000) in paragraph at lines 30--32
-
->>> Utils : Image 'Images/content/leds.png' [size=0.6,id 1] loaded !
-[6 <./Images/content/leds.png>]
->>> Utils : Image 'Images/content/buttons.png' [size=0.4,id 2] loaded !
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 52.
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 37--39
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytrees.code.tex)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
+
+[8] [9]
+>>> Utils : Image 'Images/content/Part.png' [size=0.5,id 1] loaded !
+>>> Utils : Image 'Images/content/Utils.png' [size=0.5,id 2] loaded !
+>>> Utils : Image 'Images/content/messages.png' [size=0.5,id 3] loaded !
+[10 <./Images/content/Part.png> <./Images/content/Utils.png>]
+>>> Utils : Image 'Images/content/warnings.png' [size=0.5,id 4] loaded !
+>>> Utils : Image 'Images/content/check.png' [size=0.5,id 5] loaded !
+[11 <./Images/content/messages.png> <./Images/content/warnings.png> <./Images/c
+ontent/check.png>]
+>>> Utils : Image 'Images/content/check2.png' [size=0.5,id 6] loaded !
+[12 <./Images/content/check2.png>]) (./Parts/0.content/adding.tex [13]
+Chapitre 2.
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang3.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang3.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang3.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
-(/usr/share/texmf/tex/latex/lm/t1lmtt.fd) [7 <./Images/content/buttons.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 62--65
+(/usr/share/texmf/tex/latex/lm/ts1lmtt.fd)) (./Parts/0.content/badges.tex
+[14]
+Chapitre 3.
+) (./Parts/0.content/electronic.tex [15]
+Chapitre 4.
+>>> Utils : Creating new chronogram ['Exemple 1 chronogramme fixe']
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 16.
+See the caption package documentation for explanation.
+
+>>> Utils : Creating new chronogram ['Exemple 2 - Chronogramme du compteur 4 bi
+ts']
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 27.
+See the caption package documentation for explanation.
+
+[16]
+>>> Utils : Creating new schema ['Exemple de schéma électrique']
+>>> Utils : Adding power device [name=power1, value=$+5V$]
+>>> Utils : Adding logic gate device [type=nor]
+>>> Utils : Adding logic gate device [type=nand]
+>>> Utils : Adding logic gate device [type=or]
+>>> Utils : Adding transistor device [type=nmos]
+>>> Utils : Adding transistor device [type=pmos]
+>>> Utils : Adding transistor device [type=nmos]
+>>> Utils : Adding LED device [name=L1]
+>>> Utils : Adding resistor device
+[17]) (./Parts/0.content/graphics.tex [18]
+Chapitre 5.
+>>> Utils : Creating new graphic [title='Oscilloscope']
+>>> Utils : File 'src_examples/input_1.txt' loaded !
+>>> Utils : File 'src_examples/input_2.txt' loaded !
+[19]
+>>> Utils : Creating new graphic [title='Signal numérique']
+>>> Utils : Creating new graphic figure [title='Signal analogique']
+>>> Utils : File 'src_examples/input_2.txt' loaded !
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 45.
+See the caption package documentation for explanation.
+
+[20]
+>>> Utils : Creating new graphic [title='Courbes de provenances diverses']
+>>> Utils : File 'src_examples/input_2.txt' loaded !
+[21] [22]
+>>> Utils : Creating new graphic [title='h']
+>>> Utils : File 'src_examples/sinus.txt' loaded !
+
+Overfull \hbox (10.92348pt too wide) in paragraph at lines 84--84
+[][] 
+>>> Utils : Creating new graphic [title='g']
+>>> Utils : File 'src_examples/jack01.txt' loaded !
+
+Overfull \hbox (15.49348pt too wide) in paragraph at lines 91--91
+[][] 
+[23]) (./Parts/0.content/header.tex [24]
+Chapitre 6.
+[25]) (./Parts/0.content/images.tex [26]
+Chapitre 7.
+>>> Utils : Image 'Images/content/tux.png' [size=0.5,id 7] loaded !
+>>> Utils : Image 'Images/content/tux.png' [size=0.5,id 8,angle=45] loaded !
+) (./Parts/0.content/items.tex [27 <./Images/content/tux.png>]
+Chapitre 8.
+) (./Parts/0.content/labels.tex [28]
+Chapitre 9.
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--15
+
+) (./Parts/0.content/layout.tex [29]
+Chapitre 10.
+[30]) (./Parts/0.content/links.tex [31]
+Chapitre 11.
+) (./Parts/0.content/maths.tex [32]
+Chapitre 12.
+) (./Parts/0.content/messageBox.tex [33]
+Chapitre 13.
+>>> Utils : MessageBox 'Message' [id 1] created !
+>>> Utils : MessageBox 'Message' [id 2] created !
+>>> Utils : MessageBox 'Message' [id 3] created !
+) (./Parts/0.content/objects3D.tex [34]
+Chapitre 14.
+>>> Utils : Creating new plot [title='Titre 3D']
+) (./Parts/0.content/pdf.tex [35]
+Chapitre 15.
+) (./Parts/0.content/programming.tex [36]
+Chapitre 16.
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
+
+Package Listings Warning: Text dropped after begin of listing on input line 48.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--71
+[37] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
 
+Package Listings Warning: Text dropped after begin of listing on input line 101
+.
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--82
+[38]) (./Parts/0.content/table.tex [39]
+Chapitre 17.
+) (./Parts/0.content/theorems.tex [40]
+Chapitre 18.
+[41]) (./Parts/0.content/titles.tex [42]
+Chapitre 19.
 
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--92
-
-[8]
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 121.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 143--146
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--158
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 163--165
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 166--177
-
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 209.
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 253--255
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 261--263
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 284--285
-
-[12] [13]))
+) (./Parts/0.content/tree.tex [43]
+Chapitre 20.
+))
 
 Package glossaries Warning: No \printglossary or \printglossaries found. 
 (Remove \makeglossaries if you don't want any glossaries.) 
@@ -584,7 +620,7 @@ This document will not have a glossary.
 
 
 AED: lastpage setting LastPage
-[14] (Output/main.aux)
+[44] (Output/main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -592,23 +628,23 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  )
-(see the transcript file for additional information)pdfTeX warning (dest): name
-{lstnumber.-3.13} has been referenced but does not exist, replaced by a fixed o
-ne
-
-pdfTeX warning (dest): name{lstnumber.-2.15} has been referenced but does not e
-xist, replaced by a fixed one
-
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvip
-s/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/t
-exmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
-sy.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fon
-ts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/publi
-c/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/
-texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on Output/main.pdf (14 pages, 543257 bytes).
+(see the transcript file for additional information){/usr/share/texmf/fonts/enc
+/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/sh
+are/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-
+mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fo
+nts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/f
+ontawesome/fontawesometwo.enc}</usr/share/texlive/texmf-dist/fonts/type1/public
+/fontawesome/FontAwesome.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/
+public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/sha
+re/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf
+/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssb
+o10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on Output/main.pdf (44 pages, 952641 bytes).
 Transcript written on Output/main.log.

@@ -1,0 +1,22 @@
+%############################################################
+%###### Package 'Check' 
+%###### This package contains soem tools to check data
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+%################################################################
+
+  \makeatletter%
+  \@ifpackageloaded{babel}
+    {\typeout{>>> Utils : Babel package is loaded}}%
+    {\typeout{>>> Utils : Babel package is not loaded}}%
+  \makeatother%
+
+%Date 
+%Titte
+\newcommand{\addUpdate}[2]{%
+\noindent{\makebox[\textwidth][r]{\color{blue}\rule{1.05\textwidth}{.4pt}}}
+\makebox[5em][r]{
+    \textbf{\textcolor{black}{#1}}
+}\quad{#2}
+}

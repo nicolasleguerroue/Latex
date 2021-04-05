@@ -1,0 +1,240 @@
+\chapter{Introduction}
+
+\section{Présentation}
+Ce document a pour but de présenter les fonctionnalités de la bibliothèque Utils, qui n'est qu'un regroupement de bibliothèques pour simplifier l'utilisation de Latex. \n
+Chaque bibliothèque doit être indépendante afin de fonctionner correctement.\\
+
+Voici les bibliothèques disponibles : 
+
+\begin{items}{blue}{\Circle}
+\item Badges
+\item Colors
+\item Debug
+\item Electronic
+\item Fonts
+\item Glossaries
+\item Graphics
+\item Header
+\item Images
+\item Index
+\item Items
+\item Labels
+\item Layout
+\item Links
+\item Maths
+\item MessageBox
+\item Nomenclature
+\item Objects3D
+\item Pdf
+\item Programming
+\item Theorems
+\item Titles
+\item Tree
+\end{items}
+
+\section{Installation}
+
+Latex est un logiciel assez volumineux\footnote{Environ 1.5Go dans les dépots Debian/Ubuntu} mais l'installation complète ne nécéssite pas d'ajout de paquets supplémentaires.
+Il est disponible dans les dépots \bold{Debian/Ubuntu} avec les commandes suivantes\footnote{Il faut saisir la commande dans un terminal} :\\
+
+\begin{Bash}{Installation de Latex}
+sudo apt-get update
+sudo apt-get -y upgrade
+sudo apt-get install texlive-full
+\end{Bash}
+
+La commande suivante permet de gérer Latex en français.
+
+\begin{Bash}{Installation des langues}
+sudo apt-get install texlive-lang-european
+\end{Bash}
+
+\section{Organisation du projet}
+
+\begin{figure}[h!]
+    \centering
+    \usetikzlibrary{trees}
+
+    \tikzstyle{every node}=[draw=black,thick,anchor=west]
+    \tikzstyle{selected}=[draw=blue,fill=blue!30]
+    \tikzstyle{optional}=[dashed,fill=green!50]
+    \begin{tikzpicture}[%
+        grow via three points={one child at (0.5,-0.7) and
+        two children at (0.5,-0.7) and (0.5,-1.4)},
+        edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+
+        \addParent{Project}{green} 
+        child { node {Images}
+            child { node [selected] {Intro}}
+            child { node [selected] {Content}}
+        }
+        child [missing] {}	
+        child [missing] {}	
+        child { node {Make}
+            child { node {Bibliography.tex}}
+            child { node {Contacts.tex}}
+            child { node {Glossaries.tex}}
+            child { node {Index.tex}}
+            child { node {Nomenclature.tex}}
+            child { node {Rules.tex}}
+        }
+        child [missing] {}	
+        child [missing] {}	
+        child [missing] {}	
+        child [missing] {}	
+        child [missing] {}	
+        child [missing] {}	
+        child { node {Output}}
+        child { node {Parts}
+            child { node [selected] {Intro}}
+            child { node [selected] {Content}}
+        }
+        child [missing] {}	
+        child [missing] {}	
+        child { node {Utils}}
+        child { node [optional] {Settings.tex}}
+        child { node [optional] {main.tex}}
+        child { node [optional] {make}};
+
+
+    \end{tikzpicture}
+    \tikzstyle{every node}=[]
+    \tikzstyle{selected}=[]
+    \tikzstyle{optional}=[]
+    \caption{Arborescence du projet}
+    \end{figure}
+
+    Chaque projet est consitué de 5 dossiers et de 3 fichiers situés à la racine du projet.
+
+
+    \begin{items}{blue}{\Triangle}
+    \item Le dossier \bold{Images} contient l'ensemble des images du projet.
+    Chaque image doit faire partie de la même partie que son document source associé.
+    \item Le dossier \bold{Make} contient les fichiers annexes du projet : 
+    \begin{items}{cyan}{\Triangle}
+        \item Le fichier \italic{Bibliography.tex} recense les bibliographies du projet
+        \item Le fichier \italic{Contacts.tex} est une page pour contacter l'auteur et contient les informations sur les droits et les licences du projet.
+        \item Le fichier \italic{Glossaries.tex} contient le glosssaire.
+        \item Le fichier \italic{Index.tex} contient l'index.
+        \item Le fichier \italic{Nomenclature.tex} contient la nomenclature\footnote{Les unités et grandeurs physiques par exemple}
+        \item Le fichier \italic{Rules.tex} contient les conventions pour le projet. Il peut contenir les types de commandes, les conventions de nommage du projet...
+    
+    \end{items}
+    \item Le dossier \bold{Output} contient les fichiers de compilation générés de manière automatique. \bold{Vous n'aurez pas à modifier des fichiers à cette emplacement.}
+    \item Le dossier \bold{Parts} contient les différentes parties du projet. Il est possible de scinder son projet en grandes parties (Introduction, Chapitre1, Chapitre2, Conclusion), chaque dossier contenu dans le dossier \bold{Parts} représente ces parties.\\
+
+    Dans chacun de ces dossier, vous pouvez créer autant de fichier Latex que vous voulez, il seront compilés dans l'ordre alphabétique ou bien par ordre croissant si vous mettre un numéro au début du nom de fichier.\\
+
+    Pour chaque dossier crée dans le dossier \bold{Parts}, il faudra créer un dossier avec le même nom dans le dossier \bold{Images}, sous peine de voir une volée d'erreur lors de la compilation (Voir l'arborescence du projet).
+    
+    \item Le dossier \bold{Utils} contient les bibliothèques du projet.
+
+    Et voici les trois fichiers situés à la racine : 
+    \begin{items}{black}{\Triangle}
+        \item Le fichier \italic{Settings.tex} regroupe les paramètres de mise en page du projet
+        \item Le fichier \italic{main.tex} est le fichier principal du projet.
+        \item Le fichier \italic{make} est le fichier de compilation.
+    \end{items}
+\end{items}
+
+\section{Fusion de projets}
+
+Le choix d'un dossier par partie (Parts/XXX) permet de fusionner très facilement des projets.
+Pour fusionner deux projets, il suffit de copier-coller le contenu du dossier \bold{Images} et \bold{Parts} du projet A dans le dossier de projet qui contiendra la fusion (projet B). Lors de la compilation, \bold{make} va gérer la fusion automatiquement.
+
+
+\section{Compilation du projet}
+
+\subsection{Première compilation}
+
+La compilation du projet se fait grâce au fichier \bold{make} situé à la racine du projet.
+Avant de faire la toute première compilation, il convient de rendre éxécutable le fichier \bold{make} en saissisant la commande suivante : 
+    
+\begin{Bash}{Don des droits d'éxécution sur le fichier \bold{make}}
+chmod +x make
+\end{Bash}
+
+Il ne reste plus qu'à compiler le fichier.
+
+\subsection{Compilation classique}
+
+Une compilation classique a pour objectif de générer le fichier PDF de rendu, appelé \bold{main.pdf} et situé à la racine du projet.
+\begin{Bash}{Compilation du projet}
+./make
+\end{Bash}
+
+Lors de la compilation, plusieurs fichiers sont générés à la racine, dont : 
+
+\begin{items}{blue}{\Triangle}
+    \item Le fichier \italic{render\_report.tex} qui contient la première partie des fichiers journaux de compilation
+    \item Le fichier \italic{render\_report\_logs.tex} qui contient la seconde partie des fichiers journaux de compilation\footnote{Les messages de compilation générés par la bibliothèque Utils sont situés dans ce fichier.}
+    \item Le fichier \italic{standlone.tex} est le fichier qui contient l'intégralité du projet (bibliothèques et code sources du projet). Ce dernier est donc utilisable avec la commande \bold{pdflatex} et permet de générer le fichier PDf à lui seul.
+
+    \begin{Bash}{Génération du fichier PDF en dehors du projet}
+        pdflatex standlone.tex
+        \end{Bash}
+
+        
+    \item Une image \italic{Part.png} qui affiche le nombre de ligne pour chaque fichier contenu dans le dossier \bold{Parts}
+    \img{\rootImages/Part.png}{Nombre de ligne pour les parties}{0.5}
+    \item Une image \italic{Utils.png} qui affiche le nombre de ligne pour chaque fichier contenu dans le dossier \bold{Utils}
+    \img{\rootImages/Utils.png}{Nombre de ligne pour les bibliothèques}{0.5}
+\end{items}
+
+Lors de la compilation, différents messages s'affichent : 
+
+\img{\rootImages/messages.png}{Message d'ajout d'élements de la bibliothèque Utils}{0.5}
+\img{\rootImages/warnings.png}{Message d'avertissements}{0.5}
+
+\subsection{Vérification orthographique}
+
+En invoquant le paramètre \bold{--check}, il est possible de faire une vérification orthographique avec le logiciel aspell. Ci ce dernier n'est pas installé, il suffit de lancer la commande suivante : 
+
+\begin{Bash}{Installation de aspell}
+sudo apt-get install -y aspell
+\end{Bash}
+
+Enfin, si vous lancer la commande 
+
+\begin{Bash}{Vérification orthographique}
+./make --check
+\end{Bash}
+
+Le fichier \italic{make} vous demande si vous souhaiter corriger les fichiers contenus dans le dossier \bold{Parts}.
+
+\img{\rootImages/check.png}{Vérification orthographique}{0.5}
+
+Veuillez saisir \lgreen{KEY}{y} si vous souhaitez corriger le fichier indiqué.
+Ensuite, il ne vous reste plus qu'à être guidé par le logiciel aspell.
+
+\img{\rootImages/check2.png}{Commande de vérification orthographique}{0.5}
+
+Les commandes sont à saisir au clavier (\lgreen{KEY}{Ctrl+I} pour ignorer le mot par exemple).
+
+\subsection{Mise à jour Git}
+
+Pour les projets Latex étant sur Git, il est possible de mettre à jour le dépot en saississant la commande suivante : 
+\begin{Bash}{Mise à jour Git}
+./make --git
+\end{Bash}
+
+\subsection{Création d'un nouveau projet}
+
+Pour créer un nouveau projet, il suffit de copier le fichier \bold{make} et de le mettre là où on souhaite créer le nouveau projet.
+\begin{Bash}{Nouveau projet}
+./make --init
+\end{Bash}
+
+\section{Conventions}
+
+\lgreen{LOC}{Header} veut dire que le code est à mettre avant \bold{begin\{document\}}\\
+\lgreen{LOC}{Body} veut dire que le code est à mettre entre \bold{begin\{document\}} et \bold{end\{document\}}
+
+%\addUpdate{2020/02/10}{Version 1.0}
+
+%\addUpdate{2020/02/20}{Version 2.0}
+
+%\addQuote{En temps de guerre, la vérité est si précieuse qu'elle doit etre escortée par une garde de mensonge}{Sir Winston Spencer Churchill,\\ Duc de Malborought}
+%\addQuote{Si Dieu nous fait la grâce de perdre encore une pareille bataille, Votre Majesté peut compter que ses ennemis sont détruits}{Maréchal de Villars, \\ 1709}
+
+

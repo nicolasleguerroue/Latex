@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.4)  21 MAR 2021 22:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.4)  5 APR 2021 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1333,8 +1333,10 @@ Package tocbasic Info: setting babel extension for `nls' on input line 164.
 
 Package nomencl Info: Writing nomenclature file main.nlo on input line 11.
 )
-(./Utils/Pdf.sty (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+(./Utils/Objects3D.sty) (./Utils/Pdf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
 Package: pdfpages 2020/01/28 v0.5q Insert pages of external PDF documents (AM)
+
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count379
@@ -1402,7 +1404,7 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \c@exemple=\count391
 )
 \c@definition=\count392
-) (./Utils/Titles.sty
+ (./Utils/Titles.sty
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \ttl@box=\box90
@@ -1414,92 +1416,73 @@ Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \titlewidth=\dimen353
 \titlewidthlast=\dimen354
 \titlewidthfirst=\dimen355
-))
->>> Utils - [MData] : title='micp
+)))
+(./Utils/Tree.sty)
+>>> Utils - [MData] : title='
 >>> Utils - [MData] : author(s)='Nicolas LE GUERROUE'
->>> Utils - [MData] : subject='registres'
->>> Utils - [MData] : creator='Nicolas LE GUERROUÃ‰'
->>> Utils - [MData] : keywords='MIP'
->>> Utils - [MData] : link colors='green'
+>>> Utils - [MData] : subject=''
+>>> Utils - [MData] : creator=''
+>>> Utils - [MData] : keywords=''
+>>> Utils - [MData] : link colors='blue'
 >>> Utils - [MData] : bib links colors='blue'
->>> Utils - [MData] : link file colors='blue'
+>>> Utils - [MData] : link file colors='green'
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 54.
+(hyperref)                setting the option has no effect on input line 41.
 
-Package hyperref Info: Option `unicode' set `true' on input line 54.
+Package hyperref Info: Option `unicode' set `true' on input line 41.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `pdftoolbar' set `true' on input line 54.
-Package hyperref Info: Option `pdfmenubar' set `true' on input line 54.
-Package hyperref Info: Option `pdffitwindow' set `false' on input line 54.
-Package hyperref Info: Option `pdfnewwindow' set `true' on input line 54.
-Package hyperref Info: Option `colorlinks' set `true' on input line 54.
+Package hyperref Info: Option `pdftoolbar' set `true' on input line 41.
+Package hyperref Info: Option `pdfmenubar' set `true' on input line 41.
+Package hyperref Info: Option `pdffitwindow' set `false' on input line 41.
+Package hyperref Info: Option `pdfnewwindow' set `true' on input line 41.
+Package hyperref Info: Option `colorlinks' set `true' on input line 41.
+) (Output/main.aux
+
+LaTeX Warning: Label `TEST' multiply defined.
+
 )
-(/usr/share/texlive/texmf-dist/tex/latex/silence/silence.sty
-Package: silence 2012/07/02 v1.5b Selective filtering of warnings and error mes
-sages
-\sl@Save=\count393
-\sl@StateNumber=\count394
-\sl@MessageCount=\count395
-\sl@Casualties=\count396
-\sl@Filter=\toks70
-\sl@Message=\toks71
-\sl@UnexpandedMessage=\toks72
-\sl@Mess@ge=\toks73
-\sl@WarningCount=\count397
-\sl@WarningNumber=\count398
-\sl@WarningCasualties=\count399
-\sl@TempBOW=\toks74
-\sl@BankOfWarnings=\toks75
-LaTeX Info: Redefining \GenericWarning on input line 433.
-\sl@ErrorCount=\count400
-\sl@ErrorNumber=\count401
-\sl@ErrorCasualties=\count402
-\sl@TempBOE=\toks76
-\sl@BankOfErrors=\toks77
-LaTeX Info: Redefining \GenericError on input line 601.
-) (Output/main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Info: Redefining \degres on input line 15.
-LaTeX Info: Redefining \dots on input line 15.
-LaTeX Info: Redefining \up on input line 15.
-ABD: EveryShipout initializing macros
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Info: Redefining \degres on input line 5.
+LaTeX Info: Redefining \dots on input line 5.
+LaTeX Info: Redefining \up on input line 5.
+ ABD: EveryShipout initializing macros
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count403
+\scratchcounter=\count393
 \scratchdimen=\dimen356
 \scratchbox=\box91
-\nofMPsegments=\count404
-\nofMParguments=\count405
-\everyMPshowfont=\toks78
-\MPscratchCnt=\count406
+\nofMPsegments=\count394
+\nofMParguments=\count395
+\everyMPshowfont=\toks70
+\MPscratchCnt=\count396
 \MPscratchDim=\dimen357
-\MPnumerator=\count407
-\makeMPintoPDFobject=\count408
-\everyMPtoPDFconversion=\toks79
+\MPnumerator=\count397
+\makeMPintoPDFobject=\count398
+\everyMPtoPDFconversion=\toks71
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1520,7 +1503,7 @@ Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 15.
+(lastpage)             ! on input line 5.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1529,15 +1512,15 @@ Package lastpage Info: Please have a look at the pageslts package at
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(71.13188pt, 472.03123pt, 71.13188pt)
-* v-part:(T,H,B)=(71.13188pt, 652.70622pt, 71.13188pt)
+* h-part:(L,W,R)=(85.35826pt, 443.57848pt, 85.35826pt)
+* v-part:(T,H,B)=(85.35826pt, 624.25346pt, 85.35826pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=472.03123pt
-* \textheight=652.70622pt
-* \oddsidemargin=-1.1381pt
-* \evensidemargin=-1.1381pt
-* \topmargin=-38.1381pt
+* \textwidth=443.57848pt
+* \textheight=624.25346pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-23.91173pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
@@ -1555,9 +1538,9 @@ Package lastpage Info: Please have a look at the pageslts package at
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count409
+\c@lstlisting=\count399
 \AtBeginShipoutBox=\box92
-Package hyperref Info: Link coloring ON on input line 15.
+Package hyperref Info: Link coloring ON on input line 5.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -1567,11 +1550,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count410
+\c@section@level=\count400
 )
-LaTeX Info: Redefining \ref on input line 15.
-LaTeX Info: Redefining \pageref on input line 15.
-LaTeX Info: Redefining \nameref on input line 15.
+LaTeX Info: Redefining \ref on input line 5.
+LaTeX Info: Redefining \pageref on input line 5.
+LaTeX Info: Redefining \nameref on input line 5.
 
 (Output/main.out) (Output/main.out)
 \@outlinefile=\write11
@@ -1586,215 +1569,146 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
-8.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 6
+.
 
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<Images/content/STM32.png, id=156, 102.3825pt x 86.9649pt>
-File: Images/content/STM32.png Graphic file (type png)
-<use Images/content/STM32.png>
-Package pdftex.def Info: Images/content/STM32.png  used on input line 18.
-(pdftex.def)             Requested size: 102.38225pt x 86.96468pt.
+<Images/s5.jpg, id=139, 1284.8pt x 963.6pt>
+File: Images/s5.jpg Graphic file (type jpg)
+<use Images/s5.jpg>
+Package pdftex.def Info: Images/s5.jpg  used on input line 6.
+(pdftex.def)             Requested size: 256.95544pt x 192.71658pt.
  [1
 
 \openout6 = `main.xdy'.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Images/content/STM32.png
->]
-
-LaTeX Font Warning: Font shape `T1/lmss/bx/sc' undefined
-(Font)              using `T1/lmss/bx/n' instead on input line 24.
-
-(Output/main.toc
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Images/s5.jpg>] (./Make/
+Contacts.tex
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
 .
- (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6
 .
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-3.
+6.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-3.
+6.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 3.
+(Font)              <12> on input line 6.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 3.
+(Font)              <8> on input line 6.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 3.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+(Font)              <6> on input line 6.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
+ut line 15.
+
+(/usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
+File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 ))
+[2]
+
+LaTeX Font Warning: Font shape `T1/lmss/bx/sc' undefined
+(Font)              using `T1/lmss/bx/n' instead on input line 10.
+
+(Output/main.toc [3
+
+])
 \tf@toc=\write12
 \openout12 = `main.toc'.
 
- [2
+ [4] (./Output/add_content.tex
+(./Parts/0.prepare/Introduction.tex [5
 
 ]
-(./Output/add_content.tex (./Parts/0.content/0.Conversion.tex
 Chapitre 1.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-3.
-(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Underfull \hbox (badness 10000) in paragraph at lines 22--24
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
 
  []
 
 
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 34.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 38--39
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 46--47
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 50--51
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 52--53
-
- []
-
-[3
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 54--55
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--78
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 81--82
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 83--84
-
- []
-
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 89.
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 106--107
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
-
- []
-
-) (./Parts/0.content/1.Introduction.tex [5]
-Chapitre 2.
-
-Underfull \hbox (badness 10000) in paragraph at lines 30--32
-
- []
-
-<Images/content/leds.png, id=236, 129.48375pt x 276.03125pt>
-File: Images/content/leds.png Graphic file (type png)
-<use Images/content/leds.png>
-Package pdftex.def Info: Images/content/leds.png  used on input line 33.
-(pdftex.def)             Requested size: 77.69083pt x 165.62001pt.
->>> Utils : Image 'Images/content/leds.png' [size=0.6,id 1] loaded !
 [6
 
- <./Images/content/leds.png>]
-<Images/content/buttons.png, id=245, 704.6325pt x 574.145pt>
-File: Images/content/buttons.png Graphic file (type png)
-<use Images/content/buttons.png>
-Package pdftex.def Info: Images/content/buttons.png  used on input line 44.
-(pdftex.def)             Requested size: 281.848pt x 229.65393pt.
+]
+Overfull \hbox (20.51584pt too wide) in paragraph at lines 67--68
+[]\T1/lmr/m/n/12 Dans un dos-sier [], pla-cez deux dos-siers ap-pe-lés []
+ []
 
->>> Utils : Image 'Images/content/buttons.png' [size=0.4,id 2] loaded !
 
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 52.
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytrees.code.tex
+File: tikzlibrarytrees.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)) (./Parts/0.prepare/pro_mini.tex [7]
+Chapitre 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--7
+
+ []
+
+<Images/prepare/wire.jpg, id=228, 602.25pt x 602.25pt>
+File: Images/prepare/wire.jpg Graphic file (type jpg)
+<use Images/prepare/wire.jpg>
+Package pdftex.def Info: Images/prepare/wire.jpg  used on input line 14.
+(pdftex.def)             Requested size: 180.67639pt x 180.67639pt.
+>>> Utils : Image 'Images/prepare/wire.jpg' [size=0.3,id 1,angle=0] loaded !
+<Images/prepare/promini.jpeg, id=229, 268.00125pt x 189.70876pt>
+File: Images/prepare/promini.jpeg Graphic file (type jpg)
+<use Images/prepare/promini.jpeg>
+Package pdftex.def Info: Images/prepare/promini.jpeg  used on input line 17.
+(pdftex.def)             Requested size: 134.00029pt x 94.85414pt.
+>>> Utils : Image 'Images/prepare/promini.jpeg' [size=0.5,id 2,angle=0] loaded 
+!
+<Images/prepare/a1.jpg, id=230, 5331.92pt x 2999.205pt>
+File: Images/prepare/a1.jpg Graphic file (type jpg)
+<use Images/prepare/a1.jpg>
+Package pdftex.def Info: Images/prepare/a1.jpg  used on input line 20.
+(pdftex.def)             Requested size: 266.61162pt x 149.96902pt.
+[8
+
+ <./Images/prepare/wire.jpg> <./Images/prepare/promini.jpeg>]
+>>> Utils : Image 'Images/prepare/a1.jpg' [size=0.05,id 3,angle=0] loaded !
+>>> Utils : MessageBox 'Attention' [id 1] created !
+<Images/prepare/pinout.png, id=240, 712.6625pt x 857.2025pt>
+File: Images/prepare/pinout.png Graphic file (type png)
+<use Images/prepare/pinout.png>
+Package pdftex.def Info: Images/prepare/pinout.png  used on input line 43.
+(pdftex.def)             Requested size: 213.8004pt x 257.16273pt.
+>>> Utils : Image 'Images/prepare/pinout.png' [size=0.3,id 4,angle=0] loaded !
+[9 <./Images/prepare/a1.jpg>]
+>>> Utils : MessageBox 'Remarque' [id 2] created !
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--54
+
+ []
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
@@ -1807,91 +1721,318 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [7 <./Images/content/buttons.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 62--65
+) [10 <./Images/prepare/pinout.png>]
+<Images/prepare/type.png, id=268, 887.315pt x 872.25874pt>
+File: Images/prepare/type.png Graphic file (type png)
+<use Images/prepare/type.png>
+Package pdftex.def Info: Images/prepare/type.png  used on input line 76.
+(pdftex.def)             Requested size: 266.19655pt x 261.67964pt.
+
+>>> Utils : Image 'Images/prepare/type.png' [size=0.3,id 5,angle=0] loaded !
+<Images/prepare/processeur.png, id=269, 848.16875pt x 458.71375pt>
+File: Images/prepare/processeur.png Graphic file (type png)
+<use Images/prepare/processeur.png>
+Package pdftex.def Info: Images/prepare/processeur.png  used on input line 79.
+(pdftex.def)             Requested size: 339.26149pt x 183.48224pt.
+>>> Utils : Image 'Images/prepare/processeur.png' [size=0.4,id 6,angle=0] loade
+d !
+[11 <./Images/prepare/type.png>]
+>>> Utils : MessageBox 'Avertissement' [id 3] created !
+>>> Utils : MessageBox 'Information' [id 4] created !
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--97
 
  []
 
+) (./Parts/1.gateway/0_gateway.tex [12 <./Images/prepare/processeur.png>]
+[13
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--71
+]
+Chapitre 3.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+6.
+(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+<Images/gateway/pin.png, id=293, 1002.74625pt x 700.6175pt>
+File: Images/gateway/pin.png Graphic file (type png)
+<use Images/gateway/pin.png>
+Package pdftex.def Info: Images/gateway/pin.png  used on input line 32.
+(pdftex.def)             Requested size: 501.3719pt x 350.30789pt.
+
+Overfull \hbox (57.79343pt too wide) in paragraph at lines 32--32
+ [] 
+ []
+
+>>> Utils : Image 'Images/gateway/pin.png' [size=0.5,id 7] loaded !
+[14
+
+]
+>>> Utils : MessageBox 'Remarque' [id 5] created !
+[15 <./Images/gateway/pin.png>]
+<Images/gateway/nappe.png, id=313, 968.61874pt x 321.2pt>
+File: Images/gateway/nappe.png Graphic file (type png)
+<use Images/gateway/nappe.png>
+Package pdftex.def Info: Images/gateway/nappe.png  used on input line 47.
+(pdftex.def)             Requested size: 484.30818pt x 160.59961pt.
+
+Overfull \hbox (40.7297pt too wide) in paragraph at lines 47--47
+ [] 
+ []
+
+>>> Utils : Image 'Images/gateway/nappe.png' [size=0.5,id 8] loaded !
+>>> Utils : MessageBox 'Remarque' [id 6] created !
+[16 <./Images/gateway/nappe.png>]
+<Images/gateway/to-92.png, id=321, 328.22626pt x 266.9975pt>
+File: Images/gateway/to-92.png Graphic file (type png)
+<use Images/gateway/to-92.png>
+Package pdftex.def Info: Images/gateway/to-92.png  used on input line 78.
+(pdftex.def)             Requested size: 164.11272pt x 133.49841pt.
+
+>>> Utils : Image 'Images/gateway/to-92.png' [size=0.5,id 9] loaded !
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
+<Images/gateway/ht.png, id=322, 1260.71pt x 654.445pt>
+File: Images/gateway/ht.png Graphic file (type png)
+<use Images/gateway/ht.png>
+Package pdftex.def Info: Images/gateway/ht.png  used on input line 86.
+(pdftex.def)             Requested size: 441.25511pt x 229.05917pt.
+>>> Utils : Image 'Images/gateway/ht.png' [size=0.35,id 10] loaded !
+[17 <./Images/gateway/to-92.png>]
+<Images/gateway/side.png, id=331, 922.44624pt x 609.27625pt>
+File: Images/gateway/side.png Graphic file (type png)
+<use Images/gateway/side.png>
+Package pdftex.def Info: Images/gateway/side.png  used on input line 90.
+(pdftex.def)             Requested size: 368.97195pt x 243.70618pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--82
+>>> Utils : Image 'Images/gateway/side.png' [size=0.4,id 11] loaded !
+<Images/gateway/passerelle_emetteur.png, id=332, 920.43875pt x 631.35875pt>
+File: Images/gateway/passerelle_emetteur.png Graphic file (type png)
+<use Images/gateway/passerelle_emetteur.png>
+Package pdftex.def Info: Images/gateway/passerelle_emetteur.png  used on input 
+line 91.
+(pdftex.def)             Requested size: 368.16898pt x 252.53902pt.
+>>> Utils : Image 'Images/gateway/passerelle_emetteur.png' [size=0.4,id 12] loa
+ded !
+<Images/gateway/dessus.png, id=333, 1014.79124pt x 728.7225pt>
+File: Images/gateway/dessus.png Graphic file (type png)
+<use Images/gateway/dessus.png>
+Package pdftex.def Info: Images/gateway/dessus.png  used on input line 92.
+(pdftex.def)             Requested size: 405.9093pt x 291.48383pt.
+[18 <./Images/gateway/ht.png> <./Images/gateway/side.png>]
+>>> Utils : Image 'Images/gateway/dessus.png' [size=0.4,id 13] loaded !
+) (./Parts/1.sensor/sensor.tex [19 <./Images/gateway/passerelle_emetteur.png> <
+./Images/gateway/dessus.png>]
+Chapitre 4.
+[20
+
+]
+<Images/sensor/pcb.png, id=358, 911.405pt x 625.33624pt>
+File: Images/sensor/pcb.png Graphic file (type png)
+<use Images/sensor/pcb.png>
+Package pdftex.def Info: Images/sensor/pcb.png  used on input line 38.
+(pdftex.def)             Requested size: 455.70139pt x 312.66736pt.
+
+Overfull \hbox (12.12291pt too wide) in paragraph at lines 38--38
+ [] 
+ []
+
+>>> Utils : Image 'Images/sensor/pcb.png' [size=0.5,id 14] loaded !
+<Images/sensor/nappe.png, id=359, 968.61874pt x 321.2pt>
+File: Images/sensor/nappe.png Graphic file (type png)
+<use Images/sensor/nappe.png>
+Package pdftex.def Info: Images/sensor/nappe.png  used on input line 45.
+(pdftex.def)             Requested size: 484.30818pt x 160.59961pt.
+
+Overfull \hbox (40.7297pt too wide) in paragraph at lines 45--45
+ [] 
+ []
+
+>>> Utils : Image 'Images/sensor/nappe.png' [size=0.5,id 15] loaded !
+[21 <./Images/sensor/pcb.png>]
+<Images/sensor/s4.jpg, id=371, 1284.8pt x 963.6pt>
+File: Images/sensor/s4.jpg Graphic file (type jpg)
+<use Images/sensor/s4.jpg>
+Package pdftex.def Info: Images/sensor/s4.jpg  used on input line 63.
+(pdftex.def)             Requested size: 321.19922pt x 240.89941pt.
+
+>>> Utils : Image 'Images/sensor/s4.jpg' [size=0.25,id 16] loaded !
+<Images/sensor/s3.jpg, id=372, 1284.8pt x 963.6pt>
+File: Images/sensor/s3.jpg Graphic file (type jpg)
+<use Images/sensor/s3.jpg>
+Package pdftex.def Info: Images/sensor/s3.jpg  used on input line 64.
+(pdftex.def)             Requested size: 321.19922pt x 240.89941pt.
+[22 <./Images/sensor/nappe.png>]
+>>> Utils : Image 'Images/sensor/s3.jpg' [size=0.25,id 17] loaded !
+) (./Parts/2.electrical_checking/check.tex [23 <./Images/sensor/s4.jpg> <./Imag
+es/sensor/s3.jpg>]
+Chapitre 5.
+<Images/electrical_checking/multi.jpg, id=387, 5331.92pt x 2999.205pt>
+File: Images/electrical_checking/multi.jpg Graphic file (type jpg)
+<use Images/electrical_checking/multi.jpg>
+Package pdftex.def Info: Images/electrical_checking/multi.jpg  used on input li
+ne 14.
+(pdftex.def)             Requested size: 266.61162pt x 149.96902pt.
+>>> Utils : Image 'Images/electrical_checking/multi.jpg' [size=0.05,id 18,angle
+=-90] loaded !
+<Images/electrical_checking/c.jpg, id=388, 5331.92pt x 2999.205pt>
+File: Images/electrical_checking/c.jpg Graphic file (type jpg)
+<use Images/electrical_checking/c.jpg>
+Package pdftex.def Info: Images/electrical_checking/c.jpg  used on input line 1
+9.
+(pdftex.def)             Requested size: 426.56232pt x 239.9413pt.
+>>> Utils : Image 'Images/electrical_checking/c.jpg' [size=0.08,id 19,angle=0] 
+loaded !
+[24
+
+ <./Images/electrical_checking/multi.jpg>]
+<Images/electrical_checking/nrf24.jpg, id=397, 5331.92pt x 2999.205pt>
+File: Images/electrical_checking/nrf24.jpg Graphic file (type jpg)
+<use Images/electrical_checking/nrf24.jpg>
+Package pdftex.def Info: Images/electrical_checking/nrf24.jpg  used on input li
+ne 35.
+(pdftex.def)             Requested size: 266.61162pt x 149.96902pt.
+
+>>> Utils : Image 'Images/electrical_checking/nrf24.jpg' [size=0.05,id 20,angle
+=-90] loaded !
+[25 <./Images/electrical_checking/c.jpg>])
+(./Parts/3.setup_domoticz/add_gateway.tex [26 <./Images/electrical_checking/nrf
+24.jpg>] [27
+
+]
+Chapitre 6.
+<Images/setup_domoticz/hardware.png, id=417, 877.2775pt x 417.56pt>
+File: Images/setup_domoticz/hardware.png Graphic file (type png)
+<use Images/setup_domoticz/hardware.png>
+Package pdftex.def Info: Images/setup_domoticz/hardware.png  used on input line
+ 14.
+(pdftex.def)             Requested size: 438.63768pt x 208.77948pt.
+>>> Utils : Image 'Images/setup_domoticz/hardware.png' [size=0.5,id 21] loaded 
+!
+<Images/setup_domoticz/add_gateway.png, id=418, 776.9025pt x 346.29375pt>
+File: Images/setup_domoticz/add_gateway.png Graphic file (type png)
+<use Images/setup_domoticz/add_gateway.png>
+Package pdftex.def Info: Images/setup_domoticz/add_gateway.png  used on input l
+ine 18.
+(pdftex.def)             Requested size: 388.45029pt x 173.14644pt.
+>>> Utils : Image 'Images/setup_domoticz/add_gateway.png' [size=0.5,id 22] load
+ed !
+[28
+
+ <./Images/setup_domoticz/hardware.png> <./Images/setup_domoticz/add_gateway.pn
+g>]
+<Images/setup_domoticz/search.png, id=428, 269.005pt x 112.42pt>
+File: Images/setup_domoticz/search.png Graphic file (type png)
+<use Images/setup_domoticz/search.png>
+Package pdftex.def Info: Images/setup_domoticz/search.png  used on input line 3
+3.
+(pdftex.def)             Requested size: 134.50217pt x 56.20985pt.
+
+>>> Utils : Image 'Images/setup_domoticz/search.png' [size=0.5,id 23] loaded !
+>>> Utils : MessageBox 'Remarque' [id 7] created !
+<Images/setup_domoticz/see.png, id=429, 384.43625pt x 52.195pt>
+File: Images/setup_domoticz/see.png Graphic file (type png)
+<use Images/setup_domoticz/see.png>
+Package pdftex.def Info: Images/setup_domoticz/see.png  used on input line 40.
+(pdftex.def)             Requested size: 192.21765pt x 26.09743pt.
+>>> Utils : Image 'Images/setup_domoticz/see.png' [size=0.5,id 24] loaded !
+>>> Utils : MessageBox 'PrÃ©cision' [id 8] created !
+<Images/setup_domoticz/cursor_log.png, id=430, 294.09875pt x 123.46124pt>
+File: Images/setup_domoticz/cursor_log.png Graphic file (type png)
+<use Images/setup_domoticz/cursor_log.png>
+Package pdftex.def Info: Images/setup_domoticz/cursor_log.png  used on input li
+ne 47.
+(pdftex.def)             Requested size: 147.04901pt x 61.73045pt.
+>>> Utils : Image 'Images/setup_domoticz/cursor_log.png' [size=0.5,id 25] loade
+d !
+[29 <./Images/setup_domoticz/search.png> <./Images/setup_domoticz/see.png>])
+(./Parts/4.debug/debug.tex [30 <./Images/setup_domoticz/cursor_log.png>]
+Chapitre 7.
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
 
+) (./Parts/4.install_linux/install.tex [31
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--92
+] [32
 
+]
+Annexe A.
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+)
+<Images/install_linux/load.png, id=463, 967.615pt x 537.00626pt>
+File: Images/install_linux/load.png Graphic file (type png)
+<use Images/install_linux/load.png>
+Package pdftex.def Info: Images/install_linux/load.png  used on input line 22.
+(pdftex.def)             Requested size: 290.28674pt x 161.10312pt.
+
+>>> Utils : Image 'Images/install_linux/load.png' [size=0.3,id 26,angle=0] load
+ed !
+<Images/install_linux/l1.png, id=464, 719.68875pt x 426.59375pt>
+File: Images/install_linux/l1.png Graphic file (type png)
+<use Images/install_linux/l1.png>
+Package pdftex.def Info: Images/install_linux/l1.png  used on input line 27.
+(pdftex.def)             Requested size: 287.87039pt x 170.63446pt.
+>>> Utils : Image 'Images/install_linux/l1.png' [size=0.4,id 27,angle=0] loaded
+ !
+[33
+
+ <./Images/install_linux/load.png>]
+<Images/install_linux/l2.png, id=476, 660.4675pt x 391.4625pt>
+File: Images/install_linux/l2.png Graphic file (type png)
+<use Images/install_linux/l2.png>
+Package pdftex.def Info: Images/install_linux/l2.png  used on input line 32.
+(pdftex.def)             Requested size: 264.18231pt x 156.58221pt.
+
+>>> Utils : Image 'Images/install_linux/l2.png' [size=0.4,id 28,angle=0] loaded
+ !
+<Images/install_linux/l3.png, id=477, 666.49pt x 395.4775pt>
+File: Images/install_linux/l3.png Graphic file (type png)
+<use Images/install_linux/l3.png>
+Package pdftex.def Info: Images/install_linux/l3.png  used on input line 36.
+(pdftex.def)             Requested size: 266.59128pt x 158.18819pt.
+>>> Utils : Image 'Images/install_linux/l3.png' [size=0.4,id 29,angle=0] loaded
+ !
+[34 <./Images/install_linux/l1.png> <./Images/install_linux/l2.png>]
+<Images/install_linux/l4.png, id=487, 668.4975pt x 405.515pt>
+File: Images/install_linux/l4.png Graphic file (type png)
+<use Images/install_linux/l4.png>
+Package pdftex.def Info: Images/install_linux/l4.png  used on input line 40.
+(pdftex.def)             Requested size: 267.39426pt x 162.20311pt.
+
+>>> Utils : Image 'Images/install_linux/l4.png' [size=0.4,id 30,angle=0] loaded
+ !
+
+Overfull \hbox (2.654pt too wide) in paragraph at lines 42--44
+\T1/lmr/m/n/12 Par dé-faut, Do-mo-ticz le place dans vos do-cu-ments per-son-na
+les (/ho-me/-nom_utilisateur) 
  []
 
-[8]
+<Images/install_linux/l5.png, id=488, 664.4825pt x 390.45876pt>
+File: Images/install_linux/l5.png Graphic file (type png)
+<use Images/install_linux/l5.png>
+Package pdftex.def Info: Images/install_linux/l5.png  used on input line 45.
+(pdftex.def)             Requested size: 265.78828pt x 156.18073pt.
+>>> Utils : Image 'Images/install_linux/l5.png' [size=0.4,id 31,angle=0] loaded
+ !
+[35 <./Images/install_linux/l3.png> <./Images/install_linux/l4.png>]
+<Images/install_linux/l6.png, id=497, 664.4825pt x 393.47pt>
+File: Images/install_linux/l6.png Graphic file (type png)
+<use Images/install_linux/l6.png>
+Package pdftex.def Info: Images/install_linux/l6.png  used on input line 49.
+(pdftex.def)             Requested size: 265.78828pt x 157.38521pt.
 
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 121.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 143--146
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--158
-
- []
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 163--165
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 166--177
-
- []
-
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 209.
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 253--255
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 261--263
-
- []
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 284--285
-
- []
-
-[12] [13]))
+>>> Utils : Image 'Images/install_linux/l6.png' [size=0.4,id 32,angle=0] loaded
+ !
+))
 
 Package glossaries Warning: No \printglossary or \printglossaries found. 
 (Remove \makeglossaries if you don't want any glossaries.) 
@@ -1899,12 +2040,13 @@ This document will not have a glossary.
 
 
 AED: lastpage setting LastPage
-[14]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 33.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 33.
- (Output/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 33.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 33.
+[36 <./Images/install_linux/l5.png> <./Images/install_linux/l6.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 14.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 14.
+
+(Output/main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 14.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 14.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
 
@@ -1912,38 +2054,33 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 62529 strings out of 481239
- 1445790 string characters out of 5920378
- 2347759 words of memory out of 8000000
- 76585 multiletter control sequences out of 15000+600000
- 605765 words of font info for 65 fonts, out of 8000000 for 9000
+ 62713 strings out of 481239
+ 1451902 string characters out of 5920378
+ 2295703 words of memory out of 8000000
+ 76729 multiletter control sequences out of 15000+600000
+ 609096 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 82i,12n,108p,1045b,2069s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{lstnumber.-3.13} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{lstnumber.-2.15} has been referenced but does not e
-xist, replaced by a fixed one
-
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvip
-s/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/t
-exmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
-sy.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fon
-ts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/publi
-c/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/
-texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on Output/main.pdf (14 pages, 543257 bytes).
+ 82i,12n,121p,1079b,2136s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/te
+xmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texlive/texmf-dist/fonts/enc/d
+vips/fontawesome/fontawesometwo.enc}</usr/share/texlive/texmf-dist/fonts/type1/
+public/fontawesome/FontAwesome.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx
+12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/
+share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/publ
+ic/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on Output/main.pdf (36 pages, 35634420 bytes).
 PDF statistics:
- 506 PDF objects out of 1000 (max. 8388607)
- 467 compressed objects within 5 object streams
- 178 named destinations out of 1000 (max. 500000)
- 332 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 586 PDF objects out of 1000 (max. 8388607)
+ 474 compressed objects within 5 object streams
+ 144 named destinations out of 1000 (max. 500000)
+ 442 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,71 @@
+\chapter{Bibliothèque Header}
+
+\section{Mise en forme de la page de garde avec une image}
+
+\lgreen{LOC}{Header}
+\begin{Latex}{Code pour la mise en forme de la page de garde avec une image}
+\setHeaderImage{Emplacement_image}{0.8}{Titre}{sous-titre}{Auteurs}{\today \\ \pageref{LastPage} pages}
+\end{Latex}
+
+
+\section{Mise en forme de la page de garde sans image}
+
+\lgreen{LOC}{Header}
+\begin{Latex}{Code pour la mise en forme de la page de garde sans image}
+  \setHeader{Titre}{Auteur 1 \\ Auteur 2}{Date}
+\end{Latex}
+
+\section{Mise en forme de la page des parties}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour la mise en forme de la page des parties}
+  \partImg{Partie}{Images/file.png}{0.2}
+\end{Latex}
+
+\section{Ajout d'un trait entre l'en-tête et le corps de la page}
+
+\lgreen{LOC}{Header}
+\begin{Latex}{Code pour l'ajout d'un trait entre l'en-tête et le corps de la page}
+  \setHeaderLine{0.2}
+\end{Latex}
+
+\section{Ajout d'un trait entre le corps de la page et le bas de page}
+
+\lgreen{LOC}{Header}
+\begin{Latex}{Code pour l'ajout d'un trait entre le corps de la page et le bas de page}
+  \setFooterLine{0.2}
+\end{Latex}
+
+
+
+
+
+\section{Définition de la présentation globale des pages}
+
+\lgreen{LOC}{Header}
+\begin{Latex}{Code pour la définition de la présentation globale des page}
+  \addPresentation
+  {Titre} {Centre} {\currentChapter}
+  {Gauche} {} {\currentPage}
+\end{Latex}
+
+\section{Redéfinition des titres des chapitres}
+
+%\setAliasChapter{Section}
+\lgreen{LOC}{Header}
+\begin{Latex}{Code pour la redéfinition des titres des chapitres}
+  \setAliasChapter{Section}
+\end{Latex}
+
+
+\section{Mettre le document en pleine page}
+\lgreen{LOC}{Header}
+\begin{Latex}{Code pour mettre le document en pleine page}
+\setFullPage
+\end{Latex}
+
+\section{Récuperer le chapitre courant}
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour récuperer le chapitre courant}
+\currentChapter
+\end{Latex}

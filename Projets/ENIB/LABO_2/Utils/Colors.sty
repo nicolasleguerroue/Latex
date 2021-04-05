@@ -1,0 +1,29 @@
+%############################################################
+%###### Package 'Color' 
+%###### This package contains some colors
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage{color}              %colors
+%################################################################
+\definecolor{pathColor}{rgb}{0.858, 0.188, 0.478}
+\definecolor{fileColor}{rgb}{0.858, 0.188, 0.478}
+\definecolor{water}{rgb}{0.858, 0.188, 0.478}
+\definecolor{LightBlue}{RGB}{66, 163, 251}
+\definecolor{DarkBlue}{RGB}{36, 100, 176}
+\definecolor{LightGray}{gray}{.94}
+\definecolor{DarkGray}{gray}{.172}
+\definecolor{Orange}{RGB}{229, 133, 3}
+\definecolor{MediumBlue}{RGB}{38, 119, 193}
+\definecolor{bigBrother}{rgb}{0.6,0.07,0.3}
+
+\newcommand{\colors}[2]{
+{\color{#1}{#2}}
+    }
+
+
+\newcommand{\func}[1]{
+    \colors{bigBrother}{#1}
+}
+
+%------------------Section Default Setting-------------

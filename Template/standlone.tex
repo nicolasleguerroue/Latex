@@ -1,0 +1,2661 @@
+
+%#############################################################
+%MAIN file for  project
+%#############################################################
+\documentclass[12pt]{report}
+%############################################################
+%###### Package 'name' 
+%###### This package contains ...
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage{lmodern}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}     %UTF-8 encoding
+\RequirePackage[many]{tcolorbox}
+%1 : txt color
+%2 : bg color 
+%3 : text
+\newtcbox{\badge}[3][red]{
+  on line, 
+  arc=2pt,
+  colback=#3,
+  colframe=#3,
+  fontupper=\color{#2},
+  boxrule=1pt, 
+  boxsep=0pt,
+  left=6pt,
+  right=6pt,
+  top=2pt,
+  bottom=2pt
+}
+
+%################################################################%############################################################
+%###### Package 'Chapter_1' 
+%###### This package contains first model of chapter
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+% \RequirePackage[explicit]{titlesec} 
+
+
+% \titleformat{\chapter}
+%   {\gdef\chapterlabel{}
+%    \normalfont\sffamily\Huge\bfseries\scshape}
+%   {\gdef\chapterlabel{\thechapter)\ }}{0pt}
+%   {\begin{tikzpicture}[remember picture,overlay]
+%     \node[yshift=-2cm] at (current page.north west)
+%       {\begin{tikzpicture}[remember picture, overlay]
+%         \draw[fill=MediumBlue] (0,0) rectangle
+%           (\paperwidth,2cm);
+%         \node[anchor=east,xshift=.9\paperwidth,rectangle,
+%               rounded corners=20pt,inner sep=11pt,
+%               fill=white]
+%               {\color{black}#1};%\chapterlabel
+%           \node[anchor=west,yshift=1cm,xshift=2cm,inner sep=11pt,
+%               fill=MediumBlue]
+%               {\color{white}{\large Synthèse Latex}};%\chapterlabel
+%        \end{tikzpicture}
+%       };
+%    \end{tikzpicture}
+%   }
+%   \titlespacing*{\chapter}{0pt}{50pt}{-60pt}%############################################################
+%###### Package 'Color' 
+%###### This package contains some colors
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage{color}              %colors
+%################################################################
+\definecolor{pathColor}{rgb}{0.858, 0.188, 0.478}
+\definecolor{fileColor}{rgb}{0.858, 0.188, 0.478}
+\definecolor{water}{rgb}{0.858, 0.188, 0.478}
+\definecolor{LightBlue}{RGB}{66, 163, 251}
+\definecolor{DarkBlue}{RGB}{36, 100, 176}
+\definecolor{LightGray}{gray}{.94}
+\definecolor{DarkGray}{gray}{.172}
+\definecolor{Orange}{RGB}{229, 133, 3}
+\definecolor{MediumBlue}{RGB}{38, 119, 193}
+
+
+\newcommand{\colors}[2]{
+{\color{#1}{#2}}
+}%############################################################
+%###### Package 'Check' 
+%###### This package contains soem tools to check data
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+%################################################################
+
+  \makeatletter%
+  \@ifpackageloaded{babel}
+    {\typeout{>>> Utils : Babel package is loaded}}%
+    {\typeout{>>> Utils : Babel package is not loaded}}%
+  \makeatother%
+
+%Date 
+%Titte
+\newcommand{\addUpdate}[2]{%
+\noindent{\makebox[\textwidth][r]{\color{blue}\rule{1.05\textwidth}{.4pt}}}
+\makebox[5em][r]{
+    \textbf{\textcolor{black}{#1}}
+}\quad{#2}
+}%############################################################
+%###### Package 'Electronic' 
+%###### This package contains some tools to generate electornic circuits
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+
+\RequirePackage{tikz-timing}
+
+\RequirePackage{graphics} %include figures
+\RequirePackage{graphicx} %include figures
+\RequirePackage{pgf,tikz}
+\RequirePackage{circuitikz}
+\usetikzlibrary{babel}  %allow to use tikz library with babel
+
+\RequirePackage{ifthen}    %use if then 
+ 
+
+%############################ Settings ##############################
+\tikzset{%
+    timing/table/axis/.style={->,>=latex},
+    timing/table/axis ticks/.style={},   
+}
+
+%Direction of some device such as resistor, led...
+%1.5 is the minimum length of device according my runs
+\newcommand{\Up}{0,1.5}
+\newcommand{\Down}{0,-1.5}
+\newcommand{\Right}{1.5,0}
+\newcommand{\Left}{-1.5,0}
+
+
+%###### Length of components
+\newcommand{\bipolesLength}[1]{#1cm}     %begin default size
+%Length update
+\newcommand{\setBipolesLength}[1]{
+    \renewcommand{\bipolesLength}{#1}
+    \ctikzset{bipoles/length=\bipolesLength cm}
+}%End \setBipolesLength
+
+%############ Mirrors and inverting
+\newcommand{\Mirror}{}
+\newcommand{\Invert}{}
+
+%Update
+\newcommand{\setMirror}[1]{
+    \renewcommand{\Mirror}{,mirror}
+}%End \setMirror
+
+\newcommand{\setNoMirror}[1]{
+    \renewcommand{\Mirror}{}
+}%End \setMirror
+
+\newcommand{\setInvert}[1]{
+    \renewcommand{\Invert}{,Invert}
+}%End \setInvert
+
+\newcommand{\setNoInvert}[1]{
+    \renewcommand{\Invert}{}
+}%End \setInvert
+
+
+%############## Rotate ###########
+\newcommand{\rotate}{0}
+
+%Update
+\newcommand{\setRotate}[1]{
+    \renewcommand{\rotate}{#1}
+}%End \setRotate
+
+
+%####################### Colors
+%default colors of border colors and background colors
+\newcommand{\deviceBorderColor}{black}
+\newcommand{\deviceBackgroundColor}{white}
+
+%Update
+\newcommand{\setDeviceBorderColor}[1]{
+    \renewcommand{\deviceBorderColor}{#1}
+    \renewcommand{\deviceBackgroundColor}{white} %reset bg color
+}%End \setDeviceBorderColor
+
+\newcommand{\setDeviceBackgroundColor}[1]{
+    \renewcommand{\deviceBorderColor}{black} %reset bg color
+    \renewcommand{\deviceBackgroundColor}{#1}
+}%\setDeviceBackgroundColor
+
+%Reset
+\newcommand{\resetColors}{
+    \renewcommand{\deviceBorderColor}{black} %reset border color
+    \renewcommand{\deviceBackgroundColor}{white} %reset bg color
+}
+%####################################################################
+%############## draw device #########################################
+
+%rotation
+%color
+%anchor
+
+%\ifthenelse{\equal{#1}{0}}{A.}{no A.}
+%Init
+
+\begin{comment}
+    @begin
+    @command \addLogicGate
+    @des 
+    Cette commande permet de dessiner une porte logique à double entrée. Pour dessinder une porte inverseuse, utiliser la commande \addNotGate
+    @sed
+    @input Coordonnées de la porte en (x,y) sans parenthèse
+    @input Référence de la porte pour s'accrocher aux entrées et sorties
+    @input Type de la porte [nand, nor, or, and, or, xor]
+    @input Label de sortie (laisser vide si absence de label souhaité)
+    @input Label de l'entrée 1 (laisser vide si absence de label souhaité)
+    @input Label de l'entrée 2 (laisser vide si absence de label souhaité)
+    @input Nom de la porte [NOR1, AND1...]
+    @begin_example 
+    \addLogicGate{5,5}{logicgate}{nand}{S}{A}{B}{L1}
+    @end_example
+    @end
+    \end{comment}
+
+\newcommand{\addLogicGate}[7] {
+    %\Colors
+    \raiseMessage{Adding logic gate device [type=#3]}
+    \ifthenelse{\equal{\deviceBorderColor}  {black}}
+    {\draw (#1)         node (#2) [rotate=\rotate,xshift=0cm,fill=\deviceBackgroundColor,#3 port] {#7}}%if equal to black
+    {\draw (#1)         node (#2) [rotate=\rotate,xshift=0cm,color=\deviceBorderColor,#3 port] {#7}}
+
+    (#2.out)  node      [anchor=south west, yshift=-0.3cm] {#4}
+    (#2.in 1) node (A1)     [anchor=east,xshift=0cm,yshift=+0.3cm]       {#5}
+    (#2.in 2) node (B1)     [anchor=east,xshift=0cm,yshift=+0.3cm]       {#6};
+}
+
+
+\newenvironment{schema}[1]
+{
+    \begin{center}
+        \makeatletter
+        \def\@captype{figure}
+        \makeatother
+        \newcommand{\TitleSchema}{#1}%use var to print title 
+        %\shorthandoff{:;!?} %Compulsory if frenchb package is used (from babel)
+        \raiseMessage{Creating new schema ['#1']}
+        \begin{tikzpicture}
+            %\setGraphic %command to display with frenchb babel
+    }
+    { 
+        \end{tikzpicture}
+   % \caption{\TitleSchema}
+    \end{center}
+}
+
+
+\newenvironment{numeric}[1]
+{
+\begin{center}
+    \makeatletter
+    \def\@captype{figure}
+    \makeatother
+    \newcommand{\TitleNumeric}{#1}%use var to print title 
+    \raiseMessage{Creating new chronogram ['#1']}
+\begin{tikztimingtable}
+}
+{
+\end{tikztimingtable}%
+\caption{\TitleNumeric}
+\end{center}
+}
+
+
+%cood
+%name device
+%type (npn, pnp)
+%B
+%C
+%E
+\newcommand{\addTransistor}[6] {
+
+    \raiseMessage{Adding transistor device [type=#3]}
+    \ifthenelse{\equal{\deviceBorderColor}  {black}}
+    {\draw (#1)         node (#2) [xshift=0cm,fill=\deviceBackgroundColor,#3] {}}%if equal to black
+    {\draw (#1)         node (#2) [xshift=0cm,color=\deviceBorderColor,#3] {}}
+
+    (#2.B)  node      [anchor=south west, xshift=0cm, yshift=0cm] {#4} 
+    (#2.C) node (A1)     [anchor=north,xshift=0.3cm,yshift=+0.1cm]       {#5}
+    (#2.E) node (B1)     [anchor=south,xshift=0.3cm,yshift=0.1cm]       {#6};
+}
+%node 1
+%node 2
+%wire type
+\newcommand{\addWire}[3] {
+    \draw (#1) #3 (#2);
+}%end addWire
+
+\newcommand{\orthogonalWireA}{-|}
+\newcommand{\orthogonalWireB}{|-}
+\newcommand{\directWire}{--}
+
+%coord
+%label
+%value
+\newcommand{\addNode}[3] {
+    \node (#2) at (#1) {#3};
+}%end addWire
+
+
+%posiition (x,y)
+%color
+%width in pt
+\newcommand{\addPoint}[3] {
+    \filldraw [#2] (#1) circle (#3pt);
+}%end addWire
+
+%posiition (x,y)
+%name
+%value
+\newcommand{\addPower}[3] {
+    \raiseMessage{Adding power device [name=#2, value=#3]}
+    \draw (#1) node (#2) [vcc] {#3};
+}%end addPower
+
+%posiition (x,y)
+%name
+%value
+\newcommand{\addGround}[3] {
+    \draw (#1) node (#2) [ground] {#3};
+}%end addGround
+
+%posiition depart(x,y)
+%orientation de départ
+%position arrivée
+\newcommand{\addResistor}[4] {
+    \raiseMessage{Adding resistor device}
+    \draw (#1) to[R,l=$R$] +(#2) #4 (#3);
+}%end addResistor
+
+%posiition depart(x,y)
+%orientation de départ
+%position arrivée
+%type de liaison
+%nom de la led
+\newcommand{\addLed}[5] {
+    \raiseMessage{Adding LED device [name=#5]}
+    \ifthenelse{\equal{\deviceBorderColor}  {black}}
+    {\draw (#1) to[leD,l_=#5,fill=\deviceBackgroundColor] +(#2) #4 (#3);}
+    {\draw (#1) to[leD,l_=#5,color=\deviceBorderColor] +(#2) #4 (#3);}
+
+    % {\draw (#1)         node (#2) [xshift=0cm,fill=\deviceBackgroundColor,#3] {}}%if equal to black
+    % {\draw (#1)         node (#2) [xshift=0cm,color=\deviceBorderColor,#3] {}}
+
+    %\draw (#1) to[leD,l_=#5] +(#2) #4 (#3);
+}%end addResistor%############################################################
+%###### Package 'Font' 
+%###### This package contains some tools to set fonts
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage{fontawesome}
+
+   %############################################################
+%###### Package 'Glossaries' 
+%###### This package contains some tools to set glossaries
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage[xindy, acronym, nomain, toc]{glossaries}
+%################################################################
+\makeglossaries
+
+\renewcommand{\glossary}[1]{%
+\gls{#1}
+}%############################################################
+%###### Package 'Graphics' 
+%###### This package contains some tools to create graphics 2D or 3D
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+%\ProvidesPackage{Utils}[2013/01/13 Utils Package]
+%############################################################
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}     %UTF-8 encoding
+\RequirePackage{csvsimple} 
+\RequirePackage{tikz,pgfplots,pgf}  
+\RequirePackage{version}            %use commented code
+
+\RequirePackage{graphics} %include figures
+\RequirePackage{graphicx} %include figures
+\RequirePackage{caption}
+\RequirePackage{subcaption} %Add
+\RequirePackage{version}            %use commented code
+\pgfplotsset{compat=1.7}
+%###### Checking if babel is loaded
+\makeatletter
+\@ifpackageloaded{babel}
+{% if the package was loaded
+\newcommand{\setGraphic}{\shorthandoff{:;!?}} %Compulsory if frenchb package is used (from babel)
+\frenchbsetup{StandardLists=true} %to include if using \RequirePackage[french]{babel} -> rounded list
+}
+{%else:
+\newcommand{\setGraphic}{} %Compulsory if frenchb package is used (from babel)
+}
+\makeatother
+%############################################################
+%### WARNING : USE \shorthandoff{:;!?} before \begin{tikzpicture} 
+%### environment
+%############################################################
+\begin{comment}
+@begin
+@env graphics
+@des 
+Cet environnement permet de tracer des courbes en 2D à partir de points, d'équations ou de fichier CSV
+@sed
+@input Largeur du graphique ]0;1] 
+@input Hauteur du graphique ]0;1+] 
+@input Valeur minimale en abscisse 
+@input Valeur maximale en abscisse
+@input Valeur minimale en ordonnée 
+@input Valeur maximale en ordonnée
+@input Légende de l'axe des abscisse
+@input Légende de l'axe des ordonnées
+@input Titre du graphique
+@begin_example 
+\begin{graphics}{0.8}{0.5}{0}{100}{-10}{10}{ve}{vs}{Titre}
+\addPointsFromCSV{raw.csv}
+\end{graphics}
+@end_example
+@end
+\end{comment}
+
+\newenvironment{graphicFigure}[9]
+{
+    \raiseMessage{Creating new graphic figure [title='#9']}
+    \begin{center}
+        \makeatletter
+        \def\@captype{figure}
+        \makeatother
+
+        \newcommand{\TitleGraphic}{#9}%use var to print title 
+        \begin{tikzpicture}
+        \setGraphic %command to display with frenchb babel
+    %\shorthandoff{:;!?} %Compulsory if frenchb package is used (from babel)
+    \begin{axis}[width=#1\linewidth,height=#2\linewidth,xmin=#3,xmax=#4,  ymin=#5, ymax=#6, scale only axis,xlabel=#7,ylabel=#8] %grid=both
+    }
+    { 
+    \end{axis}
+        \end{tikzpicture}
+        \captionof{figure}{\TitleGraphic}
+    \end{center}
+}
+
+
+\newenvironment{graphic}[9]
+{
+    \raiseMessage{Creating new graphic [title='#9']}
+    \newcommand{\TitleGraphic}{#9}%use var to print title 
+        \begin{tikzpicture}
+        \setGraphic %command to display with frenchb babel
+    \begin{axis}[width=#1\linewidth,height=#2\linewidth,xmin=#3,xmax=#4,  ymin=#5, ymax=#6, scale only axis,xlabel=#7,ylabel=#8, title=#9] %grid=both
+    }
+    { 
+    \end{axis}
+        \end{tikzpicture}
+
+}
+    
+%############################################################
+\begin{comment}
+@begin
+@command addPoints
+@des 
+Cette commande permet de tracer une courbe en passant une liste de coordonnées de points : (x1,y1)(x2,y2)(...)
+Il faut que cette commande soit utilisées dans l'environnement \textbf{graphics}.
+@sed
+@input Couleur de la courbe
+@input Liste des coordonnées des points. Chaque point est entre parenthèse et les coordonnées sont séparées par une virgule
+@begin_example 
+\addPoints{red}{(0,0)(5,0)(5,5)(10,5)(10,0)}
+@end_example
+@end
+\end{comment}   
+
+\newcommand{\addPoints}[2]{
+    \addplot+[thick,mark=none, color=#1] coordinates{#2};
+}
+
+%############################################################
+\begin{comment}
+@begin
+@command addTrace
+@des 
+Cette commande permet de tracer une courbe en passant une équation en fonction de x
+Il faut que cette commande soit utilisées dans l'environnement \textbf{graphics}.
+@sed
+@input Couleur de la courbe
+@input Début du domaine de définition
+@input Fin du domaine de définition
+@input Équation à tracer
+@begin_example 
+\addTrace{blue}{4}{8}{8x^2}
+@end_example
+@end
+\end{comment}
+
+\newcommand{\addTrace}[4]{
+    \addplot [#1, domain=#2:#3, samples=400] {#4};
+}
+
+%############################################################
+\begin{comment}
+@begin
+@command addPointsFromCSV
+@des 
+Cette commande permet de tracer une courbe en passant un fichier de données CSV (ou format TXT)
+Il faut que cette commande soit utilisées dans l'environnement \textbf{graphics}.
+@sed
+@input Couleur de la courbe
+@input délimitateur des données (comma=virgule, semicolon=point-vigule)
+@input Fichier des données
+@begin_example 
+\addPointsFromCSV{blue}{semicolon}{raw.csv}
+@end_example
+@end
+\end{comment}
+
+\newcommand{\addPointsFromCSV}[3]{
+    \IfFileExists{#3}{
+    \addplot+[thick, mark=none, color=#1] table[mark=none,col sep=#2] {#3};
+    \raiseMessage{File '#3' loaded !}
+    }
+    {\raiseError{[import failed]'#3' \stop}
+    }
+}
+
+%############################################################
+\begin{comment}
+@begin
+@command addLegend
+@des 
+Cette commande permet d'ajouter une légende au graphique
+Il faut que cette commande soit utilisées dans l'environnement \textbf{graphics}.
+@sed
+@input Légendes de chaque courbe séparées par une virgule
+@begin_example 
+\addLegend{sig1, sig2, sig3}
+@end_example
+@end
+\end{comment}
+
+\newcommand{\addLegend}[1]{
+    \legend{#1}
+}
+
+%############################################################%############################################################
+%###### Package 'Layout' 
+%###### This package contains some tools to set page layout or text
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage{lmodern}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}     %UTF-8 encoding
+\RequirePackage{graphicx}           %Images
+\RequirePackage{caption}            %légende
+\RequirePackage{textcomp}           %special characters
+\RequirePackage{fancyhdr}           %headers & footers
+\RequirePackage{lastpage}           %page counter
+
+\RequirePackage{float}              %image floating
+\RequirePackage{wrapfig}
+\RequirePackage{subcaption}         %Subcaption
+
+\RequirePackage{geometry}
+
+%############################################################
+
+\begin{comment}
+@begin
+@command \setHeader
+@des 
+Cette commande permet de créer une page de garde minimaliste
+@sed
+@input Titre du document
+@input Auteur(s) - Les retours à la ligne se font en utilisant la commande \\
+@input La date
+@begin_example 
+\setHeader{Titre}{Auteur 1 \\ Auteur 2}{XX/XX/XXXX}
+@end_example
+@end
+\end{comment}
+
+\newcommand{\setHeader}[3]{
+\title{#1}
+\author{#2}
+\date{#3}
+\maketitle
+}
+
+
+
+
+
+
+%###############################################################
+\begin{comment}
+@begin
+@command \partImg
+@des 
+Cette commande permet de créer une page de partie avec une image
+@sed
+@input Titre de la partie
+@input Source de l'image \\
+@input Ratio
+@begin_example 
+\partImg{Partie}{Images/file.png}{0.2}
+@end_example
+@end
+\end{comment}
+\newcommand{\partImg}[3]{
+    \part[#1]{#1 \\\vspace*{2cm} \makebox{\centering \includegraphics[width=#3\textwidth]{#2}}}
+}
+
+
+%###############################################################
+\begin{comment}
+@begin
+@command \setHeaderImage
+@des 
+Cette commande permet de créer une page de garde avec une image centrée, un titre, sous titre en plus
+@sed
+@input Titre du document
+@input Auteur(s) - Les retours à la ligne se font en utilisant la commande \\
+@input La date
+@begin_example 
+\setHeaderImage{Titre}{Auteur 1 \\ Auteur 2}{XX/XX/XXXX}
+@end_example
+@end
+\end{comment}
+
+\newcommand{\setHeaderImage}[6]{
+\begin{titlepage}
+  \begin{sffamily}
+  \begin{center}
+    \includegraphics[scale=#2]{#1} \sn \sn
+    \hfill
+%\HRule \\[0.4cm]
+\begin{center}
+    {\Huge \textbf{#3}} \sn
+    \textbf{#4}\sn \sn
+\end{center}
+\sn \sn
+ #5 \sn
+   \vfill
+   {\large #6}
+  \end{center}
+  \end{sffamily}
+\end{titlepage}
+}
+
+
+%### Définition du style de page 'classic' si report
+
+\newcommand{\addPresentation}[6]{
+\fancypagestyle{classic}{
+    \rhead{#3}  
+    \lhead{#1}
+    \chead{#2}
+    \rfoot{#6}  %Page courante / Nombre de page
+    \cfoot{#5}
+    \lfoot{#4}
+}
+
+\@ifclassloaded{report}{
+\makeatletter
+\renewcommand\chapter{\if@openright\cleardoublepage\else\clearpage\fi
+                      \thispagestyle{classic} %Thème 'classic'
+                      \global\@topnum\z@
+                      \@afterindentfalse
+                      \secdef\@chapter\@schapter}
+\makeatother
+}%End renew chapter
+
+\@ifclassloaded{book}{
+\makeatletter
+\renewcommand\chapter{\if@openright\cleardoublepage\else\clearpage\fi
+                      \thispagestyle{classic} %Thème 'classic'
+                      \global\@topnum\z@
+                      \@afterindentfalse
+                      \secdef\@chapter\@schapter}
+\makeatother
+}%End renew chapter
+
+\pagestyle{classic}
+}
+
+
+\newcommand{\setRightHeader}[1]{\rhead{#1}}
+\newcommand{\setCenterHeader}[1]{\chead{#1}}
+\newcommand{\setLeftHeader}[1]{\lhead{#1}}
+
+\newcommand{\setRightFooter}[1]{\rfoot{#1}}
+\newcommand{\setCenterFooter}[1]{\cfoot{#1}}
+\newcommand{\setLeftFooter}[1]{\lfoot{#1}}
+
+
+
+\newcommand{\setHeaderLine}[1]{ 
+\renewcommand{\headrulewidth}{#1pt} 
+}
+\newcommand{\setFooterLine}[1]{ 
+\renewcommand{\footrulewidth}{#1pt} 
+}
+  
+\newcommand{\currentChapter}{\leftmark}
+
+%Raccourcis
+\@ifclassloaded{report)}{
+
+\newcommand{\setAliasChapter}[1]{
+\makeatletter
+\renewcommand{\@chapapp}{#1}   %Le mot 'Chapitre' est remplacé par 'Section'
+\makeatother
+}
+}%End if
+{
+  \newcommand{\setAliasChapter}[1]{
+}
+}
+
+\@ifclassloaded{book)}{
+\newcommand{\currentChapter}{\leftmark}
+\newcommand{\setAliasChapter}[1]{
+\makeatletter
+\renewcommand{\@chapapp}{#1}   %Le mot 'Chapitre' est remplacé par 'Section'
+\makeatother
+}
+}%End if
+
+
+\newcommand{\currentPage}{\thepage/\pageref{LastPage}}%############################################################
+%###### Package 'name' 
+%###### This package contains ...
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage{lmodern}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}     %UTF-8 encoding
+\RequirePackage{graphicx}           %Images
+\RequirePackage{caption}            %légende
+\RequirePackage{float}              %image floating
+\RequirePackage{wrapfig}
+\RequirePackage{subcaption}         %Subcaption
+
+%################################################################
+
+
+\newcounter{imgCounter}  %Number of img
+
+%##################
+\begin{comment}
+    @begin
+    @command \img
+    @des 
+    Cette commande permet de mettre une image centrée avec un titre et une taille
+    @sed
+    @input Source et nom de l'image
+    @input Titre de l'image
+    @input Taille de l'image ]0;1+]
+    @begin_example 
+    \img{Image.png}{Titre de l'image}{0.5}
+    @end_example
+    @end
+\end{comment}
+    
+\newcommand{\img}[3]{\IfFileExists{#1}{\begin{figure}[H]\centering\ \includegraphics[scale=#3]{#1}\caption{#2}\end{figure} \addtocounter{imgCounter}{1} \raiseMessage{Image '#1' [size=#3,id \arabic{imgCounter}] loaded !}  }{\raiseWarning{Image '#1' no loaded}}}
+
+
+\begin{comment}
+      @begin
+      @command \imgr
+      @des 
+      Cette commande permet de mettre une image centrée avec un titre et une taille et un angle
+      @sed
+      @input Source et nom de l'image
+      @input Titre de l'image
+      @input Taille de l'image ]0;1+]
+      @input angle en degres
+      @begin_example 
+      \img{Image.png}{Titre de l'image}{0.5}{90}
+      @end_example
+      @end
+\end{comment}
+\newcommand{\imgr}[4]{\IfFileExists{#1}{\begin{figure}[H]\centering\ \includegraphics[scale=#3,angle=#4]{#1}\caption{#2}\end{figure} \addtocounter{imgCounter}{1} \raiseMessage{Image '#1' [size=#3,id \arabic{imgCounter},angle=#4] loaded !} }{\raiseWarning{Image '#1' no loaded}}}
+
+    %################################################################
+    \begin{comment}
+    @begin
+    @command \imgf
+    @des 
+    Cette commande permet de mettre une image centrée sans titre et une taille de manière flottante avec le contenu
+    @sed
+    @input Source et nom de l'image
+    @input Titre de l'image
+    @input Taille de l'image ]0;1+] par rapport au texte
+    @input Taille de l'image par rapport à l'espace qui lui est reservé
+    
+    @begin_example 
+    \imgf{Image.png}{Titre de l'image}{0.5}{0.5}
+    @end_example
+    @end
+    \end{comment}
+    
+
+
+
+    %################################################################%############################################################
+%###### Package 'Index' 
+%###### This package contains some tools to set index
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+%################################################################
+\RequirePackage{makeidx}            %make index
+
+\makeindex%############################################################
+%###### Package 'name' 
+%###### This package contains ...
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage{enumitem}
+\RequirePackage{pifont}
+
+%################################################################
+
+\newcommand{\setTriangleList}{\renewcommand{\labelitemi}{$\blacktriangleright$}}
+\newcommand{\setCircleList}{\renewcommand{\labelitemi}{$\circ$}}
+\newcommand{\setBulletList}{\renewcommand{\labelitemi}{$\bullet$}}
+\newcommand{\setDiamondList}{\renewcommand{\labelitemi}{$\diamond$}}
+
+\newcommand{\Triangle}{$\blacktriangleright$}
+\newcommand{\Circle}{$\circ$}
+\newcommand{\Bullet}{$\bullet$}
+%\newcommand{\Diamond}{$\diamond$}
+
+
+\newenvironment{items}[2]
+{      
+        \begin{itemize}[font=\color{#1}, label=#2]  
+    }
+    { 
+        \end{itemize}
+}%############################################################
+%###### Package 'name' 
+%###### This package contains ...
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\tcbuselibrary{listings,breakable, skins}
+%\RequirePackage{amsmath}
+
+%################################################################
+
+\newtcbox{\lorange}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe=orange!50!black,coltext=orange!25!black,colback=orange!10!white,
+  overlay={\begin{tcbclipinterior}\fill[orange!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+
+\newtcbox{\lred}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe=red!50!black,coltext=red!25!black,colback=red!10!white,
+  overlay={\begin{tcbclipinterior}\fill[red!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+
+\newtcbox{\lgreen}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe=green!50!black,coltext=green!25!black,colback=green!10!white,
+  overlay={\begin{tcbclipinterior}\fill[green!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+
+\newtcbox{\lmagenta}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe=magenta!50!black,coltext=magenta!25!black,colback=magenta!10!white,
+  overlay={\begin{tcbclipinterior}\fill[magenta!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+  
+\newtcbox{\lpurple}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe=purple!50!black,coltext=purple!25!black,colback=purple!10!white,
+  overlay={\begin{tcbclipinterior}\fill[purple!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+    
+\newtcbox{\lblue}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe=blue!50!black,coltext=blue!25!black,colback=blue!10!white,
+  overlay={\begin{tcbclipinterior}\fill[blue!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+   
+   
+\newtcbox{\lcyan}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe=cyan!50!black,coltext=cyan!25!black,colback=cyan!10!white,
+  overlay={\begin{tcbclipinterior}\fill[cyan!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+
+\newtcbox{\lbrown}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+    right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+    colframe=brown!50!black,coltext=brown!25!black,colback=brown!10!white,
+    overlay={\begin{tcbclipinterior}\fill[brown!75!white] (frame.south west)
+      rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+   
+\newtcbox{\lyellow}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+  right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+  colframe=yellow!50!black,coltext=yellow!25!black,colback=yellow!10!white,
+  overlay={\begin{tcbclipinterior}\fill[yellow!75!white] (frame.south west)
+    rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+        
+\newtcbox{\lblack}[1]{enhanced, nobeforeafter,tcbox raise base,boxrule=0.4pt,top=0mm,bottom=0mm,
+    right=0mm,left=4mm,arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}},
+    colframe=black!50!black,coltext=black!25!black,colback=black!10!white,
+    overlay={\begin{tcbclipinterior}\fill[black!75!white] (frame.south west)
+      rectangle node[text=white,font=\sffamily\bfseries\tiny,rotate=90] {#1} ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}%############################################################
+%###### Package 'Layout' 
+%###### This package contains some tools to set page layout or text
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage{lmodern}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}     %UTF-8 encoding
+
+\RequirePackage{xcolor}             %define new colors
+\RequirePackage{xparse}
+\RequirePackage{amssymb,amsthm}     %math
+
+
+%################################################################
+\begin{comment}
+@begin
+@command \bold
+@des 
+Cette commande permet de mettre le texte en gras
+@sed
+@input Texte à mettre en gras
+@begin_example 
+\bold{texte en gras}
+@end_example
+@end
+\end{comment}
+
+\renewcommand{\bold}[1]{\textbf{#1}}
+
+%################################################################
+\begin{comment}
+@begin
+@command \italic
+@des 
+Cette commande permet de mettre le texte en italique
+@sed
+@input Texte à mettre en italique
+@begin_example 
+\italic{texte en italique}
+@end_example
+@end
+\end{comment}
+
+\newcommand{\italic}[1]{\textit{#1}}
+
+%################################################################
+\begin{comment}
+@begin
+@command \ib
+@des 
+Cette commande permet de mettre le texte en italique et en gras
+@sed
+@input Texte à mettre en italique et gras
+@begin_example 
+\ib{texte en italique et gras}
+@end_example
+@end
+\end{comment}
+
+\newcommand{\ib}[1]{\textit{\textbf{#1}}}
+
+%################################################################
+\begin{comment}
+@begin
+@command \bi
+@des 
+Cette commande permet de mettre le texte en italique et en gras
+@sed
+@input Texte à mettre en italique et gras
+@begin_example 
+\bi{texte en italique et gras}
+@end_example
+@end
+\end{comment}
+
+\newcommand{\bi}[1]{\textit{\textbf{#1}}}
+
+
+\begin{comment}
+@begin
+@command \n
+@des 
+Cette commande permet de faire un saut de ligne
+@sed
+@begin_example 
+Text \n Next text
+@end_example
+@end
+\end{comment}
+
+\newcommand{\n}{\\}
+
+%################################################################
+\begin{comment}
+@begin
+@command \sn
+@des 
+Cette commande permet de faire un espace vertical
+@sed
+@begin_example 
+Text \sn Next text
+@end_example
+@end
+\end{comment}
+
+\newcommand{\sn}{\vskip 0.5cm}
+
+%################################################################
+
+%#######################################%############################################################
+%###### Package 'name' 
+%###### This package contains tools to use links, url and other
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage{hyperref}           %Url
+
+%################################################################
+\begin{comment}
+@begin
+@command \setParameters
+@des 
+Cette commande permet de définir les propriétés du document PDF (auteur, titre...)
+@sed
+@input Titre du PDF
+@input Auteur(s)
+@input Sujet du fichier PDF (courte phrase)
+@input Créateur du fichier PDF
+@input Mots-clés (liste)
+@input Couleurs des liens
+@input Couleurs des citations dans la bibliographie
+@input Couleurs des liens de fichier
+@input Couleurs des liens externe
+@begin_example 
+\setParameters {Tutoriel Latex} {Nicolas LE GUERROUE} {Tutoriel Latex pour la mise en place des outils} {\author}{Latex}{green}{blue}{blue}
+@end_example
+@end
+\end{comment}
+
+\newcommand{\setParameters}[8]{
+   \typeout{>>> Utils - [MData] : title='#1}
+   \typeout{>>> Utils - [MData] : author(s)='#2'}
+   \typeout{>>> Utils - [MData] : subject='#3'}
+   \typeout{>>> Utils - [MData] : creator='#4'}
+   \typeout{>>> Utils - [MData] : keywords='#5'}
+   \typeout{>>> Utils - [MData] : link colors='#6'}
+   \typeout{>>> Utils - [MData] : bib links colors='#7'}
+   \typeout{>>> Utils - [MData] : link file colors='#8'}
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={1},    % fits the width of the page to the window
+    pdftitle={#1},    % title
+    pdfauthor={#2},     % author
+    pdfsubject={#3},   % subject of the document
+    pdfcreator={#4},   % creator of the document
+    pdfproducer={#4}, % producer of the document
+    pdfkeywords={#5}, % list of keywords
+    pdfnewwindow=true,      % links in new PDF window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=black,          % color of internal links (change box color with linkbordercolor)
+    citecolor=#6,        % color of links to bibliography
+    filecolor=#7,         % color of file links
+    urlcolor=#8        % color of external links
+} }%############################################################
+%###### Package 'Maths' 
+%###### This package contains some tools to set mathematic tools
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+%Vecteur à 3 composantes  
+\newcommand{\evec}[3]{\left (\begin{array}{ccc} #1 \\ #2 \\ #3\end{array} \right )}
+%Matrice à 3 composantes
+\newcommand{\emat}[3]{\left [\begin{array}{ccc} #1 \\ #2 \\ #3\end{array} \right ]}
+% \emat{a & b & c}{d & e & f}{g & h & i}%############################################################
+%###### Package 'MessageBox' 
+%###### This package contains some tools to set messageBox
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage[many]{tcolorbox}
+\RequirePackage{color}              %colors
+\RequirePackage{geometry}
+%################################################################
+\newcounter{messageBoxCounter}  %Number of msgBox
+%###############################################################
+
+\newcommand{\messageBox}[5]{
+% 1: title
+% 2: color frame
+% 3: color bg
+% 4: content
+% 5: titlecolor
+%\messageBox{Remarque}{green}{white}{Erreur 0xff58}{black}
+%\messageBox{Installation}{gray}{white}{DE}{black}
+%\messageBox{Avertissement}{orange}{white}{dede}{black}
+%\messageBox{Erreur}{red}{white}{dede}{black}
+\addtocounter{messageBoxCounter}{1}
+\raiseMessage{MessageBox '#1' [id \arabic{messageBoxCounter}] created !}
+ \begin{tcolorbox}[title=#1,
+colframe=#2!80,
+colback=#3!10,
+coltitle=#5!100,  
+]
+#4
+\end{tcolorbox}
+}%############################################################
+%###### Package 'Glossaries' 
+%###### This package contains some tools to set glossaries
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage{nomencl}  %nomenclature
+%################################################################
+
+
+\makenomenclature
+
+%##### Convention [Nomenclature]
+  \renewcommand{\nomgroup}[1]{%
+  \item[\bfseries
+  \ifthenelse{\equal{#1}{P}}{Constantes physiques}{%
+  \ifthenelse{\equal{#1}{O}}{Autres symboles}{%
+  \ifthenelse{\equal{#1}{N}}{Nombres spéciaux}{ 
+  \ifthenelse{\equal{#1}{A}}{Amplificateurs Opérationnels}{ 
+  \ifthenelse{\equal{#1}{M}}{Mécanique}{ 
+  \ifthenelse{\equal{#1}{E}}{Électronique}{}}}}}}%
+  ]}
+
+
+  % Add unit on convention [nomenclature]
+%----------------------------------------------
+\newcommand{\addUnit}[1]{%
+\renewcommand{\nomentryend}{\hspace*{\fill}#1}}
+%----------------------------------------------%############################################################
+%###### Package 'name' 
+%###### This package contains ...
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+
+\RequirePackage{csvsimple} 
+\RequirePackage{tikz,pgfplots,pgf}  
+\RequirePackage{version}            %use commented code
+
+\RequirePackage{graphics} %include figures
+\RequirePackage{graphicx} %include figures
+\RequirePackage{caption}
+\RequirePackage{subcaption} %Add
+\RequirePackage{version}            %use commented code
+\pgfplotsset{compat=1.7}
+
+%############################################################
+%################################################################
+%1 : color
+%2 : diameter
+\newcommand{\ball}[2]{
+    \tikz\path[shading=ball,
+    ball color=#1] circle (#2mm);
+}
+
+
+
+
+
+%############################################################
+\begin{comment}
+    @begin
+    @command plot
+    @des 
+    Cette commande permet de tracer des surfaces 3D
+    @sed
+    @input Iitre du graphique
+    @input Equation à deux variables (x et y)
+    @begin_example 
+    \plot{Titre}{x*x+y*5}
+    @end_example
+    @end
+    \end{comment}   
+        
+    \newcommand{\plot}[2]{
+        \raiseMessage{Creating new plot [title='#1']}
+    \begin{tikzpicture}
+    \setGraphic %command to display with frenchb babel
+     \begin{axis}[title={#1}, xlabel=x, ylabel=y]
+     \addplot3[surf,domain=0:360,samples=50]
+     {#2};
+     \end{axis}
+     \end{tikzpicture}
+     }
+        %############################################################
+%###### Package 'Titles' 
+%###### This package contains some tools to set title color
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage{pdfpages} 
+%################################################################
+
+%\includepdf[⟨options⟩]{⟨fichier⟩}\RequirePackage{color}              %colors
+\RequirePackage{listings}           %new env such as Bash, Python
+\RequirePackage{xcolor}             %define new colors
+\RequirePackage{graphicx}             %define new colors
+\RequirePackage{xparse}
+\RequirePackage{amssymb,amsthm}     %math
+\RequirePackage{multirow}
+\RequirePackage{tabularx}           %use for csv file [table]
+\RequirePackage{textcomp}           %special characters
+
+%###############################################################
+%### Couleurs programmation
+\definecolor{green}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{purple}{rgb}{0.58,0,0.82}
+\definecolor{bg}{rgb}{0.98,0.98,0.98}
+%###############################################################
+%### définition du style 'Python' [begin{Python}]
+\lstdefinestyle{Python}{
+    backgroundcolor=\color{bg},   
+    commentstyle=\color{green},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{gray},
+    stringstyle=\color{purple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=none,   %left, right, none 
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,  
+    tabsize=2
+}
+\lstset{style=Python}
+\lstset{literate=
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {Ã}{{\~A}}1 {ã}{{\~a}}1 {Õ}{{\~O}}1 {õ}{{\~o}}1 {’}{{'}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+  {»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1
+}
+\lstnewenvironment{Python}[1]{\lstset{language=Python, title=#1}}{}
+%###############################################################
+%###############################################################
+%### définition du style 'Cpp' [begin{Cpp}]
+\lstdefinestyle{Cpp}{
+    basicstyle=\ttfamily,
+    columns=fullflexible,
+    keepspaces=true,
+    upquote=true,
+    showstringspaces=false,
+    commentstyle=\color{olive},
+    keywordstyle=\color{blue},
+    identifierstyle=\color{violet},
+    stringstyle=\color{purple},
+    numbers=none,
+    language=c,
+}
+\lstnewenvironment{Cpp}[1]{\lstset{style=Cpp, title=#1}}{}
+
+%###############################################################
+%### définition du style 'Bash' [begin{Bash}]
+\lstdefinestyle{Bash}{
+    basicstyle=\ttfamily,
+    columns=fullflexible,
+    keepspaces=true,
+    upquote=true,
+    frame=trBL, %frame=trBL, shadowbox, trrb
+    %frameround=fttt,
+    numbers=none,
+    showstringspaces=false,
+    commentstyle=\color{olive},
+    keywordstyle=\color{blue},
+    identifierstyle=\color{black},
+    stringstyle=\color{gray},
+    language=bash,
+    morekeywords={sudo,apt-get,install, autoremove, update, upgrade, chmod, ifconfig}
+}
+\lstnewenvironment{Bash}[1]{\lstset{style=Bash, title=#1}}{}
+
+%###############################################################
+%### définition du style 'Latex' [begin{Latex}]
+\lstdefinestyle{Latex}{
+    basicstyle=\ttfamily,
+    columns=fullflexible,
+    keepspaces=true,
+    upquote=true,
+    frame=trBL, %frame=trBL, shadowbox, trrb
+    %frameround=fttt,
+    numbers=none,
+    showstringspaces=false,
+    commentstyle=\color{olive},
+    keywordstyle=\color{blue},
+    identifierstyle=\color{black},
+    stringstyle=\color{gray},
+    language=tex,
+    morekeywords={nomenclature, badge,texttiming, addPower,addGround,setDeviceBackgroundColor, 
+    setRotate, addLogicGate, resetColors, addTransistor,
+    addWire,addNode,addLed, addResistor,
+    addPoints, addPointsFromCSV,addLegend,addTrace,
+    setHeaderImage, setHeader, setFooterLine, setHeaderLine, partImg, setAliasChapter, addPresentation,
+    addParent, setParameters,
+    img, imgf, imgr,
+    includepdf, setFullPage, currentChapter, bold, italic, ib,sn,
+    \chapter, \section, \subsection, \subsubsection, \begin, \end, \item, items, messageBox, evec, emat, plot, ball,
+    lorange,lred,lgreen, lmagenta,lpurple,lcyan,lblue,lbrown,lyellow,lblack, tree}
+    }
+\lstnewenvironment{Latex}[1]{\lstset{style=Latex, title=#1}}{}%############################################################
+%###### Package 'Theorems' 
+%###### This package contains some tools to set theorems
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage{amssymb,amsthm}     %math
+%################################################################
+%###############################################################
+\newtheorem{question}{Question}
+\newtheorem{reponse}{$>>>$}
+\newtheorem{propriete}{Propriété}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remarque}{Remarque}
+\newtheorem{exemple}{Exemple}
+\newtheorem{definition}{Definition}%############################################################
+%###### Package 'Titles' 
+%###### This package contains some tools to set title color
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+\RequirePackage[explicit]{titlesec} 
+%################################################################
+
+% \@ifclassloaded{report}{
+%     \titleformat{\chapter}[display] {\fontsize{17pt}{12pt}\selectfont \bfseries}{\textcolor{blue} {\chaptertitlename\ \thechapter: #1}}{20pt}{\Huge}
+% }
+
+\titleformat{\section}[display] {\fontsize{17pt}{12pt}\selectfont \bfseries}{\textcolor{DarkBlue} {#1}}{20pt}{\Huge}
+\titleformat{\subsection}[display] {\fontsize{15pt}{12pt}\selectfont \bfseries}{\textcolor{orange} {#1}}{20pt}{\large}
+\titlespacing*{\section}{0pt}{20pt}{-30pt}
+\titlespacing*{\subsection}{0pt}{20pt}{-20pt}%############################################################
+%###### Package 'Trees' 
+%###### This package contains some tools to generate trees
+%###### Author  : Nicolas LE GUERROUE
+%###### Contact : nicolasleguerroue@gmail.com
+%############################################################
+
+\RequirePackage{tikz-timing}
+
+\RequirePackage{graphics} %include figures
+\RequirePackage{graphicx} %include figures
+\RequirePackage{pgf,tikz}
+\RequirePackage{circuitikz}
+\usetikzlibrary{babel}  %allow to use tikz library with babel
+%###############################################################
+
+%1 : content
+%2 : color
+%child { node {Sonde\_MySensors}
+%child { node [selected] {Sonde\_MySensors.ino}}
+%}
+%child [missing] {}		
+%child { node {passerelle\_MySensors}
+%child { node [selected] {Passerelle\_MySensors.ino}}
+%};
+\newcommand{\addParent}[2] {
+    \node [color=#2] {#1}
+}
+
+%title
+\newenvironment{tree}[1] {
+    \begin{figure}[h!]
+    \centering
+    \usetikzlibrary{trees}
+
+    \tikzstyle{every node}=[draw=black,thick,anchor=west]
+    \tikzstyle{selected}=[draw=blue,fill=blue!30]
+    \tikzstyle{optional}=[dashed,fill=gray!50]
+    \begin{tikzpicture}[%
+        grow via three points={one child at (0.5,-0.7) and
+        two children at (0.5,-0.7) and (0.5,-1.4)},
+        edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+}
+{
+    \end{tikzpicture}
+    \tikzstyle{every node}=[]
+    \tikzstyle{selected}=[]
+    \tikzstyle{optional}=[]
+    \caption{Arborescence du projet}
+    \end{figure}
+}
+
+  
+
+
+
+
+  
+%\usepackage[Lenny]{fncychap}   %Sonny, Lenny, Glenn, Conny, Rejne, Bjarne
+%#############################################################
+%#### Settings
+%#############################################################
+%#############################################################
+%If you want to set on fullpage, change this bloc
+%#############################################################
+\geometry{hmargin=2cm,vmargin=2.5cm}
+%#############################################################
+%#############################################################
+%If you want rename the chapter name, change the value of argument
+%#############################################################
+\setAliasChapter{Section}
+%#############################################################
+%#############################################################
+%If you want to add presentation, modify the next bloc
+%The firt line is about the header : 
+% {left content}{center content}{right content}
+%The second line is about the footer : 
+% {left content}{center content}{right content}
+%####
+%to get the current chapter name, use \currentChapter command as content
+%to get the current number page, use \currentPagecommand as content
+\addPresentation
+{Synthèse Latex} {} {\currentChapter}
+{Bibliothèque Utils} {} {\currentPage}
+%#############################################################
+%Change the width of footer line and header line
+%To delete it, set value to 0
+\setHeaderLine{0.2}
+\setFooterLine{0.2}
+
+\setcounter{tocdepth}{2} %depth of table of content
+\setcounter{secnumdepth}{2}
+
+%#############################################################
+%Change the name of the section "Nomenclature"
+%To delete it, set value to 0
+\renewcommand{\nomname}{Conventions}
+%Setting up the parameter of PDF file as name, author...
+\begin{comment}
+@input Titre du PDF
+@input Auteur(s)
+@input Sujet du fichier PDF (courte phrase)
+@input Créateur du fichier PDF
+@input Producteur du fichier PDF
+@input Mots-clés (liste)
+@input Couleurs des liens
+@input Couleurs des citations dans la bibliographie
+@input Couleurs des liens de fichier
+\end{comment}
+\setParameters {Tutoriel Latex} {Nicolas Le Guerroué} {Bibliothèque Utils} {Nicolas Le Guerroué}{Latex}{green}{blue}{blue}
+  
+
+
+\titleformat{\chapter}
+  {\gdef\chapterlabel{}
+   \normalfont\sffamily\Huge\bfseries\scshape}
+  {\gdef\chapterlabel{\thechapter)\ }}{0pt}
+  {\begin{tikzpicture}[remember picture,overlay]
+    \node[yshift=-2cm] at (current page.north west)
+      {\begin{tikzpicture}[remember picture, overlay]
+        \draw[fill=MediumBlue] (0,0) rectangle
+          (\paperwidth,2cm);
+        \node[anchor=east,xshift=.9\paperwidth,rectangle,
+              rounded corners=20pt,inner sep=11pt,
+              fill=white]
+              {\color{black}#1};%\chapterlabel
+          \node[anchor=west,yshift=1cm,xshift=2cm,inner sep=11pt,
+              fill=MediumBlue]
+              {\color{white}{\large Synthèse Latex}};%\chapterlabel
+       \end{tikzpicture}
+      };
+   \end{tikzpicture}
+  }
+  \titlespacing*{\chapter}{0pt}{50pt}{-60pt}
+\begin{document}
+\setHeader{A}{A}{A}
+\tableofcontents
+\setcounter{page}{2}
+\chapter{Introduction}
+
+\section{Présentation}
+Ce document a pour but de présenter les fonctionnalités de la bibliothèque Utils, qui n'est qu'un regroupement de bibliothèques pour simplifier l'utilisation de Latex. \n
+Chaque bibliothèque doit être indépendante afin de fonctionner correctement.\\
+
+Voici les bibliothèques disponibles : 
+
+\begin{items}{blue}{\Circle}
+\item Badges
+\item Colors
+\item Debug
+\item Electronic
+\item Fonts
+\item Glossaries
+\item Graphics
+\item Header
+\item Images
+\item Index
+\item Items
+\item Labels
+\item Layout
+\item Links
+\item Maths
+\item MessageBox
+\item Nomenclature
+\item Objects3D
+\item Pdf
+\item Programming
+\item Theorems
+\item Titles
+\item Tree
+\end{items}
+
+\section{Installation}
+
+Latex est un logiciel assez volumineux\footnote{Environ 1.5Go dans les dépots Debian/Ubuntu} mais l'installation complète ne nécéssite pas d'ajout de paquets supplémentaires.
+Il est disponible dans les dépots \bold{Debian/Ubuntu} avec les commandes suivantes\footnote{Il faut saisir la commande dans un terminal} :\\
+
+\begin{Bash}{Installation de Latex}
+sudo apt-get update
+sudo apt-get -y upgrade
+sudo apt-get install texlive-full
+\end{Bash}
+
+La commande suivante permet de gérer Latex en français.
+
+\begin{Bash}{Installation des langues}
+sudo apt-get install texlive-lang-european
+\end{Bash}
+
+\section{Organisation du projet}
+
+\begin{figure}[h!]
+    \centering
+    \usetikzlibrary{trees}
+
+    \tikzstyle{every node}=[draw=black,thick,anchor=west]
+    \tikzstyle{selected}=[draw=blue,fill=blue!30]
+    \tikzstyle{optional}=[dashed,fill=green!50]
+    \begin{tikzpicture}[%
+        grow via three points={one child at (0.5,-0.7) and
+        two children at (0.5,-0.7) and (0.5,-1.4)},
+        edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+
+        \addParent{Project}{green} 
+        child { node {Images}
+            child { node [selected] {Intro}}
+            child { node [selected] {Content}}
+        }
+        child [missing] {}	
+        child [missing] {}	
+        child { node {Make}
+            child { node {Bibliography.tex}}
+            child { node {Contacts.tex}}
+            child { node {Glossaries.tex}}
+            child { node {Index.tex}}
+            child { node {Nomenclature.tex}}
+            child { node {Rules.tex}}
+        }
+        child [missing] {}	
+        child [missing] {}	
+        child [missing] {}	
+        child [missing] {}	
+        child [missing] {}	
+        child [missing] {}	
+        child { node {Output}}
+        child { node {Parts}
+            child { node [selected] {Intro}}
+            child { node [selected] {Content}}
+        }
+        child [missing] {}	
+        child [missing] {}	
+        child { node {Utils}}
+        child { node [optional] {Settings.tex}}
+        child { node [optional] {main.tex}}
+        child { node [optional] {make}};
+
+
+    \end{tikzpicture}
+    \tikzstyle{every node}=[]
+    \tikzstyle{selected}=[]
+    \tikzstyle{optional}=[]
+    \caption{Arborescence du projet}
+    \end{figure}
+
+    Chaque projet est consitué de 5 dossiers et de 3 fichiers situés à la racine du projet.
+
+
+    \begin{items}{blue}{\Triangle}
+    \item Le dossier \bold{Images} contient l'ensemble des images du projet.
+    Chaque image doit faire partie de la même partie que son document source associé.
+    \item Le dossier \bold{Make} contient les fichiers annexes du projet : 
+    \begin{items}{cyan}{\Triangle}
+        \item Le fichier \italic{Bibliography.tex} recense les bibliographies du projet
+        \item Le fichier \italic{Contacts.tex} est une page pour contacter l'auteur et contient les informations sur les droits et les licences du projet.
+        \item Le fichier \italic{Glossaries.tex} contient le glosssaire.
+        \item Le fichier \italic{Index.tex} contient l'index.
+        \item Le fichier \italic{Nomenclature.tex} contient la nomenclature\footnote{Les unités et grandeurs physiques par exemple}
+        \item Le fichier \italic{Rules.tex} contient les conventions pour le projet. Il peut contenir les types de commandes, les conventions de nommage du projet...
+    
+    \end{items}
+    \item Le dossier \bold{Output} contient les fichiers de compilation générés de manière automatique. \bold{Vous n'aurez pas à modifier des fichiers à cette emplacement.}
+    \item Le dossier \bold{Parts} contient les différentes parties du projet. Il est possible de scinder son projet en grandes parties (Introduction, Chapitre1, Chapitre2, Conclusion), chaque dossier contenu dans le dossier \bold{Parts} représente ces parties.\\
+
+    Dans chacun de ces dossier, vous pouvez créer autant de fichier Latex que vous voulez, il seront compilés dans l'ordre alphabétique ou bien par ordre croissant si vous mettre un numéro au début du nom de fichier.\\
+
+    Pour chaque dossier crée dans le dossier \bold{Parts}, il faudra créer un dossier avec le même nom dans le dossier \bold{Images}, sous peine de voir une volée d'erreur lors de la compilation (Voir l'arborescence du projet).
+    
+    \item Le dossier \bold{Utils} contient les bibliothèques du projet.
+
+    Et voici les trois fichiers situés à la racine : 
+    \begin{items}{black}{\Triangle}
+        \item Le fichier \italic{Settings.tex} regroupe les paramètres de mise en page du projet
+        \item Le fichier \italic{main.tex} est le fichier principal du projet.
+        \item Le fichier \italic{make} est le fichier de compilation.
+    \end{items}
+\end{items}
+
+\section{Fusion de projets}
+
+Le choix d'un dossier par partie (Parts/XXX) permet de fusionner très facilement des projets.
+Pour fusionner deux projets, il suffit de copier-coller le contenu du dossier \bold{Images} et \bold{Parts} du projet A dans le dossier de projet qui contiendra la fusion (projet B). Lors de la compilation, \bold{make} va gérer la fusion automatiquement.
+
+
+\section{Compilation du projet}
+
+\subsection{Première compilation}
+
+La compilation du projet se fait grâce au fichier \bold{make} situé à la racine du projet.
+Avant de faire la toute première compilation, il convient de rendre éxécutable le fichier \bold{make} en saissisant la commande suivante : 
+    
+\begin{Bash}{Don des droits d'éxécution sur le fichier \bold{make}}
+chmod +x make
+\end{Bash}
+
+Il ne reste plus qu'à compiler le fichier.
+
+\subsection{Compilation classique}
+
+Une compilation classique a pour objectif de générer le fichier PDF de rendu, appelé \bold{main.pdf} et situé à la racine du projet.
+\begin{Bash}{Compilation du projet}
+./make
+\end{Bash}
+
+Lors de la compilation, plusieurs fichiers sont générés à la racine, dont : 
+
+\begin{items}{blue}{\Triangle}
+    \item Le fichier \italic{render\_report.tex} qui contient la première partie des fichiers journaux de compilation
+    \item Le fichier \italic{render\_report\_logs.tex} qui contient la seconde partie des fichiers journaux de compilation\footnote{Les messages de compilation générés par la bibliothèque Utils sont situés dans ce fichier.}
+    \item Le fichier \italic{standlone.tex} est le fichier qui contient l'intégralité du projet (bibliothèques et code sources du projet). Ce dernier est donc utilisable avec la commande \bold{pdflatex} et permet de générer le fichier PDf à lui seul.
+
+    \begin{Bash}{Génération du fichier PDF en dehors du projet}
+        pdflatex standlone.tex
+        \end{Bash}
+
+        
+    \item Une image \italic{Part.png} qui affiche le nombre de ligne pour chaque fichier contenu dans le dossier \bold{Parts}
+    \img{\rootImages/Part.png}{Nombre de ligne pour les parties}{0.5}
+    \item Une image \italic{Utils.png} qui affiche le nombre de ligne pour chaque fichier contenu dans le dossier \bold{Utils}
+    \img{\rootImages/Utils.png}{Nombre de ligne pour les bibliothèques}{0.5}
+\end{items}
+
+Lors de la compilation, différents messages s'affichent : 
+
+\img{\rootImages/messages.png}{Message d'ajout d'élements de la bibliothèque Utils}{0.5}
+\img{\rootImages/warnings.png}{Message d'avertissements}{0.5}
+
+\subsection{Vérification orthographique}
+
+En invoquant le paramètre \bold{--check}, il est possible de faire une vérification orthographique avec le logiciel aspell. Ci ce dernier n'est pas installé, il suffit de lancer la commande suivante : 
+
+\begin{Bash}{Installation de aspell}
+sudo apt-get install -y aspell
+\end{Bash}
+
+Enfin, si vous lancer la commande 
+
+\begin{Bash}{Vérification orthographique}
+./make --check
+\end{Bash}
+
+Le fichier \italic{make} vous demande si vous souhaiter corriger les fichiers contenus dans le dossier \bold{Parts}.
+
+\img{\rootImages/check.png}{Vérification orthographique}{0.5}
+
+Veuillez saisir \lgreen{KEY}{y} si vous souhaitez corriger le fichier indiqué.
+Ensuite, il ne vous reste plus qu'à être guidé par le logiciel aspell.
+
+\img{\rootImages/check2.png}{Commande de vérification orthographique}{0.5}
+
+Les commandes sont à saisir au clavier (\lgreen{KEY}{Ctrl+I} pour ignorer le mot par exemple).
+
+\subsection{Mise à jour Git}
+
+Pour les projets Latex étant sur Git, il est possible de mettre à jour le dépot en saississant la commande suivante : 
+\begin{Bash}{Mise à jour Git}
+./make --git
+\end{Bash}
+
+\subsection{Création d'un nouveau projet}
+
+Pour créer un nouveau projet, il suffit de copier le fichier \bold{make} et de le mettre là où on souhaite créer le nouveau projet.
+\begin{Bash}{Nouveau projet}
+./make --init
+\end{Bash}
+
+\section{Conventions}
+
+\lgreen{LOC}{Header} veut dire que le code est à mettre avant \bold{begin\{document\}}\\
+\lgreen{LOC}{Body} veut dire que le code est à mettre entre \bold{begin\{document\}} et \bold{end\{document\}}
+
+%\addUpdate{2020/02/10}{Version 1.0}
+
+%\addUpdate{2020/02/20}{Version 2.0}
+
+%\addQuote{En temps de guerre, la vérité est si précieuse qu'elle doit etre escortée par une garde de mensonge}{Sir Winston Spencer Churchill,\\ Duc de Malborought}
+%\addQuote{Si Dieu nous fait la grâce de perdre encore une pareille bataille, Votre Majesté peut compter que ses ennemis sont détruits}{Maréchal de Villars, \\ 1709}\chapter {Bibliothèque Adding}
+
+La Bibliothèque \bold{Adding} permet de générer des nomenclatures.
+
+\section{Création d'une nomenclature}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour la création d'une nomenclature}
+
+\nomenclature[E]{$r$}{Rapport cyclique d'un signal périodique}
+\nomenclature[A]{$A_d$}{Coefficient d'amplification, gain différentiel }
+\nomenclature[A]{$\varepsilon$}{Tension différentielle $(\varepsilon = E_+ - E_-)$\addUnit{V}}
+\nomenclature[A]{$E_+$}{Tension entrée non inverseuse \addUnit{V}}
+\nomenclature[A]{$E_-$}{Tension entrée inverseuse \addUnit{V}}
+\nomenclature[E]{$\eta$}{Rendement d'un mécanisme \addUnit{\%}}
+\nomenclature[E]{$\varphi$}{Déphasage entre deux signaux \addUnit{rad}}
+  
+\end{Latex}\chapter {Bibliothèque Badges}
+
+\section{Création de badges avec des couleurs}
+
+\badge{white}{black}{Electronique}
+\badge{white}{blue}{Mécanique}
+\badge{white}{green}{Informatique}
+\sn 
+\sn
+
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour la création de badges avec des couleurs}
+\badge{white}{black}{Electronique}
+\badge{white}{blue}{Mécanique}
+\badge{white}{green}{Informatique}
+\end{Latex}\chapter{Bibliothèque Electronic}
+
+La bibliothèque \bold{Electronic} permet de générer des chronogrammes et des schémas électriques
+
+\section{Création de chronogrammes fixes}
+
+\begin{numeric}{Exemple 1 chronogramme fixe}
+    D1 &  20{C}   \\
+    D2 &  [green] 1H1L1L1L1H1L1L1H1L1H1L1H1L1H1L1H  \\
+    D7 &  [black] 1H1L1L1L1H1L1L1H1L1H1L1H1L1H1L1H  \\
+    D8 & 8D5U7U5D \\
+    D9 & LLL 2{0.1H 0.1L} 0.6H HH \\
+    D10 & ZZ G ZZ G XX G X \\
+    D11 & [d] 4{5D{Text}} 0.2D \\
+    D12 & [L][timing/slope=1.0] HL HL HL HL HL \\
+  \end{numeric}
+
+
+  \begin{numeric}{Exemple 2 - Chronogramme du compteur 4 bits}
+    INPUT &  CC [blue]16{CC} CCC   \\
+    D0 &  HL 8{LHHL} LHL   \\
+    D1 &  H  4{LLLLHHHH} LLLL \\
+    D2 &  H 2{LLLLLLLLHHHHHHHH} LLLL   \\
+    D3 &  H{LLLLLLLLLLLLLLLLHHHHHHHHHHHHHHHH} LLLL  \\
+    END &  LL [green]14{LL} LHHLLL  \\
+    VALUE & L 2D{0} 2D{1} 2D{2} 2D{3} 2D{4} 2D{5} 2D{6} 2D{7} 2D{8} 2D{9} 2D{10} 2D{11} 2D{12} 2D{13} 2D{14} 2D{15} 2D{0} 2D{1}  \\
+  \end{numeric}%
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour la création de chronogrammes fixes [exemple 1]}
+  \begin{numeric}{exemple 1 chronogramme fixe}
+    D1 &  20{C}   \\
+    D2 &  [green] 1H1L1L1L1H1L1L1H1L1H1L1H1L1H1L1H  \\
+    D7 &  [black] 1H1L1L1L1H1L1L1H1L1H1L1H1L1H1L1H  \\
+    D8 & 8D5U7U5D \\
+    D9 & LLL 2{0.1H 0.1L} 0.6H HH \\
+    D10 & ZZ G ZZ G XX G X \\
+    D11 & [d] 4{5D{Text}} 0.2D \\
+    D12 & [L][timing/slope=1.0] HL HL HL HL HL \\
+  \end{numeric}
+\end{Latex}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour la création de chronogrammes fixes [exemple 2]}
+  \begin{numeric}{Exemple 2 - Chronogramme du compteur 4 bits}
+    INPUT &  CC [blue]16{CC} CCC   \\
+    D0 &  HL 8{LHHL} LHL   \\
+    D1 &  H  4{LLLLHHHH} LLLL \\
+    D2 &  H 2{LLLLLLLLHHHHHHHH} LLLL   \\
+    D3 &  H{LLLLLLLLLLLLLLLLHHHHHHHHHHHHHHHH} LLLL  \\
+    END &  LL [green]14{LL} LHHLLL  \\
+    VALUE & L 2D{0} 2D{1} 2D{2} 2D{3} 2D{4} 2D{5} 2D{6} 2D{7} 2D{8} 2D{9} 2D{10} 2D{11} 2D{12} 2D{13} 2D{14} 2D{15} 2D{0} 2D{1}  \\
+  \end{numeric}%
+\end{Latex}
+
+
+\section{Création de chronogrammes flottants}
+
+Notre signal d'horloge (\texttiming{[blue]CCCCCC}) provient d'un oscillateur à quartz.
+Notre signal d'horloge (\texttiming[timing/draw grid]{LHLHLHLHLHLHLHL}) provient d'un oscillateur à quartz. 
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour la création de chronogrammes flottants}
+  Notre signal d'horloge (\texttiming{[blue]CCCCCC}) provient d'un oscillateur à quartz.
+  Notre signal d'horloge (\texttiming[timing/draw grid]{LHLHLHLHLHLHLHL}) provient d'un oscillateur à quartz. 
+\end{Latex}
+
+
+
+\section{Création de schémas électriques}
+
+  
+  \begin{schema} {Exemple de schéma électrique}
+  
+    \addPower{6,5}{power1}{$+5V$}
+    \addGround{4,0}{gnd1}{}
+  
+    \setDeviceBackgroundColor{white}
+    \setRotate{0}
+    \addLogicGate{0,0}{mynor}{nor}{}{A}{B}{G1}
+  
+    \setDeviceBackgroundColor{green}
+    \addLogicGate{0,2}{mynand}{nand}{}{C}{D}{G2}
+    \addLogicGate{2,1}{myor}{or}{}{}{}{G3}
+    \resetColors
+            
+    \addTransistor{6,1}{npnA}{nmos}{B}{C}{E}
+    \addTransistor{6,3}{pnpA}{pmos}{b}{e}{c}
+  
+    \resetColors
+    \addTransistor{10,2}{npnR}{nmos}{b}{e}{c}
+  
+    \addWire{mynor.out}{myor.in 2}{\orthogonalWireA}
+    \addWire{mynand.out}{myor.in 1}{\orthogonalWireA}
+
+    \addWire{mynand.out}{pnpA.B}{\orthogonalWireA}
+    \addWire{pnpA.C}{npnA.C}{\orthogonalWireA}
+  
+    \addWire{pnpA.E}{power1}{\orthogonalWireA}
+  
+    \addWire{npnA.E}{gnd1}{\orthogonalWireA}
+  
+    \addNode{$(pnpA.C)+(1,0)$}{node1}{}
+    \addWire{pnpA.C}{node1}{\orthogonalWireA}
+  
+    \setDeviceBackgroundColor{red}
+    \addLed{myor.out}{\Right}{npnA.B}{\orthogonalWireA}{L1}
+    \addResistor{node1}{\Right}{npnR.B}{\orthogonalWireA}
+            
+  \end{schema}
+  
+  \lgreen{LOC}{Body}
+  \begin{Latex}{Code pour la création de schémas électriques}
+    \begin{schema} {Exemple de schéma électrique}
+  
+      \addPower{6,5}{power1}{$+5V$}
+      \addGround{4,0}{gnd1}{}
+    
+      \setDeviceBackgroundColor{white}
+      \setRotate{0}
+      \addLogicGate{0,0}{mynor}{nor}{}{A}{B}{G1}
+    
+      \setDeviceBackgroundColor{green}
+      \addLogicGate{0,2}{mynand}{nand}{}{C}{D}{G2}
+      \addLogicGate{2,1}{myor}{or}{}{}{}{G3}
+      \resetColors
+              
+      \addTransistor{6,1}{npnA}{nmos}{B}{C}{E}
+      \addTransistor{6,3}{pnpA}{pmos}{b}{e}{c}
+    
+      \resetColors
+      \addTransistor{10,2}{npnR}{nmos}{b}{e}{c}
+    
+      \addWire{mynor.out}{myor.in 2}{\orthogonalWireA}
+      \addWire{mynand.out}{myor.in 1}{\orthogonalWireA}
+  
+      \addWire{mynand.out}{pnpA.B}{\orthogonalWireA}
+      \addWire{pnpA.C}{npnA.C}{\orthogonalWireA}
+    
+      \addWire{pnpA.E}{power1}{\orthogonalWireA}
+    
+      \addWire{npnA.E}{gnd1}{\orthogonalWireA}
+    
+      \addNode{$(pnpA.C)+(1,0)$}{node1}{}
+      \addWire{pnpA.C}{node1}{\orthogonalWireA}
+    
+      \setDeviceBackgroundColor{red}
+      \addLed{myor.out}{\Right}{npnA.B}{\orthogonalWireA}{L1}
+      \addResistor{node1}{\Right}{npnR.B}{\orthogonalWireA}
+              
+    \end{schema}
+  \end{Latex}
+  \chapter{Bilbiothèque Graphic}
+
+\section{Affichage d'un graphique 2D avec insertion des données depuis un fichier txt (csv)}
+
+\begin{graphic}{0.8}{0.6}{0}{2.1}{-1.1}{1.1}{t(ms)}{vs}{Oscilloscope}
+\addPointsFromCSV{red}{comma}{src_examples/input_1.txt}
+\addPointsFromCSV{blue}{comma}{src_examples/input_2.txt}
+\addLegend{voie A, voie B}
+\end{graphic}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'affichage d'un graphique 2D avec insertion des données depuis un fichier txt (csv)}
+\begin{graphic}{0.8}{0.6}{0}{2.1}{-1.1}{1.1}{t(ms)}{vs}{Oscilloscope}
+  \addPointsFromCSV{red}{comma}{src_examples/input_1.txt}
+  \addPointsFromCSV{blue}{comma}{src_examples/input_2.txt}
+  \addLegend{voie A, voie B}
+\end{graphic}
+\end{Latex}
+
+
+
+\section{Affichage d'un graphique 2D avec insertion des données depuis une liste de points}
+
+\begin{graphic}{0.8}{0.4}{0}{40}{-1}{6}{t(s)}{Tension (V)}{Signal numérique}
+\addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
+\addLegend{Tension (V)}
+\end{graphic}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'affichage d'un graphique 2D avec insertion des données depuis une liste de points}
+\begin{graphic}{0.8}{0.4}{0}{40}{-1}{6}{t(s)}{Tension (V)}{Signal numérique}
+  \addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
+  \addLegend{Tension (V)}
+\end{graphic}
+\end{Latex}
+
+
+\section{Affichage d'un graphique 2D avec insertion des données depuis une équation}
+
+
+
+\begin{graphicFigure}{0.4}{0.4}{0}{3}{-1}{5}{t(s)}{Tension V}{Signal analogique}
+\addPointsFromCSV{red}{comma}{src_examples/input_2.txt}
+\addLegend{Legende}
+\end{graphicFigure}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'affichage d'un graphique 2D avec insertion des données depuis une liste de points}
+\begin{graphicFigure}{0.4}{0.4}{0}{3}{-1}{5}{t(s)}{Tension V}{Signal analogique}
+  \addPointsFromCSV{red}{comma}{src_examples/input_2.txt}
+  \addLegend{Legende}
+\end{graphicFigure}
+\end{Latex}
+
+
+\section{Affichage d'un graphique 2D avec insertion des données depuis plusieurs sources}
+
+\begin{graphic}{0.8}{0.4}{0}{20}{-1}{10}{x}{y}{Courbes de provenances diverses}
+\addPointsFromCSV{red}{comma}{src_examples/input_2.txt}
+\addTrace{green}{-10}{10}{x}
+\addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
+\addLegend{s1,s2,s3}
+\end{graphic}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'affichage d'un graphique 2D avec insertion des données depuis plusieurs sources}
+\begin{graphic}{0.8}{0.4}{0}{20}{-1}{10}{x}{y}{Courbes de provenances diverses}
+  \addPointsFromCSV{red}{comma}{src_examples/input_2.txt}
+  \addTrace{green}{-10}{10}{x}
+  \addPoints{blue}{(0,0)(10,0)(10,5)(15,5)(15,0)(20,0)(20,5)(25,5)(25,0)(30,0)(30,5)(35,5)(35,0)(100,0)}
+  \addLegend{s1,s2,s3}
+\end{graphic}
+\end{Latex}
+
+\newpage
+\section{Affichage de deux graphiques}
+
+  \begin{figure}[h!]  
+    \centering 
+      \begin{subfigure}[b]{0.4\linewidth}
+        \begin{graphic}{0.8}{1}{0}{1.2}{-1}{5}{t(s)}{Tension V}{h}
+          \addPointsFromCSV{red}{comma}{src_examples/sinus.txt}
+          \addLegend{sin(t)}
+          \end{graphic}%NO END  LINE HERE
+        \caption{Origine} 
+      \end{subfigure}
+    \begin{subfigure}[b]{0.4\linewidth}
+      \begin{graphic}{0.8}{1}{0}{4}{-0.3}{0.3}{t(s)}{Tension V}{g}
+        \addPointsFromCSV{blue}{comma}{src_examples/jack01.txt}
+        \addLegend{g(t)}
+        \end{graphic}%NO END  LINE HERE
+    \caption{Bruit}
+    \end{subfigure}
+    \caption{Les tensions de service}
+    \end{figure}  
+
+
+  
+    \lgreen{LOC}{Body}
+    \begin{Latex}{Code pour l'affichage d'un graphique 2D avec insertion des données depuis plusieurs sources}
+
+      \begin{figure}[h]  
+        \centering 
+          \begin{subfigure}[b]{0.4\linewidth}
+            \begin{graphic}{0.8}{1}{0}{1.2}{-1}{5}{t(s)}{Tension V}{h}
+              \addPointsFromCSV{red}{comma}{src_examples/sinus.txt}
+              \addLegend{sin(t)}
+              \end{graphic}%NO END  LINE HERE
+            \caption{No interaction} 
+          \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+          \begin{graphic}{0.8}{1}{0}{4}{-0.3}{0.3}{t(s)}{Tension V}{g}
+            \addPointsFromCSV{blue}{comma}{src_examples/jack01.txt}
+            \addLegend{g(t)}
+            \end{graphic}%NO END  LINE HERE
+        \caption{Interaction}
+        \end{subfigure}
+        \caption{Les tensions de service}
+        \end{figure}  
+    \end{Latex}
+
+    \chapter{Bibliothèque Header}
+
+\section{Mise en forme de la page de garde avec une image}
+
+\lgreen{LOC}{Header}
+\begin{Latex}{Code pour la mise en forme de la page de garde avec une image}
+\setHeaderImage{Emplacement_image}{0.8}{Titre}{sous-titre}{Auteurs}{\today \\ \pageref{LastPage} pages}
+\end{Latex}
+
+
+\section{Mise en forme de la page de garde sans image}
+
+\lgreen{LOC}{Header}
+\begin{Latex}{Code pour la mise en forme de la page de garde sans image}
+  \setHeader{Titre}{Auteur 1 \\ Auteur 2}{Date}
+\end{Latex}
+
+\section{Mise en forme de la page des parties}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour la mise en forme de la page des parties}
+  \partImg{Partie}{Images/file.png}{0.2}
+\end{Latex}
+
+\section{Ajout d'un trait entre l'en-tête et le corps de la page}
+
+\lgreen{LOC}{Header}
+\begin{Latex}{Code pour l'ajout d'un trait entre l'en-tête et le corps de la page}
+  \setHeaderLine{0.2}
+\end{Latex}
+
+\section{Ajout d'un trait entre le corps de la page et le bas de page}
+
+\lgreen{LOC}{Header}
+\begin{Latex}{Code pour l'ajout d'un trait entre le corps de la page et le bas de page}
+  \setFooterLine{0.2}
+\end{Latex}
+
+
+
+
+
+\section{Définition de la présentation globale des pages}
+
+\lgreen{LOC}{Header}
+\begin{Latex}{Code pour la définition de la présentation globale des page}
+  \addPresentation
+  {Titre} {Centre} {\currentChapter}
+  {Gauche} {} {\currentPage}
+\end{Latex}
+
+\section{Redéfinition des titres des chapitres}
+
+%\setAliasChapter{Section}
+\lgreen{LOC}{Header}
+\begin{Latex}{Code pour la redéfinition des titres des chapitres}
+  \setAliasChapter{Section}
+\end{Latex}
+
+
+\section{Mettre le document en pleine page}
+\lgreen{LOC}{Header}
+\begin{Latex}{Code pour mettre le document en pleine page}
+\setFullPage
+\end{Latex}
+
+\section{Récuperer le chapitre courant}
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour récuperer le chapitre courant}
+\currentChapter
+\end{Latex}\chapter{Bibliothèque Images}
+
+
+\section{Ajout d'une image non-flottante}
+
+\img{\rootImages/tux.png}{Légende de l'image}{0.5}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'ajout d'une image non-flottante}
+\img{\rootImages/tux.png}{Légende de l'image}{0.5}
+\end{Latex}
+
+\section{Ajout d'une image non-flottante avec une rotation}
+
+\imgr{\rootImages/tux.png}{Légende de l'image}{0.5}{45}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'ajout d'une image non-flottante avec une rotation}
+\imgr{\rootImages/tux.png}{Légende de l'image}{0.5}{45}
+\end{Latex}
+
+% \section{Ajout d'une image flottante}
+
+% Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum
+% ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris. Nam arcu li-
+% bero, nonummy eget, consectetuer id, vulputate a, magna. Donec vehicula augue eu
+% neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+% turpis egestas. Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibu-
+% \imgf{\rootImages/tux.png}{Légende de l'image}{0.5}
+% lum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer
+% sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices
+% bibendum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac,
+% nulla. Curabitur auctor semper nulla. Donec varius orci eget risus. Duis nibh mi, congue\chapter {Bibliothèque Items}
+
+\section{Création d'un liste}
+
+\begin{items}{orange}{\Triangle}
+    \item A
+    \item B
+    \item C
+\end{items}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour la création d'une liste}
+\begin{items}{orange}{\Triangle}
+    \item A
+    \item B
+    \item C
+\end{items}
+\end{Latex}\chapter{Bibliothèque Labels}
+
+\section{Création de labels colorés}
+
+\lorange{LIB}{OUT}
+\lred{LIB}{OUT}
+\lgreen{LIB}{OUT}
+\lmagenta{LIB}{OUT}
+\lpurple{LIB}{OUT}
+\lcyan{LIB}{OUT}
+\lblue{LIB}{OUT}
+\lbrown{LIB}{OUT}
+\lyellow{LIB}{OUT}
+\lblack{LIB}{OUT} \\
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour la création de labels colorés}
+\lorange{LIB}{OUT}  %Label orange
+\lred{LIB}{OUT} %Label rouge 
+\lgreen{LIB}{OUT} %...
+\lmagenta{LIB}{OUT}
+\lpurple{LIB}{OUT}
+\lcyan{LIB}{OUT}
+\lblue{LIB}{OUT}
+\lbrown{LIB}{OUT}
+\lyellow{LIB}{OUT}
+\lblack{LIB}{OUT}
+\end{Latex}\chapter{Bibliothèque Layout}
+
+
+\section{Mise en gras}
+
+\bold{Texte en gras}
+\sn
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour mettre le texte en gras}
+\bold{Texte en gras}
+\end{Latex}
+
+\section{Mise en italique}
+
+\italic{Texte en italique}
+\sn
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour mettre le texte en italique}
+\italic{Texte en gras}
+\end{Latex}
+
+\section{Mise en gras et italique}
+
+\ib{Texte en gras et italique}
+\sn
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour mettre le texte en gras et italique}
+\ib{Texte en gras et italique}
+\end{Latex}
+
+
+\section{Ajout d'un espace vertical}
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum
+ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris. Nam arcu li- \sn
+
+bero, nonummy eget, consectetuer id, vulputate a, magna. Donec vehicula augue eu
+neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+turpis egestas. Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibu-
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour ajouter un espace vertical}
+\sn
+\end{Latex}\chapter{Bibliothèque Links}
+
+\section{Paramétrage des liens et des méta-données}
+
+\lgreen{LOC}{Header}
+\begin{Latex}{Code pour paramétrer les liens et les métadonnées}
+%@input Titre du PDF
+%@input Auteur(s)
+%@input Sujet du fichier PDF (courte phrase)
+%@input Créateur du fichier PDF
+%@input Producteur du fichier PDF
+%@input Mots-clés (liste)
+%@input Couleurs des liens
+%@input Couleurs des citations dans la bibliographie
+%@input Couleurs des liens de fichier
+\setParameters {Tutoriel Latex} {Nicolas Le Guerroué} {Bibliothèque Utils} {Nicolas Le Guerroué}{Latex}{green}{blue}{blue}
+    
+\end{Latex}\chapter{Bibliothèque Maths}
+
+\section{Création d'une matrice 3*3}
+
+$$\emat{a & b & c}{d & e & f}{g & h & i}  $$
+\vskip 0.5cm
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour la création d'une matrice 3*3}
+    $$\emat{a & b & c}{d & e & f}{g & h & i}  $$
+\end{Latex}
+
+\section{Création d'un vecteur à trois dimensions}
+
+$$\evec{a}{b}{c}  $$
+\vskip 0.5cm
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour la création d'un vecteur à trois dimensions}
+    $$\evec{a}{b}{c}  $$
+\end{Latex}\chapter{Bibliothèque MessageBox}
+
+\section{Création de boites de dialogues}
+
+\messageBox{Message}{orange}{white}{Voici un message}{black}
+\messageBox{Message}{red}{white}{Et un autre message}{black}
+\messageBox{Message}{green}{white}{bref...}{white}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour la création de boites de dialogues}
+\messageBox{Message}{orange}{white}{Voici un message}{black}
+\end{Latex}\chapter{Bibliothèque Object3D}
+
+\section{Affichage d'un graphique 3D avec insertion des données depuis une équation}
+
+\plot{Titre 3D}{x*y*y}
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'affichage graphique 3D avec insertion des données depuis une équation}
+    \plot{Titre 3D}{x*y*y}
+\end{Latex}
+
+\section{Affichage de sphères en 3D}
+
+\ball{red}{2}
+\ball{green}{3}
+\ball{blue}{4}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'affichage de sphères en 3D}
+    \ball{red}{2}
+    \ball{green}{3}
+    \ball{blue}{4}
+\end{Latex}\chapter{Bibliothèque Pdf}
+
+\section{Insertion d'un document PDF}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour ajouter un document au format PDF}
+    \includepdf[page=1,2,3]
+\end{Latex}
+
+\section{Insertion d'un ensemble de pages d'un document PDF}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour ajouter un ensemble de page d'un document au format PDF}
+    \includepdf[page=1,2,3]
+\end{Latex}\chapter{Bilbiothèque Programming}
+
+
+\section{Affichage d'un code C/C++ avec titre}
+
+
+\begin{Cpp}{Titre}
+#include <iostream>
+
+#define CONST 1
+
+int var = 1;
+float 
+
+int main() {
+  
+  call();
+  return 0;
+
+}//End main
+
+\end{Cpp}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'affichage d'un code C/C++ avec titre}
+    \begin{Cpp}{Titre}
+        #include <iostream>
+        
+        #define CONST 1
+        
+        int var = 1;
+        float 
+        
+        int main() {
+          
+          call();
+          return 0;
+        
+        }//End main
+        
+        \end{Cpp}
+\end{Latex}
+
+\section{Affichage d'un code C/C++ sans titre}
+
+
+\begin{Cpp}
+#include <iostream>
+
+#define CONST 1 #const var
+
+int var = 1;
+float g = 2.5;
+...
+
+\end{Cpp}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'affichage d'un code C/C++ sans titre}
+    \begin{Cpp}
+        #include <iostream>
+        
+        #define CONST 1 #const var
+        
+        int var = 1;
+        float g = 2.5;
+        ...
+        
+        \end{Cpp}
+\end{Latex}
+
+
+\section{Affichage d'un code Python avec titre}
+
+
+\begin{Python}{Titre du code}
+def call(input):
+
+  """docstring"""
+  a = input
+  for elem in a:
+    print(elem) #show
+\end{Python}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'affichage d'un code Python avec titre}
+  \begin{Python}{Titre du code}
+    def call(input):
+    
+      """docstring"""
+      a = input
+      for elem in a:
+        print(elem) #show
+    \end{Python}
+\end{Latex}
+
+\section{Affichage d'un code Python sans titre}
+
+
+\begin{Python}
+def call(input):
+
+  """docstring"""
+  ...
+\end{Python}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'affichage d'un code Python sans titre}
+  \begin{Python}
+    def call(input):
+    
+      """docstring"""
+      ...
+    \end{Python}
+\end{Latex}
+
+
+\section{Affichage d'un code Bash avec titre}
+
+
+\begin{Bash}{Titre du code}
+sudo apt-get -y update
+sudo apt-get -y upgrade
+echo -e "content"
+\end{Bash}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'affichage d'un code Bash avec titre}
+  \begin{Bash}{Titre du code}
+    sudo apt-get -y update
+    sudo apt-get -y upgrade
+    echo -e "content"
+    \end{Bash}
+\end{Latex}
+
+\section{Affichage d'un code bash sans titre}
+
+\bold{Ce type d'affichage n'est pas encore supporté par la bibliothèque.}
+\chapter{Bibliothèque Tables}
+
+  
+\begin{figure}[!h]
+    \centering
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    $U_A$ (V) & $U_B$ (V) & Sens du courant & $U_A-U_B$\\
+    \hline
+    10 & 5 & \colors{blue}{De A vers B} & 5\\
+    \hline
+    5 & 10 & \colors{blue}{de B vers A} & -5\\
+    \hline
+    5 & 5 & \colors{blue}{Aucun courant ne circule} & 0\\
+    \hline
+  \end{tabular}
+  \caption{Réponse sur le sens du courant en fonction des tensions $U_A$ et $U_B$}
+  \end{figure}
+  
+  \lgreen{LOC}{Body}
+  \begin{Latex}{Code d'exemple}
+    
+    \begin{figure}[!h]
+        \centering
+      \begin{tabular}{|c|c|c|c|}
+        \hline
+        $U_A$ (V) & $U_B$ (V) & Sens du courant & $U_A-U_B$\\
+        \hline
+        10 & 5 & \colors{blue}{De A vers B} & 5\\
+        \hline
+        5 & 10 & \colors{blue}{de B vers A} & -5\\
+        \hline
+        5 & 5 & \colors{blue}{Aucun courant ne circule} & 0\\
+        \hline
+      \end{tabular}
+      \caption{Réponse sur le sens du courant en fonction des tensions $U_A$ et $U_B$}
+      \end{figure}
+      
+      
+      
+  \end{Latex}
+  \chapter {Bibliothèque Theorems}
+
+
+\section{Création d'une question}
+
+\begin{question}
+    Quelle heure est-il ?
+\end{question}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour la création d'une question}
+\begin{question}
+    Quelle heure est-il ?
+\end{question}
+\end{Latex}
+
+\section{Création d'une reponse}
+
+\begin{reponse}
+    il est 18 h.
+\end{reponse}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour la création d'une reponse}
+\begin{reponse}
+    il est 18 h.
+\end{reponse}
+\end{Latex}
+
+\section{Création d'une propriete}
+
+\begin{propriete}
+    Un produit scalaire est commutatif.
+\end{propriete}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour la création d'une propriete}
+\begin{propriete}
+    Un produit scalaire est commutatif.
+\end{propriete}
+\end{Latex}
+
+\section{Création d'une proposition}
+
+\begin{proposition}
+    Les chats sont des mammifères.
+\end{proposition}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour la création d'une proposition}
+\begin{proposition}
+    Les chats sont des mammifères.
+\end{proposition}
+\end{Latex}
+
+\section{Création d'une remarque}
+
+\begin{remarque}
+remarque sur Latex
+\end{remarque}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour la création d'une remarque}
+\begin{remarque}
+remarque sur Latex
+\end{remarque}
+\end{Latex}
+
+\section{Création d'un exemple}
+
+\begin{exemple}
+    Ceci est un exemple d'exemple
+\end{exemple}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour la création d'une exemple}
+\begin{exemple}
+    Ceci est un exemple d'exemple
+\end{exemple}
+\end{Latex}
+
+\section{Création d'une définition}
+
+\begin{definition}
+    Une phrase est un ensemble de mots.
+\end{definition}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour la création d'une definition}
+\begin{definition}
+    Une phrase est un ensemble de mots.
+\end{definition}
+\end{Latex}\chapter{Bibliothèque Titles}
+
+\subsection{Titre de chapitre}
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'ajout d'un titre}
+  \chapter{Titre}
+\end{Latex}
+
+\section{Titre de section}
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'ajout d'une section}
+  \section{Titre de section}
+\end{Latex}
+
+\subsection{Titre de sous-section}
+
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'ajout d'une sous-section}
+  \subsection{Titre de sous-section}
+\end{Latex}
+
+\subsubsection{Titre de sous-sous-section}
+\lgreen{LOC}{Body}
+\begin{Latex}{Code pour l'ajout d'une sous-sous-section}
+  \subsection{Titre de sous-sous-section}
+\end{Latex}\chapter {Bibliothèque Tree}
+
+\section{Création d'un arbre}
+
+% \begin{tree}{Arborescence du projet}
+%     \addParent{AZE}{red} 
+%     child { node {Sonde\_MySensors}
+%       child { node [selected] {Sonde\_MySensors.ino}}
+%     }
+%     child [missing] {}		
+%     child { node {passerelle\_MySensors}
+%       child { node [selected] {Passerelle\_MySensors.ino}}
+%     };
+%   \end{tree}
+
+
+\begin{Latex}{Code pour la création d'un arbre}
+\begin{tree}{Arborescence du projet}
+    \addParent{AZE}{red} 
+    child { node {Sonde\_MySensors}
+        child { node [selected] {Sonde\_MySensors.ino}}
+    }
+    child [missing] {}		
+    child { node {passerelle\_MySensors}
+        child { node [selected] {Passerelle\_MySensors.ino}}
+    };
+\end{tree}
+\end{Latex}
+
+\end{document}
+%#############################################################
